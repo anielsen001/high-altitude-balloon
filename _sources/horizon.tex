@@ -1,0 +1,40 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{math}
+\usetikzlibrary{angles, quotes}
+%\usetikzlibrary{shapes.misc}
+%\usetikzlibrary{shapes,arrows}
+
+%\usepackage{scalefnt}
+%\usepackage{fontawesome}
+%\usepackage{amsmath,amssymb}
+
+\begin{document}
+\begin{tikzpicture}
+
+\newcommand\radius{4.0}
+\newcommand\height{1.0}
+
+\coordinate (O) at (0,0) ;
+
+\coordinate (R) at (\radius,0); 
+\coordinate (h) at (\height+\radius,0);
+
+\coordinate (I) at ( {\radius* (\radius/(\radius + \height)) }, {\radius*sin(acos(\radius/(\radius + \height)))}); 
+
+\draw[fill=none] (0,0) circle (\radius);
+\draw[fill=black] (0,0) circle (1 pt); 
+\draw[red](0,0)--(R) node [midway,below] {$R$}; 
+\draw[](R)--(h) node [midway, below] {$h$}; 
+
+\draw[](O)--(I) node [midway,left] {$R$}; 
+
+\draw[](I)--(h) node [midway,right] {$\ell$};
+
+
+pic["$\theta$", --] {angle=h--O--I};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,14 @@
+---
+title: Horizon calculator
+format: html
+---
+
+## Assumptions
+
+The Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth. 
+
+![](/_sources/horizon.png)
+
+## References
+
+- [Washington U](https://sites.math.washington.edu/~conroy/m120-general/horizon.pdf)
