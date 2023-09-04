@@ -26,15 +26,24 @@
 
 \draw[fill=none] (0,0) circle (\radius);
 \draw[fill=black] (0,0) circle (1 pt); 
-\draw[red](0,0)--(R) node [midway,below] {$R$}; 
+\draw[](0,0)--(R) node [midway,below] {$R$}; 
 \draw[](R)--(h) node [midway, below] {$h$}; 
 
 \draw[](O)--(I) node [midway,left] {$R$}; 
 
 \draw[](I)--(h) node [midway,right] {$\ell$};
 
+\path 
+        (h)
+        -- (O)
+        -- (I)
+pic[draw, 
+    "$\theta$", 
+    thick,
+    <->, 
+    angle eccentricity= 1.2,
+    angle radius = 1cm] {angle = h--O--I};
 
-pic["$\theta$", --] {angle=h--O--I};
 
 \end{tikzpicture}
 \end{document}

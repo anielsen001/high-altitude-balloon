@@ -1,6 +1,5 @@
 PNGS = \
-	horizon.png \
-	test.png
+	horizon.png
 
 .PHONY: all clean
 
@@ -23,4 +22,4 @@ all: $(PNGS)
 	inkscape --export-pdf="$@" $<
 
 clean: 
-	rm -f *.aux *.log 
+	rm -f *.aux *.log *.pdf *.png
