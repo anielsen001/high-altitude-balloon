@@ -3,7 +3,7 @@
 
 # R related files
 .Rhistory
-.Rdata
+.RData
 
 # latex related
 *.aux
