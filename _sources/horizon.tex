@@ -31,7 +31,8 @@
 
 \draw[](O)--(I) node [midway,left] {$R$}; 
 
-\draw[](I)--(h) node [midway,right] {$\ell$};
+% slant range to horizon
+\draw[](I)--(h) node [midway,right] {$s$};
 
 \path 
         (h)
@@ -43,6 +44,21 @@ pic[draw,
     <->, 
     angle eccentricity= 1.2,
     angle radius = 1cm] {angle = h--O--I};
+
+
+
+\path 
+    (h)
+    -- (O)
+    -- (I)
+pic[draw, 
+"$\ell$", 
+thick,
+---, 
+midway,
+left,
+angle eccentricity= 1,
+angle radius = \radius cm] {angle = h--O--I};
 
 
 \end{tikzpicture}

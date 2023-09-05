@@ -5,9 +5,32 @@ format: html
 
 ## Assumptions
 
+This is basically just a restate of the execlleent Washington U reference below.
+
 The Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth. 
 
 ![](/_sources/horizon.png)
+
+The slant range $s$ to the horizon
+$$
+s = \sqrt{(R+h)^2 - R^2}
+$$
+rewritten
+$$
+s = \sqrt{2Rh + h^2}
+$$
+
+$\ell$ is the distance along the ground. We assume that $h \ll R$ so $s \approx \ell$  and 
+$$
+s \approx \ell = \sqrt{2Rh + h^2} \approx \sqrt{2Rh}
+$$ 
+often restated as
+$$
+s = k \sqrt{h}
+$$
+and found on-line with $k=1.22459$ with $h$ in feet and $s$ in miles. 
+
+
 
 ## References
 
