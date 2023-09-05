@@ -2,6 +2,7 @@ project:
   title: "High-altitude-balloon"
   type: website
   pre-render: make
+  output-dir: output
 
 
 
