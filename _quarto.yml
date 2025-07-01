@@ -4,7 +4,34 @@ project:
   pre-render: make
   output-dir: output
 
+website:
+  title: "High-altitude balloon"
+  site-url: "https://apnielsen.com/high-altitude-balloon"
+  description: "This is a summary of notes for launching a high-altitude balloon"
+  
+  navbar:
+    search: true
 
+    left:
+      - text: "Home page"
+        href: "https://apnielsen.com/"
+      
+    right:
+      - icon: github
+        href: https://github.com/anielsen001/high-altitude-balloon
 
-
-
+  sidebar:
+    logo: _sources/eclipse/balloon_launch_eclipse_thumb.jpg
+    style: "floating"
+    search: true
+    contents:
+      - text: Home
+        href: index.qmd
+      - text: "Horizon calculator"
+        href: horizon.qmd
+  
+format:
+  html:
+    theme:
+      - cosmo
+     
