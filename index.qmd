@@ -1,7 +1,34 @@
 ---
-title: "balloon"
+title: "high altitude balloon magnetometry"
 ---
 
-## Quarto
+The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth's magnetic field is typically not measured at these altitudes, it's usually measured with satellites or low-altitude (<10kft) aircraft for anomaly surveys.
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Balloon payload
+
+### Tracker/telemetry/microcontroller
+
+Several options exist
+
+#### LoRA/LoRAWAN trackers
+
+This option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.
+
+https://github.com/lightaprs/LightTracker-1.1
+
+A version was built around this system and flown in 2024 during the total eclipse. 
+
+![](/_sources/eclipse/balloon_launch_eclipse.jpg)
+
+#### APRS
+
+VHF
+
+- https://qrp-labs.com/lightaprs2.html
+
+
+#### WSPR
+
+- https://www.zachtek.com/product-page/wspr-tx-pico-transmitter
+- https://qrp-labs.com/lightaprsw2.html
+- https://qrp-labs.com/u4b
