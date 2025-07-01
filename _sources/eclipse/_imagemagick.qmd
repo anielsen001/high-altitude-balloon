@@ -1,0 +1,11 @@
+Make thumbnail 
+https://usage.imagemagick.org/thumbnails/#fit
+```bash
+convert -define jpeg:size=200x200 balloon_launch_eclipse.jpg -thumbnail '200x200>' balloon_launch_eclipse_thumb.jpg
+```
+
+Make thumbnail and rotate
+https://unix.stackexchange.com/questions/365592/how-to-rotate-a-set-of-pictures-from-the-command-line
+```bash
+convert -define jpeg:size=200x200 balloon_launch_eclipse.jpg -rotate 90 -thumbnail '200x200>' balloon_launch_eclipse_thumb.jpg
+```
