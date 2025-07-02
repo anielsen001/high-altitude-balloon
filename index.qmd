@@ -1,8 +1,35 @@
 ---
-title: "high altitude balloon magnetometry"
+title: "High altitude balloon magnetometry"
 ---
 
 The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth's magnetic field is typically not measured at these altitudes, it's usually measured with satellites or low-altitude (<10kft) aircraft for anomaly surveys.
+
+The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a [PNI RM3100 magnetometer](https://www.pnisensor.com/rm3100/).  We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, @sec-eclipse-launch, but we lost contact with the payload telemetry.
+
+## Eclipse launch {#sec-eclipse-launch}
+
+:::: {.grid}
+
+::: {.g-col-4}
+
+![Payload (Eclipse Chipse for scale)](/_sources/eclipse/eclipse_balloon_payload.jpg){width=200px}
+
+:::
+
+::: {.g-col-4}
+
+![Launch](/_sources/eclipse/balloon_launch_eclipse.jpg){width=200px}
+
+:::
+
+
+::: {.g-col-4}
+
+![Recovery](/_sources/eclipse/balloon_payload_recovery.jpg){width=200px}
+
+:::
+
+::::
 
 ## Balloon payload
 
@@ -10,15 +37,13 @@ The goal of this project is to measure the magnetic field at high-altitudes 60kf
 
 Several options exist
 
-#### LoRA/LoRAWAN trackers
+#### LoRA/LoRAWAN trackers {#sec-lorawan-tracker}
 
 This option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.
 
 https://github.com/lightaprs/LightTracker-1.1
 
 A version was built around this system and flown in 2024 during the total eclipse. 
-
-![](/_sources/eclipse/balloon_launch_eclipse.jpg)
 
 #### APRS
 
