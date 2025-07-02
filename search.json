@@ -1,0 +1,110 @@
+[
+  {
+    "objectID": "horizon.html",
+    "href": "horizon.html",
+    "title": "Horizon calculator",
+    "section": "",
+    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
+    "crumbs": [
+      "Home page",
+      "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "horizon.html#assumptions",
+    "href": "horizon.html#assumptions",
+    "title": "Horizon calculator",
+    "section": "",
+    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
+    "crumbs": [
+      "Home page",
+      "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "horizon.html#references",
+    "href": "horizon.html#references",
+    "title": "Horizon calculator",
+    "section": "References",
+    "text": "References\n\nWashington U",
+    "crumbs": [
+      "Home page",
+      "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/index.html",
+    "href": "lorawan/dragino-lps8v2/index.html",
+    "title": "Dragino LPS8v2",
+    "section": "",
+    "text": "https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html - User Manual"
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/index.html#product-page",
+    "href": "lorawan/dragino-lps8v2/index.html#product-page",
+    "title": "Dragino LPS8v2",
+    "section": "",
+    "text": "https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html - User Manual"
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/index.html#initial-power-on",
+    "href": "lorawan/dragino-lps8v2/index.html#initial-power-on",
+    "title": "Dragino LPS8v2",
+    "section": "Initial power on",
+    "text": "Initial power on\n\nWi-Fi active with a hotspot name like “dragino-xxxxxx”\n\nconnect and use password “dragino+dragino”\nLog in with “root”, “dragino”"
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/index.html#configure-wi-fi-client",
+    "href": "lorawan/dragino-lps8v2/index.html#configure-wi-fi-client",
+    "title": "Dragino LPS8v2",
+    "section": "Configure wi-fi client",
+    "text": "Configure wi-fi client\n\nonly see 2.4 GHz networks\nconnect to wifi network\nafter connection to wi-fi network, will disconnect from local hostspot"
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/index.html#helium-network-configuration",
+    "href": "lorawan/dragino-lps8v2/index.html#helium-network-configuration",
+    "title": "Dragino LPS8v2",
+    "section": "Helium Network configuration",
+    "text": "Helium Network configuration\n\nDragino Helium notes\nHelium gateway software\n\nssh into the server\nssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  root@192.168.30.42\nrun apt update to update the list of packages\napt update"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "High altitude balloon magnetometry",
+    "section": "",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 1, but we lost contact with the payload telemetry.",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-eclipse-launch",
+    "href": "index.html#sec-eclipse-launch",
+    "title": "High altitude balloon magnetometry",
+    "section": "Eclipse launch",
+    "text": "Eclipse launch\n\n\n\n\n\nPayload (Eclipse Chipse for scale)\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#balloon-payload",
+    "href": "index.html#balloon-payload",
+    "title": "High altitude balloon magnetometry",
+    "section": "Balloon payload",
+    "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "lorawan/dragino-lps8v2/about.html",
+    "href": "lorawan/dragino-lps8v2/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
