@@ -34,4 +34,5 @@ format:
   html:
     theme:
       - cosmo
+    lightbox: auto
      
