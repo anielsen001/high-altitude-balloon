@@ -72,7 +72,18 @@
     "href": "index.html",
     "title": "High altitude balloon magnetometry",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 1, but we lost contact with the payload telemetry.",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 2, but we lost contact with the payload telemetry.",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#pico-balloon-payload",
+    "href": "index.html#pico-balloon-payload",
+    "title": "High altitude balloon magnetometry",
+    "section": "Pico-balloon payload",
+    "text": "Pico-balloon payload\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
     "crumbs": [
       "Home page",
       "Home"
@@ -83,7 +94,7 @@
     "href": "index.html#sec-eclipse-launch",
     "title": "High altitude balloon magnetometry",
     "section": "Eclipse launch",
-    "text": "Eclipse launch\n\n\n\n\n\nPayload (Eclipse Chipse for scale)\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "text": "Eclipse launch\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
     "crumbs": [
       "Home page",
       "Home"
