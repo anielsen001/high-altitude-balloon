@@ -12,7 +12,9 @@ The goal is to build a pico-balloon payload that can circumnavigate the Earth us
 
 ::: {.g-col-4}
 
-![Payload (Eclipse Chipse for scale)](/_sources/eclipse/eclipse_balloon_payload.jpg){width=200px}
+![Test payload (Eclipse Chipse for scale)](/_sources/eclipse/eclipse_balloon_payload.jpg){width=200px}
+
+![Flight payload](/_sources/eclipse/eclipse_payload_photo.jpg){width=200px}
 
 :::
 
