@@ -10,7 +10,7 @@ The goal is to build a pico-balloon payload that can circumnavigate the Earth us
 
 I'm developing a new payload based on [QRP labs](https://qrp-labs.com) [u4b](https://qrp-labs.com/u4b) balloon tracker. So far I've tested mine with a GPS dipole antenna. 
 
-[u4b with GPS antenna](/_sources/u4b/u4b_gps_antenna.jpg)
+![u4b with GPS antenna](/_sources/u4b/u4b_gps_antenna.jpg)
 
 ## Eclipse launch {#sec-eclipse-launch}
 
