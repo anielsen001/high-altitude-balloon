@@ -6,6 +6,12 @@ The goal of this project is to measure the magnetic field at high-altitudes 60kf
 
 The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a [PNI RM3100 magnetometer](https://www.pnisensor.com/rm3100/).  We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, @sec-eclipse-launch, but we lost contact with the payload telemetry.
 
+## Pico-balloon payload
+
+I'm developing a new payload based on [QRP labs](https://qrp-labs.com) [u4b](https://qrp-labs.com/u4b) balloon tracker. So far I've tested mine with a GPS dipole antenna. 
+
+[u4b with GPS antenna](/_sources/u4b/u4b_gps_antenna.jpg)
+
 ## Eclipse launch {#sec-eclipse-launch}
 
 :::: {.grid}
