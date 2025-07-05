@@ -1,0 +1,133 @@
+## connect to u4b via usb
+
+connect the u4b to the computer with a usb cable. Check for the device and use `screen` to log attach to a terminal.
+
+```bash
+screen /dev/ttyACM0 9600
+```
+
+screen user's guide: https://www.gnu.org/software/screen/manual/screen.html
+
+The manual discusses the interface.
+
+Ctrl-q is supposed to quit, but not working. - need to do Ctrl-a-q
+
+
+ +---Configuration------------------------+
+ |                                        |
+ |   Callsign            KF8EEZ           |
+ |   Band                20m              |
+ |   Channel             567              |
+ |   Autostart program   TRACKER          |
+ |                                        |
+ |   Frequency           14097060         |
+ |   Telemetry format    QX8XXX XXXX XX   |
+ |   Start minute        02               |
+ |                                        |
+ |     Use left & right arrow keys to     |
+ |        change Band and Channel.        |
+ |                                        |
+ +------------------------Ctrl-Q = Quit---+
+
+
+     U4B 1_00_003
+     QRP Labs, 2022
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+Notes about new firmware and testing antenna
+https://groups.io/g/QRPLabs/topic/110026397#msg135162
+
+upgraded firmware:
+
+
+     U4B 1_00_004
+     QRP Labs, 2024
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+## GPS antenna
+
+From the hardware manual, page 12
+
+```
+The HF antenna needs 1/4-wavelength on each leg (for example, each leg is 5m for 20m
+operation). A typical flight configuration has the top end of the top leg tied to the balloon, and the
+U4B payload suspended directly in the middle of the dipole.
+The GPS antenna can be made of simple #28 (0.3mm) enameled wire; a 1/4-wave at 1575Mhz is
+about 45mm. The feedline consists of 1-inch of twisted wire, about 6 turns works well.
+```
+
+```{python}
+#| label: gps wavelength
+from scipy import constants as spc
+freq_l1 = 1575.42e6 # Hz
+
+wavelength = spc.c/freq_l1
+
+half_wavelength = wavelength/2.0
+quarter_wavelength = wavelength/4.0
+
+print(f'half wavelength: {half_wavelength*1000} millimeters')
+print(f'quarter wavelength: {quarter_wavelength*1000} millimeters')
+
+```
+
+half wavelength: 95.14683639918243 millimeters
+quarter wavelength: 47.57341819959122 millimeters
+
+
+## HF Antenna
+
+### dummy load
+
+use a 50 Ohm resistor across the lead pads
+
+### dipole
+
+Frequency of channel is: 14097060
+
+```{python}
+#| label: wavelength 20m band
+from scipy import constants as spc
+
+freq_hf = 14097060
+wavelength = spc.c/freq_hf
+
+half_wavelength = wavelength/2.0
+quarter_wavelength = wavelength/4.0
+
+print(f'half wavelength: {half_wavelength} meters')
+print(f'quarter wavelength: {quarter_wavelength} meters')
+```
+
+half wavelength: 10.63315535296012 meters
+quarter wavelength: 5.31657767648006 meters
