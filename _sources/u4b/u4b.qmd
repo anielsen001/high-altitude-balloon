@@ -74,6 +74,30 @@ upgraded firmware:
                              +------------------------Ctrl-Q = Quit---+
 
 
+Upgraded to latest software 
+
+
+     U4B 1_00_005
+     QRP Labs, 2025
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+the channel can also be configured in program with LET CH=<chan num>
+available channels thru config are 567, 452, 561
+
 ## GPS antenna
 
 From the hardware manual, page 12
