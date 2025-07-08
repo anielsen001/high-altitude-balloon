@@ -1,0 +1,11 @@
+---
+title: picoballoon tracking
+format: html
+---
+
+- [WSPRNet](https://www.wsprnet.org/drupal/)
+- [LU7AA](https://lu7aa.org.ar/wsprset.asp#)
+- [Traquito channel map](https://traquito.github.io//channelmap/)
+  - Registered channel 109 on 20m
+- [QRP Labs tracking](https://www.qrp-labs.com/track/tracking.html)
+  - Registered smore-001
