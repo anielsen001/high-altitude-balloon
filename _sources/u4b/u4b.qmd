@@ -98,6 +98,8 @@ Upgraded to latest software
 the channel can also be configured in program with LET CH=<chan num>
 available channels thru config are 567, 452, 561
 
+Registered channel 109 at traquito website. min 6, freq = 14097060
+
 ## GPS antenna
 
 From the hardware manual, page 12
