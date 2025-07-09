@@ -157,3 +157,6 @@ print(f'quarter wavelength: {quarter_wavelength} meters')
 
 half wavelength: 10.63315535296012 meters
 quarter wavelength: 5.31657767648006 meters = 16.7323 ft = 200.76 inches
+
+Antenna wire - what gauge? people are using 36 AWG
+What fishing line support to use.
