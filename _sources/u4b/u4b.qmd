@@ -160,3 +160,16 @@ quarter wavelength: 5.31657767648006 meters = 16.7323 ft = 200.76 inches
 
 Antenna wire - what gauge? people are using 36 AWG
 What fishing line support to use.
+
+## Power
+
+3.3V min to 5.5V max - true max is likely 6.0V 
+
+### Battery holder
+
+with NiMH 4.3 V fully charged output
+
+### Solar
+
+
+### USB
