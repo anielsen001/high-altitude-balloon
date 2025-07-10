@@ -14,9 +14,9 @@ I'm developing a new payload based on [QRP labs](https://qrp-labs.com) [u4b](htt
 
 ## Eclipse launch {#sec-eclipse-launch}
 
-:::: {.grid}
+:::: {layout-ncol=3}
 
-::: {.g-col-4}
+::: {.left}
 
 ![Test payload (Eclipse Chipse for scale)](/_sources/eclipse/eclipse_balloon_payload.jpg){width=200px}
 
@@ -24,14 +24,14 @@ I'm developing a new payload based on [QRP labs](https://qrp-labs.com) [u4b](htt
 
 :::
 
-::: {.g-col-4}
+::: {.center}
 
 ![Launch](/_sources/eclipse/balloon_launch_eclipse.jpg){width=200px}
 
 :::
 
 
-::: {.g-col-4}
+::: {.right}
 
 ![Recovery](/_sources/eclipse/balloon_payload_recovery.jpg){width=200px}
 
