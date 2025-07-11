@@ -1,4 +1,10 @@
 
+Fri 11 Jul 2025 06:07:12 AM EDT
+
+add time stamp
+C-u M-! date
+
+
 From the manual
 ```
 The “disk” on U4B is implemented as a FAT12-ish file structure on the 128K I2C EEPROM chip.
