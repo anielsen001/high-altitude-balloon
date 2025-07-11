@@ -15,4 +15,4 @@ Trying to mount EEPROM file as loop device
 sudo mount -t vfat -o loop EEPROM /mnt/tmp
 ```
 
-But this does not work.
+But this does not work. Posted a question on qrp lab discussion.
