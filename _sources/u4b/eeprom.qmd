@@ -1,0 +1,18 @@
+
+From the manual
+```
+The “disk” on U4B is implemented as a FAT12-ish file structure on the 128K I2C EEPROM chip.
+There are 1024 blocks, each of which is 128 bytes long. A program that is longer than 128K is
+stored in multiple blocks. Normally these would be consecutive blocks but in case a large enough
+consecutive memory area is not available for the size of the file being saved, it will be split into
+smaller pieces that are spread around the disk and later re-assembled. 
+
+```
+
+Trying to mount EEPROM file as loop device
+
+```bash
+sudo mount -t vfat -o loop EEPROM /mnt/tmp
+```
+
+But this does not work.

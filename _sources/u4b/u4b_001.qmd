@@ -1,0 +1,89 @@
+## U4B 001
+
+Notes for u4b number 001 
+
+
+ +---Configuration------------------------+
+ |                                        |
+ |   Callsign            KF8EEZ           |
+ |   Band                20m              |
+ |   Channel             567              |
+ |   Autostart program   TRACKER          |
+ |                                        |
+ |   Frequency           14097060         |
+ |   Telemetry format    QX8XXX XXXX XX   |
+ |   Start minute        02               |
+ |                                        |
+ |     Use left & right arrow keys to     |
+ |        change Band and Channel.        |
+ |                                        |
+ +------------------------Ctrl-Q = Quit---+
+
+
+     U4B 1_00_003
+     QRP Labs, 2022
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+
+upgraded firmware:
+
+
+     U4B 1_00_004
+     QRP Labs, 2024
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+Upgraded to latest software 
+
+
+     U4B 1_00_005
+     QRP Labs, 2025
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+the channel can also be configured in program with LET CH=<chan num>
+available channels thru config are 567, 452, 561
+
+Registered channel 109 at traquito website. min 6, freq = 14097060

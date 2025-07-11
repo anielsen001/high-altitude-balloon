@@ -1,0 +1,46 @@
+## u4b 002
+
+Available channels: 325, 254, 387
+Set to 325 in config menu
+Planning to use channel 109 for active telemetry
+
+
+     U4B 1_00_003
+     QRP Labs, 2022
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             325              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    1X6XXX XXXX XX   |
+     Update F/W              |   Start minute        08               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+Updated firmware to latest
+
+     U4B 1_00_005
+     QRP Labs, 2025
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             325              |
+     File manager            |   Autostart program   TRACKER          |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    1X6XXX XXXX XX   |
+     Update F/W              |   Start minute        08               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
