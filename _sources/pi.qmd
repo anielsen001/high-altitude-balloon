@@ -1,0 +1,17 @@
+
+Raspberry pi used for testing
+
+```text
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether e4:5f:01:06:6e:b0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.88.214/24 brd 192.168.88.255 scope global dynamic noprefixroute eth0
+       valid_lft 370sec preferred_lft 370sec
+    inet6 fe80::3de9:a0d5:23df:51c9/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e4:5f:01:06:6e:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.81/24 brd 192.168.10.255 scope global dynamic noprefixroute wlan0
+       valid_lft 381sec preferred_lft 381sec
+    inet6 fe80::d687:a843:d822:51a0/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
