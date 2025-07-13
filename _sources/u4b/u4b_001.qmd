@@ -87,3 +87,36 @@ the channel can also be configured in program with LET CH=<chan num>
 available channels thru config are 567, 452, 561
 
 Registered channel 109 at traquito website. min 6, freq = 14097060
+
+
+## Test 2025-07-13
+
+19:35:13  HOST USB:   1
+19:35:13  HIGH POWER: 1
+19:35:13  CHANNEL:
+19:35:13  CALLSIGN:   KF8EEZ
+19:35:35  LLH: 3943.0867 N 08409.8531 W 317.3
+19:40:08  LLH: 3943.0861 N 08409.8520 W 301.3
+19:50:08  LLH: 3943.0787 N 08409.8580 W 187.9
+20:00:08  LLH: 3943.0866 N 08409.8561 W 298.5
+20:10:09  LLH: 3943.0879 N 08409.8580 W 285.8
+20:20:11  LLH: 3943.0773 N 08409.8521 W 295.7
+
+![](wsprnet-kf8eez.png)
+
+This is a copy of the current program
+
+```basic
+LET CH = 109
+LET HP = 1
+PRINT "HOST USB:   #US"
+PRINT "HIGH POWER: #HP"
+PRINT "CHANNEL:    #CH"
+PRINT "CALLSIGN:   #CS"
+10 GPS 360
+PRINT "LLH: #LT #LN #AT"
+TELE
+GOTO 10
+```
+
+
