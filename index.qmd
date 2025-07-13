@@ -1,5 +1,5 @@
 ---
-title: "High altitude balloon magnetometry"
+title: "Balloon magnetometry"
 ---
 
 The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth's magnetic field is typically not measured at these altitudes, it's usually measured with satellites or low-altitude (<10kft) aircraft for anomaly surveys.
@@ -7,6 +7,20 @@ The goal of this project is to measure the magnetic field at high-altitudes 60kf
 The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a [PNI RM3100 magnetometer](https://www.pnisensor.com/rm3100/).  We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, @sec-eclipse-launch, but we lost contact with the payload telemetry.
 
 ## Pico-balloon payload
+
+### Testing with HF antenna and raspberry pi
+
+Tested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.
+
+:::{layout-ncol=2}
+
+![[https://WSPRnet.org](wsprnet.org) map page showing successful contact.](/_sources/u4b/wsprnet-kf8eez.png)
+
+![Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.](/_sources/u4b/u4b_001_test_with_pi.jpg)
+
+:::
+
+### GPS dipole antenna
 
 I'm developing a new payload based on [QRP labs](https://qrp-labs.com) [u4b](https://qrp-labs.com/u4b) balloon tracker. So far I've tested mine with a GPS dipole antenna. 
 
