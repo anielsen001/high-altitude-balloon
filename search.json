@@ -70,7 +70,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "High altitude balloon magnetometry",
+    "title": "Balloon magnetometry",
     "section": "",
     "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 2, but we lost contact with the payload telemetry.",
     "crumbs": [
@@ -81,9 +81,9 @@
   {
     "objectID": "index.html#pico-balloon-payload",
     "href": "index.html#pico-balloon-payload",
-    "title": "High altitude balloon magnetometry",
+    "title": "Balloon magnetometry",
     "section": "Pico-balloon payload",
-    "text": "Pico-balloon payload\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "text": "Pico-balloon payload\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
     "crumbs": [
       "Home page",
       "Home"
@@ -92,9 +92,9 @@
   {
     "objectID": "index.html#sec-eclipse-launch",
     "href": "index.html#sec-eclipse-launch",
-    "title": "High altitude balloon magnetometry",
+    "title": "Balloon magnetometry",
     "section": "Eclipse launch",
-    "text": "Eclipse launch\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "text": "Eclipse launch\n\n\n\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
     "crumbs": [
       "Home page",
       "Home"
@@ -103,13 +103,27 @@
   {
     "objectID": "index.html#balloon-payload",
     "href": "index.html#balloon-payload",
-    "title": "High altitude balloon magnetometry",
+    "title": "Balloon magnetometry",
     "section": "Balloon payload",
     "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
     "crumbs": [
       "Home page",
       "Home"
     ]
+  },
+  {
+    "objectID": "tracking.html",
+    "href": "tracking.html",
+    "title": "picoballoon tracking",
+    "section": "",
+    "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "picoballoon build references",
+    "section": "",
+    "text": "https://sites.google.com/view/picoballoonsbyk9yo/home"
   },
   {
     "objectID": "lorawan/dragino-lps8v2/about.html",

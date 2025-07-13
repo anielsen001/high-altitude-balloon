@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>High altitude balloon magnetometry – High-altitude balloon</title>
+<title>Balloon magnetometry – High-altitude balloon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">High altitude balloon magnetometry</h1>
+<h1 class="title">Balloon magnetometry</h1>
 </div>
 
 
@@ -181,45 +181,80 @@ ul.task-list li input[type="checkbox"] {
 <p>The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a <a href="https://www.pnisensor.com/rm3100/">PNI RM3100 magnetometer</a>. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, <a href="#sec-eclipse-launch" class="quarto-xref">Section&nbsp;2</a>, but we lost contact with the payload telemetry.</p>
 <section id="pico-balloon-payload" class="level2">
 <h2 class="anchored" data-anchor-id="pico-balloon-payload">Pico-balloon payload</h2>
+<section id="testing-with-hf-antenna-and-raspberry-pi" class="level3">
+<h3 class="anchored" data-anchor-id="testing-with-hf-antenna-and-raspberry-pi">Testing with HF antenna and raspberry pi</h3>
+<p>Tested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./_sources/u4b/wsprnet-kf8eez.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="https://WSPRnet.org map page showing successful contact."><img src="./_sources/u4b/wsprnet-kf8eez.png" class="img-fluid figure-img" alt="https://WSPRnet.org map page showing successful contact."></a></p>
+<figcaption><a href="wsprnet.org">https://WSPRnet.org</a> map page showing successful contact.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./_sources/u4b/u4b_001_test_with_pi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."><img src="./_sources/u4b/u4b_001_test_with_pi.jpg" class="img-fluid figure-img" alt="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."></a></p>
+<figcaption>Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gps-dipole-antenna" class="level3">
+<h3 class="anchored" data-anchor-id="gps-dipole-antenna">GPS dipole antenna</h3>
 <p>I’m developing a new payload based on <a href="https://qrp-labs.com">QRP labs</a> <a href="https://qrp-labs.com/u4b">u4b</a> balloon tracker. So far I’ve tested mine with a GPS dipole antenna.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
+<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
 <figcaption>u4b with GPS antenna</figcaption>
 </figure>
 </div>
 </section>
+</section>
 <section id="sec-eclipse-launch" class="level2">
 <h2 class="anchored" data-anchor-id="sec-eclipse-launch">Eclipse launch</h2>
-<div class="grid">
-<div class="g-col-4">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="left quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
+<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
 <figcaption>Test payload (Eclipse Chipse for scale)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
+<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
 <figcaption>Flight payload</figcaption>
 </figure>
 </div>
 </div>
-<div class="g-col-4">
+<div class="center quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
+<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
 <figcaption>Launch</figcaption>
 </figure>
 </div>
 </div>
-<div class="g-col-4">
+<div class="right quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
+<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
 <figcaption>Recovery</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
