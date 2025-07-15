@@ -104,6 +104,8 @@ Registered channel 109 at traquito website. min 6, freq = 14097060
 
 ![](wsprnet-kf8eez.png)
 
+
+
 This is a copy of the current program
 
 ```basic
