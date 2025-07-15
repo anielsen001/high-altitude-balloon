@@ -1,0 +1,32 @@
+## Default program
+
+This is the default program
+
+```basic
+10 GPS 360
+TELE
+GOTO 10
+```
+
+## Testing program
+
+This is a program for testing. Each print statement prints out the current time before the message.
+
+The TELE statement waits until the proper time to transmit, which could be up to 10 minutes.
+
+```basic
+LET CH = 109
+LET HP = 1
+PRINT "HOST USB:    #US"
+PRINT "HIGH POWER:  #HP"
+PRINT "FREQUENCY:   #FQ"
+PRINT "CHANNEL:     #CH"
+PRINT "CALLSIGN:    #CS"
+PRINT "TEMPERATURE: #TK"
+10 GPS 360
+PRINT "LLH: #LT #LN #AT"
+PRINT "GPS: VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+TELE
+GOTO 10
+```
+
