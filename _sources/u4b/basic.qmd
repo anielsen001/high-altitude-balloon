@@ -30,3 +30,20 @@ TELE
 GOTO 10
 ```
 
+## Issues
+
+### Firmware 1.00.05
+
+the CH variable prints differently than expected. I think the tag version and non-tagged version should both work but does not appear to.
+
+```text
+$ PRINT CH
+325
+$ PRINT "#CH"
+
+$ PRINT "CHANNEL: #CH"
+CHANNEL:
+$ PRINT CH
+325
+$
+```
