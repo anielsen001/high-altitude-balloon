@@ -12,11 +12,26 @@ GOTO 10
 
 This is a program for testing. Each print statement prints out the current time before the message.
 
+There's a different syntax running from command line vs in a program. 
+
+- in a program use 
+```basic
+RUN "TEST"
+```
+- at command line use
+```basic
+RUN TEST
+```
+
 The TELE statement waits until the proper time to transmit, which could be up to 10 minutes.
 
-C is the transmission count
+C is the transmission count - increment everytime a transmission occurs. used to see if transmissions are missing. if balloon loses power this will reset
+N is a counter used for the BLINK program to set the number of times to blink the led
 
-```basic
+
+### initialization program 
+
+```BASIC
 LET CH = 109
 LET HP = 1
 LET C = 0
@@ -26,6 +41,26 @@ PRINT "FREQUENCY:   #FQ"
 PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
+```
+
+### Blink LED program
+
+The value N is used to control how often to flash
+
+```BASIC
+PRINT "BLINK #VN"
+FOR I = 1 TO N
+OUT 19 1
+DELAY 100
+OUT 19 0
+DELAY 100
+NEXT
+```
+
+### Main program
+
+```basic
+RUN INIT
 10 GPS 360
 PRINT "LLH: #LT #LN #AT"
 PRINT "GPS: VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
