@@ -30,16 +30,18 @@ about 45mm. The feedline consists of 1-inch of twisted wire, about 6 turns works
 
 ```{python}
 #| label: gps wavelength
-from scipy import constants as spc
-freq_l1 = 1575.42e6 # Hz
+from astropy import units as u
+from astropy.constants import c
+freq_l1 = 1575.42e6 * u.Hz # Hz
 
-wavelength = spc.c/freq_l1
+wavelength = c/freq_l1
 
 half_wavelength = wavelength/2.0
 quarter_wavelength = wavelength/4.0
 
-print(f'half wavelength: {half_wavelength*1000} millimeters')
-print(f'quarter wavelength: {quarter_wavelength*1000} millimeters')
+print(f'full wavelength: {wavelength.to(u.millimeter)}')
+print(f'half wavelength: {half_wavelength.to(u.millimeter)} ')
+print(f'quarter wavelength: {quarter_wavelength.to(u.millimeter)} ')
 
 ```
 
@@ -59,20 +61,27 @@ Frequency of channel is: 14097060
 
 ```{python}
 #| label: wavelength 20m band
-from scipy import constants as spc
+from astropy import units as u
+from astropy.constants import c
 
-freq_hf = 14097060
-wavelength = spc.c/freq_hf
+freq_hf = 14097060 * u.Hz
+wavelength = c/freq_hf
 
 half_wavelength = wavelength/2.0
 quarter_wavelength = wavelength/4.0
 
-print(f'half wavelength: {half_wavelength} meters')
-print(f'quarter wavelength: {quarter_wavelength} meters')
+print(f'full wavelength: {wavelength.si}')
+print(f'half wavelength: {half_wavelength.si} ')
+print(f'quarter wavelength: {quarter_wavelength.si} ')
+print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.foot)}')
+print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.inch)}')
 ```
 
-half wavelength: 10.63315535296012 meters
-quarter wavelength: 5.31657767648006 meters = 16.7323 ft = 200.76 inches
+full wavelength: 21.26631070592024 m
+half wavelength: 10.63315535296012 m 
+quarter wavelength: 5.31657767648006 m 
+quarter wavelength: 17.442840145931953 ft
+quarter wavelength: 209.31408175118344 inch
 
 Antenna wire - what gauge? people are using 36 AWG
 What fishing line support to use.
