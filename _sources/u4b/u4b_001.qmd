@@ -121,4 +121,24 @@ TELE
 GOTO 10
 ```
 
+This is from a wspr.rocks query, derived from the demo
 
+```sql
+/* the slash-asterisk pair surrounding this text creates a comment */
+/* selecting * returns all columns, or you can name specific columns you need */
+/* the 10 record limit can be increased to 5,000 max */
+
+select
+	*
+from wspr.rx where
+	time > subtractHours(now(),240 )
+	and tx_sign = 'KF8EEZ'
+	and band = 14
+limit 10
+```
+
+```csv
+id,time,band,rx_sign,rx_lat,rx_lon,rx_loc,tx_sign,tx_lat,tx_lon,tx_loc,distance,azimuth,rx_azimuth,frequency,power,snr,drift,version,code
+10340868755,2025-07-13 19:36:00,14,WD4ELG,36.188,-79.875,FM06be,KF8EEZ,39.479,-85.042,EM79,583,127,310,14097078,10,-25,0,2.7.0,1
+10340957923,2025-07-13 19:56:00,14,WD4ELG,36.188,-79.875,FM06be,KF8EEZ,39.479,-85.042,EM79,583,127,310,14097078,10,-23,0,2.7.0,1
+```
