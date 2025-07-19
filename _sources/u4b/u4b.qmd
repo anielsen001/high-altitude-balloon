@@ -59,6 +59,8 @@ use a 50 Ohm resistor across the lead pads
 
 Frequency of channel is: 14097060
 
+https://www.onlineconversion.com/frequency_wavelength.htm
+
 ```{python}
 #| label: wavelength 20m band
 from astropy import units as u
