@@ -15,3 +15,5 @@ Raspberry pi used for testing
     inet6 fe80::d687:a843:d822:51a0/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 ```
+
+ssh -o PubkeyAuthentication=no apn@192.168.10.81
