@@ -3,6 +3,10 @@
 Available channels: 325, 254, 387
 Set to 325 in config menu
 Planning to use channel 109 for active telemetry
+ 
+Minute 6
+Lane 2 
+Freq 14_097_060
 
 
      U4B 1_00_003
