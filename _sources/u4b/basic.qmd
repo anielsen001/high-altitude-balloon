@@ -71,6 +71,39 @@ TELE C
 GOTO 10
 ```
 
+### Show program
+
+shows variables in the terminal
+
+```basic
+PRINT "LLH: #LT #LN #AT"
+PRINT "GPS: VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "CNT: #VC"
+
+```
+
+### Count program
+
+keep a counter with the value stored in a file
+
+CNTINIT program
+
+opens for append, if it's empy, then write the current counter value
+
+```basic
+FILE 1 "A" "COUNTLOG"
+IF FILEEOF 1 = 1
+   PRINT "COUNTLOG EMPTY"
+   FILEWR 1 C
+ENDIF
+```
+
+CNTINCR
+
+```basic
+
+```
+
 ## Issues
 
 ### Firmware 1.00.05
