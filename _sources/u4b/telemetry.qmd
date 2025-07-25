@@ -1,0 +1,4 @@
+
+The U4B telemetry format is described here:
+
+https://qrp-labs.com/flights/s4.html#protocol
