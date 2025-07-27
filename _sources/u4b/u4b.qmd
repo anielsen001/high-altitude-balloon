@@ -38,10 +38,12 @@ wavelength = c/freq_l1
 
 half_wavelength = wavelength/2.0
 quarter_wavelength = wavelength/4.0
+quarter_wavelength95 = wavelength/4.0*0.95
 
 print(f'full wavelength: {wavelength.to(u.millimeter)}')
 print(f'half wavelength: {half_wavelength.to(u.millimeter)} ')
 print(f'quarter wavelength: {quarter_wavelength.to(u.millimeter)} ')
+print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.millimeter)} ')
 
 # feedline additional length
 feed_length = 1.0*u.imperial.inch
@@ -49,13 +51,17 @@ feed_length = 1.0*u.imperial.inch
 print(f'feed length: {feed_length.to(u.millimeter)}')
 
 # total length
-totlength = feed_length + quarter_wavelength
+totlength = feed_length + quarter_wavelength95
 print(f'total length: {totlength.to(u.millimeter)}')
 
 ```
 
 half wavelength: 95.14683639918243 millimeters
 quarter wavelength: 47.57341819959122 millimeters
+quarter wavelength * 95%: 45.194747289611655 mm
+feed length: 25.400000000000002 mm
+total length: 70.59474728961166 mm
+
 
 
 ## HF Antenna
@@ -96,6 +102,18 @@ quarter wavelength: 209.31408175118344 inch
 
 Antenna wire - what gauge? people are using 36 AWG
 What fishing line support to use.
+
+this note indicates that the antenna length should be shortened by 95%
+https://groups.io/g/picoballoon/topic/34545561#msg48
+
+shortening the hf antenna
+```{python}
+quarter_wavelength95 = wavelength/4.0*0.95
+print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.imperial.inch)}')
+```
+
+quarter wavelength * 95%: 198.84837766362426 inch
+
 
 ## Power
 
