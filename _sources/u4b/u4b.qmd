@@ -43,6 +43,15 @@ print(f'full wavelength: {wavelength.to(u.millimeter)}')
 print(f'half wavelength: {half_wavelength.to(u.millimeter)} ')
 print(f'quarter wavelength: {quarter_wavelength.to(u.millimeter)} ')
 
+# feedline additional length
+feed_length = 1.0*u.imperial.inch
+
+print(f'feed length: {feed_length.to(u.millimeter)}')
+
+# total length
+totlength = feed_length + quarter_wavelength
+print(f'total length: {totlength.to(u.millimeter)}')
+
 ```
 
 half wavelength: 95.14683639918243 millimeters
