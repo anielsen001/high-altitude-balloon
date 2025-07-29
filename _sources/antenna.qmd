@@ -1,0 +1,7 @@
+## Magnetic loop antennae
+
+Theory
+https://www.aa5tb.com/loop.html
+
+Calculators
+https://miguelvaca.github.io/vk3cpu/magloop.html
