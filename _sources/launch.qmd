@@ -1,5 +1,15 @@
 https://sf-hab.org/2021/10/13/choosing-the-time-and-place-for-a-launch/
 
+# focused more on hab
+https://ukhas.org.uk/doku.php?id=start
+https://ukhas.org.uk/doku.php?id=frontpage:guides
+# super pressure calculator
+https://ukhas.org.uk/doku.php?id=projects:splat
 
+https://sf-hab.org/2021/10/13/the-rate-of-ascent/
+
+launch predictor - designed for HAB, set burst altitude as drift altitude.
 https://predict.sondehub.org/
 
+HYSPLIT NOAA drift predictor
+https://www.ready.noaa.gov/hypub-bin/trajsrc.pl?trjtype=4
