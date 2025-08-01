@@ -1,3 +1,14 @@
+## TODOs
+
+- [ ] Select launch site
+- [ ] balloon stretch
+- [ ] Test solar panels
+- [ ] Wire flight module
+- [ ] program flight module
+- [ ] design rigging
+- [x] make flight antenna 
+
+
 ## BOM
 
 - [Kyocera AVX SCCR20E335SRB Supercapacitors](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
