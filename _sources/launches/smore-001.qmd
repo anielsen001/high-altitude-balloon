@@ -4,3 +4,4 @@
 - [Powerfilm solar panel](/_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf)
 - [Voltage regulator](/_datasheets/L7805CV_voltage_regulator.pdf)
 - [QRP-labs u4b](/_sources/u4b/u4b_hardware.pdf)
+  - [u4b-002](/_sources/u4b/u4b-002.qmd)
