@@ -1,0 +1,6 @@
+## BOM
+
+- [Kyocera AVX SCCR20E335SRB Supercapacitors](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
+- [Powerfilm solar panel](/_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf)
+- [Voltage regulator](/_datasheets/L7805CV_voltage_regulator.pdf)
+- [QRP-labs u4b](/_sources/u4b/u4b_hardware.pdf)
