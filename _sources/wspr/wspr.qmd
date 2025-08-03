@@ -1,3 +1,11 @@
+## wsjtx
+
+locally detecions can be done in wsjtx
+
+![Screenshot of wideband detection](tracker_detection_wsjtx.png)
+
+![Screenshot of wsjtx decode](wsjtx-decode-tracker.png)
+
 ## wspr.rocks
 
 https://wspr.rocks
