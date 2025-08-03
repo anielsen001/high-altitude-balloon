@@ -31,24 +31,29 @@ N is a counter used for the BLINK program to set the number of times to blink th
 
 ### initialization program 
 
+INIT
 ```BASIC
 LET CH = 109
 LET HP = 1
 LET C = 0
+LET N = 3
 PRINT "HOST USB:    #US"
 PRINT "HIGH POWER:  #HP"
 PRINT "FREQUENCY:   #FQ"
 PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
+RUN "LEDOFF"
 ```
 
 ### Blink LED program
 
 The value N is used to control how often to flash
 
+BLINK
 ```BASIC
 PRINT "BLINK #VN"
+DELAY 100
 FOR I = 1 TO N
 OUT 19 1
 DELAY 100
@@ -57,18 +62,30 @@ DELAY 100
 NEXT
 ```
 
+LEDON
+```BASIC
+OUT 19 1
+```
+
+LEDOFF
+```BASIC
+OUT 19 0
+```
+
 ### Main program
 
+The BLINK program seems to cause the code to hang up, so not using it.
+
 ```basic
-RUN INIT
+RUN "INIT"
 10 GPS 360
-PRINT "LLH: #LT #LN #AT"
-PRINT "GPS: VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
 LET C = C + 1
-TELE C
-
-
+RUN "SHOW"
+PRINT "START TELE"
+TELE
+PRINT "END TELE"
 GOTO 10
+
 ```
 
 ### Show program
@@ -76,10 +93,10 @@ GOTO 10
 shows variables in the terminal
 
 ```basic
-PRINT "LLH: #LT #LN #AT"
-PRINT "GPS: VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
-PRINT "CNT: #VC"
-
+PRINT "LLH:  #LT #LN #AT"
+PRINT "GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "CNT:  #VC"
+PRINT "TEMP: #TK"
 ```
 
 ### Count program
