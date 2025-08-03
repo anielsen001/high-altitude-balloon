@@ -1,0 +1,3 @@
+qrp-lab S/N: 21894
+
+started to program thinking that u4b_002 was having issues. Seems to be blink program, deactivated.
