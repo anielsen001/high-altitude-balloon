@@ -1,18 +1,20 @@
-## TODOs
-
-- [ ] Select launch site
-- [ ] balloon stretch
-- [ ] Test solar panels
-- [ ] Wire flight module
-- [ ] program flight module
-- [ ] design rigging
-- [x] make flight antenna 
-
 
 ## BOM
 
 - [Kyocera AVX SCCR20E335SRB Supercapacitors](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
+  - These are 3 volts, so two in series
 - [Powerfilm solar panel](/_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf)
+  - MPT4.8-150
 - [Voltage regulator](/_datasheets/L7805CV_voltage_regulator.pdf)
 - [QRP-labs u4b](/_sources/u4b/u4b_hardware.pdf)
   - [u4b-002](/_sources/u4b/u4b-002.qmd)
+
+## Launch
+
+Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.
+
+Second attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.
+
+The u4b was using high power. Maybe should use low power until transmitted a few times.
+
+The LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop? 
