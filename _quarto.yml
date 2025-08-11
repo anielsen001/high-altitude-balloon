@@ -4,6 +4,9 @@ project:
   pre-render: make
   output-dir: output
 
+execute:
+  freeze: true
+
 website:
   title: "High-altitude balloon"
   site-url: "https://apnielsen.com/high-altitude-balloon"
