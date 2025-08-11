@@ -72,7 +72,18 @@
     "href": "index.html",
     "title": "Balloon magnetometry",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 2, but we lost contact with the payload telemetry.",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 3, but we lost contact with the payload telemetry.",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#launch",
+    "href": "index.html#launch",
+    "title": "Balloon magnetometry",
+    "section": "Launch",
+    "text": "Launch\nFirst launch attempt on 2025-08-09, but the balloon got away with out the payload. By the time we prepped with more gas and a second balloon, clouds came in and we decided to wait until the following morning.\nWe launched the balloon in the morning of 2025-08-09. The goal was to get the balloon in the air and hear from the payload.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X",
     "crumbs": [
       "Home page",
       "Home"
@@ -117,6 +128,13 @@
     "title": "picoballoon tracking",
     "section": "",
     "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001"
+  },
+  {
+    "objectID": "tracking.html#references",
+    "href": "tracking.html#references",
+    "title": "picoballoon tracking",
+    "section": "References",
+    "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
   },
   {
     "objectID": "references.html",

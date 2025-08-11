@@ -178,7 +178,25 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.</p>
-<p>The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a <a href="https://www.pnisensor.com/rm3100/">PNI RM3100 magnetometer</a>. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, <a href="#sec-eclipse-launch" class="quarto-xref">Section&nbsp;2</a>, but we lost contact with the payload telemetry.</p>
+<p>The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a <a href="https://www.pnisensor.com/rm3100/">PNI RM3100 magnetometer</a>. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, <a href="#sec-eclipse-launch" class="quarto-xref">Section&nbsp;3</a>, but we lost contact with the payload telemetry.</p>
+<section id="launch" class="level2">
+<h2 class="anchored" data-anchor-id="launch">Launch</h2>
+<p>First launch attempt on 2025-08-09, but the balloon got away with out the payload. By the time we prepped with more gas and a second balloon, clouds came in and we decided to wait until the following morning.</p>
+<p>We launched the balloon in the morning of 2025-08-09. The goal was to get the balloon in the air and hear from the payload.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./_sources/launches/smore-001/launch_away_crop.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Launch!"><img src="./_sources/launches/smore-001/launch_away_crop.jpg" class="img-fluid figure-img" alt="Launch!"></a></p>
+<figcaption>Launch!</figcaption>
+</figure>
+</div>
+<p>The balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./_sources/launches/smore-001/maybe_transmit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Partial transmission in WSJT-X"><img src="./_sources/launches/smore-001/maybe_transmit.jpg" class="img-fluid figure-img" alt="Partial transmission in WSJT-X"></a></p>
+<figcaption>Partial transmission in WSJT-X</figcaption>
+</figure>
+</div>
+</section>
 <section id="pico-balloon-payload" class="level2">
 <h2 class="anchored" data-anchor-id="pico-balloon-payload">Pico-balloon payload</h2>
 <section id="testing-with-hf-antenna-and-raspberry-pi" class="level3">
@@ -192,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/wsprnet-kf8eez.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="https://WSPRnet.org map page showing successful contact."><img src="./_sources/u4b/wsprnet-kf8eez.png" class="img-fluid figure-img" alt="https://WSPRnet.org map page showing successful contact."></a></p>
+<p><a href="./_sources/u4b/wsprnet-kf8eez.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="https://WSPRnet.org map page showing successful contact."><img src="./_sources/u4b/wsprnet-kf8eez.png" class="img-fluid figure-img" alt="https://WSPRnet.org map page showing successful contact."></a></p>
 <figcaption><a href="wsprnet.org">https://WSPRnet.org</a> map page showing successful contact.</figcaption>
 </figure>
 </div>
@@ -200,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/u4b_001_test_with_pi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."><img src="./_sources/u4b/u4b_001_test_with_pi.jpg" class="img-fluid figure-img" alt="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."></a></p>
+<p><a href="./_sources/u4b/u4b_001_test_with_pi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."><img src="./_sources/u4b/u4b_001_test_with_pi.jpg" class="img-fluid figure-img" alt="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."></a></p>
 <figcaption>Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.</figcaption>
 </figure>
 </div>
@@ -213,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I’m developing a new payload based on <a href="https://qrp-labs.com">QRP labs</a> <a href="https://qrp-labs.com/u4b">u4b</a> balloon tracker. So far I’ve tested mine with a GPS dipole antenna.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
+<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
 <figcaption>u4b with GPS antenna</figcaption>
 </figure>
 </div>
@@ -229,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="left quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
+<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
 <figcaption>Test payload (Eclipse Chipse for scale)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
+<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
 <figcaption>Flight payload</figcaption>
 </figure>
 </div>
@@ -243,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="center quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
+<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
 <figcaption>Launch</figcaption>
 </figure>
 </div>
@@ -251,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="right quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
+<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
 <figcaption>Recovery</figcaption>
 </figure>
 </div>
