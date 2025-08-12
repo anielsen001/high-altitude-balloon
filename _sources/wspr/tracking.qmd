@@ -1,0 +1,10 @@
+## Balloon specific
+
+- [Sondehub](https://github.com/projecthorus/sondehub-amateur-tracker/wiki/Getting-your-Flight-on-the-Sondehub-Amateur-Tracker)
+
+## WSPR General
+
+- [WSPRnet.org](https://www.wsprnet.org/drupal/)
+- [WSPR Rocks](https;//wspr.rocks)
+- [WSPR Telemetry viewer](https://wsprtv.com/)
+  - Example: <https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08>

@@ -1,0 +1,38 @@
+
+
+## References
+
+Broad overview, but missing detailed information:
+https://www.arrl.org/wspr
+
+Software that does the decode:
+https://github.com/WSPRpi/WSPR-Decoder
+This is the file that does the decode
+https://github.com/WSPRpi/WSPR-Decoder/blob/master/wsprd.c
+
+Another potential version:
+https://github.com/dj0abr/WebWSPR
+via:
+https://www.rtl-sdr.com/webwspr-a-browser-based-wspr-decoder-and-visualization-tool/
+
+Fortran version associated with WSJT-X on sourceforge
+https://sourceforge.net/p/wsjt/wspr/ci/master/tree/
+part of WSJT software
+https://sourceforge.net/projects/wsjt/
+
+K9AN decoder:
+this is just a note to use the WSJT-X decoder now
+https://github.com/k9an/wsprcan
+
+Info from qrp-labs
+https://qrp-labs.com/u4b/u4bdecoding.html
+
+A description of the waveform
+https://swharden.com/software/FSKview/wspr/
+https://swharden.com/software/FSKview/wspr/wspr_coding_process.pdf
+wspr_coding_process.pdf
+
+python code:
+http://blog.marxy.org/2024/09/python-code-to-generate-wspr-audio-tones.html
+https://github.com/PH0TRA/wspr/blob/master/genwsprcode.py
+https://using.tech/posts/wspr-spread/
