@@ -1,10 +1,10 @@
-## wsjtx
+## WSJT-X
 
-locally detecions can be done in wsjtx
+Locally detecions can be done in WSJT-X
 
-![Screenshot of wideband detection](tracker_detection_wsjtx.png)
+![Screenshot of wideband detection](/_sources/launches/smore-001/testing/tracker_detection_wsjtx.png)
 
-![Screenshot of wsjtx decode](wsjtx-decode-tracker.png)
+![Screenshot of wsjtx decode](/_sources/launches/smore-001/testing/wsjtx-decode-tracker.png)
 
 ## wspr.rocks
 
