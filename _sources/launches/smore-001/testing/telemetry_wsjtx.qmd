@@ -1,0 +1,6 @@
+These are examples of the the telemetry decoded by WSJT-X during ground testing
+
+![WSJT-X spectrogram of telemetry during ground testing](/_sources/launches/smore-001/testing/tracker_detection_wsjtx.png)
+
+![WSJT-X decode of telemetry during ground testing](/_sources/launches/smore-001/testing/wsjtx-decode-tracker.png)
+
