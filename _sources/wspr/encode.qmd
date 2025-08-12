@@ -33,6 +33,7 @@ https://swharden.com/software/FSKview/wspr/wspr_coding_process.pdf
 wspr_coding_process.pdf
 
 python code:
-http://blog.marxy.org/2024/09/python-code-to-generate-wspr-audio-tones.html
-https://github.com/PH0TRA/wspr/blob/master/genwsprcode.py
-https://using.tech/posts/wspr-spread/
+- http://blog.marxy.org/2024/09/python-code-to-generate-wspr-audio-tones.html
+- https://github.com/PH0TRA/wspr/blob/master/genwsprcode.py
+  - derived from: https://github.com/brainwagon/genwspr
+- https://using.tech/posts/wspr-spread/
