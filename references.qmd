@@ -4,3 +4,7 @@ format: html
 ---
 
 - https://sites.google.com/view/picoballoonsbyk9yo/home
+- https://qrp-labs.com/images/u4b/U4B_construction_notes.pdf
+  - [local copy](/refs/U4B_construction_notes.pdf)
+- https://nibbb.org/technical-info/
+- https://sites.google.com/site/ki4mcw/Home/pico-balloonery
