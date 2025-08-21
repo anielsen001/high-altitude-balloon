@@ -1,3 +1,12 @@
+## physical
+
+### dimensions
+
+- 33 mm x 17.2mm (excluding removable USB connector)
+- 1.8 gram with USB connector removed
+
+
+
 ## connect to u4b via usb
 
 connect the u4b to the computer with a usb cable. Check for the device and use `screen` to log attach to a terminal.
