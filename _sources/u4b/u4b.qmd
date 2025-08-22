@@ -136,3 +136,13 @@ with NiMH 4.3 V fully charged output
 
 
 ### USB
+
+
+## holder
+
+the u4b does not have any holes for mounting. This
+
+This is a [parametric circuit board mount](https://www.thingiverse.com/thing:2758851?__cf_chl_tk=Lnjvf4NnZ749k5kfQiH3zFj6a7HGsKmnVHQx.GJ.jV8-1755853833-1.0.1.1-r46ZWuFOVYJPY1g2Gm9RzsyPZFJ_Tw.aGmXdhh5qSAE)
+
+examples of 3d printed frame to hold tracker 
+https://sites.google.com/site/ki4mcw/Home/pico-balloonery
