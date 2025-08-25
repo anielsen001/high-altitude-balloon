@@ -34,7 +34,7 @@ N is a counter used for the BLINK program to set the number of times to blink th
 INIT
 ```BASIC
 LET CH = 109
-LET HP = 1
+LET HP = 0
 LET C = 0
 LET N = 3
 PRINT "HOST USB:    #US"
@@ -43,7 +43,6 @@ PRINT "FREQUENCY:   #FQ"
 PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
-RUN "LEDOFF"
 ```
 
 ### Blink LED program
