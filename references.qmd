@@ -8,3 +8,4 @@ format: html
   - [local copy](/refs/U4B_construction_notes.pdf)
 - https://nibbb.org/technical-info/
 - https://sites.google.com/site/ki4mcw/Home/pico-balloonery
+- https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf
