@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage[american]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  %% \draw (0,0) to[isource, l=$I_0$] (0,3) -- (2,3)
+  %% to[R=$R_1$] (2,0) -- (0,0);
+
+  %% \draw (2,3) -- (4,3) to[R=$R_2$]
+  %% (4,0) -- (2,0);
+
+  %% solar panel
+  \draw (0,0) to[solar] (3,0); %% short line is negative
+  \draw (3,0) to[empty ZZener diode] (3,3);
+  \draw (0,-1) node[ground]{} -- (0,0);
+
+\end{circuitikz}
+
+\end{document}
