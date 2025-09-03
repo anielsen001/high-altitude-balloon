@@ -8,6 +8,10 @@ TELE
 GOTO 10
 ```
 
+## Rules
+
+No blank lines in the code. This causes the code to stop.
+
 ## Testing program
 
 This is a program for testing. Each print statement prints out the current time before the message.
@@ -43,6 +47,65 @@ PRINT "FREQUENCY:   #FQ"
 PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
+```
+
+### SHOW - show state of important variables
+
+```basic
+PRINT "SHOW START"
+PRINT "LLH:  #LT #LN #AT"
+PRINT "GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "GPS:  NSAT:  #SC"
+PRINT "CNT:  #VC"
+PRINT "TEMP: #TK"
+PRINT "POWR: #HP"
+PRINT "SHOW DONE"
+```
+
+### GPS related
+
+The logic here is a way to enable/disable GPS for indoor testing
+
+```basic
+IF 1 = 2
+GPS 360
+ELSE
+PRINT "GPS 360 HERE"
+ENDIF
+```
+
+### Telemetry
+
+The logic here is a way to enable/disable telemetry for indoor testing
+
+
+```basic
+PRINT "TELEMETRY START"
+IF 1 = 2
+TELE
+ELSE
+PRINT "TELE HERE"
+ENDIF
+PRINT "TELEMETRY END"
+```
+
+### TRACKER program
+
+```basic
+PRINT "START TRACKER2"
+RUN "INIT"
+RUN "SHOW"
+PRINT "INITIAL GPS"
+RUN "MYGPS"
+10 PRINT "LOOP AT #VC"
+RUN "SHOW"
+RUN "MYTELE"
+LET C = C + 1
+IF C > 3
+    LET HP = 1
+ENDIF
+RUN "MYGPS"
+GOTO 10
 ```
 
 ### Blink LED program
