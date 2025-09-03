@@ -12,6 +12,8 @@ GOTO 10
 
 No blank lines in the code. This causes the code to stop.
 
+you may need to both save and then also compile.
+
 ## Testing program
 
 This is a program for testing. Each print statement prints out the current time before the message.
