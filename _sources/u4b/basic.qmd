@@ -37,18 +37,36 @@ N is a counter used for the BLINK program to set the number of times to blink th
 
 ### initialization program 
 
+- start the system in low power
+- Switch to high power after N loops have occured
+
+- C is for counting how many loops have happened since the system powered on
+- N is the count that switches to high power
+  - this is a zero-based count, first pass thru loop is C = 0
+- T is the test setting variable
+  - T = 1 is test
+  - T = 0 is no test
+  - logic should be `IF T = 1` then we are in test
+
 INIT
 ```BASIC
 LET CH = 109
 LET HP = 0
 LET C = 0
-LET N = 3
+LET N = 2
+LET T = 1
 PRINT "HOST USB:    #US"
 PRINT "HIGH POWER:  #HP"
 PRINT "FREQUENCY:   #FQ"
 PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
+IF T = 1
+PRINT "FAKE GPS/TELE MODE"
+ELSE
+PRINT "REAL GPS/TELE MODE"
+ENDIF
+PRINT "INIT DONE"
 ```
 
 ### SHOW - show state of important variables
@@ -68,12 +86,16 @@ PRINT "SHOW DONE"
 
 The logic here is a way to enable/disable GPS for indoor testing
 
+MYGPS
 ```basic
-IF 1 = 2
+RUN "LEDOFF"
+IF T = 1
 GPS 360
 ELSE
 PRINT "GPS 360 HERE"
+DELAY 2000
 ENDIF
+RUN "LEDON"
 ```
 
 ### Telemetry
@@ -83,11 +105,14 @@ The logic here is a way to enable/disable telemetry for indoor testing
 
 ```basic
 PRINT "TELEMETRY START"
-IF 1 = 2
+RUN "LEDOFF"
+IF T = 1
 TELE
 ELSE
 PRINT "TELE HERE"
+DELAY 2000
 ENDIF
+RUN "LEDON"
 PRINT "TELEMETRY END"
 ```
 
@@ -103,7 +128,7 @@ RUN "MYGPS"
 RUN "SHOW"
 RUN "MYTELE"
 LET C = C + 1
-IF C > 3
+IF C > N
     LET HP = 1
 ENDIF
 RUN "MYGPS"
