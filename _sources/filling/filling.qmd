@@ -37,6 +37,7 @@ https://groups.io/g/picoballoon/files
 
 - 1 cubic meter = 1000 liters
 - Ellipsoid volume = 4/3 pi a b c
+- Circumference = 2 pi r
 
 
 
