@@ -2,20 +2,41 @@
 
 ### Balloon measurements
 
-- 36.4 grams
+- mass 36.4 grams
 - circumference 1 - 180 cm
 - circumference 2 - 215 cm
 
+```{julia}
+#| label: balloon-dimensions
+mass = 36.4 # grams
+c1 = 180 # circumference x2 cm
+c2 = 215 # circumference x1 cm
+
+a = c1/pi/2 # semi-axis radius cm
+b = c1/pi/2 # semi-axis radius cm
+c = c2/pi/2 # semi-axis radius cm
+
+volume = 4/3 * pi * a * b * c # cm^3
+volume /= 100^3 # m^3
+```
+
+balloon volume = 0.118 m^3
+balloon volume = 118 liter
+
 ### additional balloon data
 
-https://github.com/KevWal/Balloon-Info
+- https://github.com/KevWal/Balloon-Info
+- https://groups.io/g/picoballoon/table?id=38275
 
 ## filling information
 
 spreadsheet with filling information from here:
 https://groups.io/g/picoballoon/files
 
+## Misc
 
+- 1 cubic meter = 1000 liters
+- Ellipsoid volume = 4/3 pi a b c
 
 
 
