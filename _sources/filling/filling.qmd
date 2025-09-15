@@ -1,7 +1,21 @@
+## Balloon information
+
+### Balloon measurements
+
+- 36.4 grams
+- circumference 1 - 180 cm
+- circumference 2 - 215 cm
+
+### additional balloon data
+
+https://github.com/KevWal/Balloon-Info
+
+## filling information
+
 spreadsheet with filling information from here:
 https://groups.io/g/picoballoon/files
 
 
-https://github.com/KevWal/Balloon-Info
+
 
 
