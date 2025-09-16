@@ -1,0 +1,22 @@
+
+
+## Define gas properties
+
+Gas density table in kg/cu m at 101.325 kPa at MSL
+
+```{julia}
+using CSV
+using DataFrames
+df_gas = CSV.read("""
+    name,0deg,15deg
+    "hydrogen",0.0899,0.0852
+    "helium",0.1786,0.1693
+    "helium 97%",0.2120,0.2010
+    "air",1.2920,1.2247
+""" |> IOBuffer, DataFrame)
+```
+
+
+## Define atmospheric profile
+
+
