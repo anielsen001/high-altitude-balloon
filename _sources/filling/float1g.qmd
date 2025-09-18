@@ -1,14 +1,28 @@
 
+## Set up
+
+```{julia}
+using CSV
+using DataFrames
+```
+
+## Balloon system properties
+
+```{julia}
+free_lift = 5.0 # grams
+balloon_weight = 38*2 # gram
+balloon_volume = 0.15*2 # m^3
+payload_weight = 20.0 # gram
+gas = "helium 97%"
+```
 
 ## Define gas properties
 
 Gas density table in kg/cu m at 101.325 kPa at MSL
 
 ```{julia}
-using CSV
-using DataFrames
 df_gas = CSV.read("""
-    name,0deg,15deg
+    "name","0deg","15deg"
     "hydrogen",0.0899,0.0852
     "helium",0.1786,0.1693
     "helium 97%",0.2120,0.2010
@@ -16,7 +30,26 @@ df_gas = CSV.read("""
 """ |> IOBuffer, DataFrame)
 ```
 
+## Computed balloon fill properties 
+
+```{julia}
+chosen_gas_density = df_gas[(df_gas.name .== gas),"15deg"]
+air_density = df_gas[(df_gas.name .== "air"),"15deg"]
+neck_lift = free_lift + payload_weight # gram
+launch_gas_fill =
+    (neck_lift + balloon_weight)/
+    (air_density-chosen_gas_density)/1000.0
+
+println("Neck lift          $(neck_lift) gram")
+println("Gas fill at launch $(launch_gas_fill[1]) m^3")
+```
+
 
 ## Define atmospheric profile
+
+```{julia}
+fname = "atmos.csv"
+df_atmos = CSV.read(fname, DataFrame)
+```
 
 
