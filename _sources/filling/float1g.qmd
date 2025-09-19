@@ -28,20 +28,32 @@ df_gas = CSV.read("""
     "helium 97%",0.2120,0.2010
     "air",1.2920,1.2247
 """ |> IOBuffer, DataFrame)
+
+atmosphere_pressure_msl = 101.325 # kPa at MSL "standard pressure"
 ```
 
 ## Computed balloon fill properties 
 
 ```{julia}
-chosen_gas_density = df_gas[(df_gas.name .== gas),"15deg"]
-air_density = df_gas[(df_gas.name .== "air"),"15deg"]
+chosen_gas_density = only(df_gas[(df_gas.name .== gas),"15deg"])
+air_density = only(df_gas[(df_gas.name .== "air"),"15deg"])
 neck_lift = free_lift + payload_weight # gram
 launch_gas_fill =
     (neck_lift + balloon_weight)/
     (air_density-chosen_gas_density)/1000.0
 
-println("Neck lift          $(neck_lift) gram")
-println("Gas fill at launch $(launch_gas_fill[1]) m^3")
+# system denisty is the total mass including payload
+# divided by the balloon volume
+gas_mass = chosen_gas_density * launch_gas_fill * 1000 # gram
+total_mass = gas_mass + payload_weight + balloon_weight # gram
+total_mass /= 1000 # convert to kg
+system_density = total_mass / balloon_volume # kg/m^3
+
+print("Neck lift          $(neck_lift) gram")
+print("Gas fill at launch $(launch_gas_fill[1]) m^3")
+print("Gas mass           $(gas_mass) gram")
+print("Total mass         $(total_mass) kg")
+print("System density     $(system_density) km/m^3")
 ```
 
 
