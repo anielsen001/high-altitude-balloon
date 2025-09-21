@@ -4,6 +4,7 @@
 ```{julia}
 using CSV
 using DataFrames
+using Interpolations
 ```
 
 ## Balloon system properties
@@ -30,6 +31,7 @@ df_gas = CSV.read("""
 """ |> IOBuffer, DataFrame)
 
 atmosphere_pressure_msl = 101.325 # kPa at MSL "standard pressure"
+atmosphere_temperature_msl = 273.1 + 15.0 # Kelvin at standard temperature
 ```
 
 ## Computed balloon fill properties 
@@ -63,5 +65,28 @@ print("System density     $(system_density) km/m^3")
 fname = "atmos.csv"
 df_atmos = CSV.read(fname, DataFrame)
 ```
+
+## Float calculations
+
+```{julia}
+# interpolate temperature based on density
+temperature_at_float = LinearIntepolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Temp (C)")(system_density)
+internal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * (273.1 + temperature_at_float) / balloon_volume
+external_pressure = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Pres (kPa)")(system_density)
+balloon_altitude_meter = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Alt (m)")(system_density) # meters
+balloon_altitude_feet = balloon_altitude_meter * 3.28
+
+free_lift_ratio = free_lift / (balloon_weight + payload_weight + gas_mass)
+
+differential_pressure_kpa = internal_pressure - external_pressure # kPa
+differential_pressure_psi = differential_pressure_kpa * 0.145038 # psi
+
+k = launch_gas_fill * df_atmos.var"P/T (kPa/K)"[end]
+kov = k / balloon_volume
+superpressure_onset_altitude = LinearInterpolation(df_atmos.var"P/T (kPa/K)", df_atmos.var"Alt (m)")(kov) # meter
+superpressure_kpa = external_pressure * free_lift_ratio
+```
+
+
 
 
