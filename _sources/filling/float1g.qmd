@@ -11,11 +11,27 @@ using Plots
 ## Balloon system properties
 
 ```{julia}
+struct Balloon
+    weight::Float64
+    volume::Float64
+end
+
+mutable struct BalloonSystem
+    balloon::Balloon
+    payload_weight::Float64
+    free_lift::Float64
+    gas::String
+end
+
 free_lift = 5.0 # grams
 balloon_weight = 38*2 # gram
 balloon_volume = 0.15*2 # m^3
 payload_weight = 20.0 # gram
 gas = "helium 97%"
+
+balloon = Balloon(balloon_weight, balloon_volume)
+bs = BalloonSystem(balloon, payload_weight, free_lift, gas)
+
 ```
 
 ## Define gas properties
@@ -40,17 +56,17 @@ atmosphere_temperature_msl = 273.1 + 15.0 # Kelvin at standard temperature
 ```{julia}
 chosen_gas_density = only(df_gas[(df_gas.name .== gas),"15deg"])
 air_density = only(df_gas[(df_gas.name .== "air"),"15deg"])
-neck_lift = free_lift + payload_weight # gram
+neck_lift = bs.free_lift + bs.payload_weight # gram
 launch_gas_fill =
-    (neck_lift + balloon_weight)/
+    (neck_lift + bs.balloon.weight)/
     (air_density-chosen_gas_density)/1000.0
 
 # system denisty is the total mass including payload
 # divided by the balloon volume
 gas_mass = chosen_gas_density * launch_gas_fill * 1000 # gram
-total_mass = gas_mass + payload_weight + balloon_weight # gram
+total_mass = gas_mass + bs.payload_weight + bs.balloon.weight # gram
 total_mass /= 1000 # convert to kg
-system_density = total_mass / balloon_volume # kg/m^3
+system_density = total_mass / bs.balloon.volume # kg/m^3
 
 print("Neck lift          $(neck_lift) gram")
 print("Gas fill at launch $(launch_gas_fill[1]) m^3")
@@ -63,16 +79,39 @@ print("System density     $(system_density) km/m^3")
 ## Define atmospheric profile
 
 ```{julia}
+#| label: load-atmospheric-data
 fname = "atmos.csv"
 df_atmos = CSV.read(fname, DataFrame)
 ```
 
+```{julia}
+#| label: fig-atmospheric data
+plot(
+    df_atmos.var"Alt (m)",
+    df_atmos.var"Pres (kPa)",
+    legend=false,
+    xlabel="Altitude [meters]",
+    ylabel="Pressure [kPa]",
+)
+
+plot(
+    df_atmos.var"Alt (m)",
+    df_atmos.var"Temp (C)",
+    legend=false,
+    xlabel="Altitude [meters]",
+    ylabel="Temperature [C]",
+)
+```
+
+
+
 ## Float calculations
 
 ```{julia}
+#| label: float-calculations
 # interpolate temperature based on density
-temperature_at_float = LinearIntepolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Temp (C)")(system_density)
-internal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * (273.1 + temperature_at_float) / balloon_volume
+temperature_at_float = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Temp (C)")(system_density)
+internal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * (273.1 * temperature_at_float) / bs.balloon.volume
 external_pressure = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Pres (kPa)")(system_density)
 balloon_altitude_meter = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Alt (m)")(system_density) # meters
 balloon_altitude_feet = balloon_altitude_meter * 3.28
