@@ -16,6 +16,18 @@ struct Balloon
     volume::Float64
 end
 
+function Base.print(balloon::Balloon)
+    print("Weight: $(balloon.weight), Volume: $(balloon.volume)")
+end
+
+function Base.println(balloon::Balloon)
+    println("Weight: $(balloon.weight)")
+    println("Volume: $(balloon.volume)")
+end
+
+Base.:*(balloon::Balloon, n::Real) = Balloon(balloon.weight*n, balloon.volume*n)
+Base.:*(n::Real, balloon::Balloon) = Balloon(balloon.weight*n, balloon.volume*n)
+
 mutable struct BalloonSystem
     balloon::Balloon
     payload_weight::Float64
