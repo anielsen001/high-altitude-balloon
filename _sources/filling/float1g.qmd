@@ -6,6 +6,8 @@ using CSV
 using DataFrames
 using Interpolations
 using Plots
+using Unitful
+using UnitfulUS
 ```
 
 ## Balloon system properties
@@ -35,10 +37,10 @@ mutable struct BalloonSystem
     gas::String
 end
 
-free_lift = 5.0 # grams
-balloon_weight = 38*2 # gram
-balloon_volume = 0.15*2 # m^3
-payload_weight = 20.0 # gram
+free_lift = 5.0u"g" # grams
+balloon_weight = 38.0u"g" # gram
+balloon_volume = 0.15u"m^3" # m^3
+payload_weight = 20.0u"g" # gram
 gas = "helium 97%"
 
 balloon = Balloon(balloon_weight, balloon_volume)
@@ -60,7 +62,8 @@ df_gas = CSV.read("""
 """ |> IOBuffer, DataFrame)
 
 atmosphere_pressure_msl = 101.325 # kPa at MSL "standard pressure"
-atmosphere_temperature_msl = 273.1 + 15.0 # Kelvin at standard temperature
+atmosphere_temperature_msl_c = 15.0
+atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature
 ```
 
 ## Computed balloon fill properties 
