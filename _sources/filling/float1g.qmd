@@ -15,8 +15,8 @@ using DynamicQuantities
 
 ```{julia}
 struct Balloon
-    weight::Float64
-    volume::Float64
+    weight
+    volume
 end
 
 function Base.print(balloon::Balloon)
@@ -62,9 +62,10 @@ df_gas = CSV.read("""
     "air",1.2920,1.2247
 """ |> IOBuffer, DataFrame)
 
-atmosphere_pressure_msl = 101.325 # kPa at MSL "standard pressure"
-atmosphere_temperature_msl_c = 15.0
-atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature
+atmosphere_pressure_msl = 101.325u"kPa" # kPa at MSL "standard pressure
+atmosphere_temperature_msl = 15.0ua"degC"
+# atmosphere_temperature_msl_c = 15.0
+# atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature
 ```
 
 ## Computed balloon fill properties 
