@@ -9,6 +9,13 @@ using Plots
 #using Unitful
 #using UnitfulUS
 using DynamicQuantities
+
+# create an imperial pressure unit psi - pounds per sq inch
+@register_unit psi 6.89476u"kPa"
+
+# there's conversion from Kelvin to degC so create a function for that
+# this strips off the units completely and returns the value in degC
+kelvin_to_degC_value(k) = ustrip(k - 0.0ua"degC")
 ```
 
 ## Balloon system properties
@@ -33,8 +40,8 @@ Base.:*(n::Real, balloon::Balloon) = Balloon(balloon.weight*n, balloon.volume*n)
 
 mutable struct BalloonSystem
     balloon::Balloon
-    payload_weight::Float64
-    free_lift::Float64
+    payload_weight
+    free_lift
     gas::String
 end
 
@@ -71,25 +78,25 @@ atmosphere_temperature_msl = 15.0ua"degC"
 ## Computed balloon fill properties 
 
 ```{julia}
-chosen_gas_density = only(df_gas[(df_gas.name .== gas),"15deg"])
-air_density = only(df_gas[(df_gas.name .== "air"),"15deg"])
+chosen_gas_density = only(df_gas[(df_gas.name .== gas),"15deg"])u"kg/m^3"
+air_density = only(df_gas[(df_gas.name .== "air"),"15deg"])u"kg/m^3"
 neck_lift = bs.free_lift + bs.payload_weight # gram
 launch_gas_fill =
     (neck_lift + bs.balloon.weight)/
-    (air_density-chosen_gas_density)/1000.0
+    (air_density-chosen_gas_density)#/1000.0
 
 # system denisty is the total mass including payload
 # divided by the balloon volume
-gas_mass = chosen_gas_density * launch_gas_fill * 1000 # gram
+gas_mass = chosen_gas_density * launch_gas_fill# * 1000 # gram
 total_mass = gas_mass + bs.payload_weight + bs.balloon.weight # gram
-total_mass /= 1000 # convert to kg
+#total_mass /= 1000 # convert to kg
 system_density = total_mass / bs.balloon.volume # kg/m^3
 
-print("Neck lift          $(neck_lift) gram")
-print("Gas fill at launch $(launch_gas_fill[1]) m^3")
-print("Gas mass           $(gas_mass) gram")
-print("Total mass         $(total_mass) kg")
-print("System density     $(system_density) km/m^3")
+print("Neck lift          $(neck_lift |> us"g")")
+print("Gas fill at launch $(launch_gas_fill)")
+print("Gas mass           $(gas_mass |> us"g")")
+print("Total mass         $(total_mass |> us"g")")
+print("System density     $(system_density)")
 ```
 
 
@@ -127,21 +134,23 @@ plot(
 ```{julia}
 #| label: float-calculations
 # interpolate temperature based on density
-temperature_at_float = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Temp (C)")(system_density)
-internal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * (273.1 * temperature_at_float) / bs.balloon.volume
-external_pressure = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Pres (kPa)")(system_density)
-balloon_altitude_meter = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Alt (m)")(system_density) # meters
-balloon_altitude_feet = balloon_altitude_meter * 3.28
+u_system_density = ustrip(u"kg/m^3",system_density)
+temperature_at_float = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Temp (C)")(u_system_density)ua"degC"
+internal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * ( temperature_at_float) / bs.balloon.volume
+external_pressure = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Pres (kPa)")(u_system_density)u"kPa"
+balloon_altitude = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"Alt (m)")(u_system_density)u"m" # meters
+# balloon_altitude_feet = balloon_altitude_meter * 3.28
 
 free_lift_ratio = free_lift / (balloon_weight + payload_weight + gas_mass)
 
-differential_pressure_kpa = internal_pressure - external_pressure # kPa
-differential_pressure_psi = differential_pressure_kpa * 0.145038 # psi
+differential_pressure = internal_pressure - external_pressure # kPa
+# differential_pressure_psi = differential_pressure_kpa * 0.145038 # psi
 
-k = launch_gas_fill * df_atmos.var"P/T (kPa/K)"[end]
+k = launch_gas_fill * df_atmos.var"P/T (kPa/K)"[end]u"kPa/K"
 kov = k / balloon_volume
-superpressure_onset_altitude = LinearInterpolation(df_atmos.var"P/T (kPa/K)", df_atmos.var"Alt (m)")(kov) # meter
-superpressure_kpa = external_pressure * free_lift_ratio
+(kov |> us"kPa/K").value
+superpressure_onset_altitude = LinearInterpolation(df_atmos.var"P/T (kPa/K)", df_atmos.var"Alt (m)")( (kov |> us"kPa/K").value  )u"m" # meter
+superpressure = external_pressure * free_lift_ratio
 ```
 
 
