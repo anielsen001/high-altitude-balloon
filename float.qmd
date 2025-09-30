@@ -1,0 +1,11 @@
+---
+title: Float calculations
+format: html
+engine: julia
+julia:
+  exeflags:
+    - "--project=."
+---
+
+{{< include /_sources/filling/float1g.qmd >}}
+

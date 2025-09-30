@@ -1,5 +1,27 @@
 
+
+
+
 ## Set up
+
+### Package environment
+
+```{julia}
+using Pkg
+
+Pkg.activate(".")
+
+needed_pkgs = [
+    "CSV",
+    "DataFrames",
+    "Interpolations",
+    "Plots",
+    "DynamicQuantities",
+]
+Pkg.add(needed_pkgs)
+```
+
+### Imports
 
 ```{julia}
 using CSV
@@ -104,8 +126,9 @@ print("System density     $(system_density)")
 
 ```{julia}
 #| label: load-atmospheric-data
+fpath = "/opt/project/_sources/filling"
 fname = "atmos.csv"
-df_atmos = CSV.read(fname, DataFrame)
+df_atmos = CSV.read(joinpath(fpath,fname), DataFrame)
 ```
 
 ```{julia}
