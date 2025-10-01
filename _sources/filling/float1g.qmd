@@ -7,6 +7,7 @@
 ### Package environment
 
 ```{julia}
+#| label: configure-packages
 using Pkg
 
 Pkg.activate(".")
@@ -24,6 +25,7 @@ Pkg.add(needed_pkgs)
 ### Imports
 
 ```{julia}
+#| lable: load-packages
 using CSV
 using DataFrames
 using Interpolations
@@ -33,7 +35,7 @@ using Plots
 using DynamicQuantities
 
 # create an imperial pressure unit psi - pounds per sq inch
-@register_unit psi 6.89476u"kPa"
+# @register_unit psi 6.89476u"kPa"
 
 # there's conversion from Kelvin to degC so create a function for that
 # this strips off the units completely and returns the value in degC
@@ -43,6 +45,7 @@ kelvin_to_degC_value(k) = ustrip(k - 0.0ua"degC")
 ## Balloon system properties
 
 ```{julia}
+#| label: balloon-definitions
 struct Balloon
     weight
     volume
@@ -83,6 +86,7 @@ bs = BalloonSystem(balloon, payload_weight, free_lift, gas)
 Gas density table in kg/cu m at 101.325 kPa at MSL
 
 ```{julia}
+#| label: define-gas-properties
 df_gas = CSV.read("""
     "name","0deg","15deg"
     "hydrogen",0.0899,0.0852
@@ -95,6 +99,7 @@ atmosphere_pressure_msl = 101.325u"kPa" # kPa at MSL "standard pressure
 atmosphere_temperature_msl = 15.0ua"degC"
 # atmosphere_temperature_msl_c = 15.0
 # atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature
+@show df_gas
 ```
 
 ## Computed balloon fill properties 
@@ -114,11 +119,11 @@ total_mass = gas_mass + bs.payload_weight + bs.balloon.weight # gram
 #total_mass /= 1000 # convert to kg
 system_density = total_mass / bs.balloon.volume # kg/m^3
 
-print("Neck lift          $(neck_lift |> us"g")")
-print("Gas fill at launch $(launch_gas_fill)")
-print("Gas mass           $(gas_mass |> us"g")")
-print("Total mass         $(total_mass |> us"g")")
-print("System density     $(system_density)")
+println("Neck lift          $(neck_lift |> us"g")")
+println("Gas fill at launch $(launch_gas_fill)")
+println("Gas mass           $(gas_mass |> us"g")")
+println("Total mass         $(total_mass |> us"g")")
+println("System density     $(system_density)")
 ```
 
 
@@ -132,7 +137,8 @@ df_atmos = CSV.read(joinpath(fpath,fname), DataFrame)
 ```
 
 ```{julia}
-#| label: fig-atmospheric data
+#| label: fig-atmospheric-data-pressure
+#| fig-cap: Atmospheric pressure as a function of altitude
 plot(
     df_atmos.var"Alt (m)",
     df_atmos.var"Pres (kPa)",
@@ -140,7 +146,11 @@ plot(
     xlabel="Altitude [meters]",
     ylabel="Pressure [kPa]",
 )
+```
 
+```{julia}
+#| label: fig-atmospheric-data-temperature
+#| fig-cap: Atmospheric temperature as a function of altitude
 plot(
     df_atmos.var"Alt (m)",
     df_atmos.var"Temp (C)",
@@ -167,13 +177,22 @@ balloon_altitude = LinearInterpolation(df_atmos.var"Den (Kg/cu m)",df_atmos.var"
 free_lift_ratio = free_lift / (balloon_weight + payload_weight + gas_mass)
 
 differential_pressure = internal_pressure - external_pressure # kPa
-# differential_pressure_psi = differential_pressure_kpa * 0.145038 # psi
 
 k = launch_gas_fill * df_atmos.var"P/T (kPa/K)"[end]u"kPa/K"
 kov = k / balloon_volume
 (kov |> us"kPa/K").value
 superpressure_onset_altitude = LinearInterpolation(df_atmos.var"P/T (kPa/K)", df_atmos.var"Alt (m)")( (kov |> us"kPa/K").value  )u"m" # meter
 superpressure = external_pressure * free_lift_ratio
+
+println("Float temperature:       $(temperature_at_float)")
+println("Balloon altitude:        $(balloon_altitude)")
+println("Free lift ratio:         $(free_lift_ratio)")
+println("Internal pressure:       $(internal_pressure |> us"kPa")")
+println("External pressure:       $(external_pressure |> us"kPa")")
+println("Differential pressure:   $(differential_pressure |> us"kPa" )")
+println("Super pressure:          $(superpressure |> us"kPa" )")
+println("Super pressure altitute: $(superpressure_onset_altitude)")
+
 ```
 
 
