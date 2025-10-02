@@ -18,6 +18,8 @@ needed_pkgs = [
     "Interpolations",
     "Plots",
     "DynamicQuantities",
+    "Markdown",
+    "PrettyTables"
 ]
 Pkg.add(needed_pkgs)
 ```
@@ -33,6 +35,8 @@ using Plots
 #using Unitful
 #using UnitfulUS
 using DynamicQuantities
+using Printf
+using PrettyTables
 
 # create an imperial pressure unit psi - pounds per sq inch
 # @register_unit psi 6.89476u"kPa"
@@ -99,7 +103,7 @@ atmosphere_pressure_msl = 101.325u"kPa" # kPa at MSL "standard pressure
 atmosphere_temperature_msl = 15.0ua"degC"
 # atmosphere_temperature_msl_c = 15.0
 # atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature
-@show df_gas
+df_gas
 ```
 
 ## Computed balloon fill properties 
@@ -133,7 +137,8 @@ println("System density     $(system_density)")
 #| label: load-atmospheric-data
 fpath = "/opt/project/_sources/filling"
 fname = "atmos.csv"
-df_atmos = CSV.read(joinpath(fpath,fname), DataFrame)
+df_atmos = CSV.read(joinpath(fpath,fname), DataFrame);
+df_atmos
 ```
 
 ```{julia}
