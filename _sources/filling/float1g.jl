@@ -17,7 +17,8 @@ using DynamicQuantities
 
 # there's conversion from Kelvin to degC so create a function for that
 # this strips off the units completely and returns the value in degC
-kelvin_to_degC_value(k) = ustrip(k - 0.0ua"degC")
+kelvin_to_degC_value(k) = ustrip(k .- 0.0ua"degC")
+degC_value_to_kelvin(c) = (c .+ ustrip(0.0ua"degC"))u"K"
 
 # environmental parameter
 
@@ -41,6 +42,14 @@ function atmos_pressure(density::Quantity; df_atmos=df_atmos)
             df_atmos.var"Pres (kPa)")(u_density)u"kPa"
 end
 
+"Return the atmospheric pressure as a quantity at the given density, using a Quantity as input"
+function atmos_pressure(density::QuantityArray; df_atmos=df_atmos)
+    u_density = ustrip(u"kg/m^3",density)
+    LinearInterpolation(
+            df_atmos.var"Den (Kg/cu m)",
+            df_atmos.var"Pres (kPa)")(u_density)u"kPa"
+end
+
 "Return the atmospheric pressure as a quantity at the given density, using a Number as input, in kg/m^3"
 function atmos_pressure(density::Number; df_atmos=df_atmos)
     LinearInterpolation(
@@ -56,6 +65,14 @@ function atmos_temperature(density::Quantity; df_atmos=df_atmos)
             df_atmos.var"Temp (C)")(u_density)ua"degC"
 end
 
+"Return the atmospheric temperature as a function of system desnity, using a Quantity as input"
+function atmos_temperature(density::QuantityArray; df_atmos=df_atmos)
+    u_density = ustrip(u"kg/m^3",density)
+    LinearInterpolation(
+            df_atmos.var"Den (Kg/cu m)",
+            df_atmos.var"Temp (C)")(u_density)ua"degC"
+end
+
 "Return the atmospheric temperature as a function of system desnity, using a Number as input in kg/m^3"
 function atmos_temperature(density::Number; df_atmos=df_atmos)
     LinearInterpolation(
@@ -65,6 +82,14 @@ end
 
 "Return the altitude of a given density, using a Quantity as input"
 function atmos_altitude(density::Quantity; df_atmos=df_atmos)
+    u_density = ustrip(u"kg/m^3",density)
+    LinearInterpolation(
+            df_atmos.var"Den (Kg/cu m)",
+            df_atmos.var"Alt (m)")(u_density)u"m" # meters
+end
+
+"Return the altitude of a given density, using a Quantity as input"
+function atmos_altitude(density::QuantityArray; df_atmos=df_atmos)
     u_density = ustrip(u"kg/m^3",density)
     LinearInterpolation(
             df_atmos.var"Den (Kg/cu m)",
