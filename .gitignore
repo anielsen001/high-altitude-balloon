@@ -3,6 +3,11 @@
 
 /.quarto/
 /output/
+/_freeze/
+/_site/
+
+# julia related
+/.julia/
 
 # R related files
 .Rhistory
