@@ -34,80 +34,30 @@ df_atmos = CSV.read(joinpath(@__DIR__,"atmos.csv"), DataFrame)
 
 
 
-"Return the atmospheric pressure as a quantity at the given density, using a Quantity as input"
-function atmos_pressure(density::Quantity; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
+"Return the atmospheric pressure as a quantity at the given density"
+function atmos_pressure(density; df_atmos=df_atmos)
+    u_density = ustrip(density/u"kg/m^3")
     LinearInterpolation(
             df_atmos.var"Den (Kg/cu m)",
             df_atmos.var"Pres (kPa)")(u_density)u"kPa"
 end
 
-"Return the atmospheric pressure as a quantity at the given density, using a Quantity as input"
-function atmos_pressure(density::QuantityArray; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
-    LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-            df_atmos.var"Pres (kPa)")(u_density)u"kPa"
-end
-
-"Return the atmospheric pressure as a quantity at the given density, using a Number as input, in kg/m^3"
-function atmos_pressure(density::Number; df_atmos=df_atmos)
-    LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-            df_atmos.var"Pres (kPa)")(density)u"kPa"
-end
-
-"Return the atmospheric temperature as a function of system desnity, using a Quantity as input"
-function atmos_temperature(density::Quantity; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
+"Return the atmospheric temperature as a function of system desnity"
+function atmos_temperature(density; df_atmos=df_atmos)
+    u_density = ustrip(density/u"kg/m^3")
     degC = LinearInterpolation(
             df_atmos.var"Den (Kg/cu m)",
         df_atmos.var"Temp (C)")(u_density)
     degC_value_to_kelvin(degC)
 end
 
-"Return the atmospheric temperature as a function of system desnity, using a Quantity as input"
-function atmos_temperature(density::QuantityArray; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
-    degC = LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-        df_atmos.var"Temp (C)")(u_density)
-    degC_value_to_kelvin(degC)
-end
-
-"Return the atmospheric temperature as a function of system desnity, using a Number as input in kg/m^3"
-function atmos_temperature(density::Number; df_atmos=df_atmos)
-    degC = LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-        df_atmos.var"Temp (C)")(density)
-    degc_value_to_kelvin(degC)
-end
-
-"Return the altitude of a given density, using a Quantity as input"
-function atmos_altitude(density::Quantity; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
+"Return the altitude of a given density"
+function atmos_altitude(density; df_atmos=df_atmos)
+    u_density = ustrip(density/u"kg/m^3")
     LinearInterpolation(
             df_atmos.var"Den (Kg/cu m)",
             df_atmos.var"Alt (m)")(u_density)u"m" # meters
 end
-
-"Return the altitude of a given density, using a Quantity as input"
-function atmos_altitude(density::QuantityArray; df_atmos=df_atmos)
-    u_density = ustrip(u"kg/m^3",density)
-    LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-            df_atmos.var"Alt (m)")(u_density)u"m" # meters
-end
-
-"Return the altitude of a given density, using a Number as input in kg/m^3"
-function atmos_altitude(density::Number; df_atmos=df_atmos)
-    LinearInterpolation(
-            df_atmos.var"Den (Kg/cu m)",
-            df_atmos.var"Alt (m)")(density)u"m" # meters
-end
-
-
-
 
 "DataFrame holding the gas densities"
 df_gas = CSV.read("""

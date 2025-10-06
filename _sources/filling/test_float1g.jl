@@ -17,3 +17,11 @@ println(bs)
 
 payload_weights = [15.0,20.0,25.0]u"g"
 bss = BalloonSystem(balloon, payload_weights, free_lift, gas)
+
+
+
+payload_weights = [0:1:50]u"g"
+bss = BalloonSystem(balloon, payload_weights, free_lift, gas)
+
+
+bss = BalloonSystem(balloon, collect(0.0:1.0:50.0)u"g", free_lift, gas)
