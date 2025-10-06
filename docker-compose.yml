@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     environment:
       DISPLAY:
+      JULIA_DEPOT_PATH: "/opt/project/.julia"
     image: balloon:latest
     #image: ${QUARTO_IMAGE}
     volumes:
