@@ -10,7 +10,7 @@ GOTO 10
 
 ## Rules
 
-No blank lines in the code. This causes the code to stop.
+No blank lines in the code. This causes the code to stop. Especially check for a blank line at the end.
 
 you may need to both save and then also compile.
 

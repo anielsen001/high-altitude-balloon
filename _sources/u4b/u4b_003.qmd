@@ -1,3 +1,125 @@
-qrp-lab S/N: 21894
+qrp-labs S/N: 21894
 
-started to program thinking that u4b_002 was having issues. Seems to be blink program, deactivated.
+## Configuration
+
+- Callsign: KF8EEZ
+- Band: 20m
+- Channel: 062
+- Autostart: TRACKER2
+
+## Programs
+
+### Tracker 2
+
+This is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn't need GPS or ability to transmit.
+
+```
+PRINT "START TRACKER2"
+RUN "INIT"
+RUN "SHOW"
+PRINT "INITIAL GPS"
+RUN "MYGPS"
+10 PRINT "LOOP AT #VC"
+RUN "SHOW"
+RUN "MYTELE"
+LET C = C + 1
+IF C > N
+    LET HP = 1
+ENDIF
+RUN "MYGPS"
+GOTO 10
+```
+
+### Init
+
+- C is the count of transmissions since wake up
+- N is the number of transmissions before switching to high-power (0-based)
+- T is a flag for test mode
+  - T=1 - test mode
+  - T=0 - live mode
+
+```
+PRINT "INIT START"
+LET CH = 109
+LET HP = 0
+LET C = 0
+LET N = 2
+LET T = 0
+PRINT "HOST USB:    #US"
+PRINT "HIGH POWER:  #HP"
+PRINT "FREQUENCY:   #FQ"
+PRINT "CHANNEL:     #CH"
+PRINT "CALLSIGN:    #CS"
+PRINT "TEMPERATURE: #TK"
+IF T = 1
+PRINT "FAKE GPS/TELE MODE"
+ELSE
+PRINT "REAL GPS/TELE MODE"
+ENDIF
+PRINT "INIT DONE"
+```
+
+### Show
+
+Prints out the current state
+
+```
+PRINT "SHOW START"
+PRINT "LLH:  #LT #LN #AT"
+PRINT "GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "GPS:  NSAT:  #SC"
+PRINT "CNT:  #VC"
+PRINT "TEMP: #TK"
+PRINT "POWR: #HP"
+PRINT "SHOW DONE"
+```
+
+### MYGPS
+
+This is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don't acquire GPS if in test mode (T=1)
+
+```
+PRINT "GPS START"
+RUN "LEDOFF"
+IF T = 0
+PRINT "REAL GPS"
+GPS 360
+ELSE
+PRINT "FAKE GPS"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "GPS END"
+```
+
+### MYTELE
+
+Don't transmit if in test mode (T=1)
+
+```
+PRINT "TELEMETRY START"
+RUN "LEDOFF"
+IF T = 0
+PRINT "REAL TELE"
+TELE
+ELSE
+PRINT "FAKE TELE"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "TELEMETRY END"
+```
+
+
+### LED off
+
+```
+OUT 19 1
+```
+
+### LED on
+
+```
+OUT 19 0
+```
+
