@@ -1,0 +1,25 @@
+
+## Solar panels {#sec-solar-panels}
+
+### Powerfilm MPT48-150 {#sec-powerfile-mpt48-150}
+
+- [datasheet](/_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf]
+- weight: 3.8 gram
+
+## Supercapacitor {#sec-supercapacitor}
+
+- [datasheet](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
+- weight: 1.2 gram
+
+## Voltage Regulator
+
+- [datasheet](/_datasheets/L7805CV_voltage_regulator.pdf)
+- weight: 1.7 gram
+
+## Zener diodes
+
+- weight: <0.12 gram
+
+## U4B
+
+- weight: 5.2 gram (with USB attached)
