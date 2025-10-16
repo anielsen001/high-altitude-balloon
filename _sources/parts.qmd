@@ -23,3 +23,12 @@
 ## U4B
 
 - weight: 5.2 gram (with USB attached)
+
+## HF Antenna
+
+### 20m band
+
+- lower half
+  - 200 inches AWG 34: 0.9 gram
+- upper half
+  - 200 inches AWG 34 + 250 inches 30 lb test fishing line: 4.1 gram
