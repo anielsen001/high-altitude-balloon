@@ -9,6 +9,7 @@ format: html
   - Registered channel 109 on 20m
 - [QRP Labs tracking](https://www.qrp-labs.com/track/tracking.html)
   - Registered smore-001
+- [WSPR Telemetry Viewer](https://wsprtv.com)
 
 ## References
 
