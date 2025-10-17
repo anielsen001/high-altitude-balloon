@@ -14,6 +14,8 @@ These are the spots from one day of testing 2025-10-16 local time
 
 https://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs
 
+csv file created by copy/paste from website
+
 2025-10-16-lu7aa-spots.csv
 
 
