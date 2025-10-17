@@ -2,11 +2,22 @@
 
 Set up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise. 
 
+### wspr.rocks spots
+
 Downloaded spot from https://wspr.rocks in both json and tsv format for comparison. 
 
 These are the spots from one day of testing 2025-10-16 local time
 2025-10-16-wpsr-rocks-spots.json
 2025-10-16-wpsr-rocks-spots.tsv
+
+### lu7aa spots
+
+https://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs
+
+2025-10-16-lu7aa-spots.csv
+
+
+### power down
 
 Solar panel ends in shadow early due to trees.
 
