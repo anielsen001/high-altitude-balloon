@@ -18,6 +18,16 @@ csv file created by copy/paste from website
 
 2025-10-16-lu7aa-spots.csv
 
+this shows decoded telemetry also
+https://lu7aa.org/wsprx.asp?banda=20m&other=kf8eez&balloonid=05&timeslot=8&repito=on&qrpid=109&SSID=11&launch=20251016010101&tracker=qrplabs
+
+### wsprtv.com
+
+shows charts 
+https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-09-17
+
+downloaded csv to
+KF8EEZ_109_20250917-20251017.cs
 
 ### power down
 
