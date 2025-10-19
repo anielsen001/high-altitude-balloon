@@ -12,19 +12,30 @@ payload_weight = 20.0u"g" # gram
 gas = "helium 97%"
 
 balloon = Balloon(balloon_weight, balloon_volume)
+balloon_2 = balloon * 2
 bs = BalloonSystem(balloon, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
 println(bs)
 
 
 payload_weights = [15.0,20.0,25.0]u"g"
 bss = BalloonSystem(balloon, payload_weights, free_lift, gas)
+bss2 = BalloonSystem(balloon_2, payload_weights, free_lift, gas)
 
 payload_weights = collect(0.0:1.0:50.0)u"g"
 bss = BalloonSystem(balloon, payload_weights, free_lift, gas)
+bss2 = BalloonSystem(balloon_2, payload_weights, free_lift, gas)
+
 
 plot(
     ustrip(u"g",payload_weights),
     ustrip(us"ft",bss.float_altitude)/1000.,
+    title="Altitude vs. payload weight",
+    xlabel="Payload mass [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",payload_weights),
+    ustrip(us"ft",bss2.float_altitude)/1000.,
     title="Altitude vs. payload weight",
     xlabel="Payload mass [grams]",
     ylabel="Float altitude [kft]",

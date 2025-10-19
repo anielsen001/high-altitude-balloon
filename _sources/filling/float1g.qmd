@@ -81,7 +81,7 @@ payload_weight = 20.0u"g" # gram
 gas = "helium 97%"
 
 balloon = Balloon(balloon_weight, balloon_volume)
-bs = BalloonSystem(balloon, payload_weight, free_lift, gas)
+bs = BalloonSystem(balloon * 2, payload_weight, free_lift, gas)
 
 ```
 
