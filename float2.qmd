@@ -1,0 +1,58 @@
+---
+title: Float calculations version 2
+format: html
+engine: julia
+julia:
+  exeflags:
+    - "--project=."
+---
+
+```{julia}
+#| label: juila-config
+include("/opt/project/_sources/filling/PicoBalloons.jl")
+using Plots
+using Revise
+using DynamicQuantities
+using .PicoBalloons
+```
+
+
+```{julia}
+#| label: balloon-parameters
+free_lift = 5.0u"g" # grams
+balloon_weight = 38.0u"g" # gram
+balloon_volume = 0.15u"m^3" # m^3
+payload_weight = 20.0u"g" # gram
+gas = "helium 97%"
+
+```
+
+
+```{julia}
+#| label: create-balloon-systems
+
+balloon_1 = Balloon(balloon_weight, balloon_volume)
+balloon_2 = balloon_1 * 2
+
+payload_weights = collect(0.0:1.0:50.0)u"g"
+bss1 = BalloonSystem(balloon_1, payload_weights, free_lift, gas)
+bss2 = BalloonSystem(balloon_2, payload_weights, free_lift, gas)
+```
+
+```{julia}
+#| label: fig-balloon-altitudes
+
+plot(
+    ustrip(u"g",payload_weights),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    title="Altitude vs. payload weight",
+    xlabel="Payload mass [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",payload_weights),
+    ustrip(us"ft",bss2.float_altitude)/1000.,
+    title="Altitude vs. payload weight",
+    xlabel="Payload mass [grams]",
+    ylabel="Float altitude [kft]",
+)
+```
