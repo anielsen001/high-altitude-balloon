@@ -4,6 +4,7 @@
 
 - 33 mm x 17.2mm (excluding removable USB connector)
 - 1.8 gram with USB connector removed
+- 3.5 gram - weight of USB connector (as measured)
 
 
 
