@@ -1,5 +1,5 @@
 project:
-  title: "High-altitude-balloon"
+  title: "Balloon magnetometry"
   type: website
   pre-render: make
   output-dir: output
@@ -8,7 +8,7 @@ execute:
   freeze: true
 
 website:
-  title: "High-altitude balloon"
+  title: "Balloons"
   site-url: "https://apnielsen.com/high-altitude-balloon"
   description: "This is a summary of notes for launching a high-altitude balloon"
   
@@ -32,6 +32,8 @@ website:
         href: index.qmd
       - text: "Horizon calculator"
         href: horizon.qmd
+      - text: "Launches"
+        contents: launches/*.qmd
   
 format:
   html:

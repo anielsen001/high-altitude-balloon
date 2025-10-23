@@ -1,4 +1,20 @@
 
+## Launch
+
+Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.
+
+Second attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.
+
+![Launch!](/_sources/launches/smore-001/launch_away_crop.jpg)
+
+The balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn't get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.
+
+![Partial transmission in WSJT-X](/_sources/launches/smore-001/maybe_transmit.jpg)
+
+The u4b was using high power. Maybe should use low power until transmitted a few times.
+
+The LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop? 
+
 ## BOM
 
 - [Kyocera AVX SCCR20E335SRB Supercapacitors](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
@@ -7,14 +23,4 @@
   - MPT4.8-150
 - [Voltage regulator](/_datasheets/L7805CV_voltage_regulator.pdf)
 - [QRP-labs u4b](/_sources/u4b/u4b_hardware.pdf)
-  - [u4b-002](/_sources/u4b/u4b-002.qmd)
-
-## Launch
-
-Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.
-
-Second attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.
-
-The u4b was using high power. Maybe should use low power until transmitted a few times.
-
-The LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop? 
+  - [u4b-002](/_sources/u4b/u4b_002.qmd)
