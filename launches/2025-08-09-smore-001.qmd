@@ -1,0 +1,6 @@
+---
+title: First Launch s'more-001
+date: 2025-08-09
+---
+
+{{< include /_sources/launches/smore-001/smore-001.qmd >}}
