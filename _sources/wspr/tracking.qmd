@@ -9,6 +9,7 @@
 
 - [WSPRnet.org](https://www.wsprnet.org/drupal/)
 - [WSPR Daemon](http://wsprdaemon.org/)
-  - https://github.com/rrobinett/wsprdaemon
+  - [GitHub source](https://github.com/rrobinett/wsprdaemon)
 - [WSPR Live](https://wspr.live)
-- [WSPR Rocks](https;//wspr.rocks)
+- [WSPR Rocks](https://wspr.rocks)
+- [WSJT-X](https://wsjt.sourceforge.io/wsjtx.html)

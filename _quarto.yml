@@ -34,6 +34,8 @@ website:
         href: horizon.qmd
       - text: "Launches"
         contents: launches/*.qmd
+      - text: "WSPR Tracking"
+        href: wspr/tracking.qmd
   
 format:
   html:
