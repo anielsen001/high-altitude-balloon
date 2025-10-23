@@ -184,6 +184,39 @@
     ]
   },
   {
+    "objectID": "wspr/tracking.html",
+    "href": "wspr/tracking.html",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#balloon-specific",
+    "href": "wspr/tracking.html#balloon-specific",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#wspr-general",
+    "href": "wspr/tracking.html#wspr-general",
+    "title": "WSPR Tracking resources",
+    "section": "WSPR General",
+    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
     "objectID": "float2.html",
     "href": "float2.html",
     "title": "Float calculations version 2",
