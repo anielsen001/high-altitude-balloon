@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.37">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Balloon magnetometry – High-altitude balloon</title>
+<title>Balloon magnetometry – Balloons</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,15 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-38d9614c99a2178aea5ac95ee66ad443.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f7a9f68a7c25d3e48d8b03507a008963.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -69,7 +71,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-launch-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-launch-listing'] = new List('listing-launch-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">High-altitude balloon</span>
+    <span class="navbar-title">Balloons</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -149,6 +209,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Horizon calculator</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true">
+ <span class="menu-text">Launches</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./launches/2025-08-09-smore-001.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First Launch s’more-001</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -178,23 +255,44 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.</p>
-<p>The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a <a href="https://www.pnisensor.com/rm3100/">PNI RM3100 magnetometer</a>. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, <a href="#sec-eclipse-launch" class="quarto-xref">Section&nbsp;3</a>, but we lost contact with the payload telemetry.</p>
-<section id="launch" class="level2">
-<h2 class="anchored" data-anchor-id="launch">Launch</h2>
-<p>First launch attempt on 2025-08-09, but the balloon got away with out the payload. By the time we prepped with more gas and a second balloon, clouds came in and we decided to wait until the following morning.</p>
-<p>We launched the balloon in the morning of 2025-08-09. The goal was to get the balloon in the air and hear from the payload.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="./_sources/launches/smore-001/launch_away_crop.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Launch!"><img src="./_sources/launches/smore-001/launch_away_crop.jpg" class="img-fluid figure-img" alt="Launch!"></a></p>
-<figcaption>Launch!</figcaption>
-</figure>
+<p>The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a <a href="https://www.pnisensor.com/rm3100/">PNI RM3100 magnetometer</a>. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, <a href="#sec-eclipse-launch" class="quarto-xref">Section&nbsp;4</a>, but we lost contact with the payload telemetry.</p>
+<section id="balloon-in-progress-2025-10-22" class="level2">
+<h2 class="anchored" data-anchor-id="balloon-in-progress-2025-10-22">Balloon in progress 2025-10-22</h2>
+<p>Working on new.</p>
+</section>
+<section id="launches" class="level2">
+<h2 class="anchored" data-anchor-id="launches">Launches</h2>
+<div id="listing-launch-listing" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1754712000000" data-listing-file-modified-sort="1761221269824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./launches/2025-08-09-smore-001.html" class="no-external"></a></p><a href="./launches/2025-08-09-smore-001.html" class="no-external">
+<p class="card-img-top"><img src="_sources/launches/smore-001/launch_away_crop.jpg" alt="Launch!"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./launches/2025-08-09-smore-001.html" class="no-external"></a></p>
 </div>
-<p>The balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="./_sources/launches/smore-001/maybe_transmit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Partial transmission in WSJT-X"><img src="./_sources/launches/smore-001/maybe_transmit.jpg" class="img-fluid figure-img" alt="Partial transmission in WSJT-X"></a></p>
-<figcaption>Partial transmission in WSJT-X</figcaption>
-</figure>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./launches/2025-08-09-smore-001.html" class="no-external">First Launch s’more-001</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./launches/2025-08-09-smore-001.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./launches/2025-08-09-smore-001.html" class="no-external">Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./launches/2025-08-09-smore-001.html" class="no-external">
+<div class="listing-date">
+Aug 9, 2025
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </div>
 </section>
 <section id="pico-balloon-payload" class="level2">
@@ -210,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/wsprnet-kf8eez.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="https://WSPRnet.org map page showing successful contact."><img src="./_sources/u4b/wsprnet-kf8eez.png" class="img-fluid figure-img" alt="https://WSPRnet.org map page showing successful contact."></a></p>
+<p><a href="./_sources/u4b/wsprnet-kf8eez.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="https://WSPRnet.org map page showing successful contact."><img src="./_sources/u4b/wsprnet-kf8eez.png" class="img-fluid figure-img" alt="https://WSPRnet.org map page showing successful contact."></a></p>
 <figcaption><a href="wsprnet.org">https://WSPRnet.org</a> map page showing successful contact.</figcaption>
 </figure>
 </div>
@@ -218,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/u4b_001_test_with_pi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."><img src="./_sources/u4b/u4b_001_test_with_pi.jpg" class="img-fluid figure-img" alt="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."></a></p>
+<p><a href="./_sources/u4b/u4b_001_test_with_pi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."><img src="./_sources/u4b/u4b_001_test_with_pi.jpg" class="img-fluid figure-img" alt="Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things."></a></p>
 <figcaption>Set up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.</figcaption>
 </figure>
 </div>
@@ -231,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I’m developing a new payload based on <a href="https://qrp-labs.com">QRP labs</a> <a href="https://qrp-labs.com/u4b">u4b</a> balloon tracker. So far I’ve tested mine with a GPS dipole antenna.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
+<p><a href="./_sources/u4b/u4b_gps_antenna.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="u4b with GPS antenna"><img src="./_sources/u4b/u4b_gps_antenna.jpg" class="img-fluid figure-img" alt="u4b with GPS antenna"></a></p>
 <figcaption>u4b with GPS antenna</figcaption>
 </figure>
 </div>
@@ -247,13 +345,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="left quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
+<p><a href="./_sources/eclipse/eclipse_balloon_payload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Test payload (Eclipse Chipse for scale)"><img src="./_sources/eclipse/eclipse_balloon_payload.jpg" class="img-fluid figure-img" width="200" alt="Test payload (Eclipse Chipse for scale)"></a></p>
 <figcaption>Test payload (Eclipse Chipse for scale)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
+<p><a href="./_sources/eclipse/eclipse_payload_photo.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Flight payload"><img src="./_sources/eclipse/eclipse_payload_photo.jpg" class="img-fluid figure-img" width="200" alt="Flight payload"></a></p>
 <figcaption>Flight payload</figcaption>
 </figure>
 </div>
@@ -261,7 +359,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="center quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
+<p><a href="./_sources/eclipse/balloon_launch_eclipse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Launch"><img src="./_sources/eclipse/balloon_launch_eclipse.jpg" class="img-fluid figure-img" width="200" alt="Launch"></a></p>
 <figcaption>Launch</figcaption>
 </figure>
 </div>
@@ -269,7 +367,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="right quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
+<p><a href="./_sources/eclipse/balloon_payload_recovery.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Recovery"><img src="./_sources/eclipse/balloon_payload_recovery.jpg" class="img-fluid figure-img" width="200" alt="Recovery"></a></p>
 <figcaption>Recovery</figcaption>
 </figure>
 </div>
@@ -302,6 +400,7 @@ ul.task-list li input[type="checkbox"] {
 <li>https://qrp-labs.com/lightaprsw2.html</li>
 <li>https://qrp-labs.com/u4b</li>
 </ul>
+
 
 
 </section>
