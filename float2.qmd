@@ -10,7 +10,7 @@ julia:
 ```{julia}
 #| label: juila-config
 include("/opt/project/_sources/filling/PicoBalloons.jl")
-using Plots
+using Plots; gr()
 using Revise
 using DynamicQuantities
 using .PicoBalloons
@@ -27,6 +27,7 @@ gas = "helium 97%"
 
 ```
 
+## comparison of payload weight and altitude
 
 ```{julia}
 #| label: create-balloon-systems
@@ -41,6 +42,7 @@ bss2 = BalloonSystem(balloon_2, payload_weights, free_lift, gas)
 
 ```{julia}
 #| label: fig-balloon-altitudes
+#| fig-cap: Balloon system altitude for different payload weights.
 
 plot(
     ustrip(u"g",payload_weights),
@@ -48,11 +50,61 @@ plot(
     title="Altitude vs. payload weight",
     xlabel="Payload mass [grams]",
     ylabel="Float altitude [kft]",
+    label="One Balloon",
+    grid=true,
 )
 plot!(ustrip(u"g",payload_weights),
     ustrip(us"ft",bss2.float_altitude)/1000.,
-    title="Altitude vs. payload weight",
-    xlabel="Payload mass [grams]",
-    ylabel="Float altitude [kft]",
+    label="Two Balloons",  
 )
 ```
+
+## comparison of free lift
+
+
+```{julia}
+free_lifts = collect(0.0:0.1:10.0)u"g"
+bss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)
+bss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)
+```
+
+```{julia}
+#| label: fig-balloon-altitudes-free-lift
+#| fig-cap: Balloon system altitude for different payload weights.
+
+plot(
+    ustrip(u"g",free_lifts),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    title="Altitude vs. free lift",
+    xlabel="Free lift [grams]",
+    ylabel="Float altitude [kft]",
+    label="One Balloon",
+    grid=true,
+)
+plot!(ustrip(u"g",free_lifts),
+    ustrip(us"ft",bss2.float_altitude)/1000.,
+    label="Two Balloons",  
+)
+```
+
+```{julia}
+#| label: fig-balloon-altitudes-neck-lift
+#| fig-cap: Balloon system altitude for different payload weights.
+
+plot(
+    ustrip(u"g",bss1.neck_lift),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    title="Altitude vs. neck lift",
+    xlabel="Neck lift [grams]",
+    ylabel="Float altitude [kft]",
+    label="One Balloon",
+    grid=true,
+)
+plot!(ustrip(u"g",bss2.neck_lift),
+    ustrip(us"ft",bss2.float_altitude)/1000.,
+    label="Two Balloons",  
+)
+```
+
+
+
