@@ -1,0 +1,10 @@
+## Payload weight 
+
+- USB connector removed from U4B.
+
+
+- With antenna winders: 31.7 gram.
+- Antenna winder 1: 7.6 gram
+- Antenna winder 2: 7.4 gram
+- Total antenna winder: 15 gram
+- Payload weight: 16.7 gram
