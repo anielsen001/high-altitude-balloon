@@ -1,0 +1,10 @@
+---
+title: Second Launch Prep s'more-002
+date: last-modified
+engine: julia
+julia:
+  exeflags:
+    - "--project=/opt/project"
+---
+
+{{< include /_sources/launches/smore-002/smore-002.qmd >}}
