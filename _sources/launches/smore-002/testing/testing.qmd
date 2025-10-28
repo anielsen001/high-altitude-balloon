@@ -2,6 +2,8 @@
 
 Set up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise. 
 
+![](/_sources/launches/smore-002/testing/payload_hanging_test.jpg)
+
 ### wspr.rocks spots
 
 Downloaded spot from https://wspr.rocks in both json and tsv format for comparison. 
