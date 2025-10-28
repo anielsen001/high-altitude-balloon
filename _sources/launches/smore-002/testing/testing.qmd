@@ -36,3 +36,13 @@ Solar panel ends in shadow early due to trees.
 Let up over night to allow to start again with sunrise.
 
 ## 2025-10-17
+
+Came back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight. 
+
+## 2025-10-20
+
+Additonal testing. Working in sun. 
+
+## 2025-10-23
+
+Broke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.
