@@ -1,0 +1,10 @@
+## I2C operation
+
+Default address is 0b0100000 = 32 decimal = x20 hex
+
+Address 7-bit
+PIN SA1 sets the 2nd least significant bit i.e. 0b0100010
+PIN SA0 sets the lest signficiant bit i.e       0b0100001
+The can be set in combination as well i.e.      0b0100011
+
+for the U4B these addresses are
