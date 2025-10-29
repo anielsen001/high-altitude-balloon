@@ -2,6 +2,8 @@
 
 Set up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise. 
 
+![](/_sources/launches/smore-002/testing/payload_hanging_test.jpg)
+
 ### wspr.rocks spots
 
 Downloaded spot from https://wspr.rocks in both json and tsv format for comparison. 
@@ -36,3 +38,13 @@ Solar panel ends in shadow early due to trees.
 Let up over night to allow to start again with sunrise.
 
 ## 2025-10-17
+
+Came back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight. 
+
+## 2025-10-20
+
+Additonal testing. Working in sun. 
+
+## 2025-10-23
+
+Broke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.
