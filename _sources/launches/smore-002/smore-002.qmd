@@ -83,4 +83,8 @@ plot!(ustrip(u"g",bss2.neck_lift),
 )
 ```
 
+Generally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out. 
+
+For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
+
 {{< include /_sources/launches/smore-002/testing/testing.qmd >}}
