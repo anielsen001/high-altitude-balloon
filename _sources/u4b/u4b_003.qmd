@@ -15,7 +15,7 @@ qrp-labs S/N: 21894
 
 - Callsign: KF8EEZ
 - Band: 20m
-- Channel: 062
+- Channel: 109
 - Autostart: TRACKER2
 
 ## Programs
