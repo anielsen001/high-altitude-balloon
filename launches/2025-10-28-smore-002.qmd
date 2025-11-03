@@ -2,6 +2,7 @@
 title: Second Launch Prep s'more-002
 date: last-modified
 engine: julia
+toc: true
 julia:
   exeflags:
     - "--project=/opt/project"

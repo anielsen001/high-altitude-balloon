@@ -7,7 +7,6 @@
 - Total antenna winder: 15 gram
 - Payload weight: 16.7 gram
 
-
 ## Filling Calculations
 
 ```{julia}
@@ -88,3 +87,7 @@ Generally, more free lift means that there is extra gas and the balloon will sta
 For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
 
 {{< include /_sources/launches/smore-002/testing/testing.qmd >}}
+
+## U4B and programming information
+
+{{< include /_sources/u4b/u4b_003.qmd >}}
