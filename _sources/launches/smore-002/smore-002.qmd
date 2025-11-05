@@ -86,6 +86,21 @@ Generally, more free lift means that there is extra gas and the balloon will sta
 
 For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
 
+## Attempted Launch 2025-10-04
+
+Attempted a launch but failed for two primary reasons:
+
+- payload failed to power up and transmit at launch site
+- one balloon lost about 75% of it's gas can could not provide lift
+
+Subsequent testing of the payload shows that it's working fine, and transmitting OK. Currently hung up on test system in yard. See [WSPRtv](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-03&sun_el=25)
+
+The weather high clouds and the attempted launch was early. I suspect that the solar intensity was too low to power the transmitter.
+
+
+
+## Testing
+
 {{< include /_sources/launches/smore-002/testing/testing.qmd >}}
 
 ## U4B and programming information
