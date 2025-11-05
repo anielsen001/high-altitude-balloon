@@ -11,7 +11,7 @@ julia:
 #| label: juila-config
 include("/opt/project/_sources/filling/PicoBalloons.jl")
 using Plots; gr()
-using Revise
+#using Revise
 using DynamicQuantities
 using .PicoBalloons
 ```
