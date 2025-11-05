@@ -8,4 +8,6 @@ julia:
     - "--project=/opt/project"
 ---
 
+![Attempt1: Bad balloons, geese and clouds](/_sources/launches/smore-002/attempt1/attempt1_balloon_geese.jpg)
+
 {{< include /_sources/launches/smore-002/smore-002.qmd >}}
