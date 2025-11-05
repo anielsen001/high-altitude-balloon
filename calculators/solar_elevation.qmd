@@ -1,5 +1,9 @@
-```{python}
+---
+title: Compute solar elevation angles
+---
 
+```{python}
+#| label: python-imports
 from astropy.coordinates import EarthLocation, get_sun, AltAz
 from astropy.time import Time
 from astropy import units as u
@@ -8,13 +12,23 @@ from matplotlib import pylab as plt
 import matplotlib.dates as mdates
 
 import numpy as np
+```
 
+Select the location and time. 
+
+```{python}
+#| label: location-and-time
 #llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville
+location_name = "Dayton, OH"
 llh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton
 pos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])
-
-utcoffset = -5 * u.hour # EST 
+utcoffset = -5 * u.hour # EST
 local_midnight = Time("2025-11-04 00:00:00") - utcoffset
+
+```
+
+```{python}
+#| label: fig-solar-elevation
 delta_midnight = np.linspace(0, 24, 1000) * u.hour
 times = local_midnight + delta_midnight
 frame = AltAz(obstime=times, location=pos)
@@ -34,7 +48,7 @@ with quantity_support():
     #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))
     locator = mdates.AutoDateLocator(maxticks=20)
 
-    ax.plot(delta_midnight, sunaltazs.alt,'r',label="today")
+    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')
     ax.xaxis.set_major_locator(locator)
     ax.grid()
 
@@ -45,6 +59,14 @@ with quantity_support():
         ax.plot(delta_midnight,saz.alt,'b',label=sn)
 
     ax.legend()
+    ax.set_title(f'Solar elevation angle, {location_name}')
+
+    ylim = np.array(ax.get_ylim())
+    ylim[0] = 0.0
+    ax.set_ylim(ylim)
+
+    ax.set_xlabel('Hours after midnight (local)')
+    ax.set_ylabel('Solar elevation [deg]')
     
 
 ```
