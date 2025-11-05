@@ -2,7 +2,7 @@ project:
   title: "Balloon magnetometry"
   type: website
   pre-render: make
-  output-dir: output
+  output-dir: _site
 
 execute:
   freeze: true
@@ -30,8 +30,14 @@ website:
     contents:
       - text: Home
         href: index.qmd
-      - text: "Horizon calculator"
-        href: horizon.qmd
+      - section: "Calculators"
+        contents:
+        - text: "Horizon calculator"
+          href: calculators/horizon.qmd
+        - text: "Solar elevation"
+          href: calculators/solar_elevation.qm
+        - text: "Float parameters"
+          href: calculators/float2.qmd
       - text: "Launches"
         contents: launches/*.qmd
       - text: "WSPR Tracking"
