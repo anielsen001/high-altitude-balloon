@@ -3,7 +3,6 @@
 
 /.quarto/
 /output/
-/_freeze/
 /_site/
 
 # julia related
