@@ -4,6 +4,7 @@ title: Compute solar elevation angles
 
 This is an example computation of the elevation angle over a specific day. The plot produced also shows the elevation angle at the solstices and the equinoxes for comparison.
 
+
 ```{python}
 #| label: python-imports
 from astropy.coordinates import EarthLocation, get_sun, AltAz
