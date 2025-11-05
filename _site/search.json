@@ -90,7 +90,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch Prep s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 4, 2025\n\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch Prep s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 5, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
@@ -134,7 +134,7 @@
     "href": "launches/2025-10-28-smore-002.html",
     "title": "Second Launch Prep s’more-002",
     "section": "",
-    "text": "USB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1: 7.6 gram\nAntenna winder 2: 7.4 gram\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
+    "text": "Attempt1: Bad balloons, geese and clouds",
     "crumbs": [
       "Home page",
       "Launches",
@@ -145,8 +145,8 @@
     "objectID": "launches/2025-10-28-smore-002.html#payload-weight",
     "href": "launches/2025-10-28-smore-002.html#payload-weight",
     "title": "Second Launch Prep s’more-002",
-    "section": "",
-    "text": "USB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1: 7.6 gram\nAntenna winder 2: 7.4 gram\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
+    "section": "Payload weight",
+    "text": "Payload weight\n\nUSB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1: 7.6 gram\nAntenna winder 2: 7.4 gram\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
     "crumbs": [
       "Home page",
       "Launches",
@@ -432,6 +432,30 @@
       "Home page",
       "Calculators",
       "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "launches/2025-10-28-smore-002.html#attempts",
+    "href": "launches/2025-10-28-smore-002.html#attempts",
+    "title": "Second Launch Prep s’more-002",
+    "section": "Attempts",
+    "text": "Attempts\n{{}}",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch Prep s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/2025-10-28-smore-002.html#testing",
+    "href": "launches/2025-10-28-smore-002.html#testing",
+    "title": "Second Launch Prep s’more-002",
+    "section": "Testing",
+    "text": "Testing",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch Prep s'more-002"
     ]
   }
 ]
