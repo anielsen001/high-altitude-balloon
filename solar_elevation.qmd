@@ -1,0 +1,50 @@
+```{python}
+
+from astropy.coordinates import EarthLocation, get_sun, AltAz
+from astropy.time import Time
+from astropy import units as u
+from astropy.visualization import quantity_support, time_support
+from matplotlib import pylab as plt
+import matplotlib.dates as mdates
+
+import numpy as np
+
+#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville
+llh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton
+pos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])
+
+utcoffset = -5 * u.hour # EST 
+local_midnight = Time("2025-11-04 00:00:00") - utcoffset
+delta_midnight = np.linspace(0, 24, 1000) * u.hour
+times = local_midnight + delta_midnight
+frame = AltAz(obstime=times, location=pos)
+sunaltazs = get_sun(times).transform_to(frame)
+alts = sunaltazs.alt
+
+spring_equinox = Time("2025-03-21 00:00:00") - utcoffset
+summer_solstice = Time("2025-06-21 00:00:00") - utcoffset
+fall_equinox = Time("2025-09-21 00:00:00") - utcoffset
+winter_solstice = Time("2025-12-21 00:00:00") - utcoffset
+
+specdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]
+specnames = ["spring equinox","summer solstice","fall equinox","winter solstice"]
+
+with quantity_support():
+    fig, ax = plt.subplots()
+    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))
+    locator = mdates.AutoDateLocator(maxticks=20)
+
+    ax.plot(delta_midnight, sunaltazs.alt,'r',label="today")
+    ax.xaxis.set_major_locator(locator)
+    ax.grid()
+
+    for sd,sn in zip(specdates,specnames):
+        times = sd + delta_midnight
+        frame = AltAz(obstime=times, location=pos)
+        saz = get_sun(times).transform_to(frame)
+        ax.plot(delta_midnight,saz.alt,'b',label=sn)
+
+    ax.legend()
+    
+
+```
