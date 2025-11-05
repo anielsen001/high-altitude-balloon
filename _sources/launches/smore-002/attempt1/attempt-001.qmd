@@ -1,0 +1,24 @@
+
+### Attempted Launch 2025-10-04 {#sec-attempt1}
+
+![Scene of launch field looking south](/_sources/launches/smore-002/attempt1/field_scene_with_geese.jpg)
+
+![Payload waiting for launch](/_sources/launches/smore-002/attempt1/payload_waiting_to_launch.jpg)
+
+Attempted a launch but failed for two primary reasons:
+
+- payload failed to power up and transmit at launch site
+- one balloon lost about 75% of it's gas can could not provide lift
+
+Subsequent testing of the payload shows that it's working fine, and transmitting OK. Currently hung up on test system in yard. See [WSPRtv](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-03&sun_el=25)
+
+The weather high clouds and the attempted launch was early. I suspect that the solar intensity was too low to power the transmitter.
+
+Also learned of a new risk: Canadian geese on the field.
+
+Remember to pack: 
+
+- yellow measuring tape to mark out antenna location (good visual indicator)
+- battery to power payload if sun is not strong enough
+- volt meter to test solar panel and payload voltages
+- SDR and HF antenna to listen for transmission
