@@ -1,0 +1,35 @@
+## Launch 2025-11-06
+
+Tracking link: https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25
+
+### Field before launch
+
+Clear, no wind, but geese. The geese were not a problem and just got out of the way.
+
+![Field as seen when we arrived, lots of Canadian geese](/_sources/launches/smore-002/launch/field_before_launch.jpg)
+
+### Payload setup 
+
+![Launch set up without balloon](/_sources/launches/smore-002/launch/launch_setup_no_balloons.jpg)
+
+![Balloons set up with payload](/_sources/launches/smore-002/launch/baloons_set_out.jpg)
+
+### Measuring solar panel voltage
+
+![](/_sources/launches/smore-002/launch/payload_solar_voltage_monitor.jpg)
+
+### Ground WSPR monitor
+
+I'm using a LimeSDR and homebrew mag antenna to monitor for transmissions at the launch site.
+
+![Mag antenna setup](/_sources/launches/smore-002/launch/mag_antenna_setup.jpg)
+
+![Laptop SDR detect](/_sources/launches/smore-002/launch/laptop_sdr_detect.jpg)
+
+### Payload at launch
+
+![Payload held just before release](/_sources/launches/smore-002/launch/payload_at_launch.jpg)
+
+### Launch
+
+![Balloon aloft](/_sources/launches/smore-002/launch/launch1.jpg)
