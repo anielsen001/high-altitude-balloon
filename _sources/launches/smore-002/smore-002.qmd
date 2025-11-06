@@ -86,9 +86,11 @@ Generally, more free lift means that there is extra gas and the balloon will sta
 
 For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
 
+{{< include /_sources/launches/smore-002/launch/launch.qmd >}}
+
 ## Attempts
 
-{{<include /_sources/launches/smore-002/attempt1/attempt-001.qmd >}}
+{{< include /_sources/launches/smore-002/attempt1/attempt-001.qmd >}}
 
 
 ## Testing

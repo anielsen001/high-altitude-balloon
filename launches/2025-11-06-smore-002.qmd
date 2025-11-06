@@ -1,6 +1,6 @@
 ---
-title: Second Launch Prep s'more-002
-date: last-modified
+title: Second Launch s'more-002
+date: 2025-11-06
 engine: julia
 toc: true
 julia:
