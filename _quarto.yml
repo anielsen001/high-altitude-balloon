@@ -38,8 +38,8 @@ website:
           href: calculators/solar_elevation.qmd
         - text: "Float parameters"
           href: calculators/float2.qmd
-      - text: "Launches"
-        contents: launches/*.qmd
+      - section: "Launches"
+        contents: launches
       - text: "WSPR Tracking"
         href: wspr/tracking.qmd
   
