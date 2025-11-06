@@ -4,7 +4,12 @@
     "href": "calculators/solar_elevation.html",
     "title": "Compute solar elevation angles",
     "section": "",
-    "text": "from astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\n\nimport numpy as np\n\nSelect the location and time.\n\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\nFigure 1"
+    "text": "from astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\n\nimport numpy as np\n\nSelect the location and time.\n\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\nFigure 1",
+    "crumbs": [
+      "Home page",
+      "Calculators",
+      "Solar elevation"
+    ]
   },
   {
     "objectID": "calculators/float2.html",
@@ -43,90 +48,79 @@
     ]
   },
   {
-    "objectID": "solar_elevation.html",
-    "href": "solar_elevation.html",
-    "title": "Compute solar elevation angles",
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "picoballoon build references",
     "section": "",
-    "text": "from astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\n\nimport numpy as np\n\nSelect the location and time.\n\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\nFigure 1"
+    "text": "https://sites.google.com/view/picoballoonsbyk9yo/home\nhttps://qrp-labs.com/images/u4b/U4B_construction_notes.pdf\n\nlocal copy\n\nhttps://nibbb.org/technical-info/\nhttps://sites.google.com/site/ki4mcw/Home/pico-balloonery\nhttps://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf"
   },
   {
-    "objectID": "tracking.html",
-    "href": "tracking.html",
-    "title": "picoballoon tracking",
+    "objectID": "wspr/tracking.html",
+    "href": "wspr/tracking.html",
+    "title": "WSPR Tracking resources",
     "section": "",
-    "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001\n\nWSPR Telemetry Viewer"
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
   },
   {
-    "objectID": "tracking.html#references",
-    "href": "tracking.html#references",
-    "title": "picoballoon tracking",
-    "section": "References",
-    "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Balloon magnetometry",
+    "objectID": "wspr/tracking.html#balloon-specific",
+    "href": "wspr/tracking.html#balloon-specific",
+    "title": "WSPR Tracking resources",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 4, but we lost contact with the payload telemetry.",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
     "crumbs": [
       "Home page",
-      "Home"
+      "WSPR Tracking"
     ]
   },
   {
-    "objectID": "index.html#balloon-in-progress-2025-10-22",
-    "href": "index.html#balloon-in-progress-2025-10-22",
-    "title": "Balloon magnetometry",
-    "section": "Balloon in progress 2025-10-22",
-    "text": "Balloon in progress 2025-10-22\nWorking on new.",
+    "objectID": "wspr/tracking.html#wspr-general",
+    "href": "wspr/tracking.html#wspr-general",
+    "title": "WSPR Tracking resources",
+    "section": "WSPR General",
+    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
     "crumbs": [
       "Home page",
-      "Home"
+      "WSPR Tracking"
     ]
   },
   {
-    "objectID": "index.html#launches",
-    "href": "index.html#launches",
-    "title": "Balloon magnetometry",
-    "section": "Launches",
-    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch Prep s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 5, 2025\n\n\n\n\n\n\nNo matching items",
+    "objectID": "launches/2025-08-09-smore-001.html",
+    "href": "launches/2025-08-09-smore-001.html",
+    "title": "First Launch s’more-001",
+    "section": "",
+    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
     "crumbs": [
       "Home page",
-      "Home"
+      "Launches",
+      "First Launch s'more-001"
     ]
   },
   {
-    "objectID": "index.html#pico-balloon-payload",
-    "href": "index.html#pico-balloon-payload",
-    "title": "Balloon magnetometry",
-    "section": "Pico-balloon payload",
-    "text": "Pico-balloon payload\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "objectID": "launches/2025-08-09-smore-001.html#launch",
+    "href": "launches/2025-08-09-smore-001.html#launch",
+    "title": "First Launch s’more-001",
+    "section": "",
+    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
     "crumbs": [
       "Home page",
-      "Home"
+      "Launches",
+      "First Launch s'more-001"
     ]
   },
   {
-    "objectID": "index.html#sec-eclipse-launch",
-    "href": "index.html#sec-eclipse-launch",
-    "title": "Balloon magnetometry",
-    "section": "Eclipse launch",
-    "text": "Eclipse launch\n\n\n\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "objectID": "launches/2025-08-09-smore-001.html#bom",
+    "href": "launches/2025-08-09-smore-001.html#bom",
+    "title": "First Launch s’more-001",
+    "section": "BOM",
+    "text": "BOM\n\nKyocera AVX SCCR20E335SRB Supercapacitors\n\nThese are 3 volts, so two in series\n\nPowerfilm solar panel\n\nMPT4.8-150\n\nVoltage regulator\nQRP-labs u4b\n\nu4b-002",
     "crumbs": [
       "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#balloon-payload",
-    "href": "index.html#balloon-payload",
-    "title": "Balloon magnetometry",
-    "section": "Balloon payload",
-    "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
-    "crumbs": [
-      "Home page",
-      "Home"
+      "Launches",
+      "First Launch s'more-001"
     ]
   },
   {
@@ -159,6 +153,30 @@
     "title": "Second Launch Prep s’more-002",
     "section": "Filling Calculations",
     "text": "Filling Calculations\n\nDefine basic balloon parameters\n\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\nLook at options as a function of free lift\n\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch Prep s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/2025-10-28-smore-002.html#attempts",
+    "href": "launches/2025-10-28-smore-002.html#attempts",
+    "title": "Second Launch Prep s’more-002",
+    "section": "Attempts",
+    "text": "Attempts\n{{}}",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch Prep s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/2025-10-28-smore-002.html#testing",
+    "href": "launches/2025-10-28-smore-002.html#testing",
+    "title": "Second Launch Prep s’more-002",
+    "section": "Testing",
+    "text": "Testing",
     "crumbs": [
       "Home page",
       "Launches",
@@ -274,80 +292,84 @@
     ]
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html",
-    "href": "launches/2025-08-09-smore-001.html",
-    "title": "First Launch s’more-001",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Balloon magnetometry",
     "section": "",
-    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 4, but we lost contact with the payload telemetry.",
     "crumbs": [
       "Home page",
-      "Launches",
-      "First Launch s'more-001"
+      "Home"
     ]
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html#launch",
-    "href": "launches/2025-08-09-smore-001.html#launch",
-    "title": "First Launch s’more-001",
+    "objectID": "index.html#balloon-in-progress-2025-10-22",
+    "href": "index.html#balloon-in-progress-2025-10-22",
+    "title": "Balloon magnetometry",
+    "section": "Balloon in progress 2025-10-22",
+    "text": "Balloon in progress 2025-10-22\nWorking on new.",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#launches",
+    "href": "index.html#launches",
+    "title": "Balloon magnetometry",
+    "section": "Launches",
+    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch Prep s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 5, 2025\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#pico-balloon-payload",
+    "href": "index.html#pico-balloon-payload",
+    "title": "Balloon magnetometry",
+    "section": "Pico-balloon payload",
+    "text": "Pico-balloon payload\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-eclipse-launch",
+    "href": "index.html#sec-eclipse-launch",
+    "title": "Balloon magnetometry",
+    "section": "Eclipse launch",
+    "text": "Eclipse launch\n\n\n\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#balloon-payload",
+    "href": "index.html#balloon-payload",
+    "title": "Balloon magnetometry",
+    "section": "Balloon payload",
+    "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "tracking.html",
+    "href": "tracking.html",
+    "title": "picoballoon tracking",
     "section": "",
-    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "First Launch s'more-001"
-    ]
+    "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001\n\nWSPR Telemetry Viewer"
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html#bom",
-    "href": "launches/2025-08-09-smore-001.html#bom",
-    "title": "First Launch s’more-001",
-    "section": "BOM",
-    "text": "BOM\n\nKyocera AVX SCCR20E335SRB Supercapacitors\n\nThese are 3 volts, so two in series\n\nPowerfilm solar panel\n\nMPT4.8-150\n\nVoltage regulator\nQRP-labs u4b\n\nu4b-002",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "First Launch s'more-001"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html",
-    "href": "wspr/tracking.html",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#balloon-specific",
-    "href": "wspr/tracking.html#balloon-specific",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#wspr-general",
-    "href": "wspr/tracking.html#wspr-general",
-    "title": "WSPR Tracking resources",
-    "section": "WSPR General",
-    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "picoballoon build references",
-    "section": "",
-    "text": "https://sites.google.com/view/picoballoonsbyk9yo/home\nhttps://qrp-labs.com/images/u4b/U4B_construction_notes.pdf\n\nlocal copy\n\nhttps://nibbb.org/technical-info/\nhttps://sites.google.com/site/ki4mcw/Home/pico-balloonery\nhttps://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf"
+    "objectID": "tracking.html#references",
+    "href": "tracking.html#references",
+    "title": "picoballoon tracking",
+    "section": "References",
+    "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
   },
   {
     "objectID": "calculators/float.html",
@@ -432,30 +454,6 @@
       "Home page",
       "Calculators",
       "Horizon calculator"
-    ]
-  },
-  {
-    "objectID": "launches/2025-10-28-smore-002.html#attempts",
-    "href": "launches/2025-10-28-smore-002.html#attempts",
-    "title": "Second Launch Prep s’more-002",
-    "section": "Attempts",
-    "text": "Attempts\n{{}}",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "Second Launch Prep s'more-002"
-    ]
-  },
-  {
-    "objectID": "launches/2025-10-28-smore-002.html#testing",
-    "href": "launches/2025-10-28-smore-002.html#testing",
-    "title": "Second Launch Prep s’more-002",
-    "section": "Testing",
-    "text": "Testing",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "Second Launch Prep s'more-002"
     ]
   }
 ]
