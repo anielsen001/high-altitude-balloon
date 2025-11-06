@@ -35,7 +35,7 @@ website:
         - text: "Horizon calculator"
           href: calculators/horizon.qmd
         - text: "Solar elevation"
-          href: calculators/solar_elevation.qm
+          href: calculators/solar_elevation.qmd
         - text: "Float parameters"
           href: calculators/float2.qmd
       - text: "Launches"

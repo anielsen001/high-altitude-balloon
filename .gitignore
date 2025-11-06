@@ -19,3 +19,4 @@
 *.log
 *.pdf
 *.synctex.gz
+**/*.quarto_ipynb
