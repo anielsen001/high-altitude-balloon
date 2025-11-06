@@ -96,6 +96,7 @@
     "crumbs": [
       "Home page",
       "Launches",
+      "Launches",
       "First Launch s'more-001"
     ]
   },
@@ -107,6 +108,7 @@
     "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
     "crumbs": [
       "Home page",
+      "Launches",
       "Launches",
       "First Launch s'more-001"
     ]
@@ -120,175 +122,214 @@
     "crumbs": [
       "Home page",
       "Launches",
+      "Launches",
       "First Launch s'more-001"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html",
-    "href": "launches/2025-10-28-smore-002.html",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html",
+    "href": "launches/2025-11-06-smore-002.html",
+    "title": "Second Launch s’more-002",
     "section": "",
     "text": "Attempt1: Bad balloons, geese and clouds",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#payload-weight",
-    "href": "launches/2025-10-28-smore-002.html#payload-weight",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#payload-weight",
+    "href": "launches/2025-11-06-smore-002.html#payload-weight",
+    "title": "Second Launch s’more-002",
     "section": "Payload weight",
     "text": "Payload weight\n\nUSB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1: 7.6 gram\nAntenna winder 2: 7.4 gram\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#filling-calculations",
-    "href": "launches/2025-10-28-smore-002.html#filling-calculations",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#filling-calculations",
+    "href": "launches/2025-11-06-smore-002.html#filling-calculations",
+    "title": "Second Launch s’more-002",
     "section": "Filling Calculations",
     "text": "Filling Calculations\n\nDefine basic balloon parameters\n\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\nLook at options as a function of free lift\n\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#attempts",
-    "href": "launches/2025-10-28-smore-002.html#attempts",
-    "title": "Second Launch Prep s’more-002",
-    "section": "Attempts",
-    "text": "Attempts\n{{}}",
+    "objectID": "launches/2025-11-06-smore-002.html#launch-2025-11-06",
+    "href": "launches/2025-11-06-smore-002.html#launch-2025-11-06",
+    "title": "Second Launch s’more-002",
+    "section": "Launch 2025-11-06",
+    "text": "Launch 2025-11-06\nTracking link: https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25\n\nField before launch\nClear, no wind, but geese. The geese were not a problem and just got out of the way.\n\n\n\nField as seen when we arrived, lots of Canadian geese\n\n\n\n\nPayload setup\n\n\n\nLaunch set up without balloon\n\n\n\n\n\nBalloons set up with payload\n\n\n\n\nMeasuring solar panel voltage\n\n\n\nGround WSPR monitor\nI’m using a LimeSDR and homebrew mag antenna to monitor for transmissions at the launch site.\n\n\n\nMag antenna setup\n\n\n\n\n\nLaptop SDR detect\n\n\n\n\nPayload at launch\n\n\n\nPayload held just before release\n\n\n\n\nLaunch\n\n\n\nBalloon aloft",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#testing",
-    "href": "launches/2025-10-28-smore-002.html#testing",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#attempts",
+    "href": "launches/2025-11-06-smore-002.html#attempts",
+    "title": "Second Launch s’more-002",
+    "section": "Attempts",
+    "text": "Attempts\n\nAttempted Launch 2025-10-04\n\n\n\nScene of launch field looking south\n\n\n\n\n\nPayload waiting for launch\n\n\nAttempted a launch but failed for two primary reasons:\n\npayload failed to power up and transmit at launch site\none balloon lost about 75% of it’s gas can could not provide lift\n\nSubsequent testing of the payload shows that it’s working fine, and transmitting OK. Currently hung up on test system in yard. See WSPRtv\nThe weather high clouds and the attempted launch was early. I suspect that the solar intensity was too low to power the transmitter.\nAlso learned of a new risk: Canadian geese on the field.\nRemember to pack:\n\nyellow measuring tape to mark out antenna location (good visual indicator)\nbattery to power payload if sun is not strong enough\nvolt meter to test solar panel and payload voltages\nSDR and HF antenna to listen for transmission",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Launches",
+      "Second Launch s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002.html#testing",
+    "href": "launches/2025-11-06-smore-002.html#testing",
+    "title": "Second Launch s’more-002",
     "section": "Testing",
     "text": "Testing",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#section",
-    "href": "launches/2025-10-28-smore-002.html#section",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#section",
+    "href": "launches/2025-11-06-smore-002.html#section",
+    "title": "Second Launch s’more-002",
     "section": "2025-10-16",
     "text": "2025-10-16\nSet up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise.\n\n\nwspr.rocks spots\nDownloaded spot from https://wspr.rocks in both json and tsv format for comparison.\nThese are the spots from one day of testing 2025-10-16 local time 2025-10-16-wpsr-rocks-spots.json 2025-10-16-wpsr-rocks-spots.tsv\n\n\nlu7aa spots\nhttps://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs\ncsv file created by copy/paste from website\n2025-10-16-lu7aa-spots.csv\nthis shows decoded telemetry also https://lu7aa.org/wsprx.asp?banda=20m&other=kf8eez&balloonid=05&timeslot=8&repito=on&qrpid=109&SSID=11&launch=20251016010101&tracker=qrplabs\n\n\nwsprtv.com\nshows charts https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-09-17\ndownloaded csv to KF8EEZ_109_20250917-20251017.cs\n\n\npower down\nSolar panel ends in shadow early due to trees.\nLet up over night to allow to start again with sunrise.",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#section-1",
-    "href": "launches/2025-10-28-smore-002.html#section-1",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#section-1",
+    "href": "launches/2025-11-06-smore-002.html#section-1",
+    "title": "Second Launch s’more-002",
     "section": "2025-10-17",
     "text": "2025-10-17\nCame back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight.",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#section-2",
-    "href": "launches/2025-10-28-smore-002.html#section-2",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#section-2",
+    "href": "launches/2025-11-06-smore-002.html#section-2",
+    "title": "Second Launch s’more-002",
     "section": "2025-10-20",
     "text": "2025-10-20\nAdditonal testing. Working in sun.",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#section-3",
-    "href": "launches/2025-10-28-smore-002.html#section-3",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#section-3",
+    "href": "launches/2025-11-06-smore-002.html#section-3",
+    "title": "Second Launch s’more-002",
     "section": "2025-10-23",
     "text": "2025-10-23\nBroke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#u4b-and-programming-information",
-    "href": "launches/2025-10-28-smore-002.html#u4b-and-programming-information",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#u4b-and-programming-information",
+    "href": "launches/2025-11-06-smore-002.html#u4b-and-programming-information",
+    "title": "Second Launch s’more-002",
     "section": "U4B and programming information",
     "text": "U4B and programming information\nqrp-labs S/N: 21894",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#hardware",
-    "href": "launches/2025-10-28-smore-002.html#hardware",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#hardware",
+    "href": "launches/2025-11-06-smore-002.html#hardware",
+    "title": "Second Launch s’more-002",
     "section": "Hardware",
     "text": "Hardware\nPart | no | weight |\nPowerfilm MPT48-150 | 1 | 3.8 |\nsupercap AVX_SCC_3_0V-2952762 | 2 | 2.4 |\nvolt regulator L7805CV | 1 | 1.7 |\nu4b | 1 | 5.4 |\nupper HF antenna + rigging | 1 | 4.1 |\nlower HF antenna | 1 | 0.9 |\nTOTAL | | 18.2 |",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#configuration",
-    "href": "launches/2025-10-28-smore-002.html#configuration",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#configuration",
+    "href": "launches/2025-11-06-smore-002.html#configuration",
+    "title": "Second Launch s’more-002",
     "section": "Configuration",
     "text": "Configuration\n\nCallsign: KF8EEZ\nBand: 20m\nChannel: 109\nAutostart: TRACKER2",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#programs",
-    "href": "launches/2025-10-28-smore-002.html#programs",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#programs",
+    "href": "launches/2025-11-06-smore-002.html#programs",
+    "title": "Second Launch s’more-002",
     "section": "Programs",
     "text": "Programs\n\nTracker 2\nThis is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn’t need GPS or ability to transmit.\nPRINT \"START TRACKER2\"\nRUN \"INIT\"\nRUN \"SHOW\"\nPRINT \"INITIAL GPS\"\nRUN \"MYGPS\"\n10 PRINT \"LOOP AT #VC\"\nRUN \"SHOW\"\nRUN \"MYTELE\"\nLET C = C + 1\nIF C &gt; N\n    LET HP = 1\nENDIF\nRUN \"MYGPS\"\nGOTO 10\n\n\nInit\n\nC is the count of transmissions since wake up\nN is the number of transmissions before switching to high-power (0-based)\nT is a flag for test mode\n\nT=1 - test mode\nT=0 - live mode\n\n\nPRINT \"INIT START\"\nLET CH = 109\nLET HP = 0\nLET C = 0\nLET N = 2\nLET T = 0\nPRINT \"HOST USB:    #US\"\nPRINT \"HIGH POWER:  #HP\"\nPRINT \"FREQUENCY:   #FQ\"\nPRINT \"CHANNEL:     #CH\"\nPRINT \"CALLSIGN:    #CS\"\nPRINT \"TEMPERATURE: #TK\"\nIF T = 1\nPRINT \"FAKE GPS/TELE MODE\"\nELSE\nPRINT \"REAL GPS/TELE MODE\"\nENDIF\nPRINT \"INIT DONE\"\n\n\nShow\nPrints out the current state\nPRINT \"SHOW START\"\nPRINT \"LLH:  #LT #LN #AT\"\nPRINT \"GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL\"\nPRINT \"GPS:  NSAT:  #SC\"\nPRINT \"CNT:  #VC\"\nPRINT \"TEMP: #TK\"\nPRINT \"POWR: #HP\"\nPRINT \"SHOW DONE\"\n\n\nMYGPS\nThis is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don’t acquire GPS if in test mode (T=1)\nPRINT \"GPS START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL GPS\"\nGPS 360\nELSE\nPRINT \"FAKE GPS\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"GPS END\"\n\n\nMYTELE\nDon’t transmit if in test mode (T=1)\nPRINT \"TELEMETRY START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL TELE\"\nTELE\nELSE\nPRINT \"FAKE TELE\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"TELEMETRY END\"\n\n\nLED off\nOUT 19 1\n\n\nLED on\nOUT 19 0",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
     ]
   },
   {
-    "objectID": "launches/2025-10-28-smore-002.html#ground-testing-telemetry",
-    "href": "launches/2025-10-28-smore-002.html#ground-testing-telemetry",
-    "title": "Second Launch Prep s’more-002",
+    "objectID": "launches/2025-11-06-smore-002.html#ground-testing-telemetry",
+    "href": "launches/2025-11-06-smore-002.html#ground-testing-telemetry",
+    "title": "Second Launch s’more-002",
     "section": "Ground testing telemetry",
     "text": "Ground testing telemetry\nOne set of telemetry from ground testing\n251016 1736  35  0.32  14.0970715  KF8EEZ EM79 10          0  0.80  1  1    0  0   0     1   810\n251016 1736 -28  0.37  14.0971916  KF8EEZ EM79 10          0  0.47  1  1   56  1  34     1   810\n251016 1738  10  0.24  14.0970673  0X5DBN OI57 53          0  0.12  3  1   -8  1  31     1   810\n251016 1738  34  0.32  14.0970714  0X5DBN OI57 53          0  0.76  1  1    0  0   0     1   808\n251016 1738 -20  0.49  14.0971915  0X5DBN OI57 53          0  0.19  3  1    0  0  13     1   429",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch Prep s'more-002"
+      "Launches",
+      "Second Launch s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/index.html",
+    "href": "launches/index.html",
+    "title": "Launches",
+    "section": "",
+    "text": "First Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home page",
+      "Launches"
     ]
   },
   {
@@ -318,7 +359,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch Prep s’more-002\n\n\n\n\n\n\n\n\nNov 5, 2025\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
