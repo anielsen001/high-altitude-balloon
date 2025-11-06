@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -57,22 +58,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f7a9f68a7c25d3e48d8b03507a008963.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b8be3d391443fefe914f02bf39e7599b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,14 +110,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Balloons</span>
     </a>
   </div>
@@ -160,8 +165,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -173,16 +179,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Calculators</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./horizon.html" class="sidebar-item-text sidebar-link">
+  <a href="../calculators/horizon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Horizon calculator</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../calculators/solar_elevation.qm" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solar elevation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../calculators/float2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Float parameters</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true">
@@ -194,13 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./launches/2025-08-09-smore-001.html" class="sidebar-item-text sidebar-link">
+  <a href="../launches/2025-08-09-smore-001.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First Launch s’more-001</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./launches/2025-10-28-smore-002.html" class="sidebar-item-text sidebar-link">
+  <a href="../launches/2025-10-28-smore-002.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Second Launch Prep s’more-002</span></a>
   </div>
 </li>
@@ -208,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wspr/tracking.html" class="sidebar-item-text sidebar-link">
+  <a href="../wspr/tracking.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSPR Tracking</span></a>
   </div>
 </li>
@@ -245,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="package-environment" class="level3">
 <h3 class="anchored" data-anchor-id="package-environment">Package environment</h3>
 <div id="configure-packages" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -258,395 +287,317 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Markdown"</span>,</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PrettyTables"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(needed_pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(needed_pkgs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  Activating project at `/opt/project`
-    Updating registry at `/opt/project/.julia/registries/General.toml`
+<pre><code>  Activating new project at `/opt/project/calculators`
    Resolving package versions...
-   Installed GR_jll ─────────────────────── v0.73.17+0
-   Installed JpegTurbo_jll ──────────────── v3.1.3+0
-   Installed LERC_jll ───────────────────── v4.0.1+0
-   Installed libdecor_jll ───────────────── v0.2.2+0
-   Installed libfdk_aac_jll ─────────────── v2.0.4+0
-   Installed Libmount_jll ───────────────── v2.41.2+0
-   Installed OffsetArrays ───────────────── v1.17.0
-   Installed x265_jll ───────────────────── v4.1.0+0
-   Installed Compiler ───────────────────── v0.1.1
-   Installed Xorg_xkbcomp_jll ───────────── v1.4.7+0
-   Installed LoggingExtras ──────────────── v1.1.0
-   Installed InlineStrings ──────────────── v1.4.5
-   Installed Opus_jll ───────────────────── v1.5.2+0
-   Installed Grisu ──────────────────────── v1.0.2
-   Installed Xorg_xcb_util_wm_jll ───────── v0.4.2+0
-   Installed Measures ───────────────────── v0.3.2
-   Installed ConcurrentUtilities ────────── v2.5.0
-   Installed Contour ────────────────────── v0.6.3
-   Installed StaticArrays ───────────────── v1.9.15
-   Installed OpenSSL ────────────────────── v1.5.0
-   Installed Xorg_xcb_util_image_jll ────── v0.4.1+0
-   Installed RecipesPipeline ────────────── v0.6.12
-   Installed PlotUtils ──────────────────── v1.4.3
-   Installed DelimitedFiles ─────────────── v1.9.1
-   Installed HTTP ───────────────────────── v1.10.17
-   Installed ColorSchemes ───────────────── v3.31.0
-   Installed GR ─────────────────────────── v0.73.17
-   Installed Xorg_xcb_util_jll ──────────── v0.4.1+0
-   Installed Xorg_libSM_jll ─────────────── v1.2.6+0
-   Installed Cairo_jll ──────────────────── v1.18.5+0
-   Installed Fontconfig_jll ─────────────── v2.17.1+0
-   Installed InvertedIndices ────────────── v1.3.1
-   Installed Statistics ─────────────────── v1.11.1
-   Installed DataFrames ─────────────────── v1.8.0
-   Installed Xorg_libxkbfile_jll ────────── v1.1.3+0
-   Installed EpollShim_jll ──────────────── v0.0.20230411+1
-   Installed Missings ───────────────────── v1.2.0
-   Installed Xorg_libXinerama_jll ───────── v1.1.6+0
-   Installed CodeTracking ───────────────── v2.0.1
-   Installed Xorg_libXau_jll ────────────── v1.0.13+0
-   Installed FFMPEG ─────────────────────── v0.4.4
-   Installed Tricks ─────────────────────── v0.1.12
-   Installed IrrationalConstants ────────── v0.2.4
-   Installed Pango_jll ──────────────────── v1.56.4+0
-   Installed Showoff ────────────────────── v1.0.3
-   Installed PtrArrays ──────────────────── v1.3.0
-   Installed JSON ───────────────────────── v0.21.4
-   Installed xkbcommon_jll ──────────────── v1.9.2+0
-   Installed Xorg_xcb_util_keysyms_jll ──── v0.4.1+0
-   Installed Bzip2_jll ──────────────────── v1.0.9+0
-   Installed SimpleBufferStream ─────────── v1.2.0
-   Installed XZ_jll ─────────────────────── v5.8.1+0
-   Installed SentinelArrays ─────────────── v1.4.8
-   Installed LoweredCodeUtils ───────────── v3.4.4
-   Installed Revise ─────────────────────── v3.9.0
-   Installed Infiltrator ────────────────── v1.9.3
-   Installed HarfBuzz_jll ───────────────── v8.5.1+0
-   Installed PlotThemes ─────────────────── v3.3.0
-   Installed StaticArraysCore ───────────── v1.4.3
-   Installed LZO_jll ────────────────────── v2.10.3+0
-   Installed WorkerUtilities ────────────── v1.6.1
-   Installed NaNMath ────────────────────── v1.1.3
-   Installed TranscodingStreams ─────────── v0.11.3
-   Installed fzf_jll ────────────────────── v0.61.1+0
-   Installed FriBidi_jll ────────────────── v1.0.17+0
-   Installed UnicodeFun ─────────────────── v0.4.1
-   Installed GLFW_jll ───────────────────── v3.4.0+2
-   Installed MbedTLS ────────────────────── v1.1.9
-   Installed PyPlot ─────────────────────── v2.11.6
-   Installed Ratios ─────────────────────── v0.4.5
-   Installed WeakRefStrings ─────────────── v1.4.2
-   Installed x264_jll ───────────────────── v10164.0.1+0
-   Installed FreeType2_jll ──────────────── v2.13.4+0
-   Installed Colors ─────────────────────── v0.13.1
-   Installed DataStructures ─────────────── v0.19.1
-   Installed StatsAPI ───────────────────── v1.7.1
-   Installed JLFzf ──────────────────────── v0.1.11
-   Installed Compat ─────────────────────── v4.18.0
-   Installed DisplayAs ──────────────────── v0.1.6
-   Installed CodecZlib ──────────────────── v0.7.8
-   Installed Xorg_libxcb_jll ────────────── v1.17.1+0
-   Installed mtdev_jll ──────────────────── v1.1.7+0
-   Installed libpng_jll ─────────────────── v1.6.50+0
-   Installed StatsBase ──────────────────── v0.34.6
-   Installed ExceptionUnwrapping ────────── v0.1.11
-   Installed DispatchDoctor ─────────────── v0.4.26
-   Installed ColorTypes ─────────────────── v0.12.1
-   Installed libaom_jll ─────────────────── v3.12.1+0
-   Installed Dbus_jll ───────────────────── v1.16.2+0
-   Installed eudev_jll ──────────────────── v3.2.14+0
-   Installed Xorg_libXext_jll ───────────── v1.3.7+0
-   Installed ArgCheck ───────────────────── v2.5.0
-   Installed Plots ──────────────────────── v1.41.1
-   Installed PrettyTables ───────────────── v3.0.11
-   Installed Conda ──────────────────────── v1.10.2
-   Installed TensorCore ─────────────────── v0.1.1
-   Installed Zstd_jll ───────────────────── v1.5.7+1
-   Installed TableTraits ────────────────── v1.0.1
-   Installed Xorg_xcb_util_cursor_jll ───── v0.1.6+0
-   Installed Expat_jll ──────────────────── v2.7.1+0
-   Installed PyCall ─────────────────────── v1.96.4
-   Installed JuliaInterpreter ───────────── v0.10.5
-   Installed PooledArrays ───────────────── v1.4.3
-   Installed CSV ────────────────────────── v0.10.15
-   Installed Libtiff_jll ────────────────── v4.7.2+0
-   Installed Format ─────────────────────── v1.3.7
-   Installed ColorVectorSpace ───────────── v0.11.0
-   Installed Libffi_jll ─────────────────── v3.4.7+0
-   Installed OrderedCollections ─────────── v1.8.1
-   Installed DataValueInterfaces ────────── v1.0.0
-   Installed Xorg_libXrender_jll ────────── v0.9.12+0
-   Installed libinput_jll ───────────────── v1.28.1+0
-   Installed libevdev_jll ───────────────── v1.13.4+0
-   Installed Vulkan_Loader_jll ──────────── v1.3.243+0
-   Installed Xorg_libXi_jll ─────────────── v1.8.3+0
-   Installed Ogg_jll ────────────────────── v1.3.6+0
-   Installed Qt6ShaderTools_jll ─────────── v6.8.2+1
-   Installed ChainRulesCore ─────────────── v1.26.0
-   Installed Interpolations ─────────────── v0.16.2
-   Installed Reexport ───────────────────── v1.2.2
-   Installed Ghostscript_jll ────────────── v9.55.1+0
-   Installed Qt6Declarative_jll ─────────── v6.8.2+1
-   Installed Libuuid_jll ────────────────── v2.41.2+0
-   Installed MacroTools ─────────────────── v0.5.16
-   Installed AliasTables ────────────────── v1.1.3
-   Installed LogExpFunctions ────────────── v0.3.29
-   Installed Xorg_libXcursor_jll ────────── v1.2.4+0
-   Installed DocStringExtensions ────────── v0.9.5
-   Installed Xorg_xcb_util_renderutil_jll ─ v0.3.10+0
-   Installed Xorg_libICE_jll ────────────── v1.1.2+0
-   Installed Adapt ──────────────────────── v4.4.0
-   Installed Pixman_jll ─────────────────── v0.44.2+0
-   Installed Graphite2_jll ──────────────── v1.3.15+0
-   Installed StableRNGs ─────────────────── v1.0.3
-   Installed libass_jll ─────────────────── v0.17.4+0
-   Installed Latexify ───────────────────── v0.16.10
-   Installed Xorg_xtrans_jll ────────────── v1.6.0+0
-   Installed Wayland_jll ────────────────── v1.24.0+0
-   Installed FFMPEG_jll ─────────────────── v7.1.1+0
-   Installed Xorg_xkeyboard_config_jll ──── v2.44.0+0
-   Installed Tables ─────────────────────── v1.12.1
-   Installed BitFlags ───────────────────── v0.1.9
-   Installed LLVMOpenMP_jll ─────────────── v18.1.8+0
-   Installed DataAPI ────────────────────── v1.16.0
-   Installed FixedPointNumbers ──────────── v0.8.5
-   Installed OpenSSL_jll ────────────────── v3.5.2+0
-   Installed RecipesBase ────────────────── v1.3.4
-   Installed Xorg_libXfixes_jll ─────────── v6.0.2+0
-   Installed Xorg_libXrandr_jll ─────────── v1.5.5+0
-   Installed LAME_jll ───────────────────── v3.100.3+0
-   Installed IteratorInterfaceExtensions ── v1.0.0
-   Installed GettextRuntime_jll ─────────── v0.22.4+0
-   Installed Qt6Base_jll ────────────────── v6.8.2+1
-   Installed libvorbis_jll ──────────────── v1.3.8+0
-   Installed LaTeXStrings ───────────────── v1.4.0
-   Installed URIs ───────────────────────── v1.6.1
-   Installed VersionParsing ─────────────── v1.3.0
-   Installed Libglvnd_jll ───────────────── v1.7.1+1
-   Installed Glib_jll ───────────────────── v2.86.0+0
-   Installed FilePathsBase ──────────────── v0.9.24
-   Installed Qt6Wayland_jll ─────────────── v6.8.2+1
-   Installed Requires ───────────────────── v1.3.1
-   Installed AxisAlgorithms ─────────────── v1.1.0
-   Installed TestItems ──────────────────── v1.0.0
-   Installed Xorg_libXdmcp_jll ──────────── v1.1.6+0
-   Installed Xorg_libX11_jll ────────────── v1.8.12+0
-   Installed Unzip ──────────────────────── v0.2.0
-   Installed DynamicQuantities ──────────── v1.10.0
-   Installed WoodburyMatrices ───────────── v1.0.0
-   Installed StringManipulation ─────────── v0.4.1
-   Installed SortingAlgorithms ──────────── v1.2.2
-   Installed MarkdownTables ─────────────── v1.1.0
-  No Changes to `/opt/project/Project.toml`
-  No Changes to `/opt/project/Manifest.toml`
-    Building Conda ─→ `/opt/project/.julia/scratchspaces/44cfe95a-1eb2-52ea-b672-e2afdf69b78f/b19db3927f0db4151cb86d073689f2428e524576/build.log`
-    Building PyCall → `/opt/project/.julia/scratchspaces/44cfe95a-1eb2-52ea-b672-e2afdf69b78f/9816a3826b0ebf49ab4926e2b18842ad8b5c8f04/build.log`
+   Installed Measures ──────────── v0.3.3
+   Installed PlotUtils ─────────── v1.4.4
+   Installed GR_jll ────────────── v0.73.18+0
+   Installed LoggingExtras ─────── v1.2.0
+   Installed OpenSSL ───────────── v1.6.0
+   Installed HTTP ──────────────── v1.10.19
+   Installed DataFrames ────────── v1.8.1
+   Installed StaticArraysCore ──── v1.4.4
+   Installed FFMPEG ────────────── v0.4.5
+   Installed IrrationalConstants ─ v0.2.6
+   Installed Tricks ────────────── v0.1.13
+   Installed JSON ──────────────── v1.2.0
+   Installed DataStructures ────── v0.19.3
+   Installed StatsBase ─────────── v0.34.7
+   Installed libaom_jll ────────── v3.13.1+0
+   Installed Expat_jll ─────────── v2.7.3+0
+   Installed OpenSSL_jll ───────── v3.5.4+0
+   Installed FFMPEG_jll ────────── v8.0.0+0
+   Installed Qt6Base_jll ───────── v6.8.2+2
+   Installed Qt6Wayland_jll ────── v6.8.2+2
+   Installed PrettyTables ──────── v3.1.0
+   Installed StructUtils ───────── v2.5.1
+   Installed GR ────────────────── v0.73.18
+    Updating `/opt/project/calculators/Project.toml`
+  [336ed68f] + CSV v0.10.15
+  [a93c6f00] + DataFrames v1.8.1
+  [06fc5a27] + DynamicQuantities v1.10.0
+  [a98d9a8b] + Interpolations v0.16.2
+  [91a5bcdd] + Plots v1.41.1
+  [08abe8d2] + PrettyTables v3.1.0
+  [d6f4376e] + Markdown v1.11.0
+    Updating `/opt/project/calculators/Manifest.toml`
+  [79e6a3ab] + Adapt v4.4.0
+  [66dad0bd] + AliasTables v1.1.3
+  [13072b0f] + AxisAlgorithms v1.1.0
+  [d1d4a3ce] + BitFlags v0.1.9
+  [336ed68f] + CSV v0.10.15
+  [d360d2e6] + ChainRulesCore v1.26.0
+  [944b1d66] + CodecZlib v0.7.8
+  [35d6a980] + ColorSchemes v3.31.0
+  [3da002f7] + ColorTypes v0.12.1
+  [c3611d14] + ColorVectorSpace v0.11.0
+  [5ae59095] + Colors v0.13.1
+  [34da2185] + Compat v4.18.1
+  [f0e56b4a] + ConcurrentUtilities v2.5.0
+  [d38c429a] + Contour v0.6.3
+  [a8cc5b0e] + Crayons v4.1.1
+  [9a962f9c] + DataAPI v1.16.0
+  [a93c6f00] + DataFrames v1.8.1
+  [864edb3b] + DataStructures v0.19.3
+  [e2d170a0] + DataValueInterfaces v1.0.0
+  [8bb1440f] + DelimitedFiles v1.9.1
+  [8d63f2c5] + DispatchDoctor v0.4.26
+  [ffbed154] + DocStringExtensions v0.9.5
+  [06fc5a27] + DynamicQuantities v1.10.0
+  [460bff9d] + ExceptionUnwrapping v0.1.11
+  [c87230d0] + FFMPEG v0.4.5
+  [48062228] + FilePathsBase v0.9.24
+  [53c48c17] + FixedPointNumbers v0.8.5
+  [1fa38f19] + Format v1.3.7
+  [28b8d3ca] + GR v0.73.18
+  [42e2da0e] + Grisu v1.0.2
+  [cd3eb016] + HTTP v1.10.19
+  [842dd82b] + InlineStrings v1.4.5
+  [a98d9a8b] + Interpolations v0.16.2
+  [41ab1584] + InvertedIndices v1.3.1
+  [92d709cd] + IrrationalConstants v0.2.6
+  [82899510] + IteratorInterfaceExtensions v1.0.0
+  [1019f520] + JLFzf v0.1.11
+  [692b3bcd] + JLLWrappers v1.7.1
+  [682c06a0] + JSON v1.2.0
+  [b964fa9f] + LaTeXStrings v1.4.0
+  [23fbe1c1] + Latexify v0.16.10
+  [2ab3a3ac] + LogExpFunctions v0.3.29
+  [e6f89c97] + LoggingExtras v1.2.0
+  [1914dd2f] + MacroTools v0.5.16
+  [739be429] + MbedTLS v1.1.9
+  [442fdcdd] + Measures v0.3.3
+  [e1d29d7a] + Missings v1.2.0
+  [77ba4419] + NaNMath v1.1.3
+  [6fe1bfb0] + OffsetArrays v1.17.0
+  [4d8831e6] + OpenSSL v1.6.0
+  [bac558e1] + OrderedCollections v1.8.1
+  [69de0a69] + Parsers v2.8.3
+  [ccf2f8ad] + PlotThemes v3.3.0
+  [995b91a9] + PlotUtils v1.4.4
+  [91a5bcdd] + Plots v1.41.1
+  [2dfb63ee] + PooledArrays v1.4.3
+⌅ [aea7be01] + PrecompileTools v1.2.1
+  [21216c6a] + Preferences v1.5.0
+  [08abe8d2] + PrettyTables v3.1.0
+  [43287f4e] + PtrArrays v1.3.0
+  [c84ed2f1] + Ratios v0.4.5
+  [3cdcf5f2] + RecipesBase v1.3.4
+  [01d81517] + RecipesPipeline v0.6.12
+  [189a3867] + Reexport v1.2.2
+  [05181044] + RelocatableFolders v1.0.1
+  [ae029012] + Requires v1.3.1
+  [6c6a2e73] + Scratch v1.3.0
+  [91c51154] + SentinelArrays v1.4.8
+  [992d4aef] + Showoff v1.0.3
+  [777ac1f9] + SimpleBufferStream v1.2.0
+  [a2af1166] + SortingAlgorithms v1.2.2
+  [860ef19b] + StableRNGs v1.0.3
+  [90137ffa] + StaticArrays v1.9.15
+  [1e83bf80] + StaticArraysCore v1.4.4
+  [10745b16] + Statistics v1.11.1
+  [82ae8749] + StatsAPI v1.7.1
+  [2913bbd2] + StatsBase v0.34.7
+  [892a3eda] + StringManipulation v0.4.1
+  [ec057cc2] + StructUtils v2.5.1
+  [3783bdb8] + TableTraits v1.0.1
+  [bd369af6] + Tables v1.12.1
+  [62fd8b95] + TensorCore v0.1.1
+  [1c621080] + TestItems v1.0.0
+  [3bb67fe8] + TranscodingStreams v0.11.3
+  [410a4b4d] + Tricks v0.1.13
+  [5c2747f8] + URIs v1.6.1
+  [1cfade01] + UnicodeFun v0.4.1
+  [41fe7b60] + Unzip v0.2.0
+  [ea10d353] + WeakRefStrings v1.4.2
+  [efce3f68] + WoodburyMatrices v1.0.0
+  [76eceee3] + WorkerUtilities v1.6.1
+  [6e34b625] + Bzip2_jll v1.0.9+0
+  [83423d85] + Cairo_jll v1.18.5+0
+  [ee1fde0b] + Dbus_jll v1.16.2+0
+  [2702e6a9] + EpollShim_jll v0.0.20230411+1
+  [2e619515] + Expat_jll v2.7.3+0
+  [b22a6f82] + FFMPEG_jll v8.0.0+0
+  [a3f928ae] + Fontconfig_jll v2.17.1+0
+  [d7e528f0] + FreeType2_jll v2.13.4+0
+  [559328eb] + FriBidi_jll v1.0.17+0
+  [0656b61e] + GLFW_jll v3.4.0+2
+  [d2c73de3] + GR_jll v0.73.18+0
+  [b0724c58] + GettextRuntime_jll v0.22.4+0
+  [61579ee1] + Ghostscript_jll v9.55.1+0
+  [7746bdde] + Glib_jll v2.86.0+0
+  [3b182d85] + Graphite2_jll v1.3.15+0
+  [2e76f6c2] + HarfBuzz_jll v8.5.1+0
+  [aacddb02] + JpegTurbo_jll v3.1.3+0
+  [c1c5ebd0] + LAME_jll v3.100.3+0
+  [88015f11] + LERC_jll v4.0.1+0
+  [1d63c593] + LLVMOpenMP_jll v18.1.8+0
+  [dd4b983a] + LZO_jll v2.10.3+0
+  [e9f186c6] + Libffi_jll v3.4.7+0
+  [7e76a0d4] + Libglvnd_jll v1.7.1+1
+  [94ce4f54] + Libiconv_jll v1.18.0+0
+  [4b2f31a3] + Libmount_jll v2.41.2+0
+  [89763e89] + Libtiff_jll v4.7.2+0
+  [38a345b3] + Libuuid_jll v2.41.2+0
+  [e7412a2a] + Ogg_jll v1.3.6+0
+  [458c3c95] + OpenSSL_jll v3.5.4+0
+  [91d4177d] + Opus_jll v1.5.2+0
+  [36c8627f] + Pango_jll v1.56.4+0
+⌅ [30392449] + Pixman_jll v0.44.2+0
+  [c0090381] + Qt6Base_jll v6.8.2+2
+  [629bc702] + Qt6Declarative_jll v6.8.2+1
+  [ce943373] + Qt6ShaderTools_jll v6.8.2+1
+  [e99dba38] + Qt6Wayland_jll v6.8.2+2
+  [a44049a8] + Vulkan_Loader_jll v1.3.243+0
+  [a2964d1f] + Wayland_jll v1.24.0+0
+  [ffd25f8a] + XZ_jll v5.8.1+0
+  [f67eecfb] + Xorg_libICE_jll v1.1.2+0
+  [c834827a] + Xorg_libSM_jll v1.2.6+0
+  [4f6342f7] + Xorg_libX11_jll v1.8.12+0
+  [0c0b7dd1] + Xorg_libXau_jll v1.0.13+0
+  [935fb764] + Xorg_libXcursor_jll v1.2.4+0
+  [a3789734] + Xorg_libXdmcp_jll v1.1.6+0
+  [1082639a] + Xorg_libXext_jll v1.3.7+0
+  [d091e8ba] + Xorg_libXfixes_jll v6.0.2+0
+  [a51aa0fd] + Xorg_libXi_jll v1.8.3+0
+  [d1454406] + Xorg_libXinerama_jll v1.1.6+0
+  [ec84b674] + Xorg_libXrandr_jll v1.5.5+0
+  [ea2f1a96] + Xorg_libXrender_jll v0.9.12+0
+  [c7cfdc94] + Xorg_libxcb_jll v1.17.1+0
+  [cc61e674] + Xorg_libxkbfile_jll v1.1.3+0
+  [e920d4aa] + Xorg_xcb_util_cursor_jll v0.1.6+0
+  [12413925] + Xorg_xcb_util_image_jll v0.4.1+0
+  [2def613f] + Xorg_xcb_util_jll v0.4.1+0
+  [975044d2] + Xorg_xcb_util_keysyms_jll v0.4.1+0
+  [0d47668e] + Xorg_xcb_util_renderutil_jll v0.3.10+0
+  [c22f9ab0] + Xorg_xcb_util_wm_jll v0.4.2+0
+  [35661453] + Xorg_xkbcomp_jll v1.4.7+0
+  [33bec58e] + Xorg_xkeyboard_config_jll v2.44.0+0
+  [c5fb5394] + Xorg_xtrans_jll v1.6.0+0
+  [3161d3a3] + Zstd_jll v1.5.7+1
+  [35ca27e7] + eudev_jll v3.2.14+0
+  [214eeab7] + fzf_jll v0.61.1+0
+  [a4ae2306] + libaom_jll v3.13.1+0
+  [0ac62f75] + libass_jll v0.17.4+0
+  [1183f4f0] + libdecor_jll v0.2.2+0
+  [2db6ffa8] + libevdev_jll v1.13.4+0
+  [f638f0a6] + libfdk_aac_jll v2.0.4+0
+  [36db933b] + libinput_jll v1.28.1+0
+  [b53b4c65] + libpng_jll v1.6.50+0
+  [f27f6e37] + libvorbis_jll v1.3.8+0
+  [009596ad] + mtdev_jll v1.1.7+0
+  [1270edf5] + x264_jll v10164.0.1+0
+  [dfaa095f] + x265_jll v4.1.0+0
+  [d8fb68d0] + xkbcommon_jll v1.9.2+0
+  [0dad84c5] + ArgTools v1.1.2
+  [56f22d72] + Artifacts v1.11.0
+  [2a0f44e3] + Base64 v1.11.0
+  [ade2ca70] + Dates v1.11.0
+  [8ba89e20] + Distributed v1.11.0
+  [f43a241f] + Downloads v1.6.0
+  [7b1f6079] + FileWatching v1.11.0
+  [9fa8497b] + Future v1.11.0
+  [b77e0a4c] + InteractiveUtils v1.11.0
+  [b27032c2] + LibCURL v0.6.4
+  [76f85450] + LibGit2 v1.11.0
+  [8f399da3] + Libdl v1.11.0
+  [37e2e46d] + LinearAlgebra v1.11.0
+  [56ddb016] + Logging v1.11.0
+  [d6f4376e] + Markdown v1.11.0
+  [a63ad114] + Mmap v1.11.0
+  [ca575930] + NetworkOptions v1.2.0
+  [44cfe95a] + Pkg v1.11.0
+  [de0858da] + Printf v1.11.0
+  [3fa0cd96] + REPL v1.11.0
+  [9a3f8284] + Random v1.11.0
+  [ea8e919c] + SHA v0.7.0
+  [9e88b42a] + Serialization v1.11.0
+  [1a1011a3] + SharedArrays v1.11.0
+  [6462fe0b] + Sockets v1.11.0
+  [2f01184e] + SparseArrays v1.11.0
+  [f489334b] + StyledStrings v1.11.0
+  [fa267f1f] + TOML v1.0.3
+  [a4e569a6] + Tar v1.10.0
+  [8dfed614] + Test v1.11.0
+  [cf7118a7] + UUIDs v1.11.0
+  [4ec0a83e] + Unicode v1.11.0
+  [e66e0078] + CompilerSupportLibraries_jll v1.1.1+0
+  [deac9b47] + LibCURL_jll v8.6.0+0
+  [e37daf67] + LibGit2_jll v1.7.2+0
+  [29816b5a] + LibSSH2_jll v1.11.0+1
+  [c8ffd9c3] + MbedTLS_jll v2.28.6+0
+  [14a3606d] + MozillaCACerts_jll v2023.12.12
+  [4536629a] + OpenBLAS_jll v0.3.27+1
+  [05823500] + OpenLibm_jll v0.8.1+2
+  [efcefdf7] + PCRE2_jll v10.42.0+1
+  [bea87d4a] + SuiteSparse_jll v7.7.0+0
+  [83775a58] + Zlib_jll v1.2.13+1
+  [8e850b90] + libblastrampoline_jll v5.11.0+0
+  [8e850ede] + nghttp2_jll v1.59.0+0
+  [3f19e933] + p7zip_jll v17.4.0+2
+        Info Packages marked with ⌅ have new versions available but compatibility constraints restrict them from upgrading. To see why use `status --outdated -m`
 Precompiling project...
-    436.0 ms  ✓ LaTeXStrings
-    451.4 ms  ✓ IteratorInterfaceExtensions
-    440.2 ms  ✓ StatsAPI
-    515.8 ms  ✓ Compiler
-    462.9 ms  ✓ Tricks
-    466.3 ms  ✓ WorkerUtilities
-    457.4 ms  ✓ OpenLibm_jll
-    488.2 ms  ✓ TensorCore
-    543.8 ms  ✓ Contour
-    557.8 ms  ✓ Future
-    859.2 ms  ✓ VersionParsing
-    514.7 ms  ✓ Measures
-    487.8 ms  ✓ DataValueInterfaces
-    590.7 ms  ✓ SuiteSparse_jll
-    603.1 ms  ✓ CompilerSupportLibraries_jll
-    651.3 ms  ✓ Statistics
-    680.9 ms  ✓ ArgCheck
-    731.6 ms  ✓ OrderedCollections
-    668.4 ms  ✓ Requires
-   1235.4 ms  ✓ OffsetArrays
-   1302.6 ms  ✓ Format
-    550.0 ms  ✓ StableRNGs
-    975.6 ms  ✓ Grisu
-    404.2 ms  ✓ Reexport
-    384.8 ms  ✓ TestItems
-    708.8 ms  ✓ Unzip
-    456.4 ms  ✓ SimpleBufferStream
-    609.1 ms  ✓ DocStringExtensions
-    452.1 ms  ✓ PtrArrays
-    732.6 ms  ✓ InlineStrings
-    425.3 ms  ✓ PCRE2_jll
-    805.0 ms  ✓ URIs
-    567.9 ms  ✓ DelimitedFiles
-    454.3 ms  ✓ InvertedIndices
-    635.6 ms  ✓ TranscodingStreams
-    464.5 ms  ✓ DataAPI
-    535.7 ms  ✓ StaticArraysCore
-    573.6 ms  ✓ BitFlags
-    988.9 ms  ✓ DisplayAs
-   1290.1 ms  ✓ IrrationalConstants
-    948.8 ms  ✓ ConcurrentUtilities
-    876.5 ms  ✓ SharedArrays
-    724.5 ms  ✓ LoggingExtras
-    852.8 ms  ✓ Compat
-    916.9 ms  ✓ CodeTracking
-   2695.0 ms  ✓ MacroTools
-    790.8 ms  ✓ Graphite2_jll
-    922.5 ms  ✓ OpenSSL_jll
-   1330.8 ms  ✓ MbedTLS
-    667.2 ms  ✓ EpollShim_jll
-    784.7 ms  ✓ Libmount_jll
-    767.7 ms  ✓ LLVMOpenMP_jll
-   1717.8 ms  ✓ SentinelArrays
-    768.5 ms  ✓ Bzip2_jll
-    630.4 ms  ✓ libfdk_aac_jll
-    749.7 ms  ✓ Xorg_libICE_jll
-    725.2 ms  ✓ Xorg_libXau_jll
-   1824.4 ms  ✓ Infiltrator
-    793.4 ms  ✓ libpng_jll
-    646.7 ms  ✓ LERC_jll
-    730.3 ms  ✓ LAME_jll
-    753.4 ms  ✓ fzf_jll
-   2033.6 ms  ✓ UnicodeFun
-    784.0 ms  ✓ XZ_jll
-    832.7 ms  ✓ JpegTurbo_jll
-    725.5 ms  ✓ Ogg_jll
-    688.1 ms  ✓ Xorg_libXdmcp_jll
-    702.7 ms  ✓ mtdev_jll
-    677.3 ms  ✓ x264_jll
-    735.0 ms  ✓ x265_jll
-    716.6 ms  ✓ Expat_jll
-    745.1 ms  ✓ libaom_jll
-    800.4 ms  ✓ Zstd_jll
-    688.0 ms  ✓ LZO_jll
-    710.9 ms  ✓ Opus_jll
-    729.8 ms  ✓ libevdev_jll
-    688.9 ms  ✓ Libffi_jll
-    773.7 ms  ✓ Xorg_xtrans_jll
-    713.5 ms  ✓ eudev_jll
-    732.7 ms  ✓ Libuuid_jll
-    698.2 ms  ✓ FriBidi_jll
-    527.7 ms  ✓ TableTraits
-    728.3 ms  ✓ NaNMath
-    629.2 ms  ✓ Ratios
-    637.0 ms  ✓ Adapt
-    692.9 ms  ✓ Showoff
-   1024.3 ms  ✓ GettextRuntime_jll
-   1143.2 ms  ✓ AliasTables
-   4420.3 ms  ✓ Test
-   1889.3 ms  ✓ JSON
-   2027.8 ms  ✓ RecipesBase
-    791.0 ms  ✓ CodecZlib
-   1127.4 ms  ✓ InlineStrings → ParsersExt
-    802.9 ms  ✓ PooledArrays
-    744.2 ms  ✓ Missings
-    505.1 ms  ✓ Compat → CompatLinearAlgebraExt
-    855.9 ms  ✓ LogExpFunctions
-    790.2 ms  ✓ Xorg_libSM_jll
-    810.4 ms  ✓ Pixman_jll
-   2583.3 ms  ✓ DataStructures
-   3007.6 ms  ✓ StringManipulation
-   1256.4 ms  ✓ FreeType2_jll
-   2954.1 ms  ✓ FixedPointNumbers
-   1115.8 ms  ✓ JLFzf
-    779.7 ms  ✓ Dbus_jll
-    966.1 ms  ✓ libvorbis_jll
-   1944.7 ms  ✓ DispatchDoctor
-    879.4 ms  ✓ Libtiff_jll
-   1348.1 ms  ✓ Ghostscript_jll
-   1058.8 ms  ✓ Wayland_jll
-   1000.5 ms  ✓ libinput_jll
-    574.5 ms  ✓ OffsetArrays → OffsetArraysAdaptExt
-   1079.4 ms  ✓ Tables
-   1724.2 ms  ✓ Xorg_libxcb_jll
-   2613.4 ms  ✓ OpenSSL
-    710.9 ms  ✓ ExceptionUnwrapping
-   1009.5 ms  ✓ Glib_jll
-    993.9 ms  ✓ WeakRefStrings
-   1092.2 ms  ✓ Conda
-    707.0 ms  ✓ SortingAlgorithms
-    681.6 ms  ✓ Ratios → RatiosFixedPointNumbersExt
-    947.6 ms  ✓ Fontconfig_jll
-   5342.4 ms  ✓ SparseArrays
-   1399.7 ms  ✓ FilePathsBase
-    790.9 ms  ✓ Xorg_xcb_util_jll
-    943.2 ms  ✓ MarkdownTables
-   1659.3 ms  ✓ ChainRulesCore
-    963.2 ms  ✓ Xorg_libX11_jll
-   1888.0 ms  ✓ ColorTypes
-    777.0 ms  ✓ WoodburyMatrices
-    726.8 ms  ✓ Statistics → SparseArraysExt
-    677.1 ms  ✓ Adapt → AdaptSparseArraysExt
-    795.6 ms  ✓ FilePathsBase → FilePathsBaseMmapExt
-    789.3 ms  ✓ Xorg_xcb_util_image_jll
-    769.8 ms  ✓ Xorg_xcb_util_keysyms_jll
-    820.5 ms  ✓ Xorg_xcb_util_wm_jll
-    876.8 ms  ✓ Xorg_xcb_util_renderutil_jll
-   1383.6 ms  ✓ FilePathsBase → FilePathsBaseTestExt
-    984.3 ms  ✓ ChainRulesCore → ChainRulesCoreSparseArraysExt
-    627.4 ms  ✓ DispatchDoctor → DispatchDoctorChainRulesCoreExt
-    705.9 ms  ✓ Xorg_libXrender_jll
-    992.6 ms  ✓ Xorg_libXext_jll
-    837.1 ms  ✓ Xorg_libXfixes_jll
-   3877.7 ms  ✓ Latexify
-   1018.5 ms  ✓ Xorg_libxkbfile_jll
-    824.7 ms  ✓ ColorTypes → StyledStringsExt
-   1750.7 ms  ✓ LogExpFunctions → LogExpFunctionsChainRulesCoreExt
-    784.4 ms  ✓ AxisAlgorithms
-    867.3 ms  ✓ Xorg_xcb_util_cursor_jll
-   1074.0 ms  ✓ Xorg_libXrandr_jll
-   1557.5 ms  ✓ Xorg_libXinerama_jll
-   9529.5 ms  ✓ StaticArrays
-   1466.3 ms  ✓ Cairo_jll
-   3626.6 ms  ✓ ColorVectorSpace
-   3120.1 ms  ✓ StatsBase
-   1598.1 ms  ✓ Libglvnd_jll
-   1718.4 ms  ✓ Xorg_libXcursor_jll
-   7842.1 ms  ✓ DynamicQuantities
-   1002.6 ms  ✓ Xorg_xkbcomp_jll
-   1754.6 ms  ✓ Xorg_libXi_jll
-    927.0 ms  ✓ StaticArrays → StaticArraysChainRulesCoreExt
-   1481.9 ms  ✓ Latexify → SparseArraysExt
-    909.9 ms  ✓ StaticArrays → StaticArraysStatisticsExt
-    776.9 ms  ✓ Adapt → AdaptStaticArraysExt
-    659.7 ms  ✓ Xorg_xkeyboard_config_jll
-    917.3 ms  ✓ HarfBuzz_jll
-    982.3 ms  ✓ DynamicQuantities → DynamicQuantitiesLinearAlgebraExt
-    711.0 ms  ✓ xkbcommon_jll
-    775.7 ms  ✓ libass_jll
-    886.6 ms  ✓ Pango_jll
-    893.4 ms  ✓ Vulkan_Loader_jll
-    896.4 ms  ✓ libdecor_jll
-   6774.0 ms  ✓ Colors
-   2266.5 ms  ✓ Interpolations
-   1271.1 ms  ✓ FFMPEG_jll
-    732.3 ms  ✓ GLFW_jll
-   1210.6 ms  ✓ Qt6Base_jll
-    790.4 ms  ✓ FFMPEG
-   1108.8 ms  ✓ Qt6ShaderTools_jll
-   1168.2 ms  ✓ GR_jll
-  16078.3 ms  ✓ JuliaInterpreter
-  12641.6 ms  ✓ PyCall
-   1783.1 ms  ✓ Qt6Declarative_jll
-   4051.7 ms  ✓ ColorSchemes
-    618.7 ms  ✓ Qt6Wayland_jll
-   1927.6 ms  ✓ PyPlot
-  16657.6 ms  ✓ CSV
-  20135.6 ms  ✓ HTTP
-   7806.6 ms  ✓ LoweredCodeUtils
-   3062.4 ms  ✓ GR
-   9659.0 ms  ✓ PlotUtils
-   3082.2 ms  ✓ PlotThemes
-   4598.1 ms  ✓ RecipesPipeline
-  28826.4 ms  ✓ PrettyTables
-  10129.6 ms  ✓ Revise
-    755.4 ms  ✓ Revise → DistributedExt
-  27998.8 ms  ✓ DataFrames
-   1222.0 ms  ✓ Latexify → DataFramesExt
-  40581.2 ms  ✓ Plots
-  199 dependencies successfully precompiled in 79 seconds. 38 already precompiled.</code></pre>
+   2223.9 ms  ✓ StaticArraysCore
+   2689.1 ms  ✓ Tricks
+   2231.2 ms  ✓ Measures
+   3035.2 ms  ✓ LoggingExtras
+   3414.8 ms  ✓ StructUtils
+   6242.0 ms  ✓ IrrationalConstants
+   2926.5 ms  ✓ OpenSSL_jll
+   2567.8 ms  ✓ Expat_jll
+   3511.6 ms  ✓ libaom_jll
+   7036.3 ms  ✓ ChainRulesCore
+  10310.1 ms  ✓ DataStructures
+   2379.4 ms  ✓ StructUtils → StructUtilsTablesExt
+   3421.4 ms  ✓ LogExpFunctions
+  11836.3 ms  ✓ OpenSSL
+   4262.0 ms  ✓ Dbus_jll
+  24329.5 ms  ✓ JSON
+   5571.9 ms  ✓ Wayland_jll
+   3969.5 ms  ✓ Fontconfig_jll
+   2734.0 ms  ✓ ChainRulesCore → ChainRulesCoreSparseArraysExt
+   2901.2 ms  ✓ DispatchDoctor → DispatchDoctorChainRulesCoreExt
+   2936.2 ms  ✓ SortingAlgorithms
+   8025.6 ms  ✓ LogExpFunctions → LogExpFunctionsChainRulesCoreExt
+   2798.5 ms  ✓ Vulkan_Loader_jll
+  47174.4 ms  ✓ StaticArrays
+   5288.9 ms  ✓ Cairo_jll
+   7933.4 ms  ✓ Qt6Base_jll
+   3513.7 ms  ✓ StaticArrays → StaticArraysChainRulesCoreExt
+  15058.1 ms  ✓ StatsBase
+   5105.0 ms  ✓ StaticArrays → StaticArraysStatisticsExt
+   2974.9 ms  ✓ Adapt → AdaptStaticArraysExt
+   5238.8 ms  ✓ HarfBuzz_jll
+   5873.7 ms  ✓ Qt6ShaderTools_jll
+   4283.8 ms  ✓ libass_jll
+  76696.8 ms  ✓ PlotUtils
+   3686.4 ms  ✓ Pango_jll
+   4697.7 ms  ✓ FFMPEG_jll
+  14181.3 ms  ✓ Interpolations
+   9516.4 ms  ✓ Qt6Declarative_jll
+   4164.9 ms  ✓ libdecor_jll
+   2798.4 ms  ✓ FFMPEG
+   3977.7 ms  ✓ Qt6Wayland_jll
+  15653.2 ms  ✓ PlotThemes
+   3664.7 ms  ✓ GLFW_jll
+   3413.9 ms  ✓ GR_jll
+  24955.7 ms  ✓ RecipesPipeline
+ 112988.8 ms  ✓ HTTP
+  17744.4 ms  ✓ GR
+ 178594.6 ms  ✓ PrettyTables
+ 158069.2 ms  ✓ DataFrames
+  11540.2 ms  ✓ Latexify → DataFramesExt
+ 244678.9 ms  ✓ Plots
+  51 dependencies successfully precompiled in 420 seconds. 174 already precompiled.</code></pre>
 </div>
 </div>
 </section>
 <section id="imports" class="level3">
 <h3 class="anchored" data-anchor-id="imports">Imports</h3>
 <div id="4" class="cell" data-lable="load-packages" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Interpolations</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
@@ -661,7 +612,7 @@ Precompiling project...
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># there's conversion from Kelvin to degC so create a function for that</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># this strips off the units completely and returns the value in degC</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kelvin_to_degC_value</span>(k) <span class="op">=</span> <span class="fu">ustrip</span>(k <span class="op">-</span> <span class="fl">0.0</span>ua<span class="st">"degC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kelvin_to_degC_value</span>(k) <span class="op">=</span> <span class="fu">ustrip</span>(k <span class="op">-</span> <span class="fl">0.0</span>ua<span class="st">"degC"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>kelvin_to_degC_value (generic function with 1 method)</code></pre>
 </div>
@@ -671,7 +622,7 @@ Precompiling project...
 <section id="balloon-system-properties" class="level2">
 <h2 class="anchored" data-anchor-id="balloon-system-properties">Balloon system properties</h2>
 <div id="cell-balloon-definitions" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Balloon</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Balloon</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    weight</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    volume</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
@@ -702,7 +653,7 @@ Precompiling project...
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>gas <span class="op">=</span> <span class="st">"helium 97%"</span></span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>balloon <span class="op">=</span> <span class="fu">Balloon</span>(balloon_weight, balloon_volume)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>bs <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon <span class="op">*</span> <span class="fl">2</span>, payload_weight, free_lift, gas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>bs <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon <span class="op">*</span> <span class="fl">2</span>, payload_weight, free_lift, gas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="balloon-definitions" class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>BalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.02 kg, 0.005 kg, "helium 97%")</code></pre>
 </div>
@@ -712,7 +663,7 @@ Precompiling project...
 <h2 class="anchored" data-anchor-id="define-gas-properties">Define gas properties</h2>
 <p>Gas density table in kg/cu m at 101.325 kPa at MSL</p>
 <div id="cell-define-gas-properties" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_gas <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"""</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_gas <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"""</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">    "name","0deg","15deg"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">    "hydrogen",0.0899,0.0852</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">    "helium",0.1786,0.1693</span></span>
@@ -724,10 +675,10 @@ Precompiling project...
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>atmosphere_temperature_msl <span class="op">=</span> <span class="fl">15.0</span>ua<span class="st">"degC"</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># atmosphere_temperature_msl_c = 15.0</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>df_gas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>df_gas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="define-gas-properties" class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>4×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="data-frame caption-top table table-sm table-striped small">
 <thead>
 <tr class="columnLabelRow header">
 <th class="stubheadLabel" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
@@ -776,7 +727,7 @@ Precompiling project...
 <section id="computed-balloon-fill-properties" class="level2">
 <h2 class="anchored" data-anchor-id="computed-balloon-fill-properties">Computed balloon fill properties</h2>
 <div id="10" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>chosen_gas_density <span class="op">=</span> <span class="fu">only</span>(df_gas[(df_gas.name <span class="op">.==</span> gas),<span class="st">"15deg"</span>])u<span class="st">"kg/m^3"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>chosen_gas_density <span class="op">=</span> <span class="fu">only</span>(df_gas[(df_gas.name <span class="op">.==</span> gas),<span class="st">"15deg"</span>])u<span class="st">"kg/m^3"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>air_density <span class="op">=</span> <span class="fu">only</span>(df_gas[(df_gas.name <span class="op">.==</span> <span class="st">"air"</span>),<span class="st">"15deg"</span>])u<span class="st">"kg/m^3"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>neck_lift <span class="op">=</span> bs.free_lift <span class="op">+</span> bs.payload_weight <span class="co"># gram</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>launch_gas_fill <span class="op">=</span></span>
@@ -794,7 +745,7 @@ Precompiling project...
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Gas fill at launch </span><span class="sc">$</span>(launch_gas_fill)<span class="st">"</span>)</span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Gas mass           </span><span class="sc">$</span>(gas_mass <span class="op">|&gt;</span> us<span class="st">"g"</span>)<span class="st">"</span>)</span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Total mass         </span><span class="sc">$</span>(total_mass <span class="op">|&gt;</span> us<span class="st">"g"</span>)<span class="st">"</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"System density     </span><span class="sc">$</span>(system_density)<span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"System density     </span><span class="sc">$</span>(system_density)<span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Neck lift          25.0 g
 Gas fill at launch 0.09866171729999025 m³
@@ -807,13 +758,13 @@ System density     0.3861033505909935 m⁻³ kg</code></pre>
 <section id="define-atmospheric-profile" class="level2">
 <h2 class="anchored" data-anchor-id="define-atmospheric-profile">Define atmospheric profile</h2>
 <div id="cell-load-atmospheric-data" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fpath <span class="op">=</span> <span class="st">"/opt/project/_sources/filling"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fpath <span class="op">=</span> <span class="st">"/opt/project/_sources/filling"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">"atmos.csv"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_atmos <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="fu">joinpath</span>(fpath,fname), DataFrame);</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df_atmos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df_atmos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="load-atmospheric-data" class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>8001×5 DataFrame</span></div><div style="float: right; font-style: italic;"><span>7976 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="data-frame caption-top table table-sm table-striped small">
 <thead>
 <tr class="columnLabelRow header">
 <th class="stubheadLabel" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
@@ -1047,13 +998,13 @@ System density     0.3861033505909935 m⁻³ kg</code></pre>
 </div>
 </div>
 <div id="cell-fig-atmospheric-data-pressure" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Alt (m)"</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Pres (kPa)"</span>,</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="cn">false</span>,</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Altitude [meters]"</span>,</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Pressure [kPa]"</span>,</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="fig-atmospheric-data-pressure" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-atmospheric-data-pressure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1066,13 +1017,13 @@ Figure&nbsp;1: Atmospheric pressure as a function of altitude
 </div>
 </div>
 <div id="cell-fig-atmospheric-data-temperature" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Alt (m)"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Temp (C)"</span>,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="cn">false</span>,</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Altitude [meters]"</span>,</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Temperature [C]"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="fig-atmospheric-data-temperature" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-atmospheric-data-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1088,7 +1039,7 @@ Figure&nbsp;2: Atmospheric temperature as a function of altitude
 <section id="float-calculations" class="level2">
 <h2 class="anchored" data-anchor-id="float-calculations">Float calculations</h2>
 <div id="float-calculations" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interpolate temperature based on density</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interpolate temperature based on density</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>u_system_density <span class="op">=</span> <span class="fu">ustrip</span>(u<span class="st">"kg/m^3"</span>,system_density)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>temperature_at_float <span class="op">=</span> <span class="fu">LinearInterpolation</span>(df_atmos.var<span class="st">"Den (Kg/cu m)"</span>,df_atmos.var<span class="st">"Temp (C)"</span>)(u_system_density)ua<span class="st">"degC"</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>internal_pressure <span class="op">=</span>  (atmosphere_pressure_msl <span class="op">*</span> launch_gas_fill ) <span class="op">/</span> atmosphere_temperature_msl <span class="op">*</span> ( temperature_at_float) <span class="op">/</span> bs.balloon.volume</span>
@@ -1113,7 +1064,7 @@ Figure&nbsp;2: Atmospheric temperature as a function of altitude
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"External pressure:       </span><span class="sc">$</span>(external_pressure <span class="op">|&gt;</span> us<span class="st">"kPa"</span>)<span class="st">"</span>)</span>
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Differential pressure:   </span><span class="sc">$</span>(differential_pressure <span class="op">|&gt;</span> us<span class="st">"kPa"</span> )<span class="st">"</span>)</span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Super pressure:          </span><span class="sc">$</span>(superpressure <span class="op">|&gt;</span> us<span class="st">"kPa"</span> )<span class="st">"</span>)</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Super pressure altitute: </span><span class="sc">$</span>(superpressure_onset_altitude)<span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Super pressure altitute: </span><span class="sc">$</span>(superpressure_onset_altitude)<span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Float temperature:       219.66001725174584 K
 Balloon altitude:        10559.31937569401 m
@@ -1131,236 +1082,243 @@ Super pressure altitute: 4162.055334504525 m</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/apnielsen\.com\/high-altitude-balloon");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/apnielsen\.com\/high-altitude-balloon");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1368,185 +1326,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
