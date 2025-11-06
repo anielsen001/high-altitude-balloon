@@ -1,9 +1,16 @@
 [
   {
+    "listing": "/launches/index.html",
+    "items": [
+      "/launches/2025-08-09-smore-001.html",
+      "/launches/2025-11-06-smore-002.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/launches/2025-08-09-smore-001.html",
-      "/launches/2025-10-28-smore-002.html"
+      "/launches/2025-11-06-smore-002.html"
     ]
   }
 ]
