@@ -9,6 +9,7 @@ dependencies = [
     "matplotlib>=3.10.7",
     "numpy>=2.3.1",
     "scipy>=1.16.0",
+    "sos-notebook>=0.24.4",
 ]
 
 [tool.uv.workspace]
