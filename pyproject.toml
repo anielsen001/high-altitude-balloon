@@ -4,6 +4,7 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "astropy>=7.1.0",
+    "inu>=2.5.6",
     "ipython>=9.4.0",
     "jupyter>=1.1.1",
     "matplotlib>=3.10.7",
