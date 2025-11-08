@@ -8,7 +8,7 @@ using .PicoBalloons
 free_lift = 5.0u"g" # grams
 balloon_weight = 38.0u"g" # gram
 balloon_volume = 0.15u"m^3" # m^3
-payload_weight = 20.0u"g" # gram
+payload_weight = 16.7u"g" # gram
 gas = "helium 97%"
 
 balloon = Balloon(balloon_weight, balloon_volume)
@@ -41,3 +41,12 @@ plot!(ustrip(u"g",payload_weights),
     ylabel="Float altitude [kft]",
 )
 gui()
+
+
+## invert float altitude to get lift gas density
+float_altitude = 6400.0u"m"
+system_density = PicoBalloons.atmos_density(6400u"m")
+total_mass = system_density * balloon_2.volume
+lift_gas_mass = total_mass - payload_weight - balloon_2.weight
+lift_gas_density = lift_gas_mass * PicoBalloons.gas_density("air")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)
+# = 0.6102020876451465 m⁻³ kg
