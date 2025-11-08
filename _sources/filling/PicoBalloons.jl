@@ -59,6 +59,14 @@ function atmos_altitude(density; df_atmos=df_atmos)
             df_atmos.var"Alt (m)")(u_density)u"m" # meters
 end
 
+"Return the density of a given altitude"
+function atmos_density(altitude; df_atmos=df_atmos)
+    u_altitude = ustrip(altitude/u"m")
+    LinearInterpolation(
+            reverse(df_atmos.var"Alt (m)"),
+            reverse(df_atmos.var"Den (Kg/cu m)"))(u_altitude)u"kg/m^3"
+end
+
 "DataFrame holding the gas densities"
 df_gas = CSV.read("""
         "name","0deg","15deg"
