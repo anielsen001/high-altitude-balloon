@@ -1,0 +1,23 @@
+[NOAA Hysplit single trajectory](https://www.ready.noaa.gov/hypub-bin/trajtype.pl)
+
+
+
+- Select GFS model for global coverage
+
+
+### Model Run Details 
+
+#### Model parameters:
+
+- Trajectory direction: forward
+- Vertical motion: model vertical velocity - is isobaric a better choice?
+- Start time: set to closest last balloon spot time hour
+- Start 1 Lat/Lon: last spot location
+- Level 1 height: last spot altitude - set to meters AMSL
+  - can put mutiple altitudes to look at altitude sensitivity
+
+#### Display options
+
+
+- Plot met field along traj: yes
+  - select Downward solar radiation.
