@@ -20,3 +20,6 @@
 *.pdf
 *.synctex.gz
 **/*.quarto_ipynb
+
+# exiftool backup files
+*.jpg_original
