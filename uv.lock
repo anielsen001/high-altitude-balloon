@@ -766,6 +766,7 @@ dependencies = [
     { name = "sos-notebook" },
     { name = "sos-papermill" },
     { name = "sos-python" },
+    { name = "sos-r" },
 ]
 
 [package.metadata]
@@ -789,6 +790,7 @@ requires-dist = [
     { name = "sos-notebook", specifier = ">=0.24.4" },
     { name = "sos-papermill", specifier = ">=0.2.1" },
     { name = "sos-python", specifier = ">=0.20.2" },
+    { name = "sos-r", specifier = ">=0.20.1" },
 ]
 
 [[package]]
@@ -2530,6 +2532,22 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1f/ae/1f49fd01ed567eab06900295b5c8db500d73b5cdec75a795b02ef6b4e7dc/sos-python-0.20.2.tar.gz", hash = "sha256:3dc22439df32499fb7382f95119ae06a693d160f6468f8860fb80be8e1dbc8ed", size = 10037, upload-time = "2023-10-11T02:53:45.521Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3d/a4/633aa4b642149e2a1ef3c3284af09955a80904781dd7a72d33ad5c1871ee/sos_python-0.20.2-py3-none-any.whl", hash = "sha256:382aeea6c139796ac4fb6ad076a20f93ad432e7d89607108375c95be3826af4b", size = 6327, upload-time = "2023-10-11T02:53:42.68Z" },
+]
+
+[[package]]
+name = "sos-r"
+version = "0.20.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "pyarrow" },
+    { name = "sos" },
+    { name = "sos-notebook" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3b/a9/6c0366a3b28a309a2a431ddac3de8494ee26cf2fb847524a731d5baafa88/sos-r-0.20.1.tar.gz", hash = "sha256:d6d7a25b3d3ac2f04e61d0aaae1c02a7069fbfeb5354e51fc9fdfa61f57513d7", size = 14586, upload-time = "2023-08-30T03:10:14.086Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c6/b8/a5b400771c23ae008b7464f563bab0c331b9e2366e798025c2575bd2546c/sos_r-0.20.1-py3-none-any.whl", hash = "sha256:83f995ee7f4e37c346b59435fef6b4deba131fb0b8471765cca48c8e7c62531b", size = 8963, upload-time = "2023-08-30T03:10:12.919Z" },
 ]
 
 [[package]]
