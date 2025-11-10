@@ -1,0 +1,5 @@
+
+### Forward predictions for 2025-10-08
+
+![Model run by Tom Reed](/_sources/launches/smore-002/tracking/predictions/2025-11-08-hysplit.png)
+
