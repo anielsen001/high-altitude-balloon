@@ -39,7 +39,7 @@ website:
         - text: "Float parameters"
           href: calculators/float2.qmd
       - section: "Launches"
-        contents: launches
+        contents: launches/*.qmd
       - text: "WSPR Tracking"
         href: wspr/tracking.qmd
   
