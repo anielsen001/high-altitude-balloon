@@ -1,0 +1,7 @@
+
+### Forward predictions for 2025-10-10
+
+![](/_sources/launches/smore-002/tracking/predictions/112389_trj001.gif)
+
+[HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=112389)
+
