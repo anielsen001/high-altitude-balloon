@@ -6,9 +6,12 @@
 
 [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached)
 
-## Predictions
+## Track predictions
 
 {{< include /_sources/launches/smore-002/tracking/predictions/2025-10-10-forward-prediction.qmd >}}
+
+
+[All earlier predictions](/launches/2025-11-06-smore-002/all-predictions.qmd)
 
 ## Payload weight 
 

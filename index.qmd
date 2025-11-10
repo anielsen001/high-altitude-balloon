@@ -12,9 +12,9 @@ The goal of this project is to measure the magnetic field at high-altitudes 60kf
 
 The goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a [PNI RM3100 magnetometer](https://www.pnisensor.com/rm3100/).  We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, @sec-eclipse-launch, but we lost contact with the payload telemetry.
 
-## Balloon in progress 2025-10-22
+## Balloon in progress 2025-11-06
 
-Working on new.
+[Currently aloft!](/launches/2025-11-06-smore-002.qmd). Track it [here](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached)
 
 ## Launches
 
