@@ -1,0 +1,89 @@
+---
+title: Balloon filling for smore-002
+date: 2025-11-06
+engine: julia
+toc: true
+julia:
+  exeflags:
+    - "--project=/opt/project"
+---
+
+
+## Filling Calculations
+
+```{julia}
+#| echo: false
+include("/opt/project/_sources/filling/PicoBalloons.jl")
+
+using Plots
+using Revise
+using DynamicQuantities
+using .PicoBalloons
+
+```
+
+### Define basic balloon parameters
+
+```{julia}
+free_lift = 5.0u"g" # grams
+balloon_weight = 38.0u"g" # gram
+balloon_volume = 0.15u"m^3" # m^3
+payload_weight = 16.7u"g" # gram
+gas = "helium 97%"
+
+# compare 1 and 2 balloons
+balloon_1 = Balloon(balloon_weight, balloon_volume)
+balloon_2 = balloon_1 * 2
+```
+
+### Look at options as a function of free lift
+
+```{julia}
+free_lifts = collect(0.0:1.0:10.0)u"g"
+bss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)
+bss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)
+```
+
+Free lift is the excess lift due to the super-pressure of the balloon. 
+
+```{julia}
+#| label: fig-altitude-vs-free-lift
+#| fig-cap: Float altitude vs. free lift
+#| code-fold: true
+plot(
+    ustrip(u"g",free_lifts),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    label="One Balloon",
+    title="Altitude vs. free lift",
+    xlabel="Free lift [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",free_lifts),
+      ustrip(us"ft",bss2.float_altitude)/1000.,
+      label="Two balloons",
+)
+```
+
+Neck lift if the amount of lift that's used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.
+
+```{julia}
+#| label: fig-altitude-vs-neck-lift
+#| fig-cap: Float altitude vs. neck lift
+#| code-fold: true
+plot(
+    ustrip(u"g",bss1.neck_lift),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    label="One Balloon",
+    title="Altitude vs. neck lift",
+    xlabel="Neck lift [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",bss2.neck_lift),
+      ustrip(us"ft",bss2.float_altitude)/1000.,
+      label="Two balloons",
+)
+```
+
+Generally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out. 
+
+For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
