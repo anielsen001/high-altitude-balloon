@@ -73,6 +73,7 @@ df_gas = CSV.read("""
         "hydrogen",0.0899,0.0852
         "helium",0.1786,0.1693
         "helium 97%",0.2120,0.2010
+        "helium party",0.6102020876451465,0.6102020876451465
         "air",1.2920,1.2247
     """ |> IOBuffer, DataFrame)
 

@@ -87,3 +87,57 @@ plot!(ustrip(u"g",bss2.neck_lift),
 Generally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out. 
 
 For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
+
+**This should provide a float altitude of about 35kft.**
+
+## Float reality
+
+In reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there's likely not a leak causing an issue. 
+
+The gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas? 
+
+The following Julia code inerts the float calculations using a known altitude to find the gas density
+
+```{julia}
+gas = "helium 97%"
+
+bs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
+
+float_altitude = 6400.0u"m"
+system_density = PicoBalloons.atmos_density(6400u"m")
+total_mass = system_density * balloon_2.volume
+lift_gas_mass = total_mass - payload_weight - balloon_2.weight
+lift_gas_density = lift_gas_mass * PicoBalloons.gas_density("air")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)
+println(lift_gas_density)
+# = 0.6102020876451465 m⁻³ kg
+```
+
+And then as a cross check, use this density and work the calculations forward again.
+
+```{julia}
+## work this answer forward again to verify the float altitude
+gas = "helium party"
+
+bs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
+println(bs2)
+# Weight: 0.038 kg
+# Volume: 0.15 m³
+# Neck lift                         21.7 g
+# Gas fill at launch                0.09715248628139377 m³
+# Gas mass                          59.28264994882293 g
+# Total mass                        113.98264994882292 g
+# System density                    0.7598843329921529 m⁻³ kg
+# Temperature at float              257.528258794135 K
+# Pressure at float                 56.13300078221867 kPa
+# Float altitude                    4724.459353754233 m
+# Internal pressure                 58.65236658085537 kPa
+# Differential pressure             2.519365798636696 kPa
+# Super pressure                    2.462348471781531 kPa
+# Super pressure onset altitude     4307.524755728726 m
+```
+
+Which is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.
+
+

@@ -50,3 +50,28 @@ total_mass = system_density * balloon_2.volume
 lift_gas_mass = total_mass - payload_weight - balloon_2.weight
 lift_gas_density = lift_gas_mass * PicoBalloons.gas_density("air")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)
 # = 0.6102020876451465 m⁻³ kg
+
+
+## work this answer forward again to verify the float altitude
+gas = "helium party"
+
+balloon = Balloon(balloon_weight, balloon_volume)
+balloon_2 = balloon * 2
+bs = BalloonSystem(balloon, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
+println(bs)
+
+# Weight: 0.038 kg
+# Volume: 0.15 m³
+# Neck lift                         21.7 g
+# Gas fill at launch                0.09715248628139377 m³
+# Gas mass                          59.28264994882293 g
+# Total mass                        113.98264994882292 g
+# System density                    0.7598843329921529 m⁻³ kg
+# Temperature at float              257.528258794135 K
+# Pressure at float                 56.13300078221867 kPa
+# Float altitude                    4724.459353754233 m
+# Internal pressure                 58.65236658085537 kPa
+# Differential pressure             2.519365798636696 kPa
+# Super pressure                    2.462348471781531 kPa
+# Super pressure onset altitude     4307.524755728726 m
