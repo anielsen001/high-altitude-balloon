@@ -1,0 +1,49 @@
+---
+title: Payload design
+---
+
+## Introduction
+
+
+![S'more-002 payload viewed from above](/_sources/launches/smore-002/design/smore-002-from-above-with-usb.jpg)
+
+![S'more-002 payload viewed from above](/_sources/launches/smore-002/design/smore-002-from-below-with-usb.jpg)
+
+
+## Power circuit
+
+This is the power supply circuit for the smore-002 ballon. The tracker is a QRP-labs U4B  S/N: 21894, only showed partially here. The solar panel can put out 6.8 Volts which is too much for the U4B so I used a regulator to that down to 5 Volts. I had some Kyocera AVX 3V 3.3 Farad super caps so I used two in series connected to the battery terminal.
+
+These solar panels have an inactive region in the middle and they can actually be cut in half. I punched a hold through this region and ran a stiff copper wire through the hole. This wire forms part of the upper half of the HF dipole antenna and provides an attachment point for the fishing line that forms the rigging to the balloon.
+
+One advantage of this design is that the ground tab on the voltage regulator makes a great place to attach a clip for measureing voltage during testing and just before launch to verify power from the solar panel. 
+
+One disadvantage is that there is no way to inject power into this circuit safely. A Schottky diode should be used in the future to protect the solar panel and allow injection of external power for testing after dark. 
+
+- [QRP-Labs U4B](https://qrp-labs.com/u4b)
+  - [Hardware manual](/_sources/u4b/u4b_hardware.pdf)
+  - [Software v1.00.005 manual](/_source/u4b/u4b_operation_1_00_005.pdf)
+- [Powerfilm MPT48-150](/_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf)
+- [Kyocera AVX 3V supercapacitors](/_datasheets/AVX_SCC_3_0V-2952762.pdf)
+- [ST L7805CV voltage regulator](/_datasheets/L7805CV_voltage_regulator.pdf)
+
+![Power supply circuit used for smore-002 launch](/_sources/launches/smore-002/design/smore-002-power-circuit.jpg)
+
+## HF antenna
+
+The upper half of the antenna starts off with solid core stiff wire that penetrates the solar panel. This is soldered to a thin 34 AWG wire which forms the remainder of this antenna. The 34 AWG wire is glued loosely (with Elmers) to fishing line that forms the structural support and attached to the balloon.
+
+## Parts and weights
+
+| Part                             | no | weight |
+|----------------------------------|---:|-------:|
+| Powerfilm MPT48-150              | 1  |  3.8   |
+| supercap AVX_SCC_3_0V-2952762    | 2  |  2.4   |
+| volt regulator L7805CV           | 1  |  1.7   |
+| u4b (with usb)                   | 1  | 5.4    |
+| u4b (without usb)                | 1  | 1.8    |
+| upper HF antenna + rigging       | 1  | 4.1    |
+| lower HF antenna                 | 1  | 0.9    |
+| TOTAL                            |    | 14.2   |
+
+: Parts and weights used for tracker design. Not including GPS antenna/solder/etc. Total weight came to 16.7 grams.
