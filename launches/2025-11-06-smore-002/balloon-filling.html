@@ -257,6 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#define-basic-balloon-parameters" id="toc-define-basic-balloon-parameters" class="nav-link" data-scroll-target="#define-basic-balloon-parameters">Define basic balloon parameters</a></li>
   <li><a href="#look-at-options-as-a-function-of-free-lift" id="toc-look-at-options-as-a-function-of-free-lift" class="nav-link" data-scroll-target="#look-at-options-as-a-function-of-free-lift">Look at options as a function of free lift</a></li>
   </ul></li>
+  <li><a href="#float-reality" id="toc-float-reality" class="nav-link" data-scroll-target="#float-reality">Float reality</a></li>
   </ul>
 </nav>
     </div>
@@ -375,9 +376,73 @@ Figure&nbsp;2: Float altitude vs.&nbsp;neck lift
 </div>
 <p>Generally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.</p>
 <p>For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.</p>
-
-
+<p><strong>This should provide a float altitude of about 35kft.</strong></p>
 </section>
+</section>
+<section id="float-reality" class="level2">
+<h2 class="anchored" data-anchor-id="float-reality">Float reality</h2>
+<p>In reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there’s likely not a leak causing an issue.</p>
+<p>The gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas?</p>
+<p>The following Julia code inerts the float calculations using a known altitude to find the gas density</p>
+<div id="12" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gas <span class="op">=</span> <span class="st">"helium 97%"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bs1 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_1, payload_weight, free_lift, gas)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>bs2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weight, free_lift, gas)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>float_altitude <span class="op">=</span> <span class="fl">6400.0</span>u<span class="st">"m"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>system_density <span class="op">=</span> PicoBalloons.<span class="fu">atmos_density</span>(<span class="fl">6400</span>u<span class="st">"m"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>total_mass <span class="op">=</span> system_density <span class="op">*</span> balloon_2.volume</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>lift_gas_mass <span class="op">=</span> total_mass <span class="op">-</span> payload_weight <span class="op">-</span> balloon_2.weight</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>lift_gas_density <span class="op">=</span> lift_gas_mass <span class="op">*</span> PicoBalloons.<span class="fu">gas_density</span>(<span class="st">"air"</span>)<span class="op">/</span>(bs2.neck_lift <span class="op">+</span> balloon_2.weight <span class="op">+</span> lift_gas_mass)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(lift_gas_density)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># = 0.6102020876451465 m⁻³ kg</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.6102020876451465 m⁻³ kg</code></pre>
+</div>
+</div>
+<p>And then as a cross check, use this density and work the calculations forward again.</p>
+<div id="14" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## work this answer forward again to verify the float altitude</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>gas <span class="op">=</span> <span class="st">"helium party"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>bs1 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_1, payload_weight, free_lift, gas)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>bs2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weight, free_lift, gas)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(bs2)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Weight: 0.038 kg</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Volume: 0.15 m³</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Neck lift                         21.7 g</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gas fill at launch                0.09715248628139377 m³</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Gas mass                          59.28264994882293 g</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Total mass                        113.98264994882292 g</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># System density                    0.7598843329921529 m⁻³ kg</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature at float              257.528258794135 K</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Pressure at float                 56.13300078221867 kPa</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Float altitude                    4724.459353754233 m</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Internal pressure                 58.65236658085537 kPa</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Differential pressure             2.519365798636696 kPa</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Super pressure                    2.462348471781531 kPa</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Super pressure onset altitude     4307.524755728726 m</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Weight: 0.076 kg
+Volume: 0.3 m³
+Neck lift                         21.7 g
+Gas fill at launch                0.15899158977708827 m³
+Gas mass                          97.017 g
+Total mass                        189.71699999999996 g
+System density                    0.6323899999999999 m⁻³ kg
+Temperature at float              246.65399999999997 K
+Pressure at float                 44.74199999999999 kPa
+Float altitude                    6400.000000000002 m
+Internal pressure                 45.9662472246834 kPa
+Differential pressure             1.2242472246834077 kPa
+Super pressure                    1.1791774063473488 kPa
+Super pressure onset altitude     6153.065084031026 m</code></pre>
+</div>
+</div>
+<p>Which is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.</p>
+
+
 </section>
 
 </main> <!-- /main -->
