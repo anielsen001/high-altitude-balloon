@@ -1,5 +1,0 @@
-
-### Forward predictions for 2025-11-09
-
-![Blue: 6000m, Red: 7000m MSL](/_sources/launches/smore-002/tracking/predictions/174752_trj001.gif)
-
