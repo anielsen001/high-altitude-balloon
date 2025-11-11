@@ -1,11 +1,11 @@
 ---
 title: Second Launch s'more-002
 date: 2025-11-06
-engine: julia
+#engine: julia
 toc: true
-julia:
-  exeflags:
-    - "--project=/opt/project"
+#julia:
+#  exeflags:
+#    - "--project=/opt/project"
 ---
 
 {{< include /_sources/launches/smore-002/smore-002.qmd >}}

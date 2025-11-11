@@ -1,6 +1,19 @@
 ### Forward predictions for 2025-11-11
 
+#### Initial prediction
+
+The 7000m prediction goes very far north and the balloon likely would not have enough sun to operate. 
+
 ![Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84](/_sources/launches/smore-002/tracking/predictions/158457_trj001.gif)
 
 - [HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=158457)
 - [HYSPLIT kmz output](/_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_158457.kmz)
+
+#### Additional estimates
+
+These estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.
+
+![Red: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84](/_sources/launches/smore-002/tracking/predictions/159158_trj001.gif)
+
+- [HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=159158)
+- [HYSPLIT kmz output](/_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_159158.kmz)
