@@ -8,6 +8,10 @@
 - [Lu7aa tracking site](http://lu7aa.org/wsprx.asp?other=kf8eez&banda=20m&balloonid=05&timeslot=8&detail=&launch=20251106135000&SSID=11&tracker=qrplabs&qrpid=109&repito=on&qp=&telen=&comments=#)
 - [SondeHub tracking link](https://amateur.sondehub.org/#!mt=Mapnik&mz=8&qm=12h&f=KF8EEZ-11)
 
+## Weather information at current spots
+
+{{< include /_sources/launches/smore-002/tracking/weather/2025-11-11-weather.qmd >}}
+
 ## Track predictions
 
 {{< include /_sources/launches/smore-002/tracking/predictions/2025-11-11-forward-prediction.qmd >}}
