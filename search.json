@@ -176,14 +176,14 @@
     "href": "launches/2025-11-06-smore-002/all-predictions.html",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
+    "text": "The 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\n\n\n\nThese estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.\n\n\n\nRed: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
+    "text": "The 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\n\n\n\nThese estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.\n\n\n\nRed: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-1",
@@ -246,7 +246,7 @@
     "href": "launches/2025-11-06-smore-002.html#track-predictions",
     "title": "Second Launch s’more-002",
     "section": "Track predictions",
-    "text": "Track predictions\n\nForward predictions for 2025-11-11\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\nAll earlier predictions",
+    "text": "Track predictions\n\nForward predictions for 2025-11-11\n\nInitial prediction\nThe 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\n\n\nAdditional estimates\nThese estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.\n\n\n\nRed: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\nAll earlier predictions",
     "crumbs": [
       "Home page",
       "Launches",
