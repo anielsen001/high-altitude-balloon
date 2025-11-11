@@ -176,28 +176,35 @@
     "href": "launches/2025-11-06-smore-002/all-predictions.html",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "HYSPLIT output page"
+    "text": "Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "HYSPLIT output page"
+    "text": "Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-1",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-1",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-10-09",
-    "text": "2025-10-09\n\nForward predictions for 2025-10-09"
+    "section": "2025-11-10",
+    "text": "2025-11-10\n\nForward predictions for 2025-10-10\n\nHYSPLIT output page"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-2",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-2",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-10-08",
-    "text": "2025-10-08\n\nForward predictions for 2025-10-08\n\n\n\nModel run by Tom Reed"
+    "section": "2025-11-09",
+    "text": "2025-11-09\n\nForward predictions for 2025-10-09"
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-3",
+    "href": "launches/2025-11-06-smore-002/all-predictions.html#section-3",
+    "title": "HYSPLIT predictions for balloon track",
+    "section": "2025-11-08",
+    "text": "2025-11-08\n\nForward predictions for 2025-10-08\n\n\n\nModel run by Tom Reed"
   },
   {
     "objectID": "launches/index.html",
@@ -215,7 +222,7 @@
     "href": "launches/2025-11-06-smore-002.html",
     "title": "Second Launch s’more-002",
     "section": "",
-    "text": "WSPR Telemetry Viewer tracking link",
+    "text": "WSPR Telemetry Viewer tracking link\nLu7aa tracking site",
     "crumbs": [
       "Home page",
       "Launches",
@@ -227,7 +234,7 @@
     "href": "launches/2025-11-06-smore-002.html#tracking-information",
     "title": "Second Launch s’more-002",
     "section": "",
-    "text": "WSPR Telemetry Viewer tracking link",
+    "text": "WSPR Telemetry Viewer tracking link\nLu7aa tracking site",
     "crumbs": [
       "Home page",
       "Launches",
@@ -239,7 +246,7 @@
     "href": "launches/2025-11-06-smore-002.html#track-predictions",
     "title": "Second Launch s’more-002",
     "section": "Track predictions",
-    "text": "Track predictions\n\nForward predictions for 2025-10-10\n\nHYSPLIT output page\nAll earlier predictions",
+    "text": "Track predictions\n\nForward predictions for 2025-11-11\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\nAll earlier predictions",
     "crumbs": [
       "Home page",
       "Launches",
