@@ -1,0 +1,46 @@
+---
+title: "using Julia and Python with Sos"
+format: html
+engine: jupyter
+jupyter: sos
+---
+
+
+# Julia
+
+```{sos}
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+%use juila-sos-1.11
+
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+	 
+```
+
+
+# Python
+
+```{sos}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```

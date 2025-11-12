@@ -1,0 +1,58 @@
+---
+title: ojs test
+---
+
+## Examples
+
+https://www.royfrancis.com/quarto-exp/documents/ojs-r/
+
+https://observablehq.com/plot/marks/dot
+
+## Load and prepare data with python
+
+```{python}
+#| label: python-load-data
+#| exec: false
+import numpy as np
+import pandas as pd
+from pathlib import Path
+trackpath = Path('/opt/project/_sources/launches/smore-002/tracking/spots')
+trackfile = trackpath / 'KF8EEZ_109.csv'
+df = pd.read_csv(trackfile)
+df.sort_values('#',inplace=True)
+df.set_index('#',inplace=True)
+ojs_define(raw_spots=df)
+```
+
+## Make an ojs plot
+
+```{ojs}
+//| label: ojs-show-data-table
+import { aq, op } from '@uwdata/arquero'
+spots = aq.from(transpose(raw_spots))
+
+
+viewof raw_table = Inputs.table(spots)
+
+```
+
+```{ojs}
+//| label: adjust-to-date
+
+spots_date = spots.derive({ spots{"date"} => op.parse_date(spots{"UTC Time"} })
+//viewof raw_table = Inputs.table(spots_date)
+```
+
+```{ojs}
+//| label: ojs-plot-altitude
+
+Plot.plot({
+  grid: true,
+  x: {label: "Date/Time UTC"},
+  y: {label: "Altitude meters"},
+  marks: [
+	//Plot.dot(spots, {x:"UTC Time" => d3.timeFormat("%Y-%m-%d %H:%M), y:"Altitude (km)"})
+	Plot.dot(spots, {x:"UTC Time", y:"Altitude (km)"})
+  ]
+})
+```
