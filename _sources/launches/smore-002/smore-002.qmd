@@ -10,11 +10,13 @@
 
 ## Weather information at current spots
 
-{{< include /_sources/launches/smore-002/tracking/weather/2025-11-11-weather.qmd >}}
+{{< include /_sources/launches/smore-002/tracking/weather/2025-11-12-weather.qmd >}}
+
+[All earlier weather](/launches/2025-11-06-smore-002/all-weather.qmd)
 
 ## Track predictions
 
-{{< include /_sources/launches/smore-002/tracking/predictions/2025-11-11-forward-prediction.qmd >}}
+{{< include /_sources/launches/smore-002/tracking/predictions/2025-11-12-forward-prediction.qmd >}}
 
 
 [All earlier predictions](/launches/2025-11-06-smore-002/all-predictions.qmd)
