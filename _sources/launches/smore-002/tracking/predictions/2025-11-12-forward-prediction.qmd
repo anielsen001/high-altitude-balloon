@@ -1,0 +1,7 @@
+### Forward predictions for 2025-11-12
+
+
+![Red: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84](/_sources/launches/smore-002/tracking/predictions/1627_trj001.gif)
+
+- [HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=1627)
+- [HYSPLIT kmz output](/_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_1672.kmz)
