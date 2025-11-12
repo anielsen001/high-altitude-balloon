@@ -122,22 +122,44 @@ gas = "helium party"
 bs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)
 bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
 println(bs2)
-# Weight: 0.038 kg
-# Volume: 0.15 m³
+# Weight: 0.076 kg
+# Volume: 0.3 m³
 # Neck lift                         21.7 g
-# Gas fill at launch                0.09715248628139377 m³
-# Gas mass                          59.28264994882293 g
-# Total mass                        113.98264994882292 g
-# System density                    0.7598843329921529 m⁻³ kg
-# Temperature at float              257.528258794135 K
-# Pressure at float                 56.13300078221867 kPa
-# Float altitude                    4724.459353754233 m
-# Internal pressure                 58.65236658085537 kPa
-# Differential pressure             2.519365798636696 kPa
-# Super pressure                    2.462348471781531 kPa
-# Super pressure onset altitude     4307.524755728726 m
+# Gas fill at launch                0.15899158977708827 m³
+# Gas mass                          97.017 g
+# Total mass                        189.71699999999996 g
+# System density                    0.6323899999999999 m⁻³ kg
+# Temperature at float              246.65399999999997 K
+# Pressure at float                 44.74199999999999 kPa
+# Float altitude                    6400.000000000002 m
+# Internal pressure                 45.9662472246834 kPa
+# Differential pressure             1.2242472246834077 kPa
+# Super pressure                    1.1791774063473488 kPa
+# Super pressure onset altitude     6153.065084031026 m
 ```
 
 Which is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.
 
 
+Now we can calculate the percentage of helium in the party gas based on the density. 
+
+
+For two ideal gasses the mixed density is
+\begin{equation}
+\rho_{mix} = \frac{\rho_1 v_1 + \rho_2 v_2}{v_1 + v_2}
+\end{equation}
+where $\rho_i$ is the density of each gas and $v_i$ is the volume occupied by each gas. This can be manipulated to get a volume fraction for one of the gasses
+\begin{equation}
+\frac{v_1}{v_{mix}} = \frac{\rho_{mix} - \rho_2}{\rho_1 - \rho_2}
+\end{equation}
+and we can put in some numbers for the density we have found as well as air and pure helium
+
+```{julia}
+rho_he = 0.1693u"kg/m^3"
+rho_air = 1.2247u"kg/m^3"
+rho_mix = lift_gas_density
+
+helium_volume_fraction = (rho_mix - rho_air)/(rho_he - rho_air)
+
+print(helium_volume_fraction)
+```
