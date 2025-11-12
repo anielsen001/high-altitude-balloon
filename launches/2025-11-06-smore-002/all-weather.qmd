@@ -1,0 +1,12 @@
+---
+title: Weather at ballon times and location
+---
+
+## 2025-11-12
+
+
+{{< include /_sources/launches/smore-002/tracking/weather/2025-11-12-weather.qmd >}}
+
+## 2025-11-11
+
+{{< include /_sources/launches/smore-002/tracking/weather/2025-11-11-weather.qmd >}}

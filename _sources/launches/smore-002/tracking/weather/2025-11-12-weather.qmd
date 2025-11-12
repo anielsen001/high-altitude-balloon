@@ -1,0 +1,13 @@
+### Clouds for 2025-11-12
+
+::: {layout-ncol=3}
+
+![](/_sources/launches/smore-002/tracking/weather/2025-11-12-windy-satellite.png)
+
+![](/_sources/launches/smore-002/tracking/weather/2025-11-12-windy-medium-clouds.png)
+
+![](/_sources/launches/smore-002/tracking/weather/2025-11-12-windy-high-clouds.png)
+
+![](/_sources/launches/smore-002/tracking/weather/2025-11-12-windy-winds.png)
+
+:::
