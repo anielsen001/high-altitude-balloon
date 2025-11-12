@@ -15,7 +15,7 @@ df.set_index('#',inplace=True)
 # get times and convert to iso formatted time stamps
 t =  pd.to_datetime(df['UTC Time'])
 # dt = (t - t[1]).dt.total_seconds().to_numpy()
-ts = ts = [ _t.isoformat() for _t in t]
+ts = [ _t.isoformat() for _t in t]
 
 # get llh positon spots
 llh = df[['Lat (°)','Lon (°)', 'Altitude (km)',]].bfill().to_numpy()
