@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HYSPLIT predictions for balloon track – Balloons</title>
+<title>Payload design – Balloons</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HYSPLIT predictions for balloon track</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Payload design</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -217,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HYSPLIT predictions for balloon track</h1>
+<h1 class="title">Payload design</h1>
 </div>
 
 
@@ -234,84 +234,104 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">2025-11-12</h2>
-<section id="forward-predictions-for-2025-11-12" class="level3">
-<h3 class="anchored" data-anchor-id="forward-predictions-for-2025-11-12">Forward predictions for 2025-11-12</h3>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/1627_trj001.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Red: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84"><img src="../../_sources/launches/smore-002/tracking/predictions/1627_trj001.gif" class="img-fluid figure-img" alt="Red: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84"></a></p>
-<figcaption>Red: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84</figcaption>
+<p><a href="../../_sources/launches/smore-002/design/smore-002-from-above-with-usb.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="S’more-002 payload viewed from above"><img src="../../_sources/launches/smore-002/design/smore-002-from-above-with-usb.jpg" class="img-fluid figure-img" alt="S’more-002 payload viewed from above"></a></p>
+<figcaption>S’more-002 payload viewed from above</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../_sources/launches/smore-002/design/smore-002-from-below-with-usb.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="S’more-002 payload viewed from above"><img src="../../_sources/launches/smore-002/design/smore-002-from-below-with-usb.jpg" class="img-fluid figure-img" alt="S’more-002 payload viewed from above"></a></p>
+<figcaption>S’more-002 payload viewed from above</figcaption>
+</figure>
+</div>
+</section>
+<section id="power-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="power-circuit">Power circuit</h2>
+<p>This is the power supply circuit for the smore-002 ballon. The tracker is a QRP-labs U4B S/N: 21894, only showed partially here. The solar panel can put out 6.8 Volts which is too much for the U4B so I used a regulator to that down to 5 Volts. I had some Kyocera AVX 3V 3.3 Farad super caps so I used two in series connected to the battery terminal.</p>
+<p>These solar panels have an inactive region in the middle and they can actually be cut in half. I punched a hold through this region and ran a stiff copper wire through the hole. This wire forms part of the upper half of the HF dipole antenna and provides an attachment point for the fishing line that forms the rigging to the balloon.</p>
+<p>One advantage of this design is that the ground tab on the voltage regulator makes a great place to attach a clip for measureing voltage during testing and just before launch to verify power from the solar panel.</p>
+<p>One disadvantage is that there is no way to inject power into this circuit safely. A Schottky diode should be used in the future to protect the solar panel and allow injection of external power for testing after dark.</p>
 <ul>
-<li><a href="https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=1627">HYSPLIT output page</a></li>
-<li><a href="../../_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_1672.kmz">HYSPLIT kmz output</a></li>
-</ul>
-</section>
-</section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">2025-11-11</h2>
-<section id="forward-predictions-for-2025-11-11" class="level3">
-<h3 class="anchored" data-anchor-id="forward-predictions-for-2025-11-11">Forward predictions for 2025-11-11</h3>
-<section id="initial-prediction" class="level4">
-<h4 class="anchored" data-anchor-id="initial-prediction">Initial prediction</h4>
-<p>The 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/158457_trj001.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84"><img src="../../_sources/launches/smore-002/tracking/predictions/158457_trj001.gif" class="img-fluid figure-img" alt="Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84"></a></p>
-<figcaption>Red: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84</figcaption>
-</figure>
-</div>
+<li><a href="https://qrp-labs.com/u4b">QRP-Labs U4B</a>
 <ul>
-<li><a href="https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=158457">HYSPLIT output page</a></li>
-<li><a href="../../_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_158457.kmz">HYSPLIT kmz output</a></li>
+<li><a href="../../_sources/u4b/u4b_hardware.pdf">Hardware manual</a></li>
+<li><a href="../../_source/u4b/u4b_operation_1_00_005.pdf">Software v1.00.005 manual</a></li>
+</ul></li>
+<li><a href="../../_datasheets/powerfilm_onp1237x54_apr22_xonlink.pdf">Powerfilm MPT48-150</a></li>
+<li><a href="../../_datasheets/AVX_SCC_3_0V-2952762.pdf">Kyocera AVX 3V supercapacitors</a></li>
+<li><a href="../../_datasheets/L7805CV_voltage_regulator.pdf">ST L7805CV voltage regulator</a></li>
 </ul>
-</section>
-<section id="additional-estimates" class="level4">
-<h4 class="anchored" data-anchor-id="additional-estimates">Additional estimates</h4>
-<p>These estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/159158_trj001.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Red: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84"><img src="../../_sources/launches/smore-002/tracking/predictions/159158_trj001.gif" class="img-fluid figure-img" alt="Red: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84"></a></p>
-<figcaption>Red: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84</figcaption>
+<p><a href="../../_sources/launches/smore-002/design/smore-002-power-circuit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Power supply circuit used for smore-002 launch"><img src="../../_sources/launches/smore-002/design/smore-002-power-circuit.jpg" class="img-fluid figure-img" alt="Power supply circuit used for smore-002 launch"></a></p>
+<figcaption>Power supply circuit used for smore-002 launch</figcaption>
 </figure>
 </div>
-<ul>
-<li><a href="https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=159158">HYSPLIT output page</a></li>
-<li><a href="../../_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_159158.kmz">HYSPLIT kmz output</a></li>
-</ul>
 </section>
+<section id="hf-antenna" class="level2">
+<h2 class="anchored" data-anchor-id="hf-antenna">HF antenna</h2>
+<p>The upper half of the antenna starts off with solid core stiff wire that penetrates the solar panel. This is soldered to a thin 34 AWG wire which forms the remainder of this antenna. The 34 AWG wire is glued loosely (with Elmers) to fishing line that forms the structural support and attached to the balloon.</p>
 </section>
-</section>
-<section id="section-2" class="level2">
-<h2 class="anchored" data-anchor-id="section-2">2025-11-10</h2>
-<section id="forward-predictions-for-2025-11-10" class="level3">
-<h3 class="anchored" data-anchor-id="forward-predictions-for-2025-11-10">Forward predictions for 2025-11-10</h3>
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/112389_trj001.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../../_sources/launches/smore-002/tracking/predictions/112389_trj001.gif" class="img-fluid"></a></p>
-<p><a href="https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=112389">HYSPLIT output page</a></p>
-</section>
-</section>
-<section id="section-3" class="level2">
-<h2 class="anchored" data-anchor-id="section-3">2025-11-09</h2>
-<section id="forward-predictions-for-2025-11-09" class="level3">
-<h3 class="anchored" data-anchor-id="forward-predictions-for-2025-11-09">Forward predictions for 2025-11-09</h3>
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/174752_trj001.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../../_sources/launches/smore-002/tracking/predictions/174752_trj001.gif" class="img-fluid"></a></p>
-</section>
-</section>
-<section id="section-4" class="level2">
-<h2 class="anchored" data-anchor-id="section-4">2025-11-08</h2>
-<section id="forward-predictions-for-2025-10-08" class="level3">
-<h3 class="anchored" data-anchor-id="forward-predictions-for-2025-10-08">Forward predictions for 2025-10-08</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../_sources/launches/smore-002/tracking/predictions/2025-11-08-hysplit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Model run by Tom Reed"><img src="../../_sources/launches/smore-002/tracking/predictions/2025-11-08-hysplit.png" class="img-fluid figure-img" alt="Model run by Tom Reed"></a></p>
-<figcaption>Model run by Tom Reed</figcaption>
-</figure>
-</div>
+<section id="parts-and-weights" class="level2">
+<h2 class="anchored" data-anchor-id="parts-and-weights">Parts and weights</h2>
+<table class="caption-top table">
+<caption>Parts and weights used for tracker design. Not including GPS antenna/solder/etc. Total weight came to 16.7 grams.</caption>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th style="text-align: right;">no</th>
+<th style="text-align: right;">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Powerfilm MPT48-150</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.8</td>
+</tr>
+<tr class="even">
+<td>supercap AVX_SCC_3_0V-2952762</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2.4</td>
+</tr>
+<tr class="odd">
+<td>volt regulator L7805CV</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.7</td>
+</tr>
+<tr class="even">
+<td>u4b (with usb)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.4</td>
+</tr>
+<tr class="odd">
+<td>u4b (without usb)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr class="even">
+<td>upper HF antenna + rigging</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.1</td>
+</tr>
+<tr class="odd">
+<td>lower HF antenna</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9</td>
+</tr>
+<tr class="even">
+<td>TOTAL</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">14.2</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
