@@ -4,6 +4,7 @@
 /.quarto/
 /output/
 /_site/
+/*_html/
 
 # julia related
 /.julia/
