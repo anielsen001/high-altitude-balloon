@@ -5,3 +5,4 @@
 
 - [HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=1627)
 - [HYSPLIT kmz output](/_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_1672.kmz)
+- [HYSPLIT shapefile output](/_sources/launches/smore-002/tracking/predictions/gis_1672.zip)
