@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.12"
 
 [manifest]
@@ -798,11 +798,13 @@ dependencies = [
     { name = "inu" },
     { name = "ipython" },
     { name = "jupyter" },
+    { name = "kml2geojson" },
     { name = "lxml" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "plotly" },
     { name = "pyarrow" },
+    { name = "pyshp" },
     { name = "scipy" },
     { name = "setuptools" },
     { name = "simplekml" },
@@ -826,11 +828,13 @@ requires-dist = [
     { name = "inu", specifier = ">=2.5.6" },
     { name = "ipython", specifier = ">=9.4.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "kml2geojson", specifier = ">=5.1.0" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "matplotlib", specifier = ">=3.10.7" },
     { name = "numpy", specifier = ">=2.3.1" },
     { name = "plotly", specifier = ">=6.4.0" },
     { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "pyshp", specifier = ">=3.0.2.post1" },
     { name = "scipy", specifier = ">=1.16.0" },
     { name = "setuptools", specifier = ">=80.9.0" },
     { name = "simplekml", specifier = ">=1.3.6" },
@@ -1332,6 +1336,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/99/dd/841e9a66c4715477ea0abc78da039832fbb09dac5c35c58dc4c41a407b8a/kiwisolver-1.4.9-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:aedff62918805fb62d43a4aa2ecd4482c380dc76cd31bd7c8878588a61bd0369", size = 2391835, upload-time = "2025-08-10T21:27:34.23Z" },
     { url = "https://files.pythonhosted.org/packages/0c/28/4b2e5c47a0da96896fdfdb006340ade064afa1e63675d01ea5ac222b6d52/kiwisolver-1.4.9-cp314-cp314t-win_amd64.whl", hash = "sha256:1fa333e8b2ce4d9660f2cda9c0e1b6bafcfb2457a9d259faa82289e73ec24891", size = 79988, upload-time = "2025-08-10T21:27:35.587Z" },
     { url = "https://files.pythonhosted.org/packages/80/be/3578e8afd18c88cdf9cb4cffde75a96d2be38c5a903f1ed0ceec061bd09e/kiwisolver-1.4.9-cp314-cp314t-win_arm64.whl", hash = "sha256:4a48a2ce79d65d363597ef7b567ce3d14d68783d2b2263d98db3d9477805ba32", size = 70260, upload-time = "2025-08-10T21:27:36.606Z" },
+]
+
+[[package]]
+name = "kml2geojson"
+version = "5.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2f/eb/45891463bdd2117cf468aa1cda382edd293799bb79ee2b6660709ad3f63f/kml2geojson-5.1.0.tar.gz", hash = "sha256:76a69f598e55d2eff90332e87ee9480c36120f60e6f5d6b5aaeba63ce92a3dfa", size = 10679, upload-time = "2022-05-02T02:46:15.365Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8d/71/1346b2f1530c7cb027d61b8e323919b77a19ace9e9aafcff978b1043c888/kml2geojson-5.1.0-py3-none-any.whl", hash = "sha256:1fc3096a6feb3728e97521db30f4c55982f3f7ad299892687a41b1b5528f55df", size = 9884, upload-time = "2022-05-02T02:46:13.062Z" },
 ]
 
 [[package]]
@@ -2250,6 +2266,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz", hash = "sha256:2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6", size = 1099274, upload-time = "2025-09-21T04:11:06.277Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl", hash = "sha256:e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e", size = 113890, upload-time = "2025-09-21T04:11:04.117Z" },
+]
+
+[[package]]
+name = "pyshp"
+version = "3.0.2.post1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/7f/fb/07f057ff01229c575831766b44bd249aefa086146cf5bce52e172d77cf4e/pyshp-3.0.2.post1.tar.gz", hash = "sha256:18e34a66759b6d34a6f535978c76dad518200f23a727d9e22af8e8535c0245b9", size = 2192180, upload-time = "2025-10-10T16:04:58.529Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/92/a8ad817864a560b96ac1c817f9c56bb7eacc1a7d522e2d39afe9e9c77d7b/pyshp-3.0.2.post1-py3-none-any.whl", hash = "sha256:b0aec66bc55f7cd3a846f6b02c5a9eec1fc1d2cff16ccfcf6493a6773c7eb602", size = 58298, upload-time = "2025-10-10T16:04:57.151Z" },
 ]
 
 [[package]]
