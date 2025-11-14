@@ -50,8 +50,8 @@ dfatt = pd.read_csv(
     'GIS_traj_121367_01.att',
     names=cols,
     comment='#',
-    #parse_dates = {'datetime':[['YYYYMMDD', 'TIME']]},
-    parse_dates = {'datetime':[[1,2]]},
+    parse_dates = {'datetime':['YYYYMMDD', 'TIME']},
+    #parse_dates = {'datetime':[[1,2]]},
     date_format = '%Y%m%d %H%M',
 )
 df = pd.merge(left=dfatt,right=dftxt,how='left')
