@@ -41,7 +41,7 @@ map.save(hysplitpath / 'test.html')
 import datetime
 
 # Brute forcing shape files
-cols=['TRAJNUM','LAT','LON','FLUX']
+cols=['TRAJNUM','LON','LAT','FLUX']
 dftxt = pd.read_csv('GIS_traj_121367_01.txt',names=cols,skipfooter=1,engine='python')
 cols = ['TRAJNUM','YYYYMMDD','TIME','LEVEL']
 parse = lambda x: datetime.strptime(x, '%Y%m%d %H%M')
