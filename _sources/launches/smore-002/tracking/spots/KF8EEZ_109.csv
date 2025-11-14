@@ -1,4 +1,6 @@
 #,UTC Time,Grid,GPS Fix Validity,Track Attachment,Lat (°),Lon (°),Altitude (km),Vertical Speed (m/min),Speed (km/h),Computed Speed (km/h),Voltage (V),Temperature (°C),Sun Elevation (°),# RX Reports,Average RX Frequency (Hz),Max RX Distance (km),Max SNR (dB)
+112,2025-11-13 09:36,KM67ls,1,1,37.77,32.96,6.62,0,30,26,4.90,0,34,8,79,2747,-17
+111,2025-11-13 09:26,KM67,1,0,37.50,33.00,,,,,,,35,3,102,2649,-21
 110,2025-11-12 11:36,KM36,1,0,36.50,27.00,,,,,,,31,4,92,1967,-12
 109,2025-11-12 11:26,KM36kf,1,1,36.23,26.88,6.54,-4,30,,3.20,-4,32,50,78,3159,-7
 108,2025-11-12 11:16,KM36jf,1,1,36.23,26.79,6.58,8,33,,4.85,-2,33,48,74,3002,-9
