@@ -2,6 +2,11 @@
 title: HYSPLIT predictions for balloon track
 ---
 
+
+## 2025-11-14
+
+{{< include /_sources/launches/smore-002/tracking/predictions/2025-11-14-forward-prediction.qmd >}}
+
 ## 2025-11-13
 
 {{< include /_sources/launches/smore-002/tracking/predictions/2025-11-13-forward-prediction.qmd >}}
