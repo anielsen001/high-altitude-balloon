@@ -1,0 +1,17 @@
+### Forward predictions for 2025-11-14
+
+There are no spots today, but yesterdays prediction had the ballloon too far north for the sun to activate it.
+
+![Prediction from 2025-11-13 at 2025-11-14 1000Z](/_sources/launches/smore-002/tracking/predictions/HYSPLITtraj_142371-20251114-1000.png)
+
+Doing a new prediction using these starting lat/long points
+  1025,  40.5880,  50.9080,     254.
+  2025,  42.7470,  52.6150,     227.
+  3025,  44.4120,  52.2830,     240.
+
+#### Prediction from 52.615N/42.747E at 6440 meters
+
+![Ensemble predictions starting from 52.615N/42.747E at 6440 meters](/_sources/launches/smore-002/tracking/predictions/188480_trj001.gif)
+
+- [HYSPLIT GIS products](/_sources/launches/smore-002/tracking/predictions/gis_188480.zip)
+- [HYSPLIT output page](https://www.ready.noaa.gov/hypub-bin/trajresults.pl?jobidno=188480)
