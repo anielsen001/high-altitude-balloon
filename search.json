@@ -176,46 +176,53 @@
     "href": "launches/2025-11-06-smore-002/all-predictions.html",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "Red: 6420m, Blue: 6620m, Green: 6820m, MSL. Last telemetered altitude 6620m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\nHYSPLIT shapefile output"
+    "text": "There are no spots today, but yesterdays prediction had the ballloon too far north for the sun to activate it.\n\n\n\nPrediction from 2025-11-13 at 2025-11-14 1000Z\n\n\nDoing a new prediction using these starting lat/long points 1025, 40.5880, 50.9080, 254. 2025, 42.7470, 52.6150, 227. 3025, 44.4120, 52.2830, 240.\n\n\n\n\n\nEnsemble predictions starting from 52.615N/42.747E at 6440 meters\n\n\n\nHYSPLIT GIS products\nHYSPLIT output page"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section",
     "title": "HYSPLIT predictions for balloon track",
     "section": "",
-    "text": "Red: 6420m, Blue: 6620m, Green: 6820m, MSL. Last telemetered altitude 6620m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\nHYSPLIT shapefile output"
+    "text": "There are no spots today, but yesterdays prediction had the ballloon too far north for the sun to activate it.\n\n\n\nPrediction from 2025-11-13 at 2025-11-14 1000Z\n\n\nDoing a new prediction using these starting lat/long points 1025, 40.5880, 50.9080, 254. 2025, 42.7470, 52.6150, 227. 3025, 44.4120, 52.2830, 240.\n\n\n\n\n\nEnsemble predictions starting from 52.615N/42.747E at 6440 meters\n\n\n\nHYSPLIT GIS products\nHYSPLIT output page"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-1",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-1",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-11-12",
-    "text": "2025-11-12\n\nForward predictions for 2025-11-12\n\n\n\nRed: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
+    "section": "2025-11-13",
+    "text": "2025-11-13\n\nForward predictions for 2025-11-13\n\n\n\nRed: 6420m, Blue: 6620m, Green: 6820m, MSL. Last telemetered altitude 6620m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\nHYSPLIT shapefile output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-2",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-2",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-11-11",
-    "text": "2025-11-11\n\nForward predictions for 2025-11-11\n\nInitial prediction\nThe 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\n\n\nAdditional estimates\nThese estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.\n\n\n\nRed: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
+    "section": "2025-11-12",
+    "text": "2025-11-12\n\nForward predictions for 2025-11-12\n\n\n\nRed: 6300m, Blue: 6500m, Green: 6700m, MSL. Last telemetered altitude 6540m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\nHYSPLIT shapefile output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-3",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-3",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-11-10",
-    "text": "2025-11-10\n\nForward predictions for 2025-11-10\n\nHYSPLIT output page"
+    "section": "2025-11-11",
+    "text": "2025-11-11\n\nForward predictions for 2025-11-11\n\nInitial prediction\nThe 7000m prediction goes very far north and the balloon likely would not have enough sun to operate.\n\n\n\nRed: 6000m, Blue: 6500m, Green: 7000m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\n\n\n\nAdditional estimates\nThese estimate were made to see how sensitive the track was to going far north versus south. It looks more likely to go to the south, which means there should be sun to keep the solar panels operating.\n\n\n\nRed: 6600m, Blue: 6700m, Green: 6800m, MSL. Last telemetered altitude 6500m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-4",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-4",
     "title": "HYSPLIT predictions for balloon track",
-    "section": "2025-11-09",
-    "text": "2025-11-09\n\nForward predictions for 2025-11-09"
+    "section": "2025-11-10",
+    "text": "2025-11-10\n\nForward predictions for 2025-11-10\n\nHYSPLIT output page"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-5",
     "href": "launches/2025-11-06-smore-002/all-predictions.html#section-5",
+    "title": "HYSPLIT predictions for balloon track",
+    "section": "2025-11-09",
+    "text": "2025-11-09\n\nForward predictions for 2025-11-09"
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-predictions.html#section-6",
+    "href": "launches/2025-11-06-smore-002/all-predictions.html#section-6",
     "title": "HYSPLIT predictions for balloon track",
     "section": "2025-11-08",
     "text": "2025-11-08\n\nForward predictions for 2025-10-08\n\n\n\nModel run by Tom Reed"
@@ -224,12 +231,19 @@
     "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-1",
     "href": "launches/2025-11-06-smore-002/all-weather.html#section-1",
     "title": "Weather at ballon times and location",
-    "section": "2025-11-12",
-    "text": "2025-11-12\n\nClouds for 2025-11-12"
+    "section": "2025-11-13",
+    "text": "2025-11-13\n\nClouds for 2025-11-13"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-2",
     "href": "launches/2025-11-06-smore-002/all-weather.html#section-2",
+    "title": "Weather at ballon times and location",
+    "section": "2025-11-12",
+    "text": "2025-11-12\n\nClouds for 2025-11-12"
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-3",
+    "href": "launches/2025-11-06-smore-002/all-weather.html#section-3",
     "title": "Weather at ballon times and location",
     "section": "2025-11-11",
     "text": "2025-11-11\n\nClouds for 2025-11-11"
@@ -270,11 +284,11 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#weather-information-at-current-spots",
-    "href": "launches/2025-11-06-smore-002.html#weather-information-at-current-spots",
+    "objectID": "launches/2025-11-06-smore-002.html#weather-information",
+    "href": "launches/2025-11-06-smore-002.html#weather-information",
     "title": "Second Launch s’more-002",
-    "section": "Weather information at current spots",
-    "text": "Weather information at current spots\n\nClouds for 2025-11-13\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
+    "section": "Weather information",
+    "text": "Weather information\nthis shows weather along the predicted HYSPLIT path (Section 3).\n\nClouds for 2025-11-14\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
     "crumbs": [
       "Home page",
       "Launches",
@@ -282,11 +296,11 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#track-predictions",
-    "href": "launches/2025-11-06-smore-002.html#track-predictions",
+    "objectID": "launches/2025-11-06-smore-002.html#sec-track-predictions",
+    "href": "launches/2025-11-06-smore-002.html#sec-track-predictions",
     "title": "Second Launch s’more-002",
     "section": "Track predictions",
-    "text": "Track predictions\n\nForward predictions for 2025-11-13\n\n\n\nRed: 6420m, Blue: 6620m, Green: 6820m, MSL. Last telemetered altitude 6620m WGS-84\n\n\n\nHYSPLIT output page\nHYSPLIT kmz output\nHYSPLIT shapefile output\n\nAll earlier predictions",
+    "text": "Track predictions\n\nForward predictions for 2025-11-14\nThere are no spots today, but yesterdays prediction had the ballloon too far north for the sun to activate it.\n\n\n\nPrediction from 2025-11-13 at 2025-11-14 1000Z\n\n\nDoing a new prediction using these starting lat/long points 1025, 40.5880, 50.9080, 254. 2025, 42.7470, 52.6150, 227. 3025, 44.4120, 52.2830, 240.\n\nPrediction from 52.615N/42.747E at 6440 meters\n\n\n\nEnsemble predictions starting from 52.615N/42.747E at 6440 meters\n\n\n\nHYSPLIT GIS products\nHYSPLIT output page\n\nAll earlier predictions",
     "crumbs": [
       "Home page",
       "Launches",
