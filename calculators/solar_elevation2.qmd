@@ -12,8 +12,8 @@ from astropy import units as u
 from astropy.visualization import quantity_support, time_support
 from matplotlib import pylab as plt
 import matplotlib.dates as mdates
-
 import numpy as np
+from tqdm import tqdm
 ```
 
 Set the minimum elevation and other parameters
@@ -24,7 +24,7 @@ minimum_solar_angle_deg = 30.0
 
 latitude_minimum_deg = 0.0 # equator
 latitude_maximum_deg = 90.0 # pole
-latitude_step_deg = 5.0 # steps
+latitude_step_deg = 10.0 # size of step
 
 longitude_deg = 0.0 # meridian
 
@@ -43,20 +43,22 @@ delta_time = np.linspace(0, 24, 1) * u.hour
 lats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)
 pos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)
 
-times = np.linspace(start_date,end_date,1000,endpoint=False)
+num_times = 24*60*10
+times = np.linspace(start_date,end_date,num_times,endpoint=False)
+daynum = (times - times[0]).jd
 
 # this syntax would assign one time to each single location
 # so times and pos must be the same length
 # frame = AltAz(obstime=times, location=pos)
 #
 # instead use list comprehension to create a 2-D array fo position and times
-frames = [ AltAz(obstime=_t, location=pos) for _t in times ]
-sunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in frames]
-alts = [ _sunloc.alt for _sunloc in sunlocs ]
+frames = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times) ]
+sunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames)]
+alts = [ _sunloc.alt for _sunloc in tqdm(sunlocs) ]
 
 # reformat into an array
 altslats = np.zeros([len(times),len(lats)])
-for ii in range(len(alts)):
+for ii in tqdm(range(len(alts))):
     altslats[ii,:] = alts[ii]
 
 ```
@@ -72,6 +74,17 @@ with time_support():
         #ax.plot(times,_alt,)
     ax.grid()
     ax.legend()
+
+```
+
+```{python}
+#| label: fig-elevation-2
+fig, ax = plt.subplots()
+for ii,_lat in enumerate(lats):
+    ax.plot(daynum, altslats[:,ii])
+    
+ax.grid()
+ax.legend()
 
 ```
 
