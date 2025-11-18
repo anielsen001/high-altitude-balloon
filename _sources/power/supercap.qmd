@@ -28,6 +28,7 @@ energy_J = storage_as * volt_batt
 print(f'Nominal energy stored in LiPO battery: {energy_J}')
 ```
 
+Lithium titanate battery (LTO)
 
 ```{python}
 #| label: battery-energy-lto
