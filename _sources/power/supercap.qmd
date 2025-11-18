@@ -1,0 +1,43 @@
+
+These numbers are for the supercapacitor setup used.
+
+```{python}
+#| label: define-capacitor-available-energy
+volt_max = 5.0
+volt_min = 3.3
+
+capacitance = 6 # Farad
+
+energy = 0.5 * capacitance * (volt_max**2 - volt_min**2) # Joule
+
+print(f'Supercapacitor energy availability: {energy}')
+```
+
+These numbers are for a small LiPO battery I have. Does not account for low temperature at altitude.
+
+```{python}
+#| label: battery-energy-lipo
+storage_mah = 110.0 # energy storage in milliamp hours
+volt_batt = 3.7 # nominal battery voltage
+
+storage_ah = storage_mah/1000.0 # convert to Amp-Hours
+storage_as = storage_ah * 3600.0 # convert to Amp-seconds
+
+energy_J = storage_as * volt_batt
+
+print(f'Nominal energy stored in LiPO battery: {energy_J}')
+```
+
+
+```{python}
+#| label: battery-energy-lto
+storage_mah = 2*12.0 # energy storage in milliamp hours
+volt_batt = 2*2.4 # nominal battery voltage - two cells in series
+
+storage_ah = storage_mah/1000.0 # convert to Amp-Hours
+storage_as = storage_ah * 3600.0 # convert to Amp-seconds
+
+energy_J = storage_as * volt_batt
+
+print(f'Nominal energy stored in LTO battery: {energy_J}')
+```
