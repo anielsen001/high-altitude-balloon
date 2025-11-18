@@ -1,0 +1,3 @@
+As measured summary of the weights of many of these parts. These values are often not included in the datasheet.
+
+LiPO battery 110 mAh - 3 g
