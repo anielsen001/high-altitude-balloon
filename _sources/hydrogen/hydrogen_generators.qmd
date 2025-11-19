@@ -1,0 +1,44 @@
+
+https://groups.io/g/picoballoon/topic/111338130#msg24763
+
+GT-A060 60ML Electrolytic Cell Module Hydrogen Generator PEM Proton Film for Electric Rich Hydrogen Water Machine
+https://www.aliexpress.us/item/3256807372708833.html
+
+USB-C PD Trigger Board Module PD/QC Decoy Board Fast Charge USB Type-c to 9V 12V 15V 20V High Speed Charger Power Delivery
+https://www.aliexpress.us/item/3256805406363424.html
+
+0W DC-DC Adjustable Step Down Buck Converter Module 20A Constant Current LED Driver Power Module
+https://www.aliexpress.us/item/3256807277165077.html
+
+
+Steve - 50l of hydrogen is what float1g.xlsx says is needed to launch a small payload. For traquito you may need a few additional liters.
+ 
+Kees - I will see if I can find the time to post build instructions on the wiki page (no promises!) For now, I will list my main observations below:
+ 
+- There are not a lot of instructions available for these cells so I had to experiment / improvise
+ 
+- The 3.3-5V supply listed in the instructions appears to be wrong, at least for my module. Mine draws 8.5A at 1.88V. When I first applied 3.3V, the cell maxed out my power supply's 17A capacity.
+ 
+- My generator is gravity fed, no pump involved. Water circulation is maybe 1-5ml / minute. Basically there are 3 ports on the cell - water inlet, oxygen / water outlet, and hydrogen / water outlet. What comes out of the output ports is mostly gases, with just a few drops of water now and then (and more water present in oxygen than in hydrogen). I don't know if not providing 500-700 ml / minute water circulation hurts anything. Everything is cool to the touch when the cell is running, so perhaps for these small cells no pump is required. My water level is ~20 cm above the inlet port. The cell has an up arrow for proper orientation (water inlet port has to be below the oxygen outlet port).
+ 
+- The $3 300W 20A DC-DC converter seems to work reasonably well. It has two potentiometers -- CC and CV. What seems to work is maxing out CV and then adjusting CC until the current flow is in the 8-9A range. I noticed that the current flow changes a bit as the cell / converter warm up, by an amp or so. Also, the current adjustment is only valid for a single input voltage. If you change the input voltage, the output current changes too.
+ 
+- My USB-C PD trigger / decoy board is set for 12V. You could use other voltages too (15V or 20V), but that would make the DC-DC converter less efficient. With 12V, I can also use 12V batteries with USB car chargers. I was thinking it would be nice to hook up a solar panel to a 12V battery and generate hydrogen on solar power alone.
+ 
+- For flexible line connections, I simply drill holes 0.5-1mm smaller than the OD of the tubing and force the lines through. No bulkheads or sealants needed.
+ 
+- As far as connections go, the Gatorade bottle cap has 4 holes and 4 lines coming out of it. One line is to vent oxygen out from the top of the bottle (this line goes up above the water level in the bottle). Two lines connect to the water inlet and oxygen outlet on the PEM cell. Finally, there is a line to the hydrogen / water separator syringe to return separated water back to the bottle. 
+ 
+- I use 2 60ml syringes, one for hydrogen / water separation and one for hydrogen drying. To make connections, I simply drilled small holes in the rubber plungers and pushed lines through them. This seems to work well enough. The separator syringe has two inlets on the bottom -- hydrogen from the PEM cell and a line going back to the water bottle. The output (tip of the syringe) is connected to the second syringe. This has silica beads and a hydrogen output line on the other end.
+ 
+- Water consumption should be on the order of 1ml water / 1 liter of hydrogen. The 12oz bottle should be enough to fill several balloons. Only distilled water should be used. It may be a good idea to replace the water after prolonged storage to avoid contaminating the PEM cell.
+
+https://www.aliexpress.us/item/3256805877252822.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=21848586633&aff_fcid=f40f14f4b1fb420dbeb2c0d71d1da658-1763547696410-00636-_ms0yYd1&tt=MG&aff_fsk=_ms0yYd1&aff_platform=default&sk=_ms0yYd1&aff_trace_key=f40f14f4b1fb420dbeb2c0d71d1da658-1763547696410-00636-_ms0yYd1&shareId=21848586633&businessType=ProductDetail&platform=AE&terminal_id=47bfedeb21a641e89d8277feb68abaf3&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt
+10Pcs Waterproof Cable Gland Cable entry IP68 PG7 for 3-6.5mm PG9 PG11 PG13.5 PG16 PG19/21 White Black Nylon Plastic Connector
+
+
+https://github.com/serych/HyGen
+
+
+ydrogen Inhalation Machine 225mL/min 2 in 1Portable, HO-Separation Dual-Output Inhaler, Hydrogen Water Generator 1600ppb，Molecular Hydrogen H2 Inhaler SPE Water Ionizer for Home
+https://www.amazon.com/Inhalation-1Portable-HO-Separation-Dual-Output-1600ppb%EF%BC%8CMolecular/dp/B0FS74VRZ8/ref=sr_1_6?crid=2G02XSZBVXUP&dib=eyJ2IjoiMSJ9.A7-8B-WXb3DkTABMo1wO9zVNq3myXPSlavJ42lGmxGzGU7twUG0p9POhQpRGi-7tNqag4vjAyP0-AfR-Gnb6R4lky5619nXR1esD1KOFgyQO0Ikbjc0VxqOfgawLAO9HdGUyEl53cLf2u_zpf_rL7Up9XKDeWzsXou29sdt5kVgB9ajASwfZq34ikVMby5Cd4wOWUJKOafKi63KncnfgcOm5fxb41FolhY0VonI7nMedpqvcN3mPeigHBtHnyYHj5sWOR1qeSgM9PYb8b1mgktkOF9KAo237wyAoPM3tNi0.I8kBmUG2MZafgS875ZwfoHJ5gYWSQ56AV_5iFzKQXC4&dib_tag=se&keywords=hydrogen+generator&qid=1760889654&sprefix=hydrogen+ge%2Caps%2C418&sr=8-6
