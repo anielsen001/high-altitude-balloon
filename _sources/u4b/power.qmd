@@ -1,0 +1,13 @@
+power budget
+
+main components are 
+
+- microprocessor STM32F103CBT6  with an external clock at 4 MHz,
+- gps SIM28m
+- rf synthesizer Si5351-B
+
+microprocess or an STM32F103CBT6. with an external clock at 4 MHz, 3.3 mA max, sleep mode 1.6 mA max. these are with all peripherals enabled.
+
+gps is SIM28m
+
+rf is from Si5351-B
