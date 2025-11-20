@@ -2,3 +2,24 @@ holes can be punched through powerfilm solar panels and they still appear to wor
 https://groups.io/g/picoballoon/topic/114646932#msg24021
 
 there's a powerfilm youtube video where showing they still work after 
+
+## Power characteristics
+
+![Power details for solar panel](/_sources/solar/powerfilm_datasheet_info.png)
+
+spec'd at full and quarter sun. What elevation angle is quarter sun? 
+
+```{python}
+elev_angle_quarter = np.degrees(np.arcsin(0.25))
+```
+about 14.5 degrees
+
+
+## u4b power 
+
+- lower power 9 mW transmit
+- high power 27 mW transmit
+
+should need 3.3V to work. 
+
+There's some evidence that the current draw (from google ai) is 40 mA. This works out to 132 mW, which seems high.
