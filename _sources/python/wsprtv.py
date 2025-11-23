@@ -50,6 +50,8 @@ class WsprTvCsv:
         if degrees:
             _llh[0:2,:] = np.degrees(_llh[0:2,:])
 
+        # nans may occur in height information if only
+        # first wspr transmission was made and received
         if fill_nan:
             _h = _llh[-1,:]
             nan_bool = np.isnan(_h)
@@ -60,6 +62,33 @@ class WsprTvCsv:
             _llh[-1,:] = _h
 
         return _llh
-        
+
+    def lat(
+            self,
+            degrees = False,
+    ):
+        """
+        return latittude values for the track
+        """
+        _lat = self._df['lat'].to_numpy()
+
+        if degrees:
+            _lat = np.degrees(_lat)
+
+        return _lat
 
         
+    def lon(
+            self,
+            degrees = False,
+    ):
+        """
+        return longitude values for the track
+        """
+        _lon = self._df['lon'].to_numpy()
+
+        if degrees:
+            _lon= np.degrees(_lon)
+
+        return _lon
+
