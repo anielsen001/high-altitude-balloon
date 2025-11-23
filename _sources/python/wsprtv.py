@@ -15,8 +15,8 @@ class WsprTvCsv:
 
     _df = None # pandas data frame
 
-    def __init__(self,csvfile):
-        df = pd.read_csv(trackfile)
+    def __init__(self,csvtrackfile):
+        df = pd.read_csv(csvtrackfile)
         df.sort_values('#',inplace=True)
         df.set_index('#',inplace=True)
         t = pd.to_datetime(df['UTC Time'])
@@ -32,7 +32,8 @@ class WsprTvCsv:
     def llh(
             self,
             degrees = False,
-            fill_nan = True, 
+            fill_nan = True,
+            no_nan = False,
     ):
         """
         returns lat/lon/height in
@@ -42,10 +43,16 @@ class WsprTvCsv:
         altitude in meters
 
         if fill_nan, will interpolate nans to nearby values
-        """
 
+        if no_nan, will drop any data points that contain nan
+        """
+        if no_nan:
+            df = self._df.dropna()
+        else:
+            df = self._df
+        
         # is Nx3, we convert to 3xN
-        _llh = self._df[['lat','lon','alt']].to_numpy().copy().T
+        _llh = df[['lat','lon','alt']].to_numpy().copy().T
 
         if degrees:
             _llh[0:2,:] = np.degrees(_llh[0:2,:])
@@ -91,4 +98,13 @@ class WsprTvCsv:
             _lon= np.degrees(_lon)
 
         return _lon
+
+    def times(
+            self,
+            ):
+        """
+        return the datetime objects for each spot
+        """
+        _dt = self._df['datetime']
+        return _dt
 
