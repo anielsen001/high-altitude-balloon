@@ -43,7 +43,7 @@ def create_map(
     voltage = wspr.voltage().to_numpy()
     sun_elevation_angle = wspr.sun_elevation_angle(degrees=True).to_numpy()
     num_rx_spots = wspr.num_rx_spots().to_numpy()
-    max_rx_distance = wspr.max_rx_distance().to_numpy()
+    max_rx_distance = wspr.max_rx_distance().to_numpy()/1000.0 # convert to km
     ground_speed = wspr.ground_speed().to_numpy()
     temperature = wspr.temperature().to_numpy()
 
