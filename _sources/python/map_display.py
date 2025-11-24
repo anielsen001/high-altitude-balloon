@@ -53,6 +53,7 @@ def create_map(
     # however, the plots show correctly using EPSG:3857
     m = folium.Map(
         location = [lat_center,lon_center],
+        control_scale = True,
         #crs = 'EPSG4326',
     )
     m.fit_bounds([sw,ne])
