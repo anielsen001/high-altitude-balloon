@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -72,6 +72,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -300,6 +303,1923 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="tracking-information" class="level2">
 <h2 class="anchored" data-anchor-id="tracking-information">Tracking information</h2>
+<div id="cell-fig-map-display" class="cell" data-execution_count="1">
+<div id="fig-map-display" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-display-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_2a605508191e463b5ffc1042e4856c6d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_2a605508191e463b5ffc1042e4856c6d&quot; ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2a605508191e463b5ffc1042e4856c6d = L.map(
+                &quot;map_2a605508191e463b5ffc1042e4856c6d&quot;,
+                {
+                    center: [37.87616071428572, -27.651875],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 10,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_2a605508191e463b5ffc1042e4856c6d);
+
+            
+
+        
+    
+            var tile_layer_bd77c6a64602350eba1f30e6646987ff = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_bd77c6a64602350eba1f30e6646987ff.addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            map_2a605508191e463b5ffc1042e4856c6d.fitBounds(
+                [[35.5, -85.0], [41.5, 33.0]],
+                {}
+            );
+        
+    
+            var circle_marker_a222da8cb248e8af384e1f7f43decdbb = L.circleMarker(
+                [39.5, -85.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_a222da8cb248e8af384e1f7f43decdbb.bindTooltip(
+                `<div>
+                     2025-11-06 13:56:00<br>Lat: 39.5, Lon: -85.0<br>sun elevation: 16°<br>Num RX: 1<br>Max RX: 701.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_76e41247bbec37869d70d3c58b4be805 = L.circleMarker(
+                [39.73, -84.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_76e41247bbec37869d70d3c58b4be805.bindTooltip(
+                `<div>
+                     2025-11-06 14:06:00<br>Lat: 39.73, Lon: -84.21<br>Alt: 200.0 meter<br>4.15 volt<br>sun elevation: 18°<br>Num RX: 41<br>Max RX: 2802.0 km<br>Gnd spd: 0.0 km/h<br>Temp: 15.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0267fd77f7940e705089daa8fdccfc66 = L.circleMarker(
+                [39.5, -85.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_0267fd77f7940e705089daa8fdccfc66.bindTooltip(
+                `<div>
+                     2025-11-06 15:26:00<br>Lat: 39.5, Lon: -85.0<br>sun elevation: 28°<br>Num RX: 14<br>Max RX: 1328.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_8e4f08fb38c072e0f5b7ff492506d794 = L.circleMarker(
+                [39.5, -83.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_8e4f08fb38c072e0f5b7ff492506d794.bindTooltip(
+                `<div>
+                     2025-11-06 15:36:00<br>Lat: 39.5, Lon: -83.0<br>sun elevation: 30°<br>Num RX: 10<br>Max RX: 1478.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_4af57072f9754694aec7af4433b47704 = L.circleMarker(
+                [39.27, -83.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_4af57072f9754694aec7af4433b47704.bindTooltip(
+                `<div>
+                     2025-11-06 15:46:00<br>Lat: 39.27, Lon: -83.71<br>Alt: 3680.0 meter<br>4.9 volt<br>sun elevation: 31°<br>Num RX: 54<br>Max RX: 2715.0 km<br>Gnd spd: 56.0 km/h<br>Temp: 15.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_af86ad4d54dccedb811e880f2b873e26 = L.circleMarker(
+                [39.5, -83.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_af86ad4d54dccedb811e880f2b873e26.bindTooltip(
+                `<div>
+                     2025-11-06 15:56:00<br>Lat: 39.5, Lon: -83.0<br>4.9 volt<br>sun elevation: 31°<br>Num RX: 53<br>Max RX: 2568.0 km<br>Temp: 13.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_35c84dd22511c71d554135f21e4ca6ea = L.circleMarker(
+                [39.19, -83.46],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_35c84dd22511c71d554135f21e4ca6ea.bindTooltip(
+                `<div>
+                     2025-11-06 16:06:00<br>Lat: 39.19, Lon: -83.46<br>Alt: 4520.0 meter<br>4.9 volt<br>sun elevation: 32°<br>Num RX: 68<br>Max RX: 2736.0 km<br>Gnd spd: 70.0 km/h<br>Temp: 10.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_185f4128ad595d35d1504e5c0bcda01e = L.circleMarker(
+                [39.5, -83.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_185f4128ad595d35d1504e5c0bcda01e.bindTooltip(
+                `<div>
+                     2025-11-06 16:16:00<br>Lat: 39.5, Lon: -83.0<br>sun elevation: 33°<br>Num RX: 66<br>Max RX: 3235.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d1c04fb4416d767723762e5d94b53974 = L.circleMarker(
+                [39.1, -83.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_d1c04fb4416d767723762e5d94b53974.bindTooltip(
+                `<div>
+                     2025-11-06 16:26:00<br>Lat: 39.1, Lon: -83.21<br>Alt: 5400.0 meter<br>3.1 volt<br>sun elevation: 34°<br>Num RX: 54<br>Max RX: 2468.0 km<br>Gnd spd: 81.0 km/h<br>Temp: 8.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_664461d29800dc81c3c959504c8dc3b8 = L.circleMarker(
+                [39.1, -83.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_664461d29800dc81c3c959504c8dc3b8.bindTooltip(
+                `<div>
+                     2025-11-06 16:36:00<br>Lat: 39.1, Lon: -83.04<br>Alt: 5760.0 meter<br>3.05 volt<br>sun elevation: 34°<br>Num RX: 70<br>Max RX: 2768.0 km<br>Gnd spd: 78.0 km/h<br>Temp: 9.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a56fa33edca87ecf88065d8c62f90ae5 = L.circleMarker(
+                [39.06, -82.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_a56fa33edca87ecf88065d8c62f90ae5.bindTooltip(
+                `<div>
+                     2025-11-06 16:46:00<br>Lat: 39.06, Lon: -82.88<br>Alt: 5900.0 meter<br>3.55 volt<br>sun elevation: 34°<br>Num RX: 63<br>Max RX: 2781.0 km<br>Gnd spd: 78.0 km/h<br>Temp: 11.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ea01d487a3242f7f7b87dc5e17c64790 = L.circleMarker(
+                [39.15, -82.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_ea01d487a3242f7f7b87dc5e17c64790.bindTooltip(
+                `<div>
+                     2025-11-06 16:56:00<br>Lat: 39.15, Lon: -82.71<br>Alt: 18560.0 meter<br>3.45 volt<br>sun elevation: 35°<br>Num RX: 97<br>Max RX: 3359.0 km<br>Gnd spd: 89.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_2393271dda6a36e25df052d4b67d9a7e = L.circleMarker(
+                [39.06, -82.54],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_2393271dda6a36e25df052d4b67d9a7e.bindTooltip(
+                `<div>
+                     2025-11-06 17:06:00<br>Lat: 39.06, Lon: -82.54<br>Alt: 5960.0 meter<br>3.05 volt<br>sun elevation: 35°<br>Num RX: 87<br>Max RX: 3485.0 km<br>Gnd spd: 15.0 km/h<br>Temp: 8.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_247617be37276f70a680ff81e35ea6c9 = L.circleMarker(
+                [39.5, -83.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_247617be37276f70a680ff81e35ea6c9.bindTooltip(
+                `<div>
+                     2025-11-06 17:16:00<br>Lat: 39.5, Lon: -83.0<br>sun elevation: 34°<br>Num RX: 75<br>Max RX: 2739.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c0dda694903e5269a9cbf6b454248d17 = L.circleMarker(
+                [39.06, -82.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_c0dda694903e5269a9cbf6b454248d17.bindTooltip(
+                `<div>
+                     2025-11-06 17:26:00<br>Lat: 39.06, Lon: -82.21<br>Alt: 6060.0 meter<br>3.3 volt<br>sun elevation: 35°<br>Num RX: 66<br>Max RX: 2729.0 km<br>Gnd spd: 89.0 km/h<br>Temp: -3.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f5bf4fc44ad788290f014a2d724571e2 = L.circleMarker(
+                [39.06, -82.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_f5bf4fc44ad788290f014a2d724571e2.bindTooltip(
+                `<div>
+                     2025-11-06 17:36:00<br>Lat: 39.06, Lon: -82.04<br>Alt: 6120.0 meter<br>3.15 volt<br>sun elevation: 35°<br>Num RX: 75<br>Max RX: 2566.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_5e7f6084a8ffbebbb474608ec3b4b9c0 = L.circleMarker(
+                [39.5, -81.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_5e7f6084a8ffbebbb474608ec3b4b9c0.bindTooltip(
+                `<div>
+                     2025-11-06 17:46:00<br>Lat: 39.5, Lon: -81.0<br>sun elevation: 34°<br>Num RX: 23<br>Max RX: 1634.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_471514707ac0c5b2bc0bcb9b6ba3349b = L.circleMarker(
+                [39.06, -81.54],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_471514707ac0c5b2bc0bcb9b6ba3349b.bindTooltip(
+                `<div>
+                     2025-11-06 17:56:00<br>Lat: 39.06, Lon: -81.54<br>Alt: 6140.0 meter<br>4.9 volt<br>sun elevation: 34°<br>Num RX: 51<br>Max RX: 2608.0 km<br>Gnd spd: 93.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e5a29f33c33c9d5741063e2b8433fa09 = L.circleMarker(
+                [39.5, -81.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_e5a29f33c33c9d5741063e2b8433fa09.bindTooltip(
+                `<div>
+                     2025-11-06 18:06:00<br>Lat: 39.5, Lon: -81.0<br>sun elevation: 33°<br>Num RX: 13<br>Max RX: 1166.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c8f8bfdc1f3d377882fbc33670259650 = L.circleMarker(
+                [38.5, -81.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_c8f8bfdc1f3d377882fbc33670259650.bindTooltip(
+                `<div>
+                     2025-11-06 18:46:00<br>Lat: 38.5, Lon: -81.0<br>sun elevation: 31°<br>Num RX: 16<br>Max RX: 1594.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_154ddb9265204aaa5f31cbce47ffa17c = L.circleMarker(
+                [38.5, -81.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_154ddb9265204aaa5f31cbce47ffa17c.bindTooltip(
+                `<div>
+                     2025-11-06 18:56:00<br>Lat: 38.5, Lon: -81.0<br>sun elevation: 30°<br>Num RX: 2<br>Max RX: 732.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b59cc7827ba11c0899f42ddead950f4b = L.circleMarker(
+                [35.65, -60.46000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_b59cc7827ba11c0899f42ddead950f4b.bindTooltip(
+                `<div>
+                     2025-11-07 13:26:00<br>Lat: 35.65, Lon: -60.46000000000001<br>Alt: 6200.0 meter<br>4.85 volt<br>sun elevation: 28°<br>Num RX: 45<br>Max RX: 4472.0 km<br>Gnd spd: 89.0 km/h<br>Temp: 13.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c58c756e5eae814b9aceb94459c7c385 = L.circleMarker(
+                [35.5, -61.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_c58c756e5eae814b9aceb94459c7c385.bindTooltip(
+                `<div>
+                     2025-11-07 13:36:00<br>Lat: 35.5, Lon: -61.0<br>sun elevation: 29°<br>Num RX: 14<br>Max RX: 1806.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7d1c50bd2f7791991fdfa695d578d982 = L.circleMarker(
+                [35.65, -60.21000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_7d1c50bd2f7791991fdfa695d578d982.bindTooltip(
+                `<div>
+                     2025-11-07 13:46:00<br>Lat: 35.65, Lon: -60.21000000000001<br>Alt: 6240.0 meter<br>4.9 volt<br>sun elevation: 31°<br>Num RX: 47<br>Max RX: 4488.0 km<br>Gnd spd: 89.0 km/h<br>Temp: 8.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_82aa93e736411341ff4e968115a80432 = L.circleMarker(
+                [35.69, -60.040000000000006],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_82aa93e736411341ff4e968115a80432.bindTooltip(
+                `<div>
+                     2025-11-07 13:56:00<br>Lat: 35.69, Lon: -60.040000000000006<br>Alt: 6160.0 meter<br>4.9 volt<br>sun elevation: 32°<br>Num RX: 57<br>Max RX: 4516.0 km<br>Gnd spd: 85.0 km/h<br>Temp: 10.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_46e2721f1ac4a8e133014ce91a3249a8 = L.circleMarker(
+                [35.69, -59.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_46e2721f1ac4a8e133014ce91a3249a8.bindTooltip(
+                `<div>
+                     2025-11-07 14:06:00<br>Lat: 35.69, Lon: -59.88<br>Alt: 6200.0 meter<br>3.15 volt<br>sun elevation: 33°<br>Num RX: 55<br>Max RX: 4507.0 km<br>Gnd spd: 85.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_314866cdecc88812381b0acfe4335987 = L.circleMarker(
+                [35.5, -59.00000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_314866cdecc88812381b0acfe4335987.bindTooltip(
+                `<div>
+                     2025-11-07 14:16:00<br>Lat: 35.5, Lon: -59.00000000000001<br>sun elevation: 34°<br>Num RX: 20<br>Max RX: 1983.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_5ae06d93ede430666868fd09993073c9 = L.circleMarker(
+                [35.73, -59.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_5ae06d93ede430666868fd09993073c9.bindTooltip(
+                `<div>
+                     2025-11-07 14:26:00<br>Lat: 35.73, Lon: -59.63<br>Alt: 6240.0 meter<br>3.1 volt<br>sun elevation: 35°<br>Num RX: 55<br>Max RX: 4520.0 km<br>Gnd spd: 89.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_29322939b1d38fddc9908c6177ea2b25 = L.circleMarker(
+                [35.73, -59.38000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_29322939b1d38fddc9908c6177ea2b25.bindTooltip(
+                `<div>
+                     2025-11-07 14:36:00<br>Lat: 35.73, Lon: -59.38000000000001<br>Alt: 6280.0 meter<br>3.0 volt<br>sun elevation: 36°<br>Num RX: 60<br>Max RX: 4568.0 km<br>Gnd spd: 89.0 km/h<br>Temp: 6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_48f4cb406128bbe8e7e8c6e4d13b39bf = L.circleMarker(
+                [35.73, -59.21000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_48f4cb406128bbe8e7e8c6e4d13b39bf.bindTooltip(
+                `<div>
+                     2025-11-07 14:46:00<br>Lat: 35.73, Lon: -59.21000000000001<br>Alt: 6160.0 meter<br>3.1 volt<br>sun elevation: 36°<br>Num RX: 57<br>Max RX: 4547.0 km<br>Gnd spd: 93.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ced409f3fae9b0cb06909bd70e3e0256 = L.circleMarker(
+                [35.77, -59.040000000000006],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_ced409f3fae9b0cb06909bd70e3e0256.bindTooltip(
+                `<div>
+                     2025-11-07 14:56:00<br>Lat: 35.77, Lon: -59.040000000000006<br>Alt: 6180.0 meter<br>3.6 volt<br>sun elevation: 37°<br>Num RX: 75<br>Max RX: 4594.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 15.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_60fae96c08bb16a33f6c1b2b47da7d48 = L.circleMarker(
+                [35.77, -58.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_60fae96c08bb16a33f6c1b2b47da7d48.bindTooltip(
+                `<div>
+                     2025-11-07 15:06:00<br>Lat: 35.77, Lon: -58.88<br>Alt: 6180.0 meter<br>3.2 volt<br>sun elevation: 37°<br>Num RX: 66<br>Max RX: 4607.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 13.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ecdad8ba3805ae376608e2455bab1a65 = L.circleMarker(
+                [35.81, -58.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_ecdad8ba3805ae376608e2455bab1a65.bindTooltip(
+                `<div>
+                     2025-11-07 15:16:00<br>Lat: 35.81, Lon: -58.71<br>Alt: 6180.0 meter<br>4.95 volt<br>sun elevation: 38°<br>Num RX: 45<br>Max RX: 2544.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 3.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d7119ef0c7d8e1a9d5d210a2e064da9b = L.circleMarker(
+                [35.81, -58.54],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_d7119ef0c7d8e1a9d5d210a2e064da9b.bindTooltip(
+                `<div>
+                     2025-11-07 15:26:00<br>Lat: 35.81, Lon: -58.54<br>Alt: 6180.0 meter<br>3.1 volt<br>sun elevation: 38°<br>Num RX: 39<br>Max RX: 2907.0 km<br>Gnd spd: 33.0 km/h<br>Temp: 10.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3b6724baddd27268c7966268883db3b1 = L.circleMarker(
+                [35.81, -58.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_3b6724baddd27268c7966268883db3b1.bindTooltip(
+                `<div>
+                     2025-11-07 15:36:00<br>Lat: 35.81, Lon: -58.29<br>Alt: 6140.0 meter<br>3.55 volt<br>sun elevation: 38°<br>Num RX: 42<br>Max RX: 2425.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 14.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_692f6035cd2520e08e22a5323d114541 = L.circleMarker(
+                [35.85, -58.129999999999995],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_692f6035cd2520e08e22a5323d114541.bindTooltip(
+                `<div>
+                     2025-11-07 15:46:00<br>Lat: 35.85, Lon: -58.129999999999995<br>Alt: 6260.0 meter<br>3.2 volt<br>sun elevation: 38°<br>Num RX: 68<br>Max RX: 5443.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_4085865ea42bd08a397f8cb37e098f53 = L.circleMarker(
+                [35.85, -57.96000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_4085865ea42bd08a397f8cb37e098f53.bindTooltip(
+                `<div>
+                     2025-11-07 15:56:00<br>Lat: 35.85, Lon: -57.96000000000001<br>Alt: 6180.0 meter<br>3.1 volt<br>sun elevation: 38°<br>Num RX: 58<br>Max RX: 4188.0 km<br>Gnd spd: 19.0 km/h<br>Temp: 11.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ad3a2b47f51e00cdde931d9e0a2e494c = L.circleMarker(
+                [35.9, -57.790000000000006],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_ad3a2b47f51e00cdde931d9e0a2e494c.bindTooltip(
+                `<div>
+                     2025-11-07 16:06:00<br>Lat: 35.9, Lon: -57.790000000000006<br>Alt: 6220.0 meter<br>4.95 volt<br>sun elevation: 37°<br>Num RX: 64<br>Max RX: 4690.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 11.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0c0e608e73a4a1b32931421960c7493d = L.circleMarker(
+                [35.9, -57.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_0c0e608e73a4a1b32931421960c7493d.bindTooltip(
+                `<div>
+                     2025-11-07 16:16:00<br>Lat: 35.9, Lon: -57.63<br>Alt: 6200.0 meter<br>3.15 volt<br>sun elevation: 37°<br>Num RX: 58<br>Max RX: 5033.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 13.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6f727121d3b090061be446dfe47e7601 = L.circleMarker(
+                [35.9, -57.46],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6f727121d3b090061be446dfe47e7601.bindTooltip(
+                `<div>
+                     2025-11-07 16:26:00<br>Lat: 35.9, Lon: -57.46<br>Alt: 6200.0 meter<br>3.0 volt<br>sun elevation: 36°<br>Num RX: 74<br>Max RX: 5570.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 10.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_76ca3c2f0af7a46c6b168aa0926bb706 = L.circleMarker(
+                [35.94, -57.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_76ca3c2f0af7a46c6b168aa0926bb706.bindTooltip(
+                `<div>
+                     2025-11-07 16:36:00<br>Lat: 35.94, Lon: -57.21<br>Alt: 6320.0 meter<br>3.1 volt<br>sun elevation: 36°<br>Num RX: 39<br>Max RX: 5523.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 15.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_251a9754a6f401b697e0d3e1eba9a482 = L.circleMarker(
+                [35.94, -57.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_251a9754a6f401b697e0d3e1eba9a482.bindTooltip(
+                `<div>
+                     2025-11-07 16:46:00<br>Lat: 35.94, Lon: -57.04<br>Alt: 6180.0 meter<br>3.1 volt<br>sun elevation: 35°<br>Num RX: 34<br>Max RX: 4989.0 km<br>Gnd spd: 96.0 km/h<br>Temp: 12.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_665465bdc648d222a92abe53ec61dd2f = L.circleMarker(
+                [35.5, -57.00000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_665465bdc648d222a92abe53ec61dd2f.bindTooltip(
+                `<div>
+                     2025-11-07 16:56:00<br>Lat: 35.5, Lon: -57.00000000000001<br>sun elevation: 34°<br>Num RX: 9<br>Max RX: 2435.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7984c038ac2f2f5a8b06749664fa99fa = L.circleMarker(
+                [35.94, -56.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_7984c038ac2f2f5a8b06749664fa99fa.bindTooltip(
+                `<div>
+                     2025-11-07 17:06:00<br>Lat: 35.94, Lon: -56.71<br>Alt: 6200.0 meter<br>3.3 volt<br>sun elevation: 33°<br>Num RX: 38<br>Max RX: 5943.0 km<br>Gnd spd: 100.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e0d58ca6ce9cd8ca728bd183830c093b = L.circleMarker(
+                [35.98, -56.46],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_e0d58ca6ce9cd8ca728bd183830c093b.bindTooltip(
+                `<div>
+                     2025-11-07 17:16:00<br>Lat: 35.98, Lon: -56.46<br>Alt: 6280.0 meter<br>4.9 volt<br>sun elevation: 32°<br>Num RX: 26<br>Max RX: 4053.0 km<br>Gnd spd: 104.0 km/h<br>Temp: 10.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_2af5346a6d667e11102e077cdef6ba82 = L.circleMarker(
+                [35.5, -57.00000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_2af5346a6d667e11102e077cdef6ba82.bindTooltip(
+                `<div>
+                     2025-11-07 17:26:00<br>Lat: 35.5, Lon: -57.00000000000001<br>sun elevation: 32°<br>Num RX: 32<br>Max RX: 5573.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c8275aca9ee78df7b517a1d54cb16eb5 = L.circleMarker(
+                [35.5, -57.00000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_c8275aca9ee78df7b517a1d54cb16eb5.bindTooltip(
+                `<div>
+                     2025-11-07 17:36:00<br>Lat: 35.5, Lon: -57.00000000000001<br>sun elevation: 30°<br>Num RX: 27<br>Max RX: 6110.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6ef5b0a7f0c1e7ff46d047e4bfcca6fd = L.circleMarker(
+                [38.5, -35.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6ef5b0a7f0c1e7ff46d047e4bfcca6fd.bindTooltip(
+                `<div>
+                     2025-11-08 12:06:00<br>Lat: 38.5, Lon: -35.0<br>sun elevation: 28°<br>Num RX: 2<br>Max RX: 3265.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e716aa92fc1df9261c3d8ef157699100 = L.circleMarker(
+                [38.19, -34.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_e716aa92fc1df9261c3d8ef157699100.bindTooltip(
+                `<div>
+                     2025-11-08 12:16:00<br>Lat: 38.19, Lon: -34.88<br>Alt: 6380.0 meter<br>3.0 volt<br>sun elevation: 30°<br>Num RX: 28<br>Max RX: 4932.0 km<br>Gnd spd: 104.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_230d622d005d07d6865ef17a805b7357 = L.circleMarker(
+                [38.5, -35.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_230d622d005d07d6865ef17a805b7357.bindTooltip(
+                `<div>
+                     2025-11-08 12:36:00<br>Lat: 38.5, Lon: -35.0<br>sun elevation: 31°<br>Num RX: 20<br>Max RX: 4911.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ecdf5632f585bf44f3bdb81a2ea72c53 = L.circleMarker(
+                [38.5, -35.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_ecdf5632f585bf44f3bdb81a2ea72c53.bindTooltip(
+                `<div>
+                     2025-11-08 12:46:00<br>Lat: 38.5, Lon: -35.0<br>sun elevation: 32°<br>Num RX: 19<br>Max RX: 4050.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_70afd1b9745d3608c0d4f51ccac31e71 = L.circleMarker(
+                [38.23, -34.13],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_70afd1b9745d3608c0d4f51ccac31e71.bindTooltip(
+                `<div>
+                     2025-11-08 12:56:00<br>Lat: 38.23, Lon: -34.13<br>Alt: 6420.0 meter<br>4.85 volt<br>sun elevation: 33°<br>Num RX: 11<br>Max RX: 3826.0 km<br>Gnd spd: 100.0 km/h<br>Temp: -1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a15084e529f035682c8473b0219b7e17 = L.circleMarker(
+                [38.23, -34.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_a15084e529f035682c8473b0219b7e17.bindTooltip(
+                `<div>
+                     2025-11-08 13:06:00<br>Lat: 38.23, Lon: -34.04<br>Alt: 6400.0 meter<br>4.9 volt<br>sun elevation: 34°<br>Num RX: 11<br>Max RX: 5000.0 km<br>Gnd spd: 100.0 km/h<br>Temp: 7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_4c113670309072fc18f1704b4422c662 = L.circleMarker(
+                [38.27, -33.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_4c113670309072fc18f1704b4422c662.bindTooltip(
+                `<div>
+                     2025-11-08 13:26:00<br>Lat: 38.27, Lon: -33.63<br>Alt: 6420.0 meter<br>3.2 volt<br>sun elevation: 35°<br>Num RX: 15<br>Max RX: 4173.0 km<br>Gnd spd: 100.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_530d690552c53b515c1365ff4a68ab36 = L.circleMarker(
+                [38.5, -33.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_530d690552c53b515c1365ff4a68ab36.bindTooltip(
+                `<div>
+                     2025-11-08 13:36:00<br>Lat: 38.5, Lon: -33.0<br>sun elevation: 35°<br>Num RX: 7<br>Max RX: 3588.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_87cb71ecefa05adfd70c650d5453fe0e = L.circleMarker(
+                [38.31, -33.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_87cb71ecefa05adfd70c650d5453fe0e.bindTooltip(
+                `<div>
+                     2025-11-08 13:46:00<br>Lat: 38.31, Lon: -33.29<br>Alt: 6480.0 meter<br>3.2 volt<br>sun elevation: 35°<br>Num RX: 22<br>Max RX: 4201.0 km<br>Gnd spd: 100.0 km/h<br>Temp: -1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3a2398001a46b2304bb715528117dba5 = L.circleMarker(
+                [38.31, -33.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_3a2398001a46b2304bb715528117dba5.bindTooltip(
+                `<div>
+                     2025-11-08 13:56:00<br>Lat: 38.31, Lon: -33.04<br>Alt: 6400.0 meter<br>3.25 volt<br>sun elevation: 35°<br>Num RX: 11<br>Max RX: 3600.0 km<br>Gnd spd: 100.0 km/h<br>Temp: 4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d296a15a404d4ecdffc9c6c3d73ad627 = L.circleMarker(
+                [38.35, -32.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_d296a15a404d4ecdffc9c6c3d73ad627.bindTooltip(
+                `<div>
+                     2025-11-08 14:06:00<br>Lat: 38.35, Lon: -32.88<br>Alt: 6460.0 meter<br>3.25 volt<br>sun elevation: 35°<br>Num RX: 24<br>Max RX: 4028.0 km<br>Gnd spd: 100.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_34c56668eef5407b85d8484b5a0b4de7 = L.circleMarker(
+                [38.35, -32.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_34c56668eef5407b85d8484b5a0b4de7.bindTooltip(
+                `<div>
+                     2025-11-08 14:16:00<br>Lat: 38.35, Lon: -32.63<br>Alt: 6540.0 meter<br>4.9 volt<br>sun elevation: 35°<br>Num RX: 12<br>Max RX: 3624.0 km<br>Gnd spd: 85.0 km/h<br>Temp: 1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_262105d3b14fd525ebfe34537af778ed = L.circleMarker(
+                [38.4, -32.46],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_262105d3b14fd525ebfe34537af778ed.bindTooltip(
+                `<div>
+                     2025-11-08 14:26:00<br>Lat: 38.4, Lon: -32.46<br>Alt: 6640.0 meter<br>4.95 volt<br>sun elevation: 34°<br>Num RX: 26<br>Max RX: 4270.0 km<br>Gnd spd: 104.0 km/h<br>Temp: 9.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_be63b89edf612b0fb72f90cc519714ab = L.circleMarker(
+                [38.4, -32.13],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_be63b89edf612b0fb72f90cc519714ab.bindTooltip(
+                `<div>
+                     2025-11-08 14:46:00<br>Lat: 38.4, Lon: -32.13<br>Alt: 6420.0 meter<br>4.95 volt<br>sun elevation: 34°<br>Num RX: 10<br>Max RX: 3664.0 km<br>Gnd spd: 100.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e8a45322bfc8caffe91a203fcda6cfb9 = L.circleMarker(
+                [38.5, -31.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_e8a45322bfc8caffe91a203fcda6cfb9.bindTooltip(
+                `<div>
+                     2025-11-08 15:36:00<br>Lat: 38.5, Lon: -31.0<br>sun elevation: 29°<br>Num RX: 3<br>Max RX: 3321.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_98341e851eb84a9fd41c89848e787a13 = L.circleMarker(
+                [40.5, -11.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_98341e851eb84a9fd41c89848e787a13.bindTooltip(
+                `<div>
+                     2025-11-09 11:06:00<br>Lat: 40.5, Lon: -11.0<br>sun elevation: 30°<br>Num RX: 1<br>Max RX: 1348.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_731c99eb93fc93bc7ad0ba11e38a40fb = L.circleMarker(
+                [40.02, -11.13],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_731c99eb93fc93bc7ad0ba11e38a40fb.bindTooltip(
+                `<div>
+                     2025-11-09 11:26:00<br>Lat: 40.02, Lon: -11.13<br>Alt: 6440.0 meter<br>4.9 volt<br>sun elevation: 31°<br>Num RX: 42<br>Max RX: 5878.0 km<br>Gnd spd: 56.0 km/h<br>Temp: 1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_9726157481a1c237c1176f9c5b960765 = L.circleMarker(
+                [40.5, -11.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_9726157481a1c237c1176f9c5b960765.bindTooltip(
+                `<div>
+                     2025-11-09 11:36:00<br>Lat: 40.5, Lon: -11.0<br>sun elevation: 31°<br>Num RX: 25<br>Max RX: 1947.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6eebf0ec28450c5739ed0a904a5a6db8 = L.circleMarker(
+                [40.5, -11.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6eebf0ec28450c5739ed0a904a5a6db8.bindTooltip(
+                `<div>
+                     2025-11-09 11:46:00<br>Lat: 40.5, Lon: -11.0<br>sun elevation: 32°<br>Num RX: 11<br>Max RX: 5297.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7652b44f099449cd817e7ea7c9a93be7 = L.circleMarker(
+                [40.06, -10.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_7652b44f099449cd817e7ea7c9a93be7.bindTooltip(
+                `<div>
+                     2025-11-09 12:06:00<br>Lat: 40.06, Lon: -10.63<br>Alt: 6460.0 meter<br>4.85 volt<br>sun elevation: 33°<br>Num RX: 31<br>Max RX: 5345.0 km<br>Gnd spd: 56.0 km/h<br>Temp: 3.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_bd208cfa0e05c69982046047578adf51 = L.circleMarker(
+                [40.06, -10.46],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_bd208cfa0e05c69982046047578adf51.bindTooltip(
+                `<div>
+                     2025-11-09 12:16:00<br>Lat: 40.06, Lon: -10.46<br>Alt: 6480.0 meter<br>4.85 volt<br>sun elevation: 33°<br>Num RX: 34<br>Max RX: 5358.0 km<br>Gnd spd: 56.0 km/h<br>Temp: -2.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f6b3649ece8ecb005deb21a7483bc8d6 = L.circleMarker(
+                [40.06, -10.38],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_f6b3649ece8ecb005deb21a7483bc8d6.bindTooltip(
+                `<div>
+                     2025-11-09 12:26:00<br>Lat: 40.06, Lon: -10.38<br>Alt: 6460.0 meter<br>3.15 volt<br>sun elevation: 33°<br>Num RX: 28<br>Max RX: 5365.0 km<br>Gnd spd: 59.0 km/h<br>Temp: 5.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_faba7cb90e0df76138c62fa84bde7bac = L.circleMarker(
+                [40.5, -11.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_faba7cb90e0df76138c62fa84bde7bac.bindTooltip(
+                `<div>
+                     2025-11-09 12:36:00<br>Lat: 40.5, Lon: -11.0<br>sun elevation: 33°<br>Num RX: 32<br>Max RX: 5297.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_16e09c9647c2b0b4300a9f69a5c9ed67 = L.circleMarker(
+                [40.5, -11.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_16e09c9647c2b0b4300a9f69a5c9ed67.bindTooltip(
+                `<div>
+                     2025-11-09 12:56:00<br>Lat: 40.5, Lon: -11.0<br>sun elevation: 32°<br>Num RX: 15<br>Max RX: 5297.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_47fea2d209f1e5a947f9281c5df09157 = L.circleMarker(
+                [40.5, -9.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_47fea2d209f1e5a947f9281c5df09157.bindTooltip(
+                `<div>
+                     2025-11-09 13:06:00<br>Lat: 40.5, Lon: -9.0<br>sun elevation: 32°<br>Num RX: 6<br>Max RX: 1615.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3dafb6940c41dc1c1bdc637f970df818 = L.circleMarker(
+                [40.1, -9.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_3dafb6940c41dc1c1bdc637f970df818.bindTooltip(
+                `<div>
+                     2025-11-09 13:26:00<br>Lat: 40.1, Lon: -9.71<br>Alt: 6440.0 meter<br>3.05 volt<br>sun elevation: 31°<br>Num RX: 41<br>Max RX: 2335.0 km<br>Gnd spd: 59.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e6d20c885e077d4475ce2ef2a578d343 = L.circleMarker(
+                [40.5, -9.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_e6d20c885e077d4475ce2ef2a578d343.bindTooltip(
+                `<div>
+                     2025-11-09 13:46:00<br>Lat: 40.5, Lon: -9.0<br>sun elevation: 29°<br>Num RX: 3<br>Max RX: 1682.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6cb62a13ba9c9d8c7dd0666f15f86a5a = L.circleMarker(
+                [41.5, 3.0000000000000004],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6cb62a13ba9c9d8c7dd0666f15f86a5a.bindTooltip(
+                `<div>
+                     2025-11-10 10:36:00<br>Lat: 41.5, Lon: 3.0000000000000004<br>4.85 volt<br>sun elevation: 30°<br>Num RX: 27<br>Max RX: 1445.0 km<br>Temp: -6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_47a5896630a289d4a0a95f199f0ff08f = L.circleMarker(
+                [41.5, 3.0000000000000004],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_47a5896630a289d4a0a95f199f0ff08f.bindTooltip(
+                `<div>
+                     2025-11-10 11:16:00<br>Lat: 41.5, Lon: 3.0000000000000004<br>sun elevation: 31°<br>Num RX: 14<br>Max RX: 1078.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_41c0f8e7008ac30751ef885a4f214dcd = L.circleMarker(
+                [41.5, 3.0000000000000004],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_41c0f8e7008ac30751ef885a4f214dcd.bindTooltip(
+                `<div>
+                     2025-11-10 11:26:00<br>Lat: 41.5, Lon: 3.0000000000000004<br>sun elevation: 31°<br>Num RX: 23<br>Max RX: 1445.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_715ce1b9528d610d2cff7f71634d72ae = L.circleMarker(
+                [41.5, 3.0000000000000004],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_715ce1b9528d610d2cff7f71634d72ae.bindTooltip(
+                `<div>
+                     2025-11-10 11:56:00<br>Lat: 41.5, Lon: 3.0000000000000004<br>sun elevation: 31°<br>Num RX: 40<br>Max RX: 6143.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_21e77daa071bc86793ebef953a96c83a = L.circleMarker(
+                [41.5, 3.0000000000000004],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_21e77daa071bc86793ebef953a96c83a.bindTooltip(
+                `<div>
+                     2025-11-10 12:16:00<br>Lat: 41.5, Lon: 3.0000000000000004<br>sun elevation: 30°<br>Num RX: 1<br>Max RX: 1031.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_9bb55b219b8aa79d1d0e8ebdc833e7a9 = L.circleMarker(
+                [38.5, 14.999999999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_9bb55b219b8aa79d1d0e8ebdc833e7a9.bindTooltip(
+                `<div>
+                     2025-11-11 09:26:00<br>Lat: 38.5, Lon: 14.999999999999998<br>sun elevation: 31°<br>Num RX: 1<br>Max RX: 1077.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_51796aa8e88c038dd60e94dbfbc86833 = L.circleMarker(
+                [38.5, 14.999999999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_51796aa8e88c038dd60e94dbfbc86833.bindTooltip(
+                `<div>
+                     2025-11-11 10:06:00<br>Lat: 38.5, Lon: 14.999999999999998<br>sun elevation: 33°<br>Num RX: 2<br>Max RX: 368.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_5993a0b0d46fee61fc631ad36c3bec6f = L.circleMarker(
+                [38.5, 14.999999999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_5993a0b0d46fee61fc631ad36c3bec6f.bindTooltip(
+                `<div>
+                     2025-11-11 10:26:00<br>Lat: 38.5, Lon: 14.999999999999998<br>sun elevation: 34°<br>Num RX: 2<br>Max RX: 368.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_00c4dd3bf425d20ed0aeb0dc073e20a1 = L.circleMarker(
+                [38.5, 14.999999999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_00c4dd3bf425d20ed0aeb0dc073e20a1.bindTooltip(
+                `<div>
+                     2025-11-11 10:36:00<br>Lat: 38.5, Lon: 14.999999999999998<br>4.85 volt<br>sun elevation: 34°<br>Num RX: 21<br>Max RX: 1737.0 km<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b26306dcfce6a8ad2672d66486e6fc45 = L.circleMarker(
+                [38.77, 15.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_b26306dcfce6a8ad2672d66486e6fc45.bindTooltip(
+                `<div>
+                     2025-11-11 10:46:00<br>Lat: 38.77, Lon: 15.21<br>Alt: 6640.0 meter<br>4.95 volt<br>sun elevation: 34°<br>Num RX: 17<br>Max RX: 1632.0 km<br>Gnd spd: 41.0 km/h<br>Temp: 1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0f286fb422a5389c59e30716a5fbf9dd = L.circleMarker(
+                [38.5, 14.999999999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_0f286fb422a5389c59e30716a5fbf9dd.bindTooltip(
+                `<div>
+                     2025-11-11 10:56:00<br>Lat: 38.5, Lon: 14.999999999999998<br>sun elevation: 34°<br>Num RX: 20<br>Max RX: 1737.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_dfaf4eb3668dcf2ebd93ed9680529427 = L.circleMarker(
+                [38.73, 15.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_dfaf4eb3668dcf2ebd93ed9680529427.bindTooltip(
+                `<div>
+                     2025-11-11 11:06:00<br>Lat: 38.73, Lon: 15.29<br>Alt: 6520.0 meter<br>3.1 volt<br>sun elevation: 34°<br>Num RX: 22<br>Max RX: 1849.0 km<br>Gnd spd: 44.0 km/h<br>Temp: 8.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b5ca098d06045cec707cf80138209292 = L.circleMarker(
+                [38.69, 15.460000000000003],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_b5ca098d06045cec707cf80138209292.bindTooltip(
+                `<div>
+                     2025-11-11 11:16:00<br>Lat: 38.69, Lon: 15.460000000000003<br>Alt: 6540.0 meter<br>4.95 volt<br>sun elevation: 33°<br>Num RX: 36<br>Max RX: 1861.0 km<br>Gnd spd: 48.0 km/h<br>Temp: 8.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_377942dfddf611c9529688edb867bb32 = L.circleMarker(
+                [38.6, 15.959999999999999],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_377942dfddf611c9529688edb867bb32.bindTooltip(
+                `<div>
+                     2025-11-11 12:06:00<br>Lat: 38.6, Lon: 15.959999999999999<br>Alt: 6500.0 meter<br>4.9 volt<br>sun elevation: 30°<br>Num RX: 26<br>Max RX: 1753.0 km<br>Gnd spd: 52.0 km/h<br>Temp: 6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7dca083ec7a82d84bd23d0ef0bf3aa95 = L.circleMarker(
+                [38.5, 17.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_7dca083ec7a82d84bd23d0ef0bf3aa95.bindTooltip(
+                `<div>
+                     2025-11-11 12:16:00<br>Lat: 38.5, Lon: 17.0<br>sun elevation: 29°<br>Num RX: 24<br>Max RX: 1957.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_88586b9dc96bfa68f539a3e596ca2ec5 = L.circleMarker(
+                [36.1, 25.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_88586b9dc96bfa68f539a3e596ca2ec5.bindTooltip(
+                `<div>
+                     2025-11-12 08:16:00<br>Lat: 36.1, Lon: 25.71<br>Alt: 6500.0 meter<br>4.8 volt<br>sun elevation: 31°<br>Num RX: 29<br>Max RX: 3783.0 km<br>Gnd spd: 37.0 km/h<br>Temp: -7.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b1b85757e653f3924fd2a53acad4f11a = L.circleMarker(
+                [36.1, 25.79],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_b1b85757e653f3924fd2a53acad4f11a.bindTooltip(
+                `<div>
+                     2025-11-12 08:26:00<br>Lat: 36.1, Lon: 25.79<br>Alt: 6520.0 meter<br>4.85 volt<br>sun elevation: 32°<br>Num RX: 26<br>Max RX: 3791.0 km<br>Gnd spd: 33.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_192814e6752f2d13fd5ea337207b701c = L.circleMarker(
+                [36.15, 25.79],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_192814e6752f2d13fd5ea337207b701c.bindTooltip(
+                `<div>
+                     2025-11-12 08:36:00<br>Lat: 36.15, Lon: 25.79<br>Alt: 6540.0 meter<br>3.05 volt<br>sun elevation: 33°<br>Num RX: 45<br>Max RX: 3791.0 km<br>Gnd spd: 37.0 km/h<br>Temp: -5.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0048a8d1078987f5c86e9a20a690b3f3 = L.circleMarker(
+                [36.5, 25.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_0048a8d1078987f5c86e9a20a690b3f3.bindTooltip(
+                `<div>
+                     2025-11-12 08:46:00<br>Lat: 36.5, Lon: 25.0<br>sun elevation: 33°<br>Num RX: 54<br>Max RX: 3721.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_bee18815fb31cf0252a8bdb99a5205bc = L.circleMarker(
+                [36.15, 25.88],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_bee18815fb31cf0252a8bdb99a5205bc.bindTooltip(
+                `<div>
+                     2025-11-12 08:56:00<br>Lat: 36.15, Lon: 25.88<br>Alt: 6500.0 meter<br>3.2 volt<br>sun elevation: 34°<br>Num RX: 78<br>Max RX: 3798.0 km<br>Gnd spd: 33.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_2fe74e6c4d4b3b2049efe7492aa30e63 = L.circleMarker(
+                [36.15, 25.96],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_2fe74e6c4d4b3b2049efe7492aa30e63.bindTooltip(
+                `<div>
+                     2025-11-12 09:06:00<br>Lat: 36.15, Lon: 25.96<br>Alt: 7700.0 meter<br>3.05 volt<br>sun elevation: 35°<br>Num RX: 69<br>Max RX: 3806.0 km<br>Gnd spd: 30.0 km/h<br>Temp: 2.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6b37ebad8a2d60382f9b3055c2e13885 = L.circleMarker(
+                [36.15, 26.04],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6b37ebad8a2d60382f9b3055c2e13885.bindTooltip(
+                `<div>
+                     2025-11-12 09:16:00<br>Lat: 36.15, Lon: 26.04<br>Alt: 6500.0 meter<br>3.0 volt<br>sun elevation: 35°<br>Num RX: 74<br>Max RX: 3005.0 km<br>Gnd spd: 30.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1b08d69906a9a09d471beb8760207b11 = L.circleMarker(
+                [36.15, 26.13],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_1b08d69906a9a09d471beb8760207b11.bindTooltip(
+                `<div>
+                     2025-11-12 09:26:00<br>Lat: 36.15, Lon: 26.13<br>Alt: 6560.0 meter<br>4.85 volt<br>sun elevation: 36°<br>Num RX: 98<br>Max RX: 3821.0 km<br>Gnd spd: 33.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_813e25ba400341159774889b02301687 = L.circleMarker(
+                [36.15, 26.21],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_813e25ba400341159774889b02301687.bindTooltip(
+                `<div>
+                     2025-11-12 09:36:00<br>Lat: 36.15, Lon: 26.21<br>Alt: 6460.0 meter<br>3.2 volt<br>sun elevation: 36°<br>Num RX: 74<br>Max RX: 3828.0 km<br>Gnd spd: 30.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1ef5ed47032ebc6e4949fe85c0a55a5f = L.circleMarker(
+                [36.5, 27.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_1ef5ed47032ebc6e4949fe85c0a55a5f.bindTooltip(
+                `<div>
+                     2025-11-12 09:46:00<br>Lat: 36.5, Lon: 27.0<br>sun elevation: 36°<br>Num RX: 6<br>Max RX: 2414.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_9e32f325b46a669b22d3f36d61a2136a = L.circleMarker(
+                [36.15, 26.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_9e32f325b46a669b22d3f36d61a2136a.bindTooltip(
+                `<div>
+                     2025-11-12 09:56:00<br>Lat: 36.15, Lon: 26.29<br>Alt: 6480.0 meter<br>3.35 volt<br>sun elevation: 36°<br>Num RX: 63<br>Max RX: 3007.0 km<br>Gnd spd: 30.0 km/h<br>Temp: -1.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6cadd9ba6b4fa46904dec4f6dc1f96d4 = L.circleMarker(
+                [36.19, 26.38],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_6cadd9ba6b4fa46904dec4f6dc1f96d4.bindTooltip(
+                `<div>
+                     2025-11-12 10:06:00<br>Lat: 36.19, Lon: 26.38<br>Alt: 6480.0 meter<br>4.95 volt<br>sun elevation: 36°<br>Num RX: 66<br>Max RX: 3843.0 km<br>Gnd spd: 33.0 km/h<br>Temp: -3.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_9927ab4a538e47ca155a47a76661cb88 = L.circleMarker(
+                [36.19, 26.38],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_9927ab4a538e47ca155a47a76661cb88.bindTooltip(
+                `<div>
+                     2025-11-12 10:16:00<br>Lat: 36.19, Lon: 26.38<br>Alt: 6500.0 meter<br>3.2 volt<br>sun elevation: 36°<br>Num RX: 49<br>Max RX: 3003.0 km<br>Gnd spd: 30.0 km/h<br>Temp: -6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_8cd5e03e9033c99283c9e05625e303f7 = L.circleMarker(
+                [36.5, 27.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_8cd5e03e9033c99283c9e05625e303f7.bindTooltip(
+                `<div>
+                     2025-11-12 10:26:00<br>Lat: 36.5, Lon: 27.0<br>sun elevation: 35°<br>Num RX: 10<br>Max RX: 2132.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3a7e33ecf79e390336744645b1a9e3b5 = L.circleMarker(
+                [36.19, 26.54],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_3a7e33ecf79e390336744645b1a9e3b5.bindTooltip(
+                `<div>
+                     2025-11-12 10:36:00<br>Lat: 36.19, Lon: 26.54<br>Alt: 6520.0 meter<br>3.15 volt<br>sun elevation: 35°<br>Num RX: 35<br>Max RX: 3005.0 km<br>Gnd spd: 26.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_10d4b9247470dbd180386f42e81dd6d2 = L.circleMarker(
+                [36.19, 26.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_10d4b9247470dbd180386f42e81dd6d2.bindTooltip(
+                `<div>
+                     2025-11-12 10:46:00<br>Lat: 36.19, Lon: 26.63<br>Alt: 6520.0 meter<br>3.1 volt<br>sun elevation: 35°<br>Num RX: 24<br>Max RX: 2471.0 km<br>Gnd spd: 26.0 km/h<br>Temp: -6.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f183e3bee2d10c7ac700c92f6c183da1 = L.circleMarker(
+                [36.19, 26.63],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_f183e3bee2d10c7ac700c92f6c183da1.bindTooltip(
+                `<div>
+                     2025-11-12 10:56:00<br>Lat: 36.19, Lon: 26.63<br>Alt: 6480.0 meter<br>4.95 volt<br>sun elevation: 34°<br>Num RX: 35<br>Max RX: 3866.0 km<br>Gnd spd: 30.0 km/h<br>Temp: 3.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a2e43af1dcd677e903be57d87c358488 = L.circleMarker(
+                [36.19, 26.71],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_a2e43af1dcd677e903be57d87c358488.bindTooltip(
+                `<div>
+                     2025-11-12 11:06:00<br>Lat: 36.19, Lon: 26.71<br>Alt: 6500.0 meter<br>3.15 volt<br>sun elevation: 34°<br>Num RX: 27<br>Max RX: 2860.0 km<br>Gnd spd: 30.0 km/h<br>Temp: -5.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_32c85197aa943bdf1dab667c5c988229 = L.circleMarker(
+                [36.23, 26.79],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_32c85197aa943bdf1dab667c5c988229.bindTooltip(
+                `<div>
+                     2025-11-12 11:16:00<br>Lat: 36.23, Lon: 26.79<br>Alt: 6580.0 meter<br>4.85 volt<br>sun elevation: 33°<br>Num RX: 48<br>Max RX: 3002.0 km<br>Gnd spd: 33.0 km/h<br>Temp: -2.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a11e61e8f2eb5aa7adb114d3a1395bd4 = L.circleMarker(
+                [36.23, 26.880000000000003],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_a11e61e8f2eb5aa7adb114d3a1395bd4.bindTooltip(
+                `<div>
+                     2025-11-12 11:26:00<br>Lat: 36.23, Lon: 26.880000000000003<br>Alt: 6540.0 meter<br>3.2 volt<br>sun elevation: 32°<br>Num RX: 50<br>Max RX: 3159.0 km<br>Gnd spd: 30.0 km/h<br>Temp: -4.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_bc90b5c1660b2b974ced1996cc6c7568 = L.circleMarker(
+                [36.5, 27.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_bc90b5c1660b2b974ced1996cc6c7568.bindTooltip(
+                `<div>
+                     2025-11-12 11:36:00<br>Lat: 36.5, Lon: 27.0<br>sun elevation: 31°<br>Num RX: 4<br>Max RX: 1967.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_711fc43717f8c14ed45cea6861d3f241 = L.circleMarker(
+                [37.5, 33.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#F54927&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_711fc43717f8c14ed45cea6861d3f241.bindTooltip(
+                `<div>
+                     2025-11-13 09:26:00<br>Lat: 37.5, Lon: 33.0<br>sun elevation: 35°<br>Num RX: 3<br>Max RX: 2649.0 km
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_71c734135134b921a02882056f3eef7f = L.circleMarker(
+                [37.77, 32.96000000000001],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#21B55D&quot;, &quot;fillOpacity&quot;: 1.0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+    
+            circle_marker_71c734135134b921a02882056f3eef7f.bindTooltip(
+                `<div>
+                     2025-11-13 09:36:00<br>Lat: 37.77, Lon: 32.96000000000001<br>Alt: 6620.0 meter<br>4.9 volt<br>sun elevation: 34°<br>Num RX: 8<br>Max RX: 2747.0 km<br>Gnd spd: 30.0 km/h<br>Temp: 0.0 °C
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var poly_line_6b8af5cc78c7aa8e37f7095874b0f242 = L.polyline(
+                [[39.27, -83.71], [39.1, -83.21], [39.15, -82.71], [39.06, -82.21], [39.06, -81.54], [35.65, -60.46000000000001], [35.69, -60.040000000000006], [35.73, -59.63], [35.73, -59.21000000000001], [35.81, -58.71], [35.81, -58.29], [35.9, -57.790000000000006], [35.94, -57.21], [35.94, -56.71], [38.19, -34.88], [38.23, -34.13], [38.27, -33.63], [38.31, -33.04], [38.35, -32.63], [38.4, -32.13], [40.02, -11.13], [40.06, -10.63], [40.1, -9.71], [38.77, 15.21], [38.6, 15.959999999999999], [36.1, 25.71], [36.15, 25.96], [36.15, 26.29], [36.19, 26.63], [37.77, 32.96000000000001]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_2a605508191e463b5ffc1042e4856c6d);
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-display-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Interactive map of spots.
+</figcaption>
+</figure>
+</div>
+</div>
 <iframe src="https://wsprtv.com/?cs=kf8eez&amp;ch=109&amp;band=20m&amp;start_date=2025-11-06&amp;sun_el=25&amp;show_unattached" width="780" height="500" "=""></iframe>
 <ul>
 <li><a href="https://wsprtv.com/?cs=kf8eez&amp;ch=109&amp;band=20m&amp;start_date=2025-11-06&amp;sun_el=25&amp;show_unattached">WSPR Telemetry Viewer tracking link</a></li>

@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/launches/2025-08-09-smore-001.html",
-      "/launches/2025-11-06-smore-002.html"
-    ]
-  },
-  {
     "listing": "/launches/index.html",
     "items": [
       "/launches/2025-08-09-smore-001.html",
@@ -15,6 +8,13 @@
       "/launches/2025-11-06-smore-002/all-weather.html",
       "/launches/2025-11-06-smore-002/design.html",
       "/launches/2025-11-06-smore-002/all-predictions.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/launches/2025-08-09-smore-001.html",
+      "/launches/2025-11-06-smore-002.html"
     ]
   }
 ]
