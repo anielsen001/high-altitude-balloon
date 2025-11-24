@@ -58,9 +58,15 @@ def create_map(
             fillcolor = '#F54927'
         else:
             fillcolor = '#21B55D'
+
+        tooltip = \
+            f'{str(_t)}' + '<br>' + \
+            f'Lat: {_llh[0]}, Lon: {_llh[1]}' + '<br>' + \
+            f'Alt: {_llh[-1]} meter'
+            
         marker = folium.vector_layers.CircleMarker(
             _llh[0:2],
-            tooltip = str(_t),
+            tooltip = tooltip,
             radius=5,
             fill=True,
             fillColor=fillcolor,
