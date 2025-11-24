@@ -33,7 +33,7 @@ class WsprTvCsv:
             self,
             degrees = False,
             fill_nan = True,
-            no_nan = False,
+            drop_nan = False,
     ):
         """
         returns lat/lon/height in
@@ -44,9 +44,9 @@ class WsprTvCsv:
 
         if fill_nan, will interpolate nans to nearby values
 
-        if no_nan, will drop any data points that contain nan
+        if drop_nan, will drop any data points that contain nan
         """
-        if no_nan:
+        if drop_nan:
             df = self._df.dropna()
         else:
             df = self._df
