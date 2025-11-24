@@ -1,5 +1,16 @@
 ## Tracking information
 
+```{python}
+#| label: fig-map-display
+#| fig-cap: Interactive map of spots.
+#| echo: false
+import sys
+sys.path.append("/opt/project/_sources/python")
+from map_display import create_map
+m = create_map( '/opt/project/_sources/launches/smore-002/tracking/spots/KF8EEZ_109.csv','')
+m
+```
+
 ```{=html}
 <iframe src="https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached" width="780" height="500""></iframe>
 ```
