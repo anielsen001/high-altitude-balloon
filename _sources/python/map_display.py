@@ -32,6 +32,14 @@ def create_map(
     lat_center = np.nanmean(latd)
     lon_center = np.nanmean(lond)
 
+    lat_max = np.nanmax(latd)
+    lat_min = np.nanmin(latd)
+    lon_max = np.nanmax(lond)
+    lon_min = np.nanmin(lond)
+
+    sw = [lat_min, lon_min]
+    ne = [lat_max, lon_max]
+
     # create a folium map
     # default folium EPSG is EPSG:3857 or web-mercator
     # GPS is EPSG:4326 or WGS-84
@@ -40,6 +48,7 @@ def create_map(
         location = [lat_center,lon_center],
         #crs = 'EPSG4326',
     )
+    m.fit_bounds([sw,ne])
 
     # draw the spots on the map as markers
     for ii in range(len(times)):
@@ -60,7 +69,7 @@ def create_map(
         marker.add_to(m)
 
     # draw the track as a reference
-    llhgood = wspr.llh(degrees=True,no_nan=True)
+    llhgood = wspr.llh(degrees=True,drop_nan=True)
     track = folium.vector_layers.PolyLine(
         llhgood[0:2,:].T,
         ).add_to(m)
