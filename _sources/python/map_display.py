@@ -40,6 +40,13 @@ def create_map(
     sw = [lat_min, lon_min]
     ne = [lat_max, lon_max]
 
+    voltage = wspr.voltage().to_numpy()
+    sun_elevation_angle = wspr.sun_elevation_angle(degrees=True).to_numpy()
+    num_rx_spots = wspr.num_rx_spots().to_numpy()
+    max_rx_distance = wspr.max_rx_distance().to_numpy()
+    ground_speed = wspr.ground_speed().to_numpy()
+    temperature = wspr.temperature().to_numpy()
+
     # create a folium map
     # default folium EPSG is EPSG:3857 or web-mercator
     # GPS is EPSG:4326 or WGS-84
@@ -61,9 +68,15 @@ def create_map(
 
         tooltip = \
             f'{str(_t)}' + '<br>' + \
-            f'Lat: {_llh[0]}, Lon: {_llh[1]}' + '<br>' + \
-            f'Alt: {_llh[-1]} meter'
-            
+            f'Lat: {_llh[0]}, Lon: {_llh[1]}'
+        tooltip += '' if np.isnan(_llh[-1]) else f'<br>Alt: {_llh[-1]} meter'
+        tooltip += '' if np.isnan(voltage[ii]) else f'<br>{voltage[ii]} volt'
+        tooltip += '' if np.isnan(sun_elevation_angle[ii]) else f'<br>sun elevation: {sun_elevation_angle[ii]}°'
+        tooltip += '' if np.isnan(num_rx_spots[ii]) else f'<br>Num RX: {num_rx_spots[ii]}'
+        tooltip += '' if np.isnan(max_rx_distance[ii]) else f'<br>Max RX: {max_rx_distance[ii]} km'
+        tooltip += '' if np.isnan(ground_speed[ii]) else f'<br>Gnd spd: {ground_speed[ii]} km/h'
+        tooltip += '' if np.isnan(temperature[ii]) else f'<br>Temp: {temperature[ii]} °C'
+     
         marker = folium.vector_layers.CircleMarker(
             _llh[0:2],
             tooltip = tooltip,
