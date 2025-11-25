@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,9 +21,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,17 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8be3d391443fefe914f02bf39e7599b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f7a9f68a7c25d3e48d8b03507a008963.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,15 +107,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Balloons</span>
     </a>
@@ -166,8 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -270,18 +264,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div id="juila-config" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"/opt/project/_sources/filling/PicoBalloons.jl"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"/opt/project/_sources/filling/PicoBalloons.jl"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots;</span> gr()</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#using Revise</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DynamicQuantities</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">.PicoBalloons</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">.PicoBalloons</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-balloon-parameters" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>free_lift <span class="op">=</span> <span class="fl">5.0</span>u<span class="st">"g"</span> <span class="co"># grams</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>free_lift <span class="op">=</span> <span class="fl">5.0</span>u<span class="st">"g"</span> <span class="co"># grams</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>balloon_weight <span class="op">=</span> <span class="fl">38.0</span>u<span class="st">"g"</span> <span class="co"># gram</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>balloon_volume <span class="op">=</span> <span class="fl">0.15</span>u<span class="st">"m^3"</span> <span class="co"># m^3</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>payload_weight <span class="op">=</span> <span class="fl">20.0</span>u<span class="st">"g"</span> <span class="co"># gram</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>gas <span class="op">=</span> <span class="st">"helium 97%"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>gas <span class="op">=</span> <span class="st">"helium 97%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="balloon-parameters" class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>"helium 97%"</code></pre>
 </div>
@@ -289,18 +283,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="comparison-of-payload-weight-and-altitude" class="level2">
 <h2 class="anchored" data-anchor-id="comparison-of-payload-weight-and-altitude">comparison of payload weight and altitude</h2>
 <div id="cell-create-balloon-systems" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>balloon_1 <span class="op">=</span> <span class="fu">Balloon</span>(balloon_weight, balloon_volume)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>balloon_1 <span class="op">=</span> <span class="fu">Balloon</span>(balloon_weight, balloon_volume)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>balloon_2 <span class="op">=</span> balloon_1 <span class="op">*</span> <span class="fl">2</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>payload_weights <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">0.0</span><span class="op">:</span><span class="fl">1.0</span><span class="op">:</span><span class="fl">50.0</span>)u<span class="st">"g"</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>bss1 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_1, payload_weights, free_lift, gas)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>bss2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weights, free_lift, gas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>bss2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weights, free_lift, gas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="create-balloon-systems" class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>BalloonSystem(Balloon(0.076 kg, 0.3 m³), Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg  …  0.041 kg, 0.042 kg, 0.043000000000000003 kg, 0.044 kg, 0.045 kg, 0.046 kg, 0.047 kg, 0.048 kg, 0.049 kg, 0.05 kg], 0.005 kg, "helium 97%", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg, 0.011 kg, 0.012 kg, 0.013000000000000001 kg, 0.014000000000000002 kg  …  0.046 kg, 0.047 kg, 0.048 kg, 0.048999999999999995 kg, 0.049999999999999996 kg, 0.051 kg, 0.052 kg, 0.053 kg, 0.054 kg, 0.055 kg], Quantity{Float64, Dimensions{FRInt32}}[0.07912474357721991 m³, 0.08010159226335842 m³, 0.08107844094949694 m³, 0.08205528963563545 m³, 0.08303213832177396 m³, 0.08400898700791248 m³, 0.08498583569405099 m³, 0.08596268438018952 m³, 0.08693953306632804 m³, 0.08791638175246655 m³  …  0.1191755397088991 m³, 0.12015238839503763 m³, 0.12112923708117615 m³, 0.12210608576731466 m³, 0.12308293445345318 m³, 0.1240597831395917 m³, 0.12503663182573022 m³, 0.12601348051186873 m³, 0.12699032919800726 m³, 0.12796717788414577 m³], Quantity{Float64, Dimensions{FRInt32}}[0.015904073459021204 kg, 0.016100420044935043 kg, 0.016296766630848888 kg, 0.016493113216762726 kg, 0.016689459802676568 kg, 0.01688580638859041 kg, 0.01708215297450425 kg, 0.017278499560418093 kg, 0.01747484614633194 kg, 0.017671192732245777 kg  …  0.02395428348148872 kg, 0.024150630067402565 kg, 0.024346976653316407 kg, 0.02454332323923025 kg, 0.02473966982514409 kg, 0.024936016411057936 kg, 0.025132362996971774 kg, 0.025328709582885616 kg, 0.02552505616879946 kg, 0.025721402754713303 kg], Quantity{Float64, Dimensions{FRInt32}}[0.0919040734590212 kg, 0.09310042004493504 kg, 0.09429676663084888 kg, 0.09549311321676272 kg, 0.09668945980267657 kg, 0.0978858063885904 kg, 0.09908215297450425 kg, 0.1002784995604181 kg, 0.10147484614633194 kg, 0.10267119273224577 kg  …  0.14095428348148872 kg, 0.14215063006740258 kg, 0.14334697665331642 kg, 0.14454332323923025 kg, 0.14573966982514408 kg, 0.1469360164110579 kg, 0.14813236299697177 kg, 0.14932870958288563 kg, 0.15052505616879946 kg, 0.1517214027547133 kg], Quantity{Float64, Dimensions{FRInt32}}[0.30634691153007065 m⁻³ kg, 0.31033473348311685 m⁻³ kg, 0.31432255543616294 m⁻³ kg, 0.3183103773892091 m⁻³ kg, 0.32229819934225523 m⁻³ kg, 0.3262860212953014 m⁻³ kg, 0.3302738432483475 m⁻³ kg, 0.33426166520139367 m⁻³ kg, 0.3382494871544398 m⁻³ kg, 0.3422373091074859 m⁻³ kg  …  0.4698476116049624 m⁻³ kg, 0.4738354335580086 m⁻³ kg, 0.47782325551105476 m⁻³ kg, 0.48181107746410085 m⁻³ kg, 0.48579889941714693 m⁻³ kg, 0.4897867213701931 m⁻³ kg, 0.4937745433232393 m⁻³ kg, 0.4977623652762855 m⁻³ kg, 0.5017501872293316 m⁻³ kg, 0.5057380091823777 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.05440455261462848 , 0.05370545049728823 , 0.053024087449084024 , 0.05235979675990192 , 0.051711944716662794 , 0.05107992858689675 , 0.0504631747483989 , 0.04986113695276708 , 0.04927329471177265 , 0.04869915179654535   …  0.03547249417685587 , 0.03517395594820217 , 0.034880400806027896 , 0.03459170501929458 , 0.034307748919692994 , 0.03402841673625035 , 0.033753596437952005 , 0.033483179583928074 , 0.03321706118078427 , 0.032955139546682534 ], Quantity{Float64, Dimensions{FRInt32}}[216.68999999999997 K, 216.69 K, 216.68999999999997 K, 216.68999999999997 K, 216.68999999999997 K, 216.69 K, 216.68999999999997 K, 216.68999999999997 K, 216.69 K, 216.68999999999997 K  …  230.0265749877894 K, 230.48313269809603 K, 230.9371847064341 K, 231.3889595217897 K, 231.83765443478075 K, 232.28275899469918 K, 232.72562562358314 K, 233.16606018039138 K, 233.60362059522646 K, 234.0383063265605 K], Quantity{Float64, Dimensions{FRInt32}}[12124.647676456862 m, 12042.352377895575 m, 11960.968256404838 m, 11880.79245221582 m, 11801.407856034211 m, 11723.019190288209 m, 11645.695322147163 m, 11569.213864124647 m, 11493.783261236984 m, 11419.123905416927 m  …  8962.006935625672 m, 8891.659060385813 m, 8821.697271735882 m, 8752.086360278932 m, 8682.95001004919 m, 8614.366872927705 m, 8546.128563392427 m, 8478.264995317195 m, 8410.844284248618 m, 8343.86651362704 m], Quantity{Float64, Dimensions{FRInt32}}[19041.056970629415 m⁻¹ kg s⁻², 19288.707628523716 m⁻¹ kg s⁻², 19536.998405145 m⁻¹ kg s⁻², 19783.54339813096 m⁻¹ kg s⁻², 20032.494860690524 m⁻¹ kg s⁻², 20280.33859107773 m⁻¹ kg s⁻², 20527.774969129077 m⁻¹ kg s⁻², 20775.59424838866 m⁻¹ kg s⁻², 21023.515237917953 m⁻¹ kg s⁻², 21270.978721582447 m⁻¹ kg s⁻²  …  31000.768096121912 m⁻¹ kg s⁻², 31325.36832222525 m⁻¹ kg s⁻², 31652.022822841358 m⁻¹ kg s⁻², 31978.194106689014 m⁻¹ kg s⁻², 32305.839951763886 m⁻¹ kg s⁻², 32633.039009947013 m⁻¹ kg s⁻², 32961.582895716354 m⁻¹ kg s⁻², 33290.50152294574 m⁻¹ kg s⁻², 33620.863007181775 m⁻¹ kg s⁻², 33950.6674318648 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[20096.846665317764 m⁻¹ kg s⁻², 20344.955883408107 m⁻¹ kg s⁻², 20593.065101498447 m⁻¹ kg s⁻², 20841.174319588787 m⁻¹ kg s⁻², 21089.28353767913 m⁻¹ kg s⁻², 21337.392755769473 m⁻¹ kg s⁻², 21585.501973859813 m⁻¹ kg s⁻², 21833.61119195016 m⁻¹ kg s⁻², 22081.720410040503 m⁻¹ kg s⁻², 22329.829628130843 m⁻¹ kg s⁻²  …  32132.3045204986 m⁻¹ kg s⁻², 32459.983155284917 m⁻¹ kg s⁻², 32788.35154534961 m⁻¹ kg s⁻², 33117.43378887421 m⁻¹ kg s⁻², 33447.10625723282 m⁻¹ kg s⁻², 33777.28414405546 m⁻¹ kg s⁻², 34108.15332682999 m⁻¹ kg s⁻², 34439.67744278273 m⁻¹ kg s⁻², 34771.782335890515 m⁻¹ kg s⁻², 35104.458052282556 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[1055.7896946883484 m⁻¹ kg s⁻², 1056.248254884391 m⁻¹ kg s⁻², 1056.0666963534459 m⁻¹ kg s⁻², 1057.630921457825 m⁻¹ kg s⁻², 1056.7886769886063 m⁻¹ kg s⁻², 1057.0541646917445 m⁻¹ kg s⁻², 1057.7270047307356 m⁻¹ kg s⁻², 1058.016943561499 m⁻¹ kg s⁻², 1058.2051721225507 m⁻¹ kg s⁻², 1058.8509065483959 m⁻¹ kg s⁻²  …  1131.536424376689 m⁻¹ kg s⁻², 1134.6148330596661 m⁻¹ kg s⁻², 1136.3287225082495 m⁻¹ kg s⁻², 1139.2396821851944 m⁻¹ kg s⁻², 1141.2663054689365 m⁻¹ kg s⁻², 1144.2451341084488 m⁻¹ kg s⁻², 1146.570431113636 m⁻¹ kg s⁻², 1149.175919836991 m⁻¹ kg s⁻², 1150.91932870874 m⁻¹ kg s⁻², 1153.7906204177561 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[1035.9201857967464 m⁻¹ kg s⁻², 1035.9087327003463 m⁻¹ kg s⁻², 1035.9315119270236 m⁻¹ kg s⁻², 1035.8623115168366 m⁻¹ kg s⁻², 1035.9192667728598 m⁻¹ kg s⁻², 1035.9182469503367 m⁻¹ kg s⁻², 1035.8966954629693 m⁻¹ kg s⁻², 1035.8947500940271 m⁻¹ kg s⁻², 1035.8978621953743 m⁻¹ kg s⁻², 1035.8786216234296 m⁻¹ kg s⁻²  …  1099.6745657677438 m⁻¹ kg s⁻², 1101.8371254271588 m⁻¹ kg s⁻², 1104.0352423822492 m⁻¹ kg s⁻², 1106.1802575883307 m⁻¹ kg s⁻², 1108.3406457049023 m⁻¹ kg s⁻², 1110.4506508007914 m⁻¹ kg s⁻², 1112.5719670181113 m⁻¹ kg s⁻², 1114.6718409318235 m⁻¹ kg s⁻², 1116.7862634603237 m⁻¹ kg s⁻², 1118.8489829201144 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[11777.351201735702 m, 11699.196796946573 m, 11621.991350305985 m, 11545.710550154621 m, 11470.330166518566 m, 11395.834755428634 m, 11322.198381944072 m, 11249.403235782593 m, 11177.432603912835 m, 11106.265422868273 m  …  8657.547061694308 m, 8588.929028187977 m, 8520.73674906745 m, 8452.964663450191 m, 8385.605640687674 m, 8318.65361448102 m, 8252.104501959717 m, 8185.95207695592 m, 8120.1894820724765 m, 8054.814791424438 m])</code></pre>
 </div>
 </div>
 <div id="cell-fig-balloon-altitudes" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(u<span class="st">"g"</span>,payload_weights),</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss1.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Altitude vs. payload weight"</span>,</span>
@@ -312,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fu">ustrip</span>(u<span class="st">"g"</span>,payload_weights),</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss2.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Two Balloons"</span>,  </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-balloon-altitudes" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-balloon-altitudes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -328,15 +322,15 @@ Figure&nbsp;1: Balloon system altitude for different payload weights.
 <section id="comparison-of-free-lift" class="level2">
 <h2 class="anchored" data-anchor-id="comparison-of-free-lift">comparison of free lift</h2>
 <div id="10" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>free_lifts <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">0.0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">10.0</span>)u<span class="st">"g"</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>free_lifts <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">0.0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">10.0</span>)u<span class="st">"g"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bss1 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_1, payload_weight, free_lifts, gas)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bss2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weight, free_lifts, gas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bss2 <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon_2, payload_weight, free_lifts, gas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>BalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.02 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.0001 kg, 0.0002 kg, 0.0003 kg, 0.0004 kg, 0.0005 kg, 0.0006 kg, 0.0007 kg, 0.0008 kg, 0.0009000000000000001 kg  …  0.0091 kg, 0.0092 kg, 0.009300000000000001 kg, 0.0094 kg, 0.0095 kg, 0.0096 kg, 0.0097 kg, 0.009800000000000001 kg, 0.0099 kg, 0.01 kg], "helium 97%", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.02 kg, 0.0201 kg, 0.0202 kg, 0.020300000000000002 kg, 0.0204 kg, 0.0205 kg, 0.0206 kg, 0.0207 kg, 0.0208 kg, 0.020900000000000002 kg  …  0.0291 kg, 0.0292 kg, 0.0293 kg, 0.029400000000000003 kg, 0.0295 kg, 0.0296 kg, 0.0297 kg, 0.0298 kg, 0.029900000000000003 kg, 0.03 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09377747386929766 m³, 0.09387515873791151 m³, 0.09397284360652536 m³, 0.0940705284751392 m³, 0.09416821334375307 m³, 0.09426589821236692 m³, 0.09436358308098076 m³, 0.09446126794959461 m³, 0.09455895281820847 m³, 0.09465663768682232 m³  …  0.10266679691315816 m³, 0.10276448178177203 m³, 0.10286216665038588 m³, 0.10295985151899972 m³, 0.10305753638761357 m³, 0.10315522125622743 m³, 0.10325290612484128 m³, 0.10335059099345513 m³, 0.10344827586206898 m³, 0.10354596073068283 m³], Quantity{Float64, Dimensions{FRInt32}}[0.01884927224772883 kg, 0.018868906906320215 kg, 0.0188885415649116 kg, 0.018908176223502982 kg, 0.01892781088209437 kg, 0.01894744554068575 kg, 0.018967080199277134 kg, 0.018986714857868518 kg, 0.019006349516459905 kg, 0.01902598417505129 kg  …  0.020636026179544794 kg, 0.020655660838136178 kg, 0.02067529549672756 kg, 0.020694930155318945 kg, 0.02071456481391033 kg, 0.020734199472501717 kg, 0.0207538341310931 kg, 0.02077346878968448 kg, 0.020793103448275865 kg, 0.02081273810686725 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11484927224772883 kg, 0.1148689069063202 kg, 0.1148885415649116 kg, 0.11490817622350298 kg, 0.11492781088209436 kg, 0.11494744554068576 kg, 0.11496708019927714 kg, 0.11498671485786852 kg, 0.11500634951645991 kg, 0.11502598417505129 kg  …  0.1166360261795448 kg, 0.11665566083813618 kg, 0.11667529549672756 kg, 0.11669493015531894 kg, 0.11671456481391032 kg, 0.11673419947250172 kg, 0.1167538341310931 kg, 0.11677346878968448 kg, 0.11679310344827587 kg, 0.11681273810686725 kg], Quantity{Float64, Dimensions{FRInt32}}[0.38283090749242943 m⁻³ kg, 0.3828963563544007 m⁻³ kg, 0.382961805216372 m⁻³ kg, 0.38302725407834326 m⁻³ kg, 0.38309270294031456 m⁻³ kg, 0.38315815180228585 m⁻³ kg, 0.38322360066425715 m⁻³ kg, 0.3832890495262284 m⁻³ kg, 0.38335449838819974 m⁻³ kg, 0.383419947250171 m⁻³ kg  …  0.388786753931816 m⁻³ kg, 0.3888522027937873 m⁻³ kg, 0.38891765165575853 m⁻³ kg, 0.38898310051772983 m⁻³ kg, 0.38904854937970107 m⁻³ kg, 0.3891139982416724 m⁻³ kg, 0.38917944710364366 m⁻³ kg, 0.38924489596561496 m⁻³ kg, 0.38931034482758625 m⁻³ kg, 0.3893757936895575 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.0008705576007748872 , 0.0017408176418272378 , 0.0026107802756914597 , 0.0034804456547977247 , 0.004349813931472053 , 0.005218885257936406 , 0.0060876597863087755 , 0.0069561376686032685 , 0.007824319056730198   …  0.07802049073578542 , 0.07886458260062769 , 0.0797083903701006 , 0.08055191418760661 , 0.0813951541964518 , 0.08223811053984574 , 0.08308078336090173 , 0.08392317280263677 , 0.08476527900797166 , 0.08560710211973119 ], Quantity{Float64, Dimensions{FRInt32}}[219.22035186720555 K, 219.22920109875122 K, 219.23805033029694 K, 219.24689956184264 K, 219.25574879338834 K, 219.26459802493403 K, 219.27344725647976 K, 219.28229648802545 K, 219.29114571957115 K, 219.29999495111684 K  …  220.01675577586704 K, 220.02542441085058 K, 220.0340930458341 K, 220.04276168081765 K, 220.05156428071373 K, 220.06041351225946 K, 220.06926274380513 K, 220.07811197535085 K, 220.08696120689655 K, 220.09581043844224 K], Quantity{Float64, Dimensions{FRInt32}}[10627.064427241054 m, 10625.700909283318 m, 10624.337391325582 m, 10622.97387336785 m, 10621.610355410114 m, 10620.24683745238 m, 10618.883319494642 m, 10617.51980153691 m, 10616.156283579172 m, 10614.792765621438 m  …  10504.351960575184 m, 10503.016269514545 m, 10501.680578453906 m, 10500.344887393268 m, 10498.98855458956 m, 10497.625036631824 m, 10496.261518674091 m, 10494.898000716355 m, 10493.53448275862 m, 10492.170964800887 m], Quantity{Float64, Dimensions{FRInt32}}[24072.155176483997 m⁻¹ kg s⁻², 24077.336544723395 m⁻¹ kg s⁻², 24082.517912962787 m⁻¹ kg s⁻², 24087.699281202174 m⁻¹ kg s⁻², 24092.88064944157 m⁻¹ kg s⁻², 24098.062017680964 m⁻¹ kg s⁻², 24103.13171786982 m⁻¹ kg s⁻², 24108.176734313438 m⁻¹ kg s⁻², 24113.221750757064 m⁻¹ kg s⁻², 24118.26676720068 m⁻¹ kg s⁻²  …  24535.4625498143 m⁻¹ kg s⁻², 24540.538175844726 m⁻¹ kg s⁻², 24545.613801875148 m⁻¹ kg s⁻², 24550.689427905578 m⁻¹ kg s⁻², 24555.843492559667 m⁻¹ kg s⁻², 24561.024860799065 m⁻¹ kg s⁻², 24566.206229038457 m⁻¹ kg s⁻², 24571.387597277848 m⁻¹ kg s⁻², 24576.568965517246 m⁻¹ kg s⁻², 24581.750333756638 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[24096.62028132895 m⁻¹ kg s⁻², 24122.69464495897 m⁻¹ kg s⁻², 24148.77103505623 m⁻¹ kg s⁻², 24174.849451620707 m⁻¹ kg s⁻², 24200.92989465243 m⁻¹ kg s⁻², 24227.01236415137 m⁻¹ kg s⁻², 24253.096860117545 m⁻¹ kg s⁻², 24279.18338255095 m⁻¹ kg s⁻², 24305.27193145158 m⁻¹ kg s⁻², 24331.362506819438 m⁻¹ kg s⁻²  …  26476.61760564992 m⁻¹ kg s⁻², 26502.853607975307 m⁻¹ kg s⁻², 26529.091595411446 m⁻¹ kg s⁻², 26555.331567958343 m⁻¹ kg s⁻², 26581.589708188258 m⁻¹ kg s⁻², 26607.855502513907 m⁻¹ kg s⁻², 26634.12332330678 m⁻¹ kg s⁻², 26660.393170566887 m⁻¹ kg s⁻², 26686.66504429422 m⁻¹ kg s⁻², 26712.938944488775 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[24.465104844952293 m⁻¹ kg s⁻², 45.358100235574966 m⁻¹ kg s⁻², 66.25312209344338 m⁻¹ kg s⁻², 87.15017041853207 m⁻¹ kg s⁻², 108.04924521085923 m⁻¹ kg s⁻², 128.95034647040666 m⁻¹ kg s⁻², 149.96514224772545 m⁻¹ kg s⁻², 171.0066482375114 m⁻¹ kg s⁻², 192.05018069451762 m⁻¹ kg s⁻², 213.09573961875867 m⁻¹ kg s⁻²  …  1941.1550558356212 m⁻¹ kg s⁻², 1962.315432130581 m⁻¹ kg s⁻², 1983.4777935362981 m⁻¹ kg s⁻², 2004.6421400527652 m⁻¹ kg s⁻², 2025.746215628591 m⁻¹ kg s⁻², 2046.8306417148415 m⁻¹ kg s⁻², 2067.917094268323 m⁻¹ kg s⁻², 2089.0055732890396 m⁻¹ kg s⁻², 2110.0960787769727 m⁻¹ kg s⁻², 2131.188610732137 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 20.960708335423913 m⁻¹ kg s⁻², 41.92327204250609 m⁻¹ kg s⁻², 62.88769017014999 m⁻¹ kg s⁻², 83.8539617679091 m⁻¹ kg s⁻², 104.8220858859862 m⁻¹ kg s⁻², 125.7914787924902 m⁻¹ kg s⁻², 146.76237802670474 m⁻¹ kg s⁻², 167.73489013182487 m⁻¹ kg s⁻², 188.7090142819109 m⁻¹ kg s⁻²  …  1914.2688285659965 m⁻¹ kg s⁻², 1935.3793000327635 m⁻¹ kg s⁻², 1956.4913667935937 m⁻¹ kg s⁻², 1977.605028043231 m⁻¹ kg s⁻², 1998.7266675008316 m⁻¹ kg s⁻², 2019.8522774742928 m⁻¹ kg s⁻², 2040.9796577139787 m⁻¹ kg s⁻², 2062.1088073269148 m⁻¹ kg s⁻², 2083.2397254207267 m⁻¹ kg s⁻², 2104.372411103641 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10614.591305558239 m, 10606.326060941117 m, 10598.067101711902 m, 10589.814412797987 m, 10581.569489560781 m, 10573.330990432218 m, 10565.098721599268 m, 10556.872668108195 m, 10548.652815039517 m, 10540.439570028899 m  …  9888.015282761375 m, 9880.302500771237 m, 9872.596705519782 m, 9864.89601089021 m, 9857.200404381976 m, 9849.509873523011 m, 9841.82612562916 m, 9834.147894169226 m, 9826.474704594406 m, 9818.806544531144 m])</code></pre>
 </div>
 </div>
 <div id="cell-fig-balloon-altitudes-free-lift" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(u<span class="st">"g"</span>,free_lifts),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss1.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Altitude vs. free lift"</span>,</span>
@@ -348,7 +342,7 @@ Figure&nbsp;1: Balloon system altitude for different payload weights.
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fu">ustrip</span>(u<span class="st">"g"</span>,free_lifts),</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss2.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Two Balloons"</span>,  </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-balloon-altitudes-free-lift" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-balloon-altitudes-free-lift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -361,7 +355,7 @@ Figure&nbsp;2: Balloon system altitude for different payload weights.
 </div>
 </div>
 <div id="cell-fig-balloon-altitudes-neck-lift" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(u<span class="st">"g"</span>,bss1.neck_lift),</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss1.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Altitude vs. neck lift"</span>,</span>
@@ -373,7 +367,7 @@ Figure&nbsp;2: Balloon system altitude for different payload weights.
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fu">ustrip</span>(u<span class="st">"g"</span>,bss2.neck_lift),</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ustrip</span>(us<span class="st">"ft"</span>,bss2.float_altitude)<span class="op">/</span><span class="fl">1000</span>.,</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Two Balloons"</span>,  </span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-balloon-altitudes-neck-lift" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-balloon-altitudes-neck-lift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -391,243 +385,236 @@ Figure&nbsp;3: Balloon system altitude for different payload weights.
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/apnielsen\.com\/high-altitude-balloon");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/apnielsen\.com\/high-altitude-balloon");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -635,161 +622,185 @@ Figure&nbsp;3: Balloon system altitude for different payload weights.
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 
