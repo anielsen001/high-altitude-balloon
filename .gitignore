@@ -6,6 +6,9 @@
 /_site/
 /*_html/
 
+# python related
+__pycache__
+
 # julia related
 /.julia/
 
