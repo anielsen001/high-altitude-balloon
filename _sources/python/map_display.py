@@ -9,6 +9,7 @@ sys.path.append("/opt/project/_sources/python")
 
 import folium
 import numpy as np
+import pandas as pd
 from pathlib import Path
 
 from hysplit import HysplitShapefile
@@ -100,11 +101,12 @@ def create_map(
     # draw the hysplit tracks
     for _h in hysplitfiles:
         hysplit = HysplitShapefile(_h)
-        hysplit_time = hysplit.start_time()
-        # draw each track
-        #fg = folium.FeatureGroup(name=f'Hysplit {Path(_h).stem}')
-        fg = folium.FeatureGroup(name=f'Hysplit {str(hysplit_time)}')
+        hysplit_start_time = hysplit.start_time()
+        # draw each track into a single feature group for this hysplit model run
+        fg = folium.FeatureGroup(name=f'Hysplit {str(hysplit_start_time)}')
         for _t in hysplit.tracks:
+
+            # draw each track as a polyline
             llh = hysplit.get_track(_t)[['LAT','LON','LEVEL']].to_numpy()
             track = folium.vector_layers.PolyLine(
                 llh[:,0:2],
@@ -113,10 +115,29 @@ def create_map(
                 control = True,
                 show = True,
                 ).add_to(fg)
-        fg.add_to(m)
 
-
+            # for each 12 hour period, draw a marker along the track
+            # hysplit returns a value at each hour mark
+            tdelta = pd.Timedelta('12 hours')
+            hysplit_end_time = hysplit.end_time()
+            for _time in np.arange(hysplit_start_time, hysplit_end_time+tdelta, tdelta):
+                llh = hysplit.get_llh(_t,_time,degrees=True)
+                ll = llh[0:2].flatten()
+                if len(ll)==0: break
+                mrkr = folium.vector_layers.CircleMarker(
+                    ll,
+                    tooltip = f'{_time}',
+                    radius = 5,
+                    fill = True,
+                    color = "#FF0000",
+                    opacity = 1.0,
+                    fillColor="#FF0000",
+                    fillOpacity=1.0,
+                    ).add_to(fg)
+                    
             
+        fg.add_to(m)
+          
     folium.LayerControl().add_to(m)
     
     # return the folium map object
