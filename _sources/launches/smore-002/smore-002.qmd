@@ -2,7 +2,7 @@
 
 ```{python}
 #| label: fig-map-display
-#| fig-cap: Interactive map of spots.
+#| fig-cap: Interactive map of spots along with NOAA Hysplit predictions.
 #| echo: false
 import sys
 sys.path.append("/opt/project/_sources/python")
@@ -17,9 +17,14 @@ m = create_map(
 m
 ```
 
+:::{#fig-wsprtv-tracking}
+
 ```{=html}
 <iframe src="https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached" width="780" height="500""></iframe>
 ```
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached)
+
+:::
 
 - [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-11-06&sun_el=25&show_unattached)
 - [Lu7aa tracking site](http://lu7aa.org/wsprx.asp?other=kf8eez&banda=20m&balloonid=05&timeslot=8&detail=&launch=20251106135000&SSID=11&tracker=qrplabs&qrpid=109&repito=on&qp=&telen=&comments=#)
