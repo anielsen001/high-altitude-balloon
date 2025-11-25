@@ -46,9 +46,22 @@ class HysplitShapefile():
             self,
             trkid,
             ):
+        """
+        returns a pandas data frame with the specified trackid
+        """
         df = self._df
         dftraj = df[df['TRAJID']==trkid]
         return dftraj
+
+    def start_time(self):
+        """
+        return the start time of this hysplit model
+        """
+        return self._df['datetime'].iloc[0]
+    
+    @property
+    def tracks(self):
+        return self._tracks
 
 
 # hysplitpath = Path('/opt/project/_sources/launches/smore-002/tracking/predictions/')
