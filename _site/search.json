@@ -302,7 +302,19 @@
     "href": "launches/2025-11-06-smore-002.html",
     "title": "Second Launch s’more-002",
     "section": "",
-    "text": "/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\nFigure 1: Interactive map of spots.\n\n\n\n\n\n\nWSPR Telemetry Viewer tracking link\nLu7aa tracking site\nSondeHub tracking link",
+    "text": "Figure 1: Payload just before launch",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch s'more-002"
+    ]
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002.html#section",
+    "href": "launches/2025-11-06-smore-002.html#section",
+    "title": "Second Launch s’more-002",
+    "section": "",
+    "text": "Figure 1: Payload just before launch",
     "crumbs": [
       "Home page",
       "Launches",
@@ -313,8 +325,8 @@
     "objectID": "launches/2025-11-06-smore-002.html#tracking-information",
     "href": "launches/2025-11-06-smore-002.html#tracking-information",
     "title": "Second Launch s’more-002",
-    "section": "",
-    "text": "/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:31: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\nFigure 1: Interactive map of spots.\n\n\n\n\n\n\nWSPR Telemetry Viewer tracking link\nLu7aa tracking site\nSondeHub tracking link",
+    "section": "Tracking information",
+    "text": "Tracking information\n\n\n/opt/project/_sources/python/hysplit.py:36: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:36: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n/opt/project/_sources/python/hysplit.py:36: FutureWarning:\n\nSupport for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.\n\n\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\nFigure 2: Interactive map of spots along with NOAA Hysplit predictions.\n\n\n\n\n\n\n\n\n\n\nFigure 3: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link\nLu7aa tracking site\nSondeHub tracking link",
     "crumbs": [
       "Home page",
       "Launches",
@@ -326,7 +338,7 @@
     "href": "launches/2025-11-06-smore-002.html#weather-information",
     "title": "Second Launch s’more-002",
     "section": "Weather information",
-    "text": "Weather information\nthis shows weather along the predicted HYSPLIT path (Section 3).\n\nClouds for 2025-11-14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
+    "text": "Weather information\nthis shows weather along the predicted HYSPLIT path (Section 4).\n\nClouds for 2025-11-14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
     "crumbs": [
       "Home page",
       "Launches",
@@ -406,8 +418,8 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#section",
-    "href": "launches/2025-11-06-smore-002.html#section",
+    "objectID": "launches/2025-11-06-smore-002.html#section-1",
+    "href": "launches/2025-11-06-smore-002.html#section-1",
     "title": "Second Launch s’more-002",
     "section": "2025-10-16",
     "text": "2025-10-16\nSet up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise.\n\n\nwspr.rocks spots\nDownloaded spot from https://wspr.rocks in both json and tsv format for comparison.\nThese are the spots from one day of testing 2025-10-16 local time 2025-10-16-wpsr-rocks-spots.json 2025-10-16-wpsr-rocks-spots.tsv\n\n\nlu7aa spots\nhttps://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs\ncsv file created by copy/paste from website\n2025-10-16-lu7aa-spots.csv\nthis shows decoded telemetry also https://lu7aa.org/wsprx.asp?banda=20m&other=kf8eez&balloonid=05&timeslot=8&repito=on&qrpid=109&SSID=11&launch=20251016010101&tracker=qrplabs\n\n\nwsprtv.com\nshows charts https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-09-17\ndownloaded csv to KF8EEZ_109_20250917-20251017.cs\n\n\npower down\nSolar panel ends in shadow early due to trees.\nLet up over night to allow to start again with sunrise.",
@@ -418,8 +430,8 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#section-1",
-    "href": "launches/2025-11-06-smore-002.html#section-1",
+    "objectID": "launches/2025-11-06-smore-002.html#section-2",
+    "href": "launches/2025-11-06-smore-002.html#section-2",
     "title": "Second Launch s’more-002",
     "section": "2025-10-17",
     "text": "2025-10-17\nCame back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight.",
@@ -430,8 +442,8 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#section-2",
-    "href": "launches/2025-11-06-smore-002.html#section-2",
+    "objectID": "launches/2025-11-06-smore-002.html#section-3",
+    "href": "launches/2025-11-06-smore-002.html#section-3",
     "title": "Second Launch s’more-002",
     "section": "2025-10-20",
     "text": "2025-10-20\nAdditonal testing. Working in sun.",
@@ -442,8 +454,8 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002.html#section-3",
-    "href": "launches/2025-11-06-smore-002.html#section-3",
+    "objectID": "launches/2025-11-06-smore-002.html#section-4",
+    "href": "launches/2025-11-06-smore-002.html#section-4",
     "title": "Second Launch s’more-002",
     "section": "2025-10-23",
     "text": "2025-10-23\nBroke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.",
