@@ -7,7 +7,13 @@
 import sys
 sys.path.append("/opt/project/_sources/python")
 from map_display import create_map
-m = create_map( '/opt/project/_sources/launches/smore-002/tracking/spots/KF8EEZ_109.csv','')
+m = create_map(
+    '/opt/project/_sources/launches/smore-002/tracking/spots/KF8EEZ_109.csv',
+    ['/opt/project/_sources/launches/smore-002/tracking/predictions/gis_1627.zip',
+     '/opt/project/_sources/launches/smore-002/tracking/predictions/gis_142371.zip',
+     '/opt/project/_sources/launches/smore-002/tracking/predictions/gis_188480.zip'],     
+     )
+
 m
 ```
 

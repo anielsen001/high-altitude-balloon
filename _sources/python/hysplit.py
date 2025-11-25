@@ -2,6 +2,7 @@ import datetime
 #from fastkml import kml
 #import folium
 #import io
+import numpy as np
 import pandas as pd
 from pathlib import Path
 import zipfile
@@ -9,6 +10,7 @@ import zipfile
 class HysplitShapefile():
 
     _df = None
+    _tracks = None
 
     def __init__(
             self,
@@ -34,8 +36,19 @@ class HysplitShapefile():
                         #parse_dates = {'datetime':[[1,2]]},
                         date_format = '%Y%m%d %H%M',
                     )
-        df = pd.merge(left=dfatt,right=dftxt,how='left')                
+        df = pd.merge(left=dfatt,right=dftxt,how='left')
+        df['TRAJID'] = (df['TRAJNUM']/1000).to_numpy().astype(int)
         self._df = df
+        
+        self._tracks = np.unique((self._df['TRAJNUM'].to_numpy()/1000).astype(int))
+
+    def get_track(
+            self,
+            trkid,
+            ):
+        df = self._df
+        dftraj = df[df['TRAJID']==trkid]
+        return dftraj
 
 
 # hysplitpath = Path('/opt/project/_sources/launches/smore-002/tracking/predictions/')

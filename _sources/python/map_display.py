@@ -10,6 +10,8 @@ sys.path.append("/opt/project/_sources/python")
 import folium
 import numpy as np
 from pathlib import Path
+
+from hysplit import HysplitShapefile
 from wsprtv import WsprTvCsv
 
 def create_map(
@@ -93,6 +95,26 @@ def create_map(
     track = folium.vector_layers.PolyLine(
         llhgood[0:2,:].T,
         ).add_to(m)
+
+    # draw the hysplit tracks
+    for _h in hysplitfiles:
+        hysplit = HysplitShapefile(_h)
+        # draw each track
+        fg = folium.FeatureGroup(name=f'Hysplit {Path(_h).stem}')
+        for _t in hysplit._tracks:
+            llh = hysplit.get_track(_t)[['LAT','LON','LEVEL']].to_numpy()
+            track = folium.vector_layers.PolyLine(
+                llh[:,0:2],
+                color="#FF0000",
+                name = f'Hysplit {_t}',
+                control = True,
+                show = True,
+                ).add_to(fg)
+        fg.add_to(m)
+
+
+            
+    folium.LayerControl().add_to(m)
     
     # return the folium map object
     return m
