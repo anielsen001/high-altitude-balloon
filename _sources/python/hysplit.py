@@ -5,20 +5,25 @@ import datetime
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from scipy import interpolate as spi
 import zipfile
 
 class HysplitShapefile():
 
     _df = None
     _tracks = None
+    _zipfile = None
 
     def __init__(
             self,
             hysplitzipfile,
             ):
+
+        self._zipfile = hysplitzipfile
+        
         dfatt = None
         dftxt = None
-        #hysplitzipfile = hysplitpath / 'gis_1627.zip'
+        
         with zipfile.ZipFile(hysplitzipfile) as f:
             for _f in f.filelist:
                 if (Path(_f.filename).suffix == '.txt'):
@@ -53,15 +58,45 @@ class HysplitShapefile():
         dftraj = df[df['TRAJID']==trkid]
         return dftraj
 
+    def get_llh(
+            self,
+            trackid,
+            timestamp,
+            degrees=False,
+            ):
+        """
+        return the lat/lon/height for the given trackid at the given timestamp
+
+        does not interpolate, only returns existing time values
+
+        lat/lon is stored in degrees
+        """
+        trk = self.get_track(trackid)
+        llh = trk[['LAT','LON','LEVEL']]
+        llht = llh[trk['datetime']==timestamp].to_numpy().T # 3x1 numpy array
+        if not degrees:
+            llht[0:2] = np.radians(llht[0:2])
+        return llht
+
     def start_time(self):
         """
         return the start time of this hysplit model
         """
         return self._df['datetime'].iloc[0]
+
+    def end_time(self):
+        """
+        return the end time of this hysplit model
+        """
+        return self._df['datetime'].iloc[-1]
     
     @property
     def tracks(self):
         return self._tracks
+
+    @property
+    def zipfile(self):
+        return self._zipfile
 
 
 # hysplitpath = Path('/opt/project/_sources/launches/smore-002/tracking/predictions/')
