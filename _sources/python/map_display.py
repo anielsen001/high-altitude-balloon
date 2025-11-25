@@ -94,14 +94,17 @@ def create_map(
     llhgood = wspr.llh(degrees=True,drop_nan=True)
     track = folium.vector_layers.PolyLine(
         llhgood[0:2,:].T,
+        name = 'Spot track',
         ).add_to(m)
 
     # draw the hysplit tracks
     for _h in hysplitfiles:
         hysplit = HysplitShapefile(_h)
+        hysplit_time = hysplit.start_time()
         # draw each track
-        fg = folium.FeatureGroup(name=f'Hysplit {Path(_h).stem}')
-        for _t in hysplit._tracks:
+        #fg = folium.FeatureGroup(name=f'Hysplit {Path(_h).stem}')
+        fg = folium.FeatureGroup(name=f'Hysplit {str(hysplit_time)}')
+        for _t in hysplit.tracks:
             llh = hysplit.get_track(_t)[['LAT','LON','LEVEL']].to_numpy()
             track = folium.vector_layers.PolyLine(
                 llh[:,0:2],
