@@ -1,3 +1,7 @@
+## 
+
+![Payload just before launch](/_sources/launches/smore-002/launch/payload_at_launch.jpg){#fig-payload-before-launch}
+
 ## Tracking information
 
 ```{python}
