@@ -1,5 +1,7 @@
 # emacs
 *~
+*.bak
+*.sav
 
 /.quarto/
 /output/
