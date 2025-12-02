@@ -41,14 +41,22 @@ Here's a measured table
 
 
 
-## U4b
+## U4b {@sec-u4b}
 
-Power draw? 
+Power draw
+
+- 250 mW in hardware test mode
+-  90 mW in standby at USB interface - maybe min of power supply
+-  90 mW in sleep at USB interface - maybe min of power supply
+- 170 mW while trying to acquire GPS with no signal (in basement)
 
 From U4B hardware manual [@U4b_hw]:
 
 - maximum rated input voltate 6.0V
 - recommended max voltage is 5.5 V
 - regulated to 3.3 V on board
-- empirically runs to about 2.9 V then stops
+- empirically runs to about 2.2 V then stops using self test mode from USB CLI
+- in sleep mode LED stays on until about 2.2 V then goes out
+
+Using sabrent USB hub with mechanical switches, these only switch the power lines if super caps are used to power the U4b, you can power up the U4b in USB mode, charge the super caps and then disconnect the switch, while maintaining a USB data connection to the host computer. You can then power the U4b externally. 
 
