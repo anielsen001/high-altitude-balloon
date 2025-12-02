@@ -195,7 +195,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../calculators/solar_elevation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Solar elevation</span></a>
+ <span class="menu-text">Solar elevation at location</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../calculators/solar_elevation2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solar elevation at latitude</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -246,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Float calculations</h1>
+<div class="quarto-title-block"><div><h1 class="title">Float calculations</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -268,6 +274,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="package-environment" class="level3">
 <h3 class="anchored" data-anchor-id="package-environment">Package environment</h3>
 <div id="configure-packages" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
@@ -282,6 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PrettyTables"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>]</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(needed_pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Activating new project at `/opt/project/calculators`
    Resolving package versions...
@@ -591,6 +600,8 @@ Precompiling project...
 <section id="imports" class="level3">
 <h3 class="anchored" data-anchor-id="imports">Imports</h3>
 <div id="4" class="cell" data-lable="load-packages" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Interpolations</span></span>
@@ -607,6 +618,7 @@ Precompiling project...
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># there's conversion from Kelvin to degC so create a function for that</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># this strips off the units completely and returns the value in degC</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kelvin_to_degC_value</span>(k) <span class="op">=</span> <span class="fu">ustrip</span>(k <span class="op">-</span> <span class="fl">0.0</span>ua<span class="st">"degC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>kelvin_to_degC_value (generic function with 1 method)</code></pre>
 </div>
@@ -616,6 +628,8 @@ Precompiling project...
 <section id="balloon-system-properties" class="level2">
 <h2 class="anchored" data-anchor-id="balloon-system-properties">Balloon system properties</h2>
 <div id="cell-balloon-definitions" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Balloon</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    weight</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    volume</span>
@@ -648,6 +662,7 @@ Precompiling project...
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>balloon <span class="op">=</span> <span class="fu">Balloon</span>(balloon_weight, balloon_volume)</span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>bs <span class="op">=</span> <span class="fu">BalloonSystem</span>(balloon <span class="op">*</span> <span class="fl">2</span>, payload_weight, free_lift, gas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div id="balloon-definitions" class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>BalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.02 kg, 0.005 kg, "helium 97%")</code></pre>
 </div>
@@ -657,6 +672,8 @@ Precompiling project...
 <h2 class="anchored" data-anchor-id="define-gas-properties">Define gas properties</h2>
 <p>Gas density table in kg/cu m at 101.325 kPa at MSL</p>
 <div id="cell-define-gas-properties" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_gas <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"""</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">    "name","0deg","15deg"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">    "hydrogen",0.0899,0.0852</span></span>
@@ -670,6 +687,7 @@ Precompiling project...
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># atmosphere_temperature_msl_c = 15.0</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># atmosphere_temperature_msl = 273.1 + atmosphere_temperature_msl_c # Kelvin at standard temperature</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>df_gas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div id="define-gas-properties" class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>4×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -721,6 +739,8 @@ Precompiling project...
 <section id="computed-balloon-fill-properties" class="level2">
 <h2 class="anchored" data-anchor-id="computed-balloon-fill-properties">Computed balloon fill properties</h2>
 <div id="10" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>chosen_gas_density <span class="op">=</span> <span class="fu">only</span>(df_gas[(df_gas.name <span class="op">.==</span> gas),<span class="st">"15deg"</span>])u<span class="st">"kg/m^3"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>air_density <span class="op">=</span> <span class="fu">only</span>(df_gas[(df_gas.name <span class="op">.==</span> <span class="st">"air"</span>),<span class="st">"15deg"</span>])u<span class="st">"kg/m^3"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>neck_lift <span class="op">=</span> bs.free_lift <span class="op">+</span> bs.payload_weight <span class="co"># gram</span></span>
@@ -740,6 +760,7 @@ Precompiling project...
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Gas mass           </span><span class="sc">$</span>(gas_mass <span class="op">|&gt;</span> us<span class="st">"g"</span>)<span class="st">"</span>)</span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Total mass         </span><span class="sc">$</span>(total_mass <span class="op">|&gt;</span> us<span class="st">"g"</span>)<span class="st">"</span>)</span>
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"System density     </span><span class="sc">$</span>(system_density)<span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Neck lift          25.0 g
 Gas fill at launch 0.09866171729999025 m³
@@ -752,10 +773,13 @@ System density     0.3861033505909935 m⁻³ kg</code></pre>
 <section id="define-atmospheric-profile" class="level2">
 <h2 class="anchored" data-anchor-id="define-atmospheric-profile">Define atmospheric profile</h2>
 <div id="cell-load-atmospheric-data" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fpath <span class="op">=</span> <span class="st">"/opt/project/_sources/filling"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">"atmos.csv"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_atmos <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="fu">joinpath</span>(fpath,fname), DataFrame);</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df_atmos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div id="load-atmospheric-data" class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>8001×5 DataFrame</span></div><div style="float: right; font-style: italic;"><span>7976 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -992,6 +1016,8 @@ System density     0.3861033505909935 m⁻³ kg</code></pre>
 </div>
 </div>
 <div id="cell-fig-atmospheric-data-pressure" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Alt (m)"</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Pres (kPa)"</span>,</span>
@@ -999,6 +1025,7 @@ System density     0.3861033505909935 m⁻³ kg</code></pre>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Altitude [meters]"</span>,</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Pressure [kPa]"</span>,</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div id="fig-atmospheric-data-pressure" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-atmospheric-data-pressure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1011,6 +1038,8 @@ Figure&nbsp;1: Atmospheric pressure as a function of altitude
 </div>
 </div>
 <div id="cell-fig-atmospheric-data-temperature" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Alt (m)"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    df_atmos.var<span class="st">"Temp (C)"</span>,</span>
@@ -1018,6 +1047,7 @@ Figure&nbsp;1: Atmospheric pressure as a function of altitude
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Altitude [meters]"</span>,</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Temperature [C]"</span>,</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div id="fig-atmospheric-data-temperature" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-atmospheric-data-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1033,6 +1063,8 @@ Figure&nbsp;2: Atmospheric temperature as a function of altitude
 <section id="float-calculations" class="level2">
 <h2 class="anchored" data-anchor-id="float-calculations">Float calculations</h2>
 <div id="float-calculations" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interpolate temperature based on density</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>u_system_density <span class="op">=</span> <span class="fu">ustrip</span>(u<span class="st">"kg/m^3"</span>,system_density)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>temperature_at_float <span class="op">=</span> <span class="fu">LinearInterpolation</span>(df_atmos.var<span class="st">"Den (Kg/cu m)"</span>,df_atmos.var<span class="st">"Temp (C)"</span>)(u_system_density)ua<span class="st">"degC"</span></span>
@@ -1059,6 +1091,7 @@ Figure&nbsp;2: Atmospheric temperature as a function of altitude
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Differential pressure:   </span><span class="sc">$</span>(differential_pressure <span class="op">|&gt;</span> us<span class="st">"kPa"</span> )<span class="st">"</span>)</span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Super pressure:          </span><span class="sc">$</span>(superpressure <span class="op">|&gt;</span> us<span class="st">"kPa"</span> )<span class="st">"</span>)</span>
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Super pressure altitute: </span><span class="sc">$</span>(superpressure_onset_altitude)<span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Float temperature:       219.66001725174584 K
 Balloon altitude:        10559.31937569401 m
@@ -1071,6 +1104,8 @@ Super pressure altitute: 4162.055334504525 m</code></pre>
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 
@@ -1162,6 +1197,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1491,7 +1577,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Float calculations</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="an">engine:</span><span class="co"> julia</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="an">julia:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">  exeflags:</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - "--project=."</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>{{&lt; include /_sources/filling/float1g.qmd &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
