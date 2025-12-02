@@ -5,7 +5,8 @@ title: Compute solar elevation angles and hours of sunlight
 Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year.
 
 ```{python}
-#| label: python-imports
+#| label: python-config
+#| code-fold: show
 from astropy.coordinates import EarthLocation, get_sun, AltAz
 from astropy.time import Time
 from astropy import units as u
@@ -13,7 +14,11 @@ from astropy.visualization import quantity_support, time_support
 from matplotlib import pylab as plt
 import matplotlib.dates as mdates
 import numpy as np
+from scipy import signal as sps
 from tqdm import tqdm
+
+# disable TQDM for non-interactive
+tqdm_disable=True
 ```
 
 Set the minimum elevation and other parameters
@@ -31,7 +36,7 @@ longitude_deg = 0.0 # meridian
 height_m = 0.0 # 
 
 start_date = Time("2025-01-01 00:00:00")
-end_date = Time("2025-12-31 00:00:00")
+end_date = Time("2026-01-01 00:00:00")
 ```
 
 Define parameter space. 
@@ -44,8 +49,9 @@ Define parameter space.
 lats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)
 pos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)
 
-num_times = 24*60*10
-times = np.linspace(start_date,end_date,num_times,endpoint=False)
+num_per_day = 24 * 2 #  24 hours * 2 - half hour increments
+num_times = 365 * num_per_day # 365 days * num_per_day
+times = np.linspace(start_date,end_date,num_times,endpoint=True)
 daynum = (times - times[0]).jd
 
 # this syntax would assign one time to each single location
@@ -53,24 +59,19 @@ daynum = (times - times[0]).jd
 # frame = AltAz(obstime=times, location=pos)
 #
 # instead use list comprehension to create a 2-D array fo position and times
-frames = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times) ]
-sunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames)]
-alts = [ _sunloc.alt for _sunloc in tqdm(sunlocs) ]
+frames = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times,disable=tqdm_disable,desc = 'frames') ]
+# sunlocs is the slow calculation
+sunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames,disable=tqdm_disable,desc='sunlocs')]
+alts = [ _sunloc.alt for _sunloc in tqdm(sunlocs,disable=tqdm_disable,desc='alts') ]
 
 # reformat into an array
 altslats = np.zeros([len(times),len(lats)])
-for ii in tqdm(range(len(alts))):
+for ii in tqdm(range(len(alts)),disable=tqdm_disable,desc='altslats'):
     altslats[ii,:] = alts[ii]
 
 ```
 
-```{python}
-#| label: compute-time-above-elevation-threshold
-elevation_angle_threshold = 30.0 
-
-```
-
-Make a plot
+Make a plot of the solar elevation at different latitudes over the entire time.
 
 ```{python}
 #| label: fig-elevation
@@ -89,10 +90,12 @@ with time_support():
 ```{python}
 #| label: fig-elevation-2
 #| fig-cap: Elevation angle over a yaer
+#| code-fold: true
 fig, ax = plt.subplots()
 for ii,_lat in enumerate(lats):
-    ax.plot(daynum, altslats[:,ii],label=f'{_lat}')
+    ax.plot(daynum, altslats[:,ii],label=f'Latitude {_lat}')
 
+ax.axhline(y=minimum_solar_angle_deg, label=f'Min elev {minimum_solar_angle_deg}')
 ax.set_ylim(bottom=0.0)
 ax.set_xlabel('Day in year')
 ax.set_ylabel('Elevation angle')
@@ -101,8 +104,56 @@ ax.legend()
 
 ```
 
+Compute time per day with sun elevation above the minimum
 
-Select the location and time. 
+```{python}
+#| label: daily-time-above-minimum-solar-elevation
+
+# find where the elevation is greater or equal than the minimum
+# creates bool array of size [num_times, num_lats] where True is
+# above threshold
+ang_above_min = np.asarray(altslats >= minimum_solar_angle_deg)
+
+# now do some scipy-fu to get the number of times per day using
+# scipy's convolve function
+
+# kernel of number of blocks per day normalized to the time of
+# each block in hours
+conv_kernel = np.ones(num_per_day) * np.diff(daynum)[0]*24
+
+# compute the sum for each day and select just the first value
+# for each day. 
+day_sum = np.apply_along_axis(
+    lambda m: sps.convolve(m, conv_kernel, mode='full'),
+    axis=0,
+    arr=ang_above_min
+)[num_per_day::num_per_day,:]
+
+```
+
+Plot the result
+
+
+```{python}
+#| label: fig-hours-above-minimum
+#| fig-cap: Hours when sun elevation exceeds minimum for each day
+#| code-fold: true
+fig, ax = plt.subplots()
+for ii,_lat in enumerate(lats):
+    ax.plot(daynum[::num_per_day], day_sum[:,ii],label=f'Latitude {_lat}')
+
+ax.set_xlabel('Day in year')
+ax.set_ylabel('Hours above minimum')
+ax.set_title(f'Hours of sunlight above {minimum_solar_angle_deg} elevation')
+ax.grid()
+ax.legend()
+
+```
+
+
+## Plot solar elevation at a single point on one day
+
+Select the location and time. This example is Dayton, Ohio.
 
 ```{python}
 #| label: location-and-time
@@ -158,3 +209,5 @@ with quantity_support():
     
 
 ```
+
+
