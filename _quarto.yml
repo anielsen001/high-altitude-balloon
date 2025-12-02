@@ -44,6 +44,8 @@ website:
         contents: launches/*.qmd
       - text: "WSPR Tracking"
         href: wspr/tracking.qmd
+      - text: "References"
+        href: refs/refs.qmd
   
 format:
   html:
@@ -54,3 +56,5 @@ format:
     code-tools: true
     toc: true
      
+bibliography:
+  - refs/refs.bib
