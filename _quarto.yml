@@ -52,4 +52,5 @@ format:
     lightbox: auto
     code-fold: show
     code-tools: true
+    toc: true
      
