@@ -2,7 +2,9 @@
 title: Compute solar elevation angles and hours of sunlight
 ---
 
-Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year.
+## Sun elevation over the year and range of latitudes
+
+Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.
 
 ```{python}
 #| label: python-config
