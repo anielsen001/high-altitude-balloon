@@ -34,8 +34,10 @@ website:
         contents:
         - text: "Horizon calculator"
           href: calculators/horizon.qmd
-        - text: "Solar elevation"
+        - text: "Solar elevation at location"
           href: calculators/solar_elevation.qmd
+        - text: "Solar elevation at latitude"
+          href: calculators/solar_elevation2.qmd
         - text: "Float parameters"
           href: calculators/float2.qmd
       - section: "Launches"
@@ -48,4 +50,6 @@ format:
     theme:
       - cosmo
     lightbox: auto
+    code-fold: show
+    code-tools: true
      
