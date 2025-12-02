@@ -24,7 +24,7 @@ minimum_solar_angle_deg = 30.0
 
 latitude_minimum_deg = 0.0 # equator
 latitude_maximum_deg = 90.0 # pole
-latitude_step_deg = 10.0 # size of step
+latitude_step_deg = 15.0 # size of step
 
 longitude_deg = 0.0 # meridian
 
@@ -37,7 +37,8 @@ end_date = Time("2025-12-31 00:00:00")
 Define parameter space. 
 
 ```{python}
-delta_time = np.linspace(0, 24, 1) * u.hour
+#| label: compute-elevation-angles
+# delta_time = np.linspace(0, 24, 1) * u.hour
 
 # create positions
 lats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)
@@ -63,10 +64,18 @@ for ii in tqdm(range(len(alts))):
 
 ```
 
+```{python}
+#| label: compute-time-above-elevation-threshold
+elevation_angle_threshold = 30.0 
+
+```
+
 Make a plot
 
 ```{python}
 #| label: fig-elevation
+#| eval: false
+#| echo: false
 with time_support():
     fig, ax = plt.subplots()
     for ii,_lat in enumerate(lats):
@@ -79,10 +88,14 @@ with time_support():
 
 ```{python}
 #| label: fig-elevation-2
+#| fig-cap: Elevation angle over a yaer
 fig, ax = plt.subplots()
 for ii,_lat in enumerate(lats):
-    ax.plot(daynum, altslats[:,ii])
-    
+    ax.plot(daynum, altslats[:,ii],label=f'{_lat}')
+
+ax.set_ylim(bottom=0.0)
+ax.set_xlabel('Day in year')
+ax.set_ylabel('Elevation angle')
 ax.grid()
 ax.legend()
 
