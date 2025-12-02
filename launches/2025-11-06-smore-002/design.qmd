@@ -47,3 +47,10 @@ The upper half of the antenna starts off with solid core stiff wire that penetra
 | TOTAL                            |    | 14.2   |
 
 : Parts and weights used for tracker design. Not including GPS antenna/solder/etc. Total weight came to 16.7 grams.
+
+{{< include /_sources/power/budget.qmd >}}
+
+## References
+
+:::{#refs}
+:::

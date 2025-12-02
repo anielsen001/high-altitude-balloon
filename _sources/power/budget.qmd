@@ -1,15 +1,15 @@
-Power budget summary for smore-002.
+## Power budget summary for smore-002
 
-## Solar panels {@sec-solar-panel}
+### Solar panels {#sec-solar-panel}
 
-Using PowerFilm MPT4.8-150 [@Powerfilm_48_150] ([Datasheet](/_datahsheets/powerfilm_onp1237x54_apr22_xonlink.pdf)).
+Using PowerFilm MPT4.8-150 [@PowerFilm_48_150] ([Datasheet](/_datahsheets/powerfilm_onp1237x54_apr22_xonlink.pdf)).
 
 - Full sun 480 mW
 - 1/4 sun 108 mW
 
 The nominal operating voltage is 4.8 V. 
 
-## Regulator {@sec-regulator}
+### Regulator {#sec-regulator}
 
 Solar panel is regulated with a L7805A [@STL78] which is a 5 V version. This is probably not the best choice since the solar panel probably was under volting this value under limited light conditions. 
 
@@ -36,12 +36,33 @@ Here's a measured table
 | 4.1  |  3.2  |
 | 4.0  |  3.1  |
 
-
-## Super capacitor {@sec-supercap}
-
+During ground testing, I was trying to test outside during a cloudy day and attempted to provide power via a battery pack to the "battery" terminals of the U4b, also the +/- terminals of the series super capacitors. This didn't work because current flowed back into the regulator and I could not get enough voltage to turn the U4b on. Further testing revealed that the regulator was not damaged by this, but I learned that a diode may be required to allow a battery hookup like this for testing the payload in the future.
 
 
-## U4b {@sec-u4b}
+### Super capacitor {#sec-supercap}
+
+Used two Kyocera AVX 3.0V 3F supercapacitors [@KyoceraAVX] in series, connected to the U4b's battery connection. With the 5V regulator when fully charged, provides total energy storage $E$
+
+\begin{equation}
+E = \frac{1}{2} C \left[V_{max}^2 - V_{min}^2 \right]
+\end{equation}
+with capacitance $C$ and voltages between $V_{max}$ and $V_{min}$.
+
+```{python}
+#| label: define-capacitor-available-energy
+#| code-fold: show
+volt_max = 5.0
+volt_min = 3.3
+
+capacitance = 6 # Farad
+
+energy = 0.5 * capacitance * (volt_max**2 - volt_min**2) # Joule
+
+print(f'Supercapacitor energy availability: {energy} Joules')
+```
+
+
+### U4b {#sec-u4b}
 
 Power draw
 
@@ -58,5 +79,5 @@ From U4B hardware manual [@U4b_hw]:
 - empirically runs to about 2.2 V then stops using self test mode from USB CLI
 - in sleep mode LED stays on until about 2.2 V then goes out
 
-Using sabrent USB hub with mechanical switches, these only switch the power lines if super caps are used to power the U4b, you can power up the U4b in USB mode, charge the super caps and then disconnect the switch, while maintaining a USB data connection to the host computer. You can then power the U4b externally. 
+Using Sabrent USB hub with mechanical switches, these only switch the power lines if super caps are used to power the U4b, you can power up the U4b in USB mode, charge the super caps and then disconnect the switch, while maintaining a USB data connection to the host computer. You can then power the U4b externally. 
 
