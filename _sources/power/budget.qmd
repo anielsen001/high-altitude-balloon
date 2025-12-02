@@ -16,6 +16,27 @@ Solar panel is regulated with a L7805A [@STL78] which is a 5 V version. This is 
 - Efficiency unknown.
 - Should be tested with full range of voltage in future.
 
+Test the regulator on the bench. At 4.8V input to the regulator, output is 3.8V, with no load. 
+
+Here's a measured table
+
+| V_in | V_out |
+|------|-------|
+| 7.4  |  4.9  |
+| 7.0  |  4.9  |
+| 6.8  |  4.9  |
+| 6.4  |  4.9  |
+| 5.0  |  4.0  |
+| 4.8  |  3.8  |
+| 4.7  |  3.7  |
+| 4.5  |  3.5  |
+| 4.4  |  3.4  |
+| 4.3  |  3.3  |
+| 4.2  |  3.3  |
+| 4.1  |  3.2  |
+| 4.0  |  3.1  |
+
+
 ## Super capacitor {@sec-supercap}
 
 
@@ -23,3 +44,11 @@ Solar panel is regulated with a L7805A [@STL78] which is a 5 V version. This is 
 ## U4b
 
 Power draw? 
+
+From U4B hardware manual [@U4b_hw]:
+
+- maximum rated input voltate 6.0V
+- recommended max voltage is 5.5 V
+- regulated to 3.3 V on board
+- empirically runs to about 2.9 V then stops
+
