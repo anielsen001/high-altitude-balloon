@@ -1,0 +1,25 @@
+Power budget summary for smore-002.
+
+## Solar panels {@sec-solar-panel}
+
+Using PowerFilm MPT4.8-150 [@Powerfilm_48_150] ([Datasheet](/_datahsheets/powerfilm_onp1237x54_apr22_xonlink.pdf)).
+
+- Full sun 480 mW
+- 1/4 sun 108 mW
+
+The nominal operating voltage is 4.8 V. 
+
+## Regulator {@sec-regulator}
+
+Solar panel is regulated with a L7805A [@STL78] which is a 5 V version. This is probably not the best choice since the solar panel probably was under volting this value under limited light conditions. 
+
+- Efficiency unknown.
+- Should be tested with full range of voltage in future.
+
+## Super capacitor {@sec-supercap}
+
+
+
+## U4b
+
+Power draw? 
