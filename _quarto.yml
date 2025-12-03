@@ -10,7 +10,9 @@ execute:
 website:
   title: "Balloons"
   site-url: "https://apnielsen.com/high-altitude-balloon"
-  description: "This is a summary of notes for launching a high-altitude balloon"
+  description: "This is a summary of notes for launching a balloon"
+  google-analytics:
+    tracking-id: G-5N225FWCLS
   
   navbar:
     search: true
