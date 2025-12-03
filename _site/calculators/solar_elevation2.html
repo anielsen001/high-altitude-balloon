@@ -103,11 +103,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5N225FWCLS"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5N225FWCLS', { 'anonymize_ip': true});
+</script>
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -241,12 +250,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">WSPR Tracking</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../refs/refs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sun-elevation-over-the-year-and-range-of-latitudes" id="toc-sun-elevation-over-the-year-and-range-of-latitudes" class="nav-link active" data-scroll-target="#sun-elevation-over-the-year-and-range-of-latitudes">Sun elevation over the year and range of latitudes</a></li>
+  <li><a href="#plot-solar-elevation-at-a-single-point-on-one-day" id="toc-plot-solar-elevation-at-a-single-point-on-one-day" class="nav-link" data-scroll-target="#plot-solar-elevation-at-a-single-point-on-one-day">Plot solar elevation at a single point on one day</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -269,7 +293,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year.</p>
+<section id="sun-elevation-over-the-year-and-range-of-latitudes" class="level2">
+<h2 class="anchored" data-anchor-id="sun-elevation-over-the-year-and-range-of-latitudes">Sun elevation over the year and range of latitudes</h2>
+<p>Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.</p>
 <div id="python-config" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -416,6 +442,7 @@ Figure&nbsp;2: Hours when sun elevation exceeds minimum for each day
 </div>
 </div>
 </div>
+</section>
 <section id="plot-solar-elevation-at-a-single-point-on-one-day" class="level2">
 <h2 class="anchored" data-anchor-id="plot-solar-elevation-at-a-single-point-on-one-day">Plot solar elevation at a single point on one day</h2>
 <p>Select the location and time. This example is Dayton, Ohio.</p>
@@ -964,214 +991,216 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Compute solar elevation angles and hours of sunlight</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year.</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sun elevation over the year and range of latitudes</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: python-config</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: show</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.coordinates <span class="im">import</span> EarthLocation, get_sun, AltAz</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.time <span class="im">import</span> Time</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy <span class="im">import</span> units <span class="im">as</span> u</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.visualization <span class="im">import</span> quantity_support, time_support</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pylab <span class="im">as</span> plt</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> signal <span class="im">as</span> sps</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># disable TQDM for non-interactive</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>tqdm_disable<span class="op">=</span><span class="va">True</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>Set the minimum elevation and other parameters</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: python-config</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: show</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.coordinates <span class="im">import</span> EarthLocation, get_sun, AltAz</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.time <span class="im">import</span> Time</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy <span class="im">import</span> units <span class="im">as</span> u</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.visualization <span class="im">import</span> quantity_support, time_support</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pylab <span class="im">as</span> plt</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> signal <span class="im">as</span> sps</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co"># disable TQDM for non-interactive</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>tqdm_disable<span class="op">=</span><span class="va">True</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: define-parameters</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>minimum_solar_angle_deg <span class="op">=</span> <span class="fl">30.0</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>latitude_minimum_deg <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># equator</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>latitude_maximum_deg <span class="op">=</span> <span class="fl">90.0</span> <span class="co"># pole</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>latitude_step_deg <span class="op">=</span> <span class="fl">15.0</span> <span class="co"># size of step</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>longitude_deg <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># meridian</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>Set the minimum elevation and other parameters</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: define-parameters</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>minimum_solar_angle_deg <span class="op">=</span> <span class="fl">30.0</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>latitude_minimum_deg <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># equator</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>latitude_maximum_deg <span class="op">=</span> <span class="fl">90.0</span> <span class="co"># pole</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>latitude_step_deg <span class="op">=</span> <span class="fl">15.0</span> <span class="co"># size of step</span></span>
 <span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>height_m <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># </span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>longitude_deg <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># meridian</span></span>
 <span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> Time(<span class="st">"2025-01-01 00:00:00"</span>)</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> Time(<span class="st">"2026-01-01 00:00:00"</span>)</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>Define parameter space. </span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>height_m <span class="op">=</span> <span class="fl">0.0</span> <span class="co"># </span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> Time(<span class="st">"2025-01-01 00:00:00"</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> Time(<span class="st">"2026-01-01 00:00:00"</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: compute-elevation-angles</span></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="co"># delta_time = np.linspace(0, 24, 1) * u.hour</span></span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="co"># create positions</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>lats <span class="op">=</span> np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> EarthLocation(lat<span class="op">=</span>lats,lon<span class="op">=</span>longitude_deg, height<span class="op">=</span>height_m)</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>num_per_day <span class="op">=</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">2</span> <span class="co">#  24 hours * 2 - half hour increments</span></span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>num_times <span class="op">=</span> <span class="dv">365</span> <span class="op">*</span> num_per_day <span class="co"># 365 days * num_per_day</span></span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.linspace(start_date,end_date,num_times,endpoint<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>daynum <span class="op">=</span> (times <span class="op">-</span> times[<span class="dv">0</span>]).jd</span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="co"># this syntax would assign one time to each single location</span></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="co"># so times and pos must be the same length</span></span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="co"># frame = AltAz(obstime=times, location=pos)</span></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="co"># instead use list comprehension to create a 2-D array fo position and times</span></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> [ AltAz(obstime<span class="op">=</span>_t, location<span class="op">=</span>pos) <span class="cf">for</span> _t <span class="kw">in</span> tqdm(times,disable<span class="op">=</span>tqdm_disable,desc <span class="op">=</span> <span class="st">'frames'</span>) ]</span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="co"># sunlocs is the slow calculation</span></span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>sunlocs <span class="op">=</span> [get_sun(frames[<span class="dv">0</span>].obstime).transform_to(_f) <span class="cf">for</span> _f <span class="kw">in</span> tqdm(frames,disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'sunlocs'</span>)]</span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>alts <span class="op">=</span> [ _sunloc.alt <span class="cf">for</span> _sunloc <span class="kw">in</span> tqdm(sunlocs,disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'alts'</span>) ]</span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="co"># reformat into an array</span></span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>altslats <span class="op">=</span> np.zeros([<span class="bu">len</span>(times),<span class="bu">len</span>(lats)])</span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">len</span>(alts)),disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'altslats'</span>):</span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>    altslats[ii,:] <span class="op">=</span> alts[ii]</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>Define parameter space. </span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: compute-elevation-angles</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="co"># delta_time = np.linspace(0, 24, 1) * u.hour</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="co"># create positions</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>lats <span class="op">=</span> np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> EarthLocation(lat<span class="op">=</span>lats,lon<span class="op">=</span>longitude_deg, height<span class="op">=</span>height_m)</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>num_per_day <span class="op">=</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">2</span> <span class="co">#  24 hours * 2 - half hour increments</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>num_times <span class="op">=</span> <span class="dv">365</span> <span class="op">*</span> num_per_day <span class="co"># 365 days * num_per_day</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.linspace(start_date,end_date,num_times,endpoint<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>daynum <span class="op">=</span> (times <span class="op">-</span> times[<span class="dv">0</span>]).jd</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="co"># this syntax would assign one time to each single location</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co"># so times and pos must be the same length</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="co"># frame = AltAz(obstime=times, location=pos)</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="co"># instead use list comprehension to create a 2-D array fo position and times</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> [ AltAz(obstime<span class="op">=</span>_t, location<span class="op">=</span>pos) <span class="cf">for</span> _t <span class="kw">in</span> tqdm(times,disable<span class="op">=</span>tqdm_disable,desc <span class="op">=</span> <span class="st">'frames'</span>) ]</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="co"># sunlocs is the slow calculation</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>sunlocs <span class="op">=</span> [get_sun(frames[<span class="dv">0</span>].obstime).transform_to(_f) <span class="cf">for</span> _f <span class="kw">in</span> tqdm(frames,disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'sunlocs'</span>)]</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>alts <span class="op">=</span> [ _sunloc.alt <span class="cf">for</span> _sunloc <span class="kw">in</span> tqdm(sunlocs,disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'alts'</span>) ]</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="co"># reformat into an array</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>altslats <span class="op">=</span> np.zeros([<span class="bu">len</span>(times),<span class="bu">len</span>(lats)])</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">len</span>(alts)),disable<span class="op">=</span>tqdm_disable,desc<span class="op">=</span><span class="st">'altslats'</span>):</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>    altslats[ii,:] <span class="op">=</span> alts[ii]</span>
 <span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>Make a plot of the solar elevation at different latitudes over the entire time.</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-elevation</span></span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> time_support():</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>        ax.plot(times, altslats[:,ii])</span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>        <span class="co">#ax.plot(times,_alt,)</span></span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
-<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>Make a plot of the solar elevation at different latitudes over the entire time.</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-elevation</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> time_support():</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>        ax.plot(times, altslats[:,ii])</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>        <span class="co">#ax.plot(times,_alt,)</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
 <span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-elevation-2</span></span>
-<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Elevation angle over a yaer</span></span>
-<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
-<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>    ax.plot(daynum, altslats[:,ii],label<span class="op">=</span><span class="ss">f'Latitude </span><span class="sc">{</span>_lat<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span>minimum_solar_angle_deg, label<span class="op">=</span><span class="ss">f'Min elev </span><span class="sc">{</span>minimum_solar_angle_deg<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(bottom<span class="op">=</span><span class="fl">0.0</span>)</span>
-<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Day in year'</span>)</span>
-<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Elevation angle'</span>)</span>
-<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-elevation-2</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Elevation angle over a yaer</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>    ax.plot(daynum, altslats[:,ii],label<span class="op">=</span><span class="ss">f'Latitude </span><span class="sc">{</span>_lat<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span>minimum_solar_angle_deg, label<span class="op">=</span><span class="ss">f'Min elev </span><span class="sc">{</span>minimum_solar_angle_deg<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(bottom<span class="op">=</span><span class="fl">0.0</span>)</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Day in year'</span>)</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Elevation angle'</span>)</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
 <span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>Compute time per day with sun elevation above the minimum</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daily-time-above-minimum-solar-elevation</span></span>
-<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="co"># find where the elevation is greater or equal than the minimum</span></span>
-<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="co"># creates bool array of size [num_times, num_lats] where True is</span></span>
-<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="co"># above threshold</span></span>
-<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>ang_above_min <span class="op">=</span> np.asarray(altslats <span class="op">&gt;=</span> minimum_solar_angle_deg)</span>
-<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="co"># now do some scipy-fu to get the number of times per day using</span></span>
-<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="co"># scipy's convolve function</span></span>
-<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="co"># kernel of number of blocks per day normalized to the time of</span></span>
-<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="co"># each block in hours</span></span>
-<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>conv_kernel <span class="op">=</span> np.ones(num_per_day) <span class="op">*</span> np.diff(daynum)[<span class="dv">0</span>]<span class="op">*</span><span class="dv">24</span></span>
-<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the sum for each day and select just the first value</span></span>
-<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a><span class="co"># for each day. </span></span>
-<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>day_sum <span class="op">=</span> np.apply_along_axis(</span>
-<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> m: sps.convolve(m, conv_kernel, mode<span class="op">=</span><span class="st">'full'</span>),</span>
-<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>    axis<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>    arr<span class="op">=</span>ang_above_min</span>
-<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>)[num_per_day::num_per_day,:]</span>
-<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>Compute time per day with sun elevation above the minimum</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daily-time-above-minimum-solar-elevation</span></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="co"># find where the elevation is greater or equal than the minimum</span></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="co"># creates bool array of size [num_times, num_lats] where True is</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="co"># above threshold</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>ang_above_min <span class="op">=</span> np.asarray(altslats <span class="op">&gt;=</span> minimum_solar_angle_deg)</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="co"># now do some scipy-fu to get the number of times per day using</span></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="co"># scipy's convolve function</span></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a><span class="co"># kernel of number of blocks per day normalized to the time of</span></span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="co"># each block in hours</span></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>conv_kernel <span class="op">=</span> np.ones(num_per_day) <span class="op">*</span> np.diff(daynum)[<span class="dv">0</span>]<span class="op">*</span><span class="dv">24</span></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the sum for each day and select just the first value</span></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="co"># for each day. </span></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>day_sum <span class="op">=</span> np.apply_along_axis(</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> m: sps.convolve(m, conv_kernel, mode<span class="op">=</span><span class="st">'full'</span>),</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>    axis<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>    arr<span class="op">=</span>ang_above_min</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>)[num_per_day::num_per_day,:]</span>
 <span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a>Plot the result</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-hours-above-minimum</span></span>
-<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Hours when sun elevation exceeds minimum for each day</span></span>
-<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
-<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>    ax.plot(daynum[::num_per_day], day_sum[:,ii],label<span class="op">=</span><span class="ss">f'Latitude </span><span class="sc">{</span>_lat<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Day in year'</span>)</span>
-<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Hours above minimum'</span>)</span>
-<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f'Hours of sunlight above </span><span class="sc">{</span>minimum_solar_angle_deg<span class="sc">}</span><span class="ss"> elevation'</span>)</span>
-<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>Plot the result</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-hours-above-minimum</span></span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Hours when sun elevation exceeds minimum for each day</span></span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii,_lat <span class="kw">in</span> <span class="bu">enumerate</span>(lats):</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>    ax.plot(daynum[::num_per_day], day_sum[:,ii],label<span class="op">=</span><span class="ss">f'Latitude </span><span class="sc">{</span>_lat<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Day in year'</span>)</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Hours above minimum'</span>)</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f'Hours of sunlight above </span><span class="sc">{</span>minimum_solar_angle_deg<span class="sc">}</span><span class="ss"> elevation'</span>)</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
 <span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plot solar elevation at a single point on one day</span></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>Select the location and time. This example is Dayton, Ohio.</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plot solar elevation at a single point on one day</span></span>
 <span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: location-and-time</span></span>
-<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a><span class="co">#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville</span></span>
-<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>location_name <span class="op">=</span> <span class="st">"Dayton, OH"</span></span>
-<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>llh <span class="op">=</span> np.array([<span class="fl">39.76</span>,<span class="op">-</span><span class="fl">84.19</span>,<span class="dv">226</span>]) <span class="co"># deg, deg, meter - Dayton</span></span>
-<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> EarthLocation(lat<span class="op">=</span>llh[<span class="dv">0</span>],lon<span class="op">=</span>llh[<span class="dv">1</span>],height<span class="op">=</span>llh[<span class="dv">2</span>])</span>
-<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>utcoffset <span class="op">=</span> <span class="op">-</span><span class="dv">5</span> <span class="op">*</span> u.hour <span class="co"># EST</span></span>
-<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>local_midnight <span class="op">=</span> Time(<span class="st">"2025-11-04 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
-<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>Select the location and time. This example is Dayton, Ohio.</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: location-and-time</span></span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="co">#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville</span></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>location_name <span class="op">=</span> <span class="st">"Dayton, OH"</span></span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>llh <span class="op">=</span> np.array([<span class="fl">39.76</span>,<span class="op">-</span><span class="fl">84.19</span>,<span class="dv">226</span>]) <span class="co"># deg, deg, meter - Dayton</span></span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> EarthLocation(lat<span class="op">=</span>llh[<span class="dv">0</span>],lon<span class="op">=</span>llh[<span class="dv">1</span>],height<span class="op">=</span>llh[<span class="dv">2</span>])</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a>utcoffset <span class="op">=</span> <span class="op">-</span><span class="dv">5</span> <span class="op">*</span> u.hour <span class="co"># EST</span></span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a>local_midnight <span class="op">=</span> Time(<span class="st">"2025-11-04 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
 <span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-solar-elevation</span></span>
-<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a>delta_midnight <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">1000</span>) <span class="op">*</span> u.hour</span>
-<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> local_midnight <span class="op">+</span> delta_midnight</span>
-<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a>frame <span class="op">=</span> AltAz(obstime<span class="op">=</span>times, location<span class="op">=</span>pos)</span>
-<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>sunaltazs <span class="op">=</span> get_sun(times).transform_to(frame)</span>
-<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a>alts <span class="op">=</span> sunaltazs.alt</span>
-<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a>spring_equinox <span class="op">=</span> Time(<span class="st">"2025-03-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
-<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a>summer_solstice <span class="op">=</span> Time(<span class="st">"2025-06-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
-<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>fall_equinox <span class="op">=</span> Time(<span class="st">"2025-09-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
-<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>winter_solstice <span class="op">=</span> Time(<span class="st">"2025-12-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
-<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>specdates <span class="op">=</span> [spring_equinox,summer_solstice,fall_equinox,winter_solstice]</span>
-<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a>specnames <span class="op">=</span> [<span class="st">"spring equinox"</span>,<span class="st">"summer solstice"</span>,<span class="st">"fall equinox"</span>,<span class="st">"winter solstice"</span>]</span>
-<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> quantity_support():</span>
-<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>    <span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))</span></span>
-<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>    locator <span class="op">=</span> mdates.AutoDateLocator(maxticks<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>    ax.plot(delta_midnight, sunaltazs.alt,<span class="st">'r'</span>,label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span><span class="bu">str</span>(local_midnight)<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_major_locator(locator)</span>
-<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
-<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sd,sn <span class="kw">in</span> <span class="bu">zip</span>(specdates,specnames):</span>
-<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>        times <span class="op">=</span> sd <span class="op">+</span> delta_midnight</span>
-<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>        frame <span class="op">=</span> AltAz(obstime<span class="op">=</span>times, location<span class="op">=</span>pos)</span>
-<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>        saz <span class="op">=</span> get_sun(times).transform_to(frame)</span>
-<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>        ax.plot(delta_midnight,saz.alt,<span class="st">'b'</span>,label<span class="op">=</span>sn)</span>
-<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
-<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Solar elevation angle, </span><span class="sc">{</span>location_name<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>    ylim <span class="op">=</span> np.array(ax.get_ylim())</span>
-<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>    ylim[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(ylim)</span>
-<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Hours after midnight (local)'</span>)</span>
-<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Solar elevation [deg]'</span>)</span>
-<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-solar-elevation</span></span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a>delta_midnight <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">1000</span>) <span class="op">*</span> u.hour</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> local_midnight <span class="op">+</span> delta_midnight</span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a>frame <span class="op">=</span> AltAz(obstime<span class="op">=</span>times, location<span class="op">=</span>pos)</span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a>sunaltazs <span class="op">=</span> get_sun(times).transform_to(frame)</span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a>alts <span class="op">=</span> sunaltazs.alt</span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>spring_equinox <span class="op">=</span> Time(<span class="st">"2025-03-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>summer_solstice <span class="op">=</span> Time(<span class="st">"2025-06-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a>fall_equinox <span class="op">=</span> Time(<span class="st">"2025-09-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>winter_solstice <span class="op">=</span> Time(<span class="st">"2025-12-21 00:00:00"</span>) <span class="op">-</span> utcoffset</span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a>specdates <span class="op">=</span> [spring_equinox,summer_solstice,fall_equinox,winter_solstice]</span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a>specnames <span class="op">=</span> [<span class="st">"spring equinox"</span>,<span class="st">"summer solstice"</span>,<span class="st">"fall equinox"</span>,<span class="st">"winter solstice"</span>]</span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> quantity_support():</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>    <span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))</span></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>    locator <span class="op">=</span> mdates.AutoDateLocator(maxticks<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>    ax.plot(delta_midnight, sunaltazs.alt,<span class="st">'r'</span>,label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span><span class="bu">str</span>(local_midnight)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_major_locator(locator)</span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sd,sn <span class="kw">in</span> <span class="bu">zip</span>(specdates,specnames):</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>        times <span class="op">=</span> sd <span class="op">+</span> delta_midnight</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>        frame <span class="op">=</span> AltAz(obstime<span class="op">=</span>times, location<span class="op">=</span>pos)</span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>        saz <span class="op">=</span> get_sun(times).transform_to(frame)</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>        ax.plot(delta_midnight,saz.alt,<span class="st">'b'</span>,label<span class="op">=</span>sn)</span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Solar elevation angle, </span><span class="sc">{</span>location_name<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>    ylim <span class="op">=</span> np.array(ax.get_ylim())</span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a>    ylim[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(ylim)</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Hours after midnight (local)'</span>)</span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Solar elevation [deg]'</span>)</span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

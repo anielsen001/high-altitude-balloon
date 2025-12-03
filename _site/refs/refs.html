@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Horizon calculator – Balloons</title>
+<title>All references – Balloons</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -73,9 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f7a9f68a7c25d3e48d8b03507a008963.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,35 +130,6 @@ gtag('js', new Date());
 gtag('config', 'G-5N225FWCLS', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -184,7 +172,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../calculators/horizon.html">Calculators</a></li><li class="breadcrumb-item"><a href="../calculators/horizon.html">Horizon calculator</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../refs/refs.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -226,7 +214,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../calculators/horizon.html" class="sidebar-item-text sidebar-link active">
+  <a href="../calculators/horizon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Horizon calculator</span></a>
   </div>
 </li>
@@ -281,7 +269,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../refs/refs.html" class="sidebar-item-text sidebar-link">
+  <a href="../refs/refs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -290,22 +278,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link active" data-scroll-target="#assumptions">Assumptions</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../calculators/horizon.html">Calculators</a></li><li class="breadcrumb-item"><a href="../calculators/horizon.html">Horizon calculator</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Horizon calculator</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">All references</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -322,32 +303,69 @@ window.Quarto = {
 </header>
 
 
-<section id="assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
-<p>This is basically just a restate of the execlleent Washington U reference below.</p>
-<p>The Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.</p>
-<p><a href="../_sources/horizon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../_sources/horizon.png" class="img-fluid"></a></p>
-<p>The slant range <span class="math inline">\(s\)</span> to the horizon <span class="math display">\[
-s = \sqrt{(R+h)^2 - R^2}
-\]</span> rewritten <span class="math display">\[
-s = \sqrt{2Rh + h^2}
-\]</span></p>
-<p><span class="math inline">\(\ell\)</span> is the distance along the ground. We assume that <span class="math inline">\(h \ll R\)</span> so <span class="math inline">\(s \approx \ell\)</span> and <span class="math display">\[
-s \approx \ell = \sqrt{2Rh + h^2} \approx \sqrt{2Rh}
-\]</span> often restated as <span class="math display">\[
-s = k \sqrt{h}
-\]</span> and found on-line with <span class="math inline">\(k=1.22459\)</span> with <span class="math inline">\(h\)</span> in feet and <span class="math inline">\(s\)</span> in miles.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><a href="https://sites.math.washington.edu/~conroy/m120-general/horizon.pdf">Washington U</a></li>
-</ul>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Cherry_1971" class="csl-entry" role="listitem">
+Cherry, N. J. 1971. <span>“Characteristics and Performance of Three Low-Cost Superpressure Balloon (Tetroon) Systems.”</span> <em>Journal of Applied Meteorology</em> 10 (5): 982–90. <a href="https://doi.org/10.1175/1520-0450(1971)010<0982:capotl>2.0.co;2">https://doi.org/10.1175/1520-0450(1971)010&lt;0982:capotl&gt;2.0.co;2</a>.
+</div>
+<div id="ref-VE3KCL" class="csl-entry" role="listitem">
+David Beverstein, VE3KCL. n.d. <span>“Some Notes about Flying Clear Chinese Balloons with the U4B Transmitter.”</span> Online, accessed 2025-12-02. <a href="https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf">https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf</a>.
+</div>
+<div id="ref-WB6TOU2021" class="csl-entry" role="listitem">
+David WB6TOU, Bryan KF6ZEO, Martin W6MRR. 2021. <span>“Picoballooning in the Bay Area.”</span> In <em>ARRL/MDARC Pacificon, Oct 16, 2021</em>.
+</div>
+<div id="ref-DeSoto2004" class="csl-entry" role="listitem">
+De Soto, Widalys. 2004. <span>“Improvement and Validationof a Model for PhotovoltaicArray Performance.”</span> Master’s thesis, Univeristy of Wisconsin-Madison. <a href="https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1">https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1</a>.
+</div>
+<div id="ref-KyoceraAVX" class="csl-entry" role="listitem">
+Kyocera. n.d. <span>“3.0V SCC Series High Capacitance Cylindrical Supercapacitors.”</span> Online, accessed 2025-12-02. <a href="https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf">https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf</a>.
+</div>
+<div id="ref-Lally1971" class="csl-entry" role="listitem">
+Lally, Vincent E. 1971. <span>“Superpressure Balloons for Horizontal Soundings Ofthe Atmosphere.”</span> Technical report NCAR-TN-28. National Center for Atmospheric Research. <a href="https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf">https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf</a>.
+</div>
+<div id="ref-McKinney2024" class="csl-entry" role="listitem">
+McKinney, Todd. 2024. <span>“METHODOLOGY, DEPLOYMENT, ANDPERFORMANCE OF PICO BALLOONS INANTARCTICA.”</span> Master’s thesis, The University of Alabama in Huntsville. <a href="https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&amp;path_info=mckinney_10931.pdf">https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&amp;path_info=mckinney_10931.pdf</a>.
+</div>
+<div id="ref-McKinney2023" class="csl-entry" role="listitem">
+McKinney, Todd, Nick Perlaky, Alice Crawford, Bill Brown, and Michael J. Newchurch. 2023. <span>“Methodology, Deployment, and Performance of Pico Balloons in Antarctica.”</span> <em>Journal of Atmospheric and Oceanic Technology</em> 40 (10): 1277–90. <a href="https://doi.org/10.1175/jtech-d-23-0047.1">https://doi.org/10.1175/jtech-d-23-0047.1</a>.
+</div>
+<div id="ref-Hassan_Moghbelli_2024" class="csl-entry" role="listitem">
+Moghbelli, Hassan, Khaled Ellithy, and Zohreh Eslami. 2024. <span>“Investigation of Solar Energy Applications with Design and Implementation of Photovoltaic Traffic Light Signal System for Qatar.”</span> <em>RE&amp;PQJ</em> 7 (1). <a href="https://doi.org/10.24084/repqj07.249">https://doi.org/10.24084/repqj07.249</a>.
+</div>
+<div id="ref-PowerFilm_48_150" class="csl-entry" role="listitem">
+PowerFilm Solar. n.d. <span>“MPT4.8-150.”</span> Online, accessed 2025-12-02. <a href="https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150">https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150</a>.
+</div>
+<div id="ref-Pvpmc" class="csl-entry" role="listitem">
+(PVPMC), PV Performance Modeling Collaborative. n.d. <span>“Modeling Guide.”</span> Online, accessed 2025-12-02. <a href="https://pvpmc.sandia.gov/modeling-guide/">https://pvpmc.sandia.gov/modeling-guide/</a>.
+</div>
+<div id="ref-U4b_webpage" class="csl-entry" role="listitem">
+QRP Labs. 2025a. <span>“U4B - Balloon Tracker.”</span> Online, accessed 2025-12-02, last updated 11 July 2025. <a href="https://qrp-labs.com/u4b">https://qrp-labs.com/u4b</a>.
+</div>
+<div id="ref-U4b_sw_1_00_005" class="csl-entry" role="listitem">
+———. 2025b. <em>U4B – Ultimate4 Balloon Tracker Operating Manual, Firmware Version 1.00_005</em>. QRP Labs. <a href="https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf">https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf</a>.
+</div>
+<div id="ref-U4b_hw" class="csl-entry" role="listitem">
+———. n.d. <em>U4B - Ultimate4 Balloon Tracker Hardward Manual</em>. QRP Labs. <a href="https://qrp-labs.com/images/u4b/u4b_hardware.pdf">https://qrp-labs.com/images/u4b/u4b_hardware.pdf</a>.
+</div>
+<div id="ref-Sharma_2019" class="csl-entry" role="listitem">
+Sharma, R. 2019. <span>“Effect of Obliquity of Incident Light on the Performance of Silicon Solar Cells.”</span> <em>Heliyon</em> 5 (7): e01965. <a href="https://doi.org/10.1016/j.heliyon.2019.e01965">https://doi.org/10.1016/j.heliyon.2019.e01965</a>.
+</div>
+<div id="ref-STL78" class="csl-entry" role="listitem">
+ST Microelectronics. n.d. <span>“Positive Voltage Regulator ICs.”</span> Online, accessed 2025-12-02. <a href="https://www.st.com/resource/en/datasheet/l78.pdf">https://www.st.com/resource/en/datasheet/l78.pdf</a>.
+</div>
+<div id="ref-Talarc2025" class="csl-entry" role="listitem">
+Tommy Davis, KB7HTA. 2025. <span>“TALARC ALP40-i Balloon Construction.”</span> Online, accessed 2025-12-02. <a href="https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf">https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf</a>.
+</div>
+<div id="ref-Wardhana_2021" class="csl-entry" role="listitem">
+Wardhana, A S J, E S Damarwan, and ML Hakim. 2021. <span>“The Effect of Inclination Angle of the Solar Panel on the Resulting Output Voltage.”</span> <em>Journal of Physics: Conference Series</em> 2111 (1): 012053. <a href="https://doi.org/10.1088/1742-6596/2111/1/012053">https://doi.org/10.1088/1742-6596/2111/1/012053</a>.
+</div>
+<div id="ref-Yaniv2022" class="csl-entry" role="listitem">
+Yaniv, Asaf, Arie Sheinker, Boris Ginzburg, Nizan Salomonski, Joseph Ashkenazy, and Kobi Kusher. 2022. <span>“EXPLORATION OF EARTH’s MAGNETIC FIELD BY HIGH ALTITUDE BALLOONS.”</span> In <em>Conference: 24th ESA Symposium on European Rocket and Balloon Programmes and Related ResearchAt: Essen Germany</em>. <a href="https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS">https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS</a>.
+</div>
+</div>
 
 
 <!-- -->
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -819,76 +837,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Horizon calculator</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This is basically just a restate of the execlleent Washington U reference below.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>The Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth. </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="al">![](/_sources/horizon.png)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>The slant range $s$ to the horizon</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>s = \sqrt{(R+h)^2 - R^2}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>rewritten</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>s = \sqrt{2Rh + h^2}</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$\ell$ is the distance along the ground. We assume that $h \ll R$ so $s \approx \ell$  and </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>s \approx \ell = \sqrt{2Rh + h^2} \approx \sqrt{2Rh}</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$ </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>often restated as</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>s = k \sqrt{h}</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>and found on-line with $k=1.22459$ with $h$ in feet and $s$ in miles. </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Washington U</span><span class="co">](https://sites.math.washington.edu/~conroy/m120-general/horizon.pdf)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> All references</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">nocite:</span><span class="co"> |</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  @*</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>:::{#refs}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
