@@ -4,18 +4,7 @@
     "href": "index.html",
     "title": "Balloon magnetometry",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 4, but we lost contact with the payload telemetry.",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#balloon-in-progress-2025-11-06",
-    "href": "index.html#balloon-in-progress-2025-11-06",
-    "title": "Balloon magnetometry",
-    "section": "Balloon in progress 2025-11-06",
-    "text": "Balloon in progress 2025-11-06\nCurrently aloft!. Track it here",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 3, but we lost contact with the payload telemetry.",
     "crumbs": [
       "Home page",
       "Home"
@@ -26,7 +15,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
