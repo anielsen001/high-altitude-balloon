@@ -5,7 +5,11 @@ listing:
   contents:
     - "launches/20*.qmd"
   sort:
-    - "date"
+    - "date desc"
+    - "date-modified desc"
+    - title
+  sort-ui: true
+  filter-ui: true  
 ---
 
 The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth's magnetic field is typically not measured at these altitudes, it's usually measured with satellites or low-altitude (<10kft) aircraft for anomaly surveys.
