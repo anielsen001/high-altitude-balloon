@@ -25,6 +25,10 @@ The goal is to build a pico-balloon payload that can circumnavigate the Earth us
 
 ## Pico-balloon payload
 
+### Testing with GNSS simulator
+
+I set up a GNSS simulator to test the system without going outdoors. See [GNSS-SIM](https://apnielsen.com/gnss-sim) for more details about this set up.
+
 ### Testing with HF antenna and raspberry pi
 
 Tested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.
