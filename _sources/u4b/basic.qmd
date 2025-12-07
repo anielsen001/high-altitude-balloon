@@ -1,3 +1,9 @@
+## Notes
+
+The `File Manager` display only shows 11 lines of files. More may exist, but you won't see them. You can use the command line to access these files.
+
+Variables are initialized to `0` (zero).
+
 ## Default program
 
 This is the default program
@@ -227,3 +233,55 @@ $ PRINT CH
 325
 $
 ```
+
+## saving/loading variables from disk
+
+### write a variable to disk
+
+
+Defind some variables
+
+```basic
+LET A = 1
+LET B = 2
+LET C = 3
+LET D = 4
+```
+
+Opens a file called `COUNTS_001` for writing, erasing any exisitng file
+
+ 
+```basic
+FILE 1 "W" "COUNTS_001"
+```
+
+Writes A,B,C,D to the file, must be spaces between the variables
+
+```basic
+FILEWR 1 A, B, C, D
+```
+
+### reading from disk
+
+```basic
+FILE 1 "COUNTS_001"
+FILERD 1 A, B, C, D
+```
+
+
+## counts to record
+
+- total number of attempted transmissions - increment before tele
+  - should be saved and reloaded
+  - should be loaded during `INIT`
+  - should be save after increment
+  - use `A` for attempted
+- total number of completed transmissions - increment after tele
+  - should be saved and reloaded
+  - should be loaded during `INIT`
+  - should be save after increment
+  - use `F` for finished
+- number of transmissions since power up - incremented after tele
+  - this is what I'm using now to determine when to swtich to highpower
+  - using variable `C` 
+  - initialized to zero during `INIT`
