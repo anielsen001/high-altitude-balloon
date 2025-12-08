@@ -1,0 +1,29 @@
+## Analysis of spot data
+
+```{python}
+#| label: python-config
+#| code-fold: true
+import pandas as pd
+from pathlib import Path
+import sys
+
+sys.path.append('/opt/project/_sources/python')
+import wsprtv
+
+
+```
+
+```{python}
+#| label: load-wspr-spot-data
+wsprpath = Path('/opt/project/_sources/launches/smore-002/tracking/spots')
+wsprfile = wsprpath / 'KF8EEZ_109.csv'
+wspr = wsprtv.WsprTvCsv(wsprfile)
+```
+
+### Power and distance
+
+I programmed the u4b to switch from low (9mW) to high power (27mW) after 3 successful low-power transmissions. Does the u4b change the the indicated power in the WSPR tranmsission? It's the same in all my spot data.
+
+```{python}
+#| label: 
+```
