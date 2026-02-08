@@ -1,3 +1,10 @@
 ## Nozzle
 
 https://www.theastroimager.com/picoballoning/pico-ballooning/
+
+## Photos
+
+![Whiteboard diagram of setup](/_sources/filling/filling_whiteboard_sm.jpg)
+
+![Photo of system in action](/_sources/filling/filling_photo_sm.jpg)
+
