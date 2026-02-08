@@ -1,6 +1,7 @@
 ## Pre-launch design and preparations
 
 - u4b tracker
+  - [u4b-004](/_sources/u4b/u4b_004.qmd)
 - zener diode regulation
 - supercaps x2
 - two solar panels
