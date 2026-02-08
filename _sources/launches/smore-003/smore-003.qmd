@@ -1,0 +1,51 @@
+## Pre-launch design and preparations
+
+- u4b tracker
+- zener diode regulation
+- supercaps x2
+- two solar panels
+- schottkey diodes
+- HF antenna - 20m band
+- 2 balloons
+- WSPR channel selection
+  - planning channel 567, 2 minutes after, 14,097,060 MHz
+  - registered in QRP-labs database as smore-003 [2026-02-08]
+  - tried to register in [traquito system](https://traquito.github.io/channelmap/), but doesn't work [2026-02-08]
+
+## Payload weight 
+
+- USB connector removed from U4B.
+- With antenna winders: 31.7 gram.
+- Antenna winder 1: 7.6 gram
+- Antenna winder 2: 7.4 gram
+- Total antenna winder: 15 gram
+- Payload weight: 16.7 gram
+
+## Balloon filling calculations
+
+See [Balloon filling calculations for earlier flight](/launches/2025-11-06-smore-002/balloon-filling.qmd)
+
+## Launch checklist
+
+### Pre-launch
+
+- [ ] check forecast for wind and clouds
+- [ ] fill balloons
+
+### At launch site
+
+- [ ] verify wind and clouds OK
+- [ ] check payload voltage in sun
+- [ ] check WSPR transmissions on ground with SDR Rx
+
+## Testing
+
+{{< include /_sources/launches/smore-002/testing/testing.qmd >}}
+
+## Payload design
+
+[S'more 002 payload design](/launches/2025-11-06-smore-002/design.qmd)
+
+## U4B and programming information
+
+{{< include /_sources/u4b/u4b_003.qmd >}}
