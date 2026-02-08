@@ -3,11 +3,22 @@
 - u4b tracker
   - [u4b-004](/_sources/u4b/u4b_004.qmd)
 - zener diode regulation
+  - [ ] test design on breadboard with power supply
+  - [ ] compare design with voltage regulator
 - supercaps x2
+  - [ ] solder together 
 - two solar panels
-- schottkey diodes
+  - schottkey diodes
 - HF antenna - 20m band
+  - [ ] determine attachment points
+  - [ ] measure and wind both antenna arms
+- GPS antenna
+  - [ ] build 
 - 2 balloons
+  - [ ] stretch
+  - [ ] leak test
+  - [ ] suck out air
+  - [ ] get helium
 - WSPR channel selection
   - planning channel 567, 2 minutes after, 14,097,060 MHz
   - registered in QRP-labs database as smore-003 [2026-02-08]
