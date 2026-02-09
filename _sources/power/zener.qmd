@@ -1,0 +1,15 @@
+https://www.electronics-tutorials.ws/diode/diode_7.html
+
+need to know maximum current draw of system.
+
+![circuit diagram](/_sources/power/diode-diode24.gif)
+
+zener max power rating: $P_z$
+zener breakdown voltage: $V_z$
+zener max current: $I_z = P_z/V_z$
+
+source voltage: $V_s$
+- open circuit voltage of solar panel
+
+minimum series resistor
+$R_s = (V_s-V_z)/I_z)$
