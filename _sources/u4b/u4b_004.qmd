@@ -1,5 +1,6 @@
 ## Configuration
 
+- Firmware: 1.00.005 (make sure to upgrade to this version)
 - Callsign: KF8EEZ
 - Band: 20m
 - Channel: 567
@@ -16,6 +17,7 @@
 - T is a flag for test mode
   - T=1 - test mode
   - T=0 - live mode - must be in live mode for flight
+- B is the number of times to blink the led, set to 5
 
 ### TRACKER2
 
@@ -25,8 +27,12 @@ This is the primary program. The MYTELE and MYGPS subroutines enable control of 
 PRINT "START TRACKER2"
 RUN "INIT"
 RUN "SHOW"
+LET B = 5
+RUN "BLINK"
 PRINT "INITIAL GPS"
 RUN "MYGPS"
+LET B = 2
+RUN "BLINK"
 10 PRINT "LOOP AT #VC"
 RUN "SHOW"
 RUN "MYTELE"
@@ -49,6 +55,7 @@ LET HP = 0
 LET C = 0
 LET N = 2
 LET T = 1
+LET B = 5
 PRINT "HOST USB:    #US"
 PRINT "HIGH POWER:  #HP"
 PRINT "FREQUENCY:   #FQ"
@@ -128,4 +135,17 @@ Turn LED on
 
 ```
 OUT 19 1
+```
+
+### BLINK
+
+turns led on and off B times. you must set b first
+
+```
+FOR L = 0 TO B
+RUN "LEDON"
+DELAY 100
+RUN "LEDOFF"
+DELAY 100
+NEXT
 ```
