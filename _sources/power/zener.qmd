@@ -1,0 +1,47 @@
+https://www.electronics-tutorials.ws/diode/diode_7.html
+
+need to know maximum current draw of system.
+
+![circuit diagram](/_sources/power/diode-diode24.gif)
+
+zener max power rating: $P_z$
+zener breakdown voltage: $V_z$
+zener max current: $I_z = P_z/V_z$
+
+source voltage: $V_s$
+- open circuit voltage of solar panel
+
+minimum series resistor
+$R_s = (V_s-V_z)/I_z)$
+
+these are the diodes I have: https://www.amazon.com/dp/B0BG81TXF8?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1
+
+```
+27 Value 270pcs 1/2W Zener Diodes Assortment Kit 2.4V 2.7V 3.0V 3.3V 3.6V 3.9V 4.3V 4.7V 5.1V 5.6V 6.2V 6.8V 7.5V 8.2V 9.1V 10V 12V 13V 15V 16V 18V 20V 22V 24V 27V 30V 33V
+```
+
+From the U4B hardware manual:
+```
+The maximum rated input voltage of the RT9013-3.3 is 6.0V (absolute maximum rating) and
+recommended maximum operating voltage 5.5V. Care must therefore be taken not to use so many
+solar cells that 6.0 is exceeded. Remember that solar panels get BETTER as they get colder. In
+full sunshine at altitude, -55C temperatures can increase voltages and currents by up to 20%.
+```
+
+previously I used a 5.0V regulator
+
+power rating: 0.5 watt
+breakdown voltage: 5.1 V
+zener max current = 0.5 watt/5.1 V = 0.09 Amp = 90 mA
+solar panel:
+- max voltage (open circuit): 7.4 V
+- max current 128 mA
+
+minimum series resistor:
+(7.4V - 5.1V)/90mA = 25.5 Ohm
+
+
+
+
+
+
