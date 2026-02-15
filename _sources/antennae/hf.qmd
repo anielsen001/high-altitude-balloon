@@ -56,3 +56,7 @@ print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.imperial.inch)}')
 quarter wavelength * 95%: 198.84837766362426 inch
 
 
+### Magnetic loop antenna
+
+For receiving and test at launch site, use a mag loop antenna.
+See: https://codeberg.org/KF8EEZ/magnetic-loop-antennae
