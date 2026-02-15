@@ -6,8 +6,6 @@
 - 1.8 gram with USB connector removed
 - 3.5 gram - weight of USB connector (as measured)
 
-
-
 ## connect to u4b via usb
 
 connect the u4b to the computer with a usb cable. Check for the device and use `screen` to log attach to a terminal.
@@ -26,104 +24,10 @@ Ctrl-q is supposed to quit, but not working. - need to do Ctrl-a-q
 Notes about new firmware and testing antenna
 https://groups.io/g/QRPLabs/topic/110026397#msg135162
 
-## GPS antenna
 
-From the hardware manual, page 12
+{{< include /_sources/antennae/gps.qmd >}}
 
-```
-The HF antenna needs 1/4-wavelength on each leg (for example, each leg is 5m for 20m
-operation). A typical flight configuration has the top end of the top leg tied to the balloon, and the
-U4B payload suspended directly in the middle of the dipole.
-The GPS antenna can be made of simple #28 (0.3mm) enameled wire; a 1/4-wave at 1575Mhz is
-about 45mm. The feedline consists of 1-inch of twisted wire, about 6 turns works well.
-```
-
-```{python}
-#| label: gps wavelength
-from astropy import units as u
-from astropy.constants import c
-freq_l1 = 1575.42e6 * u.Hz # Hz
-
-wavelength = c/freq_l1
-
-half_wavelength = wavelength/2.0
-quarter_wavelength = wavelength/4.0
-quarter_wavelength95 = wavelength/4.0*0.95
-
-print(f'full wavelength: {wavelength.to(u.millimeter)}')
-print(f'half wavelength: {half_wavelength.to(u.millimeter)} ')
-print(f'quarter wavelength: {quarter_wavelength.to(u.millimeter)} ')
-print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.millimeter)} ')
-
-# feedline additional length
-feed_length = 1.0*u.imperial.inch
-
-print(f'feed length: {feed_length.to(u.millimeter)}')
-
-# total length
-totlength = feed_length + quarter_wavelength95
-print(f'total length: {totlength.to(u.millimeter)}')
-
-```
-
-half wavelength: 95.14683639918243 millimeters
-quarter wavelength: 47.57341819959122 millimeters
-quarter wavelength * 95%: 45.194747289611655 mm
-feed length: 25.400000000000002 mm
-total length: 70.59474728961166 mm
-
-
-
-## HF Antenna
-
-### dummy load
-
-use a 50 Ohm resistor across the lead pads
-
-### dipole
-
-Frequency of channel is: 14097060
-
-https://www.onlineconversion.com/frequency_wavelength.htm
-
-```{python}
-#| label: wavelength 20m band
-from astropy import units as u
-from astropy.constants import c
-
-freq_hf = 14097060 * u.Hz
-wavelength = c/freq_hf
-
-half_wavelength = wavelength/2.0
-quarter_wavelength = wavelength/4.0
-
-print(f'full wavelength: {wavelength.si}')
-print(f'half wavelength: {half_wavelength.si} ')
-print(f'quarter wavelength: {quarter_wavelength.si} ')
-print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.foot)}')
-print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.inch)}')
-```
-
-full wavelength: 21.26631070592024 m
-half wavelength: 10.63315535296012 m 
-quarter wavelength: 5.31657767648006 m 
-quarter wavelength: 17.442840145931953 ft
-quarter wavelength: 209.31408175118344 inch
-
-Antenna wire - what gauge? people are using 36 AWG
-What fishing line support to use.
-
-this note indicates that the antenna length should be shortened by 95%
-https://groups.io/g/picoballoon/topic/34545561#msg48
-
-shortening the hf antenna
-```{python}
-quarter_wavelength95 = wavelength/4.0*0.95
-print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.imperial.inch)}')
-```
-
-quarter wavelength * 95%: 198.84837766362426 inch
-
+{{< include /_sources/antennae/hf.qmd >}}
 
 ## Power
 

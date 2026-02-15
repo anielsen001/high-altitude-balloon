@@ -1,0 +1,44 @@
+## GPS dipole antenna
+
+
+From the u4b hardware manual, page 12
+
+```
+The GPS antenna can be made of simple #28 (0.3mm) enameled wire; a 1/4-wave at 1575Mhz is
+about 45mm. The feedline consists of 1-inch of twisted wire, about 6 turns works well.
+```
+
+```{python}
+#| label: gps wavelength
+from astropy import units as u
+from astropy.constants import c
+freq_l1 = 1575.42e6 * u.Hz # Hz
+
+wavelength = c/freq_l1
+
+half_wavelength = wavelength/2.0
+quarter_wavelength = wavelength/4.0
+quarter_wavelength95 = wavelength/4.0*0.95
+
+print(f'full wavelength: {wavelength.to(u.millimeter)}')
+print(f'half wavelength: {half_wavelength.to(u.millimeter)} ')
+print(f'quarter wavelength: {quarter_wavelength.to(u.millimeter)} ')
+print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.millimeter)} ')
+
+# feedline additional length
+feed_length = 1.0*u.imperial.inch
+
+print(f'feed length: {feed_length.to(u.millimeter)}')
+
+# total length
+totlength = feed_length + quarter_wavelength95
+print(f'total length: {totlength.to(u.millimeter)}')
+
+```
+
+half wavelength: 95.14683639918243 millimeters
+quarter wavelength: 47.57341819959122 millimeters
+quarter wavelength * 95%: 45.194747289611655 mm
+feed length: 25.400000000000002 mm
+total length: 70.59474728961166 mm
+

@@ -1,0 +1,58 @@
+
+## HF Antenna
+
+```
+The HF antenna needs 1/4-wavelength on each leg (for example, each leg is 5m for 20m
+operation). A typical flight configuration has the top end of the top leg tied to the balloon, and the
+U4B payload suspended directly in the middle of the dipole.
+```
+
+### Dummy load
+
+use a 50 Ohm resistor across the lead pads
+
+### Dipole
+
+Frequency of channel is: 14097060
+
+https://www.onlineconversion.com/frequency_wavelength.htm
+
+```{python}
+#| label: wavelength 20m band
+from astropy import units as u
+from astropy.constants import c
+
+freq_hf = 14097060 * u.Hz
+wavelength = c/freq_hf
+
+half_wavelength = wavelength/2.0
+quarter_wavelength = wavelength/4.0
+
+print(f'full wavelength: {wavelength.si}')
+print(f'half wavelength: {half_wavelength.si} ')
+print(f'quarter wavelength: {quarter_wavelength.si} ')
+print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.foot)}')
+print(f'quarter wavelength: {quarter_wavelength.to(u.imperial.inch)}')
+```
+
+full wavelength: 21.26631070592024 m
+half wavelength: 10.63315535296012 m 
+quarter wavelength: 5.31657767648006 m 
+quarter wavelength: 17.442840145931953 ft
+quarter wavelength: 209.31408175118344 inch
+
+Antenna wire - what gauge? people are using 36 AWG
+What fishing line support to use.
+
+this note indicates that the antenna length should be shortened by 95%
+https://groups.io/g/picoballoon/topic/34545561#msg48
+
+shortening the hf antenna
+```{python}
+quarter_wavelength95 = wavelength/4.0*0.95
+print(f'quarter wavelength * 95%: {quarter_wavelength95.to(u.imperial.inch)}')
+```
+
+quarter wavelength * 95%: 198.84837766362426 inch
+
+
