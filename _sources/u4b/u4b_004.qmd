@@ -8,6 +8,10 @@
 - Autostart: TRACKER2
 - QRP-labs S/N: 21811
 
+## HF antenna
+
+for top antenna leg, attached wire to fishing line with kapton tape, small piece about every 12 - 18 inches apart. Cut off small folded over ends with sticky tab.
+
 ## Programs
 
 ### Variables
