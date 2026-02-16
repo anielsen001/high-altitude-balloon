@@ -63,3 +63,5 @@ format:
 bibliography:
   - refs/refs.bib
   - refs/datasheets.bib
+  - refs/solar.bib
+  
