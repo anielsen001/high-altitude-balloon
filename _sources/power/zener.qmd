@@ -40,8 +40,35 @@ solar panel:
 minimum series resistor:
 (7.4V - 5.1V)/90mA = 25.5 Ohm
 
+Computing minimums
 
+```{python}
+power_rating = 0.5 # watt
+breakdown_voltage = 4.7  # volt
+zener_max_current = power_rating/breakdown_voltage
+solar_max_voltage = 7.4 # volt open circuit
+series_resistor_min = (solar_max_voltage - breakdown_voltage)/ zener_max_current
+resistor_power = series_resistor_min * zener_max_current**2
+print(f"Minimum series resistor: {series_resistor_min} Ohm")
+print(f"Zener max current:       {zener_max_current} Amp")
+print(f"Resistor power:          {resistor_power} Watt")
+```
 
+Computing real scenario
 
+```{python}
+power_rating = 0.5 # watt
+breakdown_voltage = 4.7  # volt
+zener_max_current = power_rating/breakdown_voltage
+solar_max_voltage = 7.4 # volt open circuit
+series_resistor_min = (solar_max_voltage - breakdown_voltage)/ zener_max_current
+series_resistor_select = 33 # series_resistor_min #27 #68 # Ohm
+zener_current = (solar_max_voltage - breakdown_voltage)/series_resistor_select
+resistor_power = series_resistor_select * zener_max_current**2
+print(f"Minimum series resistor: {series_resistor_min} Ohm")
+print(f"Selected resistor:       {series_resistor_select} Ohm")
+print(f"Zener max current:       {zener_max_current} Amp")
+print(f"Zener current select:    {zener_current} Amp")
+print(f"Resistor power:          {resistor_power} Watt")
 
-
+```
