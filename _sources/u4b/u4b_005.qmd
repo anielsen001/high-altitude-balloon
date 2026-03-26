@@ -1,6 +1,6 @@
 ## Configuration
 
-- Firmware: 1.00.005 (make sure to upgrade to this version)
+- Firmware: 1.01.001 upgraded 26 march 2026!
 - Callsign: KF8EEZ
 - Band: 20m
 - Channel: 567
