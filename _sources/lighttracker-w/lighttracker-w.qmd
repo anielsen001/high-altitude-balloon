@@ -1,0 +1,18 @@
+This is for the LIghtTracker-W-2.0. This tracker has both WSPR and APRS. The goal is to see if it can send more data overland using WSPR.
+
+- Original <https://github.com/lightaprs/LightAPRS-W-2.0>
+- My fork <https://github.com/KF8EEZ/LightAPRS-W-2.0>
+  - branch kf8eez-snickerdoodle has my changes
+- Arduino Container <https://github.com/anielsen001/arduino-container/>
+  - branch kf8eez-snickerdoodle has my changes
+
+
+## APRS
+
+- international frequency list here <http://www.phase-sa.com/ncyweb/APRSFREQ.html>
+
+| 144.390 | North/South America freq   |
+| 144.800 | Europe/South Africa/Russia |
+| 145.175 | Australia                  |
+| 144.175 | New Zealand                |
+
