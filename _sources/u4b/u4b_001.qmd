@@ -23,6 +23,32 @@ Notes for u4b number 001
  |                                        |
  +------------------------Ctrl-Q = Quit---+
 
+upgraded firmware, 2026-04-05
+
+
+     U4B 1_01_001
+     QRP Labs, 2025
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER2         |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band and Channel.        |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
+
+
+
+
+original firmware:
+
 
      U4B 1_00_003
      QRP Labs, 2022
