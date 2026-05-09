@@ -26,7 +26,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
@@ -935,37 +935,37 @@
   {
     "objectID": "launches/2026-05-02-smore-004.html",
     "href": "launches/2026-05-02-smore-004.html",
-    "title": "Second Launch s’more-004",
+    "title": "Third Launch s’more-004",
     "section": "",
     "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch s'more-004"
+      "Third Launch s'more-004"
     ]
   },
   {
     "objectID": "launches/2026-05-02-smore-004.html#tracking-information",
     "href": "launches/2026-05-02-smore-004.html#tracking-information",
-    "title": "Second Launch s’more-004",
+    "title": "Third Launch s’more-004",
     "section": "",
     "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch s'more-004"
+      "Third Launch s'more-004"
     ]
   },
   {
     "objectID": "launches/2026-05-02-smore-004.html#design",
     "href": "launches/2026-05-02-smore-004.html#design",
-    "title": "Second Launch s’more-004",
+    "title": "Third Launch s’more-004",
     "section": "Design",
     "text": "Design\nSmore-004 is similar to smore-002 using the same regulator and solar panel design.\n\n\n\nPayload at launch site, monitoring voltage and waiting for sun rise",
     "crumbs": [
       "Home page",
       "Launches",
-      "Second Launch s'more-004"
+      "Third Launch s'more-004"
     ]
   },
   {
