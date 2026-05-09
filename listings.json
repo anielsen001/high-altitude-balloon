@@ -1,20 +1,24 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/launches/2025-11-06-smore-002.html",
-      "/launches/2025-08-09-smore-001.html"
-    ]
-  },
-  {
     "listing": "/launches/index.html",
     "items": [
       "/launches/2025-08-09-smore-001.html",
       "/launches/2025-11-06-smore-002.html",
       "/launches/2025-11-06-smore-002/balloon-filling.html",
-      "/launches/2025-11-06-smore-002/all-weather.html",
+      "/launches/2026-05-02-smore-004.html",
+      "/launches/2026-05-03-smore-003.html",
       "/launches/2025-11-06-smore-002/all-predictions.html",
-      "/launches/2025-11-06-smore-002/design.html"
+      "/launches/2025-11-06-smore-002/design.html",
+      "/launches/2025-11-06-smore-002/all-weather.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/launches/2026-05-03-smore-003.html",
+      "/launches/2026-05-02-smore-004.html",
+      "/launches/2025-11-06-smore-002.html",
+      "/launches/2025-08-09-smore-001.html"
     ]
   }
 ]

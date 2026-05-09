@@ -1,136 +1,14 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Balloon magnetometry",
+    "objectID": "calculators/solar_elevation.html",
+    "href": "calculators/solar_elevation.html",
+    "title": "Compute solar elevation angles",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 3, but we lost contact with the payload telemetry.",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#launches",
-    "href": "index.html#launches",
-    "title": "Balloon magnetometry",
-    "section": "Launches",
-    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#pico-balloon-payload",
-    "href": "index.html#pico-balloon-payload",
-    "title": "Balloon magnetometry",
-    "section": "Pico-balloon payload",
-    "text": "Pico-balloon payload\n\nTesting with GNSS simulator\nI set up a GNSS simulator to test the system without going outdoors. See GNSS-SIM for more details about this set up.\n\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#sec-eclipse-launch",
-    "href": "index.html#sec-eclipse-launch",
-    "title": "Balloon magnetometry",
-    "section": "Eclipse launch",
-    "text": "Eclipse launch\n\n\n\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#balloon-payload",
-    "href": "index.html#balloon-payload",
-    "title": "Balloon magnetometry",
-    "section": "Balloon payload",
-    "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
-    "crumbs": [
-      "Home page",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "picoballoon build references",
-    "section": "",
-    "text": "https://sites.google.com/view/picoballoonsbyk9yo/home\nhttps://qrp-labs.com/images/u4b/U4B_construction_notes.pdf\n\nlocal copy\n\nhttps://nibbb.org/technical-info/\nhttps://sites.google.com/site/ki4mcw/Home/pico-balloonery\nhttps://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf"
-  },
-  {
-    "objectID": "calculators/solar_elevation2.html",
-    "href": "calculators/solar_elevation2.html",
-    "title": "Compute solar elevation angles and hours of sunlight",
-    "section": "",
-    "text": "Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.\n\n\nCode\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\nimport numpy as np\nfrom scipy import signal as sps\nfrom tqdm import tqdm\n\n# disable TQDM for non-interactive\ntqdm_disable=True\n\n\nSet the minimum elevation and other parameters\n\n\nCode\nminimum_solar_angle_deg = 30.0\n\nlatitude_minimum_deg = 0.0 # equator\nlatitude_maximum_deg = 90.0 # pole\nlatitude_step_deg = 15.0 # size of step\n\nlongitude_deg = 0.0 # meridian\n\nheight_m = 0.0 # \n\nstart_date = Time(\"2025-01-01 00:00:00\")\nend_date = Time(\"2026-01-01 00:00:00\")\n\n\nDefine parameter space.\n\n\nCode\n# delta_time = np.linspace(0, 24, 1) * u.hour\n\n# create positions\nlats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)\npos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)\n\nnum_per_day = 24 * 2 #  24 hours * 2 - half hour increments\nnum_times = 365 * num_per_day # 365 days * num_per_day\ntimes = np.linspace(start_date,end_date,num_times,endpoint=True)\ndaynum = (times - times[0]).jd\n\n# this syntax would assign one time to each single location\n# so times and pos must be the same length\n# frame = AltAz(obstime=times, location=pos)\n#\n# instead use list comprehension to create a 2-D array fo position and times\nframes = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times,disable=tqdm_disable,desc = 'frames') ]\n# sunlocs is the slow calculation\nsunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames,disable=tqdm_disable,desc='sunlocs')]\nalts = [ _sunloc.alt for _sunloc in tqdm(sunlocs,disable=tqdm_disable,desc='alts') ]\n\n# reformat into an array\naltslats = np.zeros([len(times),len(lats)])\nfor ii in tqdm(range(len(alts)),disable=tqdm_disable,desc='altslats'):\n    altslats[ii,:] = alts[ii]\n\n\nMake a plot of the solar elevation at different latitudes over the entire time.\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum, altslats[:,ii],label=f'Latitude {_lat}')\n\nax.axhline(y=minimum_solar_angle_deg, label=f'Min elev {minimum_solar_angle_deg}')\nax.set_ylim(bottom=0.0)\nax.set_xlabel('Day in year')\nax.set_ylabel('Elevation angle')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 1: Elevation angle over a yaer\n\n\n\n\n\nCompute time per day with sun elevation above the minimum\n\n\nCode\n# find where the elevation is greater or equal than the minimum\n# creates bool array of size [num_times, num_lats] where True is\n# above threshold\nang_above_min = np.asarray(altslats &gt;= minimum_solar_angle_deg)\n\n# now do some scipy-fu to get the number of times per day using\n# scipy's convolve function\n\n# kernel of number of blocks per day normalized to the time of\n# each block in hours\nconv_kernel = np.ones(num_per_day) * np.diff(daynum)[0]*24\n\n# compute the sum for each day and select just the first value\n# for each day. \nday_sum = np.apply_along_axis(\n    lambda m: sps.convolve(m, conv_kernel, mode='full'),\n    axis=0,\n    arr=ang_above_min\n)[num_per_day::num_per_day,:]\n\n\nPlot the result\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum[::num_per_day], day_sum[:,ii],label=f'Latitude {_lat}')\n\nax.set_xlabel('Day in year')\nax.set_ylabel('Hours above minimum')\nax.set_title(f'Hours of sunlight above {minimum_solar_angle_deg} elevation')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 2: Hours when sun elevation exceeds minimum for each day",
+    "text": "Code\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\n\nimport numpy as np\n\n\nSelect the location and time.\n\n\nCode\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\n\n\nCode\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\n\nFigure 1",
     "crumbs": [
       "Home page",
       "Tools",
-      "Solar elevation at latitude"
-    ]
-  },
-  {
-    "objectID": "calculators/solar_elevation2.html#sun-elevation-over-the-year-and-range-of-latitudes",
-    "href": "calculators/solar_elevation2.html#sun-elevation-over-the-year-and-range-of-latitudes",
-    "title": "Compute solar elevation angles and hours of sunlight",
-    "section": "",
-    "text": "Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.\n\n\nCode\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\nimport numpy as np\nfrom scipy import signal as sps\nfrom tqdm import tqdm\n\n# disable TQDM for non-interactive\ntqdm_disable=True\n\n\nSet the minimum elevation and other parameters\n\n\nCode\nminimum_solar_angle_deg = 30.0\n\nlatitude_minimum_deg = 0.0 # equator\nlatitude_maximum_deg = 90.0 # pole\nlatitude_step_deg = 15.0 # size of step\n\nlongitude_deg = 0.0 # meridian\n\nheight_m = 0.0 # \n\nstart_date = Time(\"2025-01-01 00:00:00\")\nend_date = Time(\"2026-01-01 00:00:00\")\n\n\nDefine parameter space.\n\n\nCode\n# delta_time = np.linspace(0, 24, 1) * u.hour\n\n# create positions\nlats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)\npos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)\n\nnum_per_day = 24 * 2 #  24 hours * 2 - half hour increments\nnum_times = 365 * num_per_day # 365 days * num_per_day\ntimes = np.linspace(start_date,end_date,num_times,endpoint=True)\ndaynum = (times - times[0]).jd\n\n# this syntax would assign one time to each single location\n# so times and pos must be the same length\n# frame = AltAz(obstime=times, location=pos)\n#\n# instead use list comprehension to create a 2-D array fo position and times\nframes = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times,disable=tqdm_disable,desc = 'frames') ]\n# sunlocs is the slow calculation\nsunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames,disable=tqdm_disable,desc='sunlocs')]\nalts = [ _sunloc.alt for _sunloc in tqdm(sunlocs,disable=tqdm_disable,desc='alts') ]\n\n# reformat into an array\naltslats = np.zeros([len(times),len(lats)])\nfor ii in tqdm(range(len(alts)),disable=tqdm_disable,desc='altslats'):\n    altslats[ii,:] = alts[ii]\n\n\nMake a plot of the solar elevation at different latitudes over the entire time.\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum, altslats[:,ii],label=f'Latitude {_lat}')\n\nax.axhline(y=minimum_solar_angle_deg, label=f'Min elev {minimum_solar_angle_deg}')\nax.set_ylim(bottom=0.0)\nax.set_xlabel('Day in year')\nax.set_ylabel('Elevation angle')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 1: Elevation angle over a yaer\n\n\n\n\n\nCompute time per day with sun elevation above the minimum\n\n\nCode\n# find where the elevation is greater or equal than the minimum\n# creates bool array of size [num_times, num_lats] where True is\n# above threshold\nang_above_min = np.asarray(altslats &gt;= minimum_solar_angle_deg)\n\n# now do some scipy-fu to get the number of times per day using\n# scipy's convolve function\n\n# kernel of number of blocks per day normalized to the time of\n# each block in hours\nconv_kernel = np.ones(num_per_day) * np.diff(daynum)[0]*24\n\n# compute the sum for each day and select just the first value\n# for each day. \nday_sum = np.apply_along_axis(\n    lambda m: sps.convolve(m, conv_kernel, mode='full'),\n    axis=0,\n    arr=ang_above_min\n)[num_per_day::num_per_day,:]\n\n\nPlot the result\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum[::num_per_day], day_sum[:,ii],label=f'Latitude {_lat}')\n\nax.set_xlabel('Day in year')\nax.set_ylabel('Hours above minimum')\nax.set_title(f'Hours of sunlight above {minimum_solar_angle_deg} elevation')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 2: Hours when sun elevation exceeds minimum for each day",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Solar elevation at latitude"
-    ]
-  },
-  {
-    "objectID": "calculators/solar_elevation2.html#plot-solar-elevation-at-a-single-point-on-one-day",
-    "href": "calculators/solar_elevation2.html#plot-solar-elevation-at-a-single-point-on-one-day",
-    "title": "Compute solar elevation angles and hours of sunlight",
-    "section": "Plot solar elevation at a single point on one day",
-    "text": "Plot solar elevation at a single point on one day\nSelect the location and time. This example is Dayton, Ohio.\n\n\nCode\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\n\n\nCode\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\n\nFigure 3",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Solar elevation at latitude"
-    ]
-  },
-  {
-    "objectID": "calculators/horizon.html",
-    "href": "calculators/horizon.html",
-    "title": "Horizon calculator",
-    "section": "",
-    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Horizon calculator"
-    ]
-  },
-  {
-    "objectID": "calculators/horizon.html#assumptions",
-    "href": "calculators/horizon.html#assumptions",
-    "title": "Horizon calculator",
-    "section": "",
-    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Horizon calculator"
-    ]
-  },
-  {
-    "objectID": "calculators/horizon.html#references",
-    "href": "calculators/horizon.html#references",
-    "title": "Horizon calculator",
-    "section": "References",
-    "text": "References\n\nWashington U",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Horizon calculator"
+      "Solar elevation at location"
     ]
   },
   {
@@ -170,40 +48,115 @@
     ]
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html",
-    "href": "launches/2025-08-09-smore-001.html",
-    "title": "First Launch s’more-001",
+    "objectID": "calculators/solar_elevation2.html",
+    "href": "calculators/solar_elevation2.html",
+    "title": "Compute solar elevation angles and hours of sunlight",
     "section": "",
-    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
+    "text": "Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.\n\n\nCode\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\nimport numpy as np\nfrom scipy import signal as sps\nfrom tqdm import tqdm\n\n# disable TQDM for non-interactive\ntqdm_disable=True\n\n\nSet the minimum elevation and other parameters\n\n\nCode\nminimum_solar_angle_deg = 30.0\n\nlatitude_minimum_deg = 0.0 # equator\nlatitude_maximum_deg = 90.0 # pole\nlatitude_step_deg = 15.0 # size of step\n\nlongitude_deg = 0.0 # meridian\n\nheight_m = 0.0 # \n\nstart_date = Time(\"2025-01-01 00:00:00\")\nend_date = Time(\"2026-01-01 00:00:00\")\n\n\nDefine parameter space.\n\n\nCode\n# delta_time = np.linspace(0, 24, 1) * u.hour\n\n# create positions\nlats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)\npos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)\n\nnum_per_day = 24 * 2 #  24 hours * 2 - half hour increments\nnum_times = 365 * num_per_day # 365 days * num_per_day\ntimes = np.linspace(start_date,end_date,num_times,endpoint=True)\ndaynum = (times - times[0]).jd\n\n# this syntax would assign one time to each single location\n# so times and pos must be the same length\n# frame = AltAz(obstime=times, location=pos)\n#\n# instead use list comprehension to create a 2-D array fo position and times\nframes = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times,disable=tqdm_disable,desc = 'frames') ]\n# sunlocs is the slow calculation\nsunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames,disable=tqdm_disable,desc='sunlocs')]\nalts = [ _sunloc.alt for _sunloc in tqdm(sunlocs,disable=tqdm_disable,desc='alts') ]\n\n# reformat into an array\naltslats = np.zeros([len(times),len(lats)])\nfor ii in tqdm(range(len(alts)),disable=tqdm_disable,desc='altslats'):\n    altslats[ii,:] = alts[ii]\n\n\nMake a plot of the solar elevation at different latitudes over the entire time.\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum, altslats[:,ii],label=f'Latitude {_lat}')\n\nax.axhline(y=minimum_solar_angle_deg, label=f'Min elev {minimum_solar_angle_deg}')\nax.set_ylim(bottom=0.0)\nax.set_xlabel('Day in year')\nax.set_ylabel('Elevation angle')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 1: Elevation angle over a yaer\n\n\n\n\n\nCompute time per day with sun elevation above the minimum\n\n\nCode\n# find where the elevation is greater or equal than the minimum\n# creates bool array of size [num_times, num_lats] where True is\n# above threshold\nang_above_min = np.asarray(altslats &gt;= minimum_solar_angle_deg)\n\n# now do some scipy-fu to get the number of times per day using\n# scipy's convolve function\n\n# kernel of number of blocks per day normalized to the time of\n# each block in hours\nconv_kernel = np.ones(num_per_day) * np.diff(daynum)[0]*24\n\n# compute the sum for each day and select just the first value\n# for each day. \nday_sum = np.apply_along_axis(\n    lambda m: sps.convolve(m, conv_kernel, mode='full'),\n    axis=0,\n    arr=ang_above_min\n)[num_per_day::num_per_day,:]\n\n\nPlot the result\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum[::num_per_day], day_sum[:,ii],label=f'Latitude {_lat}')\n\nax.set_xlabel('Day in year')\nax.set_ylabel('Hours above minimum')\nax.set_title(f'Hours of sunlight above {minimum_solar_angle_deg} elevation')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 2: Hours when sun elevation exceeds minimum for each day",
     "crumbs": [
       "Home page",
-      "Launches",
-      "First Launch s'more-001"
+      "Tools",
+      "Solar elevation at latitude"
     ]
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html#launch",
-    "href": "launches/2025-08-09-smore-001.html#launch",
-    "title": "First Launch s’more-001",
+    "objectID": "calculators/solar_elevation2.html#sun-elevation-over-the-year-and-range-of-latitudes",
+    "href": "calculators/solar_elevation2.html#sun-elevation-over-the-year-and-range-of-latitudes",
+    "title": "Compute solar elevation angles and hours of sunlight",
     "section": "",
-    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
+    "text": "Compute hours of sun light above a given solar elevation angle for specific latitudes over a range of dates in the year. Using 2025 as the example year.\n\n\nCode\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\nimport numpy as np\nfrom scipy import signal as sps\nfrom tqdm import tqdm\n\n# disable TQDM for non-interactive\ntqdm_disable=True\n\n\nSet the minimum elevation and other parameters\n\n\nCode\nminimum_solar_angle_deg = 30.0\n\nlatitude_minimum_deg = 0.0 # equator\nlatitude_maximum_deg = 90.0 # pole\nlatitude_step_deg = 15.0 # size of step\n\nlongitude_deg = 0.0 # meridian\n\nheight_m = 0.0 # \n\nstart_date = Time(\"2025-01-01 00:00:00\")\nend_date = Time(\"2026-01-01 00:00:00\")\n\n\nDefine parameter space.\n\n\nCode\n# delta_time = np.linspace(0, 24, 1) * u.hour\n\n# create positions\nlats = np.arange(latitude_minimum_deg, latitude_maximum_deg, latitude_step_deg)\npos = EarthLocation(lat=lats,lon=longitude_deg, height=height_m)\n\nnum_per_day = 24 * 2 #  24 hours * 2 - half hour increments\nnum_times = 365 * num_per_day # 365 days * num_per_day\ntimes = np.linspace(start_date,end_date,num_times,endpoint=True)\ndaynum = (times - times[0]).jd\n\n# this syntax would assign one time to each single location\n# so times and pos must be the same length\n# frame = AltAz(obstime=times, location=pos)\n#\n# instead use list comprehension to create a 2-D array fo position and times\nframes = [ AltAz(obstime=_t, location=pos) for _t in tqdm(times,disable=tqdm_disable,desc = 'frames') ]\n# sunlocs is the slow calculation\nsunlocs = [get_sun(frames[0].obstime).transform_to(_f) for _f in tqdm(frames,disable=tqdm_disable,desc='sunlocs')]\nalts = [ _sunloc.alt for _sunloc in tqdm(sunlocs,disable=tqdm_disable,desc='alts') ]\n\n# reformat into an array\naltslats = np.zeros([len(times),len(lats)])\nfor ii in tqdm(range(len(alts)),disable=tqdm_disable,desc='altslats'):\n    altslats[ii,:] = alts[ii]\n\n\nMake a plot of the solar elevation at different latitudes over the entire time.\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum, altslats[:,ii],label=f'Latitude {_lat}')\n\nax.axhline(y=minimum_solar_angle_deg, label=f'Min elev {minimum_solar_angle_deg}')\nax.set_ylim(bottom=0.0)\nax.set_xlabel('Day in year')\nax.set_ylabel('Elevation angle')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 1: Elevation angle over a yaer\n\n\n\n\n\nCompute time per day with sun elevation above the minimum\n\n\nCode\n# find where the elevation is greater or equal than the minimum\n# creates bool array of size [num_times, num_lats] where True is\n# above threshold\nang_above_min = np.asarray(altslats &gt;= minimum_solar_angle_deg)\n\n# now do some scipy-fu to get the number of times per day using\n# scipy's convolve function\n\n# kernel of number of blocks per day normalized to the time of\n# each block in hours\nconv_kernel = np.ones(num_per_day) * np.diff(daynum)[0]*24\n\n# compute the sum for each day and select just the first value\n# for each day. \nday_sum = np.apply_along_axis(\n    lambda m: sps.convolve(m, conv_kernel, mode='full'),\n    axis=0,\n    arr=ang_above_min\n)[num_per_day::num_per_day,:]\n\n\nPlot the result\n\n\nCode\nfig, ax = plt.subplots()\nfor ii,_lat in enumerate(lats):\n    ax.plot(daynum[::num_per_day], day_sum[:,ii],label=f'Latitude {_lat}')\n\nax.set_xlabel('Day in year')\nax.set_ylabel('Hours above minimum')\nax.set_title(f'Hours of sunlight above {minimum_solar_angle_deg} elevation')\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\nFigure 2: Hours when sun elevation exceeds minimum for each day",
     "crumbs": [
       "Home page",
-      "Launches",
-      "First Launch s'more-001"
+      "Tools",
+      "Solar elevation at latitude"
     ]
   },
   {
-    "objectID": "launches/2025-08-09-smore-001.html#bom",
-    "href": "launches/2025-08-09-smore-001.html#bom",
-    "title": "First Launch s’more-001",
-    "section": "BOM",
-    "text": "BOM\n\nKyocera AVX SCCR20E335SRB Supercapacitors\n\nThese are 3 volts, so two in series\n\nPowerfilm solar panel\n\nMPT4.8-150\n\nVoltage regulator\nQRP-labs u4b\n\nu4b-002",
+    "objectID": "calculators/solar_elevation2.html#plot-solar-elevation-at-a-single-point-on-one-day",
+    "href": "calculators/solar_elevation2.html#plot-solar-elevation-at-a-single-point-on-one-day",
+    "title": "Compute solar elevation angles and hours of sunlight",
+    "section": "Plot solar elevation at a single point on one day",
+    "text": "Plot solar elevation at a single point on one day\nSelect the location and time. This example is Dayton, Ohio.\n\n\nCode\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\n\n\nCode\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\n\nFigure 3",
+    "crumbs": [
+      "Home page",
+      "Tools",
+      "Solar elevation at latitude"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "picoballoon build references",
+    "section": "",
+    "text": "https://sites.google.com/view/picoballoonsbyk9yo/home\nhttps://qrp-labs.com/images/u4b/U4B_construction_notes.pdf\n\nlocal copy\n\nhttps://nibbb.org/technical-info/\nhttps://sites.google.com/site/ki4mcw/Home/pico-balloonery\nhttps://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf"
+  },
+  {
+    "objectID": "launches/index.html",
+    "href": "launches/index.html",
+    "title": "Launches",
+    "section": "",
+    "text": "First Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBalloon filling for smore-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHYSPLIT predictions for balloon track\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPayload design\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeather at ballon times and location\n\n\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home page",
+      "Launches"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html",
+    "href": "launches/2026-05-02-smore-004.html",
+    "title": "Third Launch s’more-004",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
     "crumbs": [
       "Home page",
       "Launches",
-      "First Launch s'more-001"
+      "Third Launch s'more-004"
     ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html#tracking-information",
+    "href": "launches/2026-05-02-smore-004.html#tracking-information",
+    "title": "Third Launch s’more-004",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Third Launch s'more-004"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html#design",
+    "href": "launches/2026-05-02-smore-004.html#design",
+    "title": "Third Launch s’more-004",
+    "section": "Design",
+    "text": "Design\nSmore-004 is similar to smore-002 using the same regulator and solar panel design.\n\n\n\nPayload at launch site, monitoring voltage and waiting for sun rise",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Third Launch s'more-004"
+    ]
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-1",
+    "href": "launches/2025-11-06-smore-002/all-weather.html#section-1",
+    "title": "Weather at ballon times and location",
+    "section": "2025-11-13",
+    "text": "2025-11-13\n\nClouds for 2025-11-13"
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-2",
+    "href": "launches/2025-11-06-smore-002/all-weather.html#section-2",
+    "title": "Weather at ballon times and location",
+    "section": "2025-11-12",
+    "text": "2025-11-12\n\nClouds for 2025-11-12"
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-3",
+    "href": "launches/2025-11-06-smore-002/all-weather.html#section-3",
+    "title": "Weather at ballon times and location",
+    "section": "2025-11-11",
+    "text": "2025-11-11\n\nClouds for 2025-11-11"
   },
   {
     "objectID": "launches/2025-11-06-smore-002/all-predictions.html",
@@ -262,71 +215,6 @@
     "text": "2025-11-08\n\nForward predictions for 2025-10-08\n\n\n\nModel run by Tom Reed"
   },
   {
-    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-1",
-    "href": "launches/2025-11-06-smore-002/all-weather.html#section-1",
-    "title": "Weather at ballon times and location",
-    "section": "2025-11-13",
-    "text": "2025-11-13\n\nClouds for 2025-11-13"
-  },
-  {
-    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-2",
-    "href": "launches/2025-11-06-smore-002/all-weather.html#section-2",
-    "title": "Weather at ballon times and location",
-    "section": "2025-11-12",
-    "text": "2025-11-12\n\nClouds for 2025-11-12"
-  },
-  {
-    "objectID": "launches/2025-11-06-smore-002/all-weather.html#section-3",
-    "href": "launches/2025-11-06-smore-002/all-weather.html#section-3",
-    "title": "Weather at ballon times and location",
-    "section": "2025-11-11",
-    "text": "2025-11-11\n\nClouds for 2025-11-11"
-  },
-  {
-    "objectID": "wspr/tracking.html",
-    "href": "wspr/tracking.html",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#balloon-specific",
-    "href": "wspr/tracking.html#balloon-specific",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#wspr-general",
-    "href": "wspr/tracking.html#wspr-general",
-    "title": "WSPR Tracking resources",
-    "section": "WSPR General",
-    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "refs/refs.html",
-    "href": "refs/refs.html",
-    "title": "All references",
-    "section": "",
-    "text": "Cherry, N. J. 1971. “Characteristics and Performance of Three Low-Cost Superpressure Balloon (Tetroon) Systems.” Journal of Applied Meteorology 10 (5): 982–90. https://doi.org/10.1175/1520-0450(1971)010&lt;0982:capotl&gt;2.0.co;2.\n\n\nDavid Beverstein, VE3KCL. n.d. “Some Notes about Flying Clear Chinese Balloons with the U4B Transmitter.” Online, accessed 2025-12-02. https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf.\n\n\nDavid WB6TOU, Bryan KF6ZEO, Martin W6MRR. 2021. “Picoballooning in the Bay Area.” In ARRL/MDARC Pacificon, Oct 16, 2021.\n\n\nDe Soto, Widalys. 2004. “Improvement and Validationof a Model for PhotovoltaicArray Performance.” Master’s thesis, Univeristy of Wisconsin-Madison. https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1.\n\n\nKyocera. n.d. “3.0V SCC Series High Capacitance Cylindrical Supercapacitors.” Online, accessed 2025-12-02. https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf.\n\n\nLally, Vincent E. 1971. “Superpressure Balloons for Horizontal Soundings Ofthe Atmosphere.” Technical report NCAR-TN-28. National Center for Atmospheric Research. https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf.\n\n\nMcKinney, Todd. 2024. “METHODOLOGY, DEPLOYMENT, ANDPERFORMANCE OF PICO BALLOONS INANTARCTICA.” Master’s thesis, The University of Alabama in Huntsville. https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&path_info=mckinney_10931.pdf.\n\n\nMcKinney, Todd, Nick Perlaky, Alice Crawford, Bill Brown, and Michael J. Newchurch. 2023. “Methodology, Deployment, and Performance of Pico Balloons in Antarctica.” Journal of Atmospheric and Oceanic Technology 40 (10): 1277–90. https://doi.org/10.1175/jtech-d-23-0047.1.\n\n\nMoghbelli, Hassan, Khaled Ellithy, and Zohreh Eslami. 2024. “Investigation of Solar Energy Applications with Design and Implementation of Photovoltaic Traffic Light Signal System for Qatar.” RE&PQJ 7 (1). https://doi.org/10.24084/repqj07.249.\n\n\nPowerFilm Solar. n.d. “MPT4.8-150.” Online, accessed 2025-12-02. https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150.\n\n\n(PVPMC), PV Performance Modeling Collaborative. n.d. “Modeling Guide.” Online, accessed 2025-12-02. https://pvpmc.sandia.gov/modeling-guide/.\n\n\nQRP Labs. 2025a. “U4B - Balloon Tracker.” Online, accessed 2025-12-02, last updated 11 July 2025. https://qrp-labs.com/u4b.\n\n\n———. 2025b. U4B – Ultimate4 Balloon Tracker Operating Manual, Firmware Version 1.00_005. QRP Labs. https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf.\n\n\n———. n.d. U4B - Ultimate4 Balloon Tracker Hardward Manual. QRP Labs. https://qrp-labs.com/images/u4b/u4b_hardware.pdf.\n\n\nSharma, R. 2019. “Effect of Obliquity of Incident Light on the Performance of Silicon Solar Cells.” Heliyon 5 (7): e01965. https://doi.org/10.1016/j.heliyon.2019.e01965.\n\n\nST Microelectronics. n.d. “Positive Voltage Regulator ICs.” Online, accessed 2025-12-02. https://www.st.com/resource/en/datasheet/l78.pdf.\n\n\nTommy Davis, KB7HTA. 2025. “TALARC ALP40-i Balloon Construction.” Online, accessed 2025-12-02. https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf.\n\n\nWardhana, A S J, E S Damarwan, and ML Hakim. 2021. “The Effect of Inclination Angle of the Solar Panel on the Resulting Output Voltage.” Journal of Physics: Conference Series 2111 (1): 012053. https://doi.org/10.1088/1742-6596/2111/1/012053.\n\n\nYaniv, Asaf, Arie Sheinker, Boris Ginzburg, Nizan Salomonski, Joseph Ashkenazy, and Kobi Kusher. 2022. “EXPLORATION OF EARTH’s MAGNETIC FIELD BY HIGH ALTITUDE BALLOONS.” In Conference: 24th ESA Symposium on European Rocket and Balloon Programmes and Related ResearchAt: Essen Germany. https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS.",
-    "crumbs": [
-      "Home page",
-      "References"
-    ]
-  },
-  {
     "objectID": "launches/2025-11-06-smore-002.html",
     "href": "launches/2025-11-06-smore-002.html",
     "title": "Second Launch s’more-002",
@@ -367,7 +255,7 @@
     "href": "launches/2025-11-06-smore-002.html#weather-information",
     "title": "Second Launch s’more-002",
     "section": "Weather information",
-    "text": "Weather information\nthis shows weather along the predicted HYSPLIT path (Section 4).\n\nClouds for 2025-11-14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
+    "text": "Weather information\nthis shows weather along the predicted HYSPLIT path (Section 4).\n\nClouds for 2025-11-14\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll earlier weather",
     "crumbs": [
       "Home page",
       "Launches",
@@ -567,25 +455,98 @@
     ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html",
-    "href": "launches/2025-11-06-smore-002/balloon-filling.html",
-    "title": "Balloon filling for smore-002",
+    "objectID": "refs/refs.html",
+    "href": "refs/refs.html",
+    "title": "All references",
     "section": "",
-    "text": "Code\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\n\n\n\nCode\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.\nThis should provide a float altitude of about 35kft."
+    "text": "Boyd, Matthew, and Clifford Hansen. 2026. “Single Diode Equivalent Circuit Models.” Online, Acccessed 2026-02-16. https://pvpmc.sandia.gov/modeling-guide/2-dc-module-iv/single-diode-equivalent-circuit-models/.\n\n\nCherry, N. J. 1971. “Characteristics and Performance of Three Low-Cost Superpressure Balloon (Tetroon) Systems.” Journal of Applied Meteorology 10 (5): 982–90. https://doi.org/10.1175/1520-0450(1971)010&lt;0982:capotl&gt;2.0.co;2.\n\n\nDavid Beverstein, VE3KCL. n.d. “Some Notes about Flying Clear Chinese Balloons with the U4B Transmitter.” Online, accessed 2025-12-02. https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf.\n\n\nDavid WB6TOU, Bryan KF6ZEO, Martin W6MRR. 2021. “Picoballooning in the Bay Area.” In ARRL/MDARC Pacificon, Oct 16, 2021.\n\n\nDe Soto, Widalys. 2004. “Improvement and Validationof a Model for PhotovoltaicArray Performance.” Master’s thesis, Univeristy of Wisconsin-Madison. https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1.\n\n\nHonsberg, C. B., and S. G. Bowden. 2019. “Photovoltaics Education Website.” Online, Acccessed 2026-02-16. https://www.pveducation.org/.\n\n\nJager, Klaus, Olindo Isabella, Arno H. M. Smets, Rene A. C. M. M. van Swaaij, and Miro Zeman. 2014. Solar Energy: Fundamentals, Technology, and Systems. Delft University of Technology. https://courses.edx.org/c4x/DelftX/ET.3034TU/asset/solar_energy_v1.1.pdf.\n\n\nKyocera. n.d. “3.0V SCC Series High Capacitance Cylindrical Supercapacitors.” Online, accessed 2025-12-02. https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf.\n\n\nLally, Vincent E. 1971. “Superpressure Balloons for Horizontal Soundings Ofthe Atmosphere.” Technical report NCAR-TN-28. National Center for Atmospheric Research. https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf.\n\n\nMcKinney, Todd. 2024. “METHODOLOGY, DEPLOYMENT, ANDPERFORMANCE OF PICO BALLOONS INANTARCTICA.” Master’s thesis, The University of Alabama in Huntsville. https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&path_info=mckinney_10931.pdf.\n\n\nMcKinney, Todd, Nick Perlaky, Alice Crawford, Bill Brown, and Michael J. Newchurch. 2023. “Methodology, Deployment, and Performance of Pico Balloons in Antarctica.” Journal of Atmospheric and Oceanic Technology 40 (10): 1277–90. https://doi.org/10.1175/jtech-d-23-0047.1.\n\n\nMoghbelli, Hassan, Khaled Ellithy, and Zohreh Eslami. 2024. “Investigation of Solar Energy Applications with Design and Implementation of Photovoltaic Traffic Light Signal System for Qatar.” RE&PQJ 7 (1). https://doi.org/10.24084/repqj07.249.\n\n\nO’Kane, Mary. 2026. “Equivalent Circuit of Solar Cell.” Online, accessed 2026-02-16. https://www.ossila.com/pages/equivalent-circuit-of-solar-cell.\n\n\nPowerFilm Solar. n.d. “MPT4.8-150.” Online, accessed 2025-12-02. https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150.\n\n\n(PVPMC), PV Performance Modeling Collaborative. n.d. “Modeling Guide.” Online, accessed 2025-12-02. https://pvpmc.sandia.gov/modeling-guide/.\n\n\nQRP Labs. 2025a. “U4B - Balloon Tracker.” Online, accessed 2025-12-02, last updated 11 July 2025. https://qrp-labs.com/u4b.\n\n\n———. 2025b. U4B – Ultimate4 Balloon Tracker Operating Manual, Firmware Version 1.00_005. QRP Labs. https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf.\n\n\n———. n.d. U4B - Ultimate4 Balloon Tracker Hardward Manual. QRP Labs. https://qrp-labs.com/images/u4b/u4b_hardware.pdf.\n\n\nRoth, Sarah A, Erin M Reed, Christopher D Yoder, Ethan A Chaffee, and Javier Romualdez. 2025. Scientific Ballooning Handbook. 50th Anniversay Edition. NASA/TP−20240004989. NASA.\n\n\nSharma, R. 2019. “Effect of Obliquity of Incident Light on the Performance of Silicon Solar Cells.” Heliyon 5 (7): e01965. https://doi.org/10.1016/j.heliyon.2019.e01965.\n\n\nST Microelectronics. n.d. “Positive Voltage Regulator ICs.” Online, accessed 2025-12-02. https://www.st.com/resource/en/datasheet/l78.pdf.\n\n\nTommy Davis, KB7HTA. 2025. “TALARC ALP40-i Balloon Construction.” Online, accessed 2025-12-02. https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf.\n\n\nWardhana, A S J, E S Damarwan, and ML Hakim. 2021. “The Effect of Inclination Angle of the Solar Panel on the Resulting Output Voltage.” Journal of Physics: Conference Series 2111 (1): 012053. https://doi.org/10.1088/1742-6596/2111/1/012053.\n\n\nYaniv, Asaf, Arie Sheinker, Boris Ginzburg, Nizan Salomonski, Joseph Ashkenazy, and Kobi Kusher. 2022. “EXPLORATION OF EARTH’s MAGNETIC FIELD BY HIGH ALTITUDE BALLOONS.” In Conference: 24th ESA Symposium on European Rocket and Balloon Programmes and Related ResearchAt: Essen Germany. https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS.\n\n\nZeman, Miro. 2026. Solar Cells. Online, accessed 2026-02-16. https://mikro.elfak.ni.ac.rs/wp-content/uploads/Solar-Cells-Miro-Zeman.pdf.",
+    "crumbs": [
+      "Home page",
+      "References"
+    ]
   },
   {
-    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html#filling-calculations",
-    "href": "launches/2025-11-06-smore-002/balloon-filling.html#filling-calculations",
-    "title": "Balloon filling for smore-002",
+    "objectID": "tracking.html",
+    "href": "tracking.html",
+    "title": "picoballoon tracking",
     "section": "",
-    "text": "Code\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\n\n\n\nCode\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.\nThis should provide a float altitude of about 35kft."
+    "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001\n\nWSPR Telemetry Viewer\nPicoMap"
   },
   {
-    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html#float-reality",
-    "href": "launches/2025-11-06-smore-002/balloon-filling.html#float-reality",
-    "title": "Balloon filling for smore-002",
-    "section": "Float reality",
-    "text": "Float reality\nIn reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there’s likely not a leak causing an issue.\nThe gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas?\nThe following Julia code inerts the float calculations using a known altitude to find the gas density\n\n\nCode\ngas = \"helium 97%\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\n\nfloat_altitude = 6400.0u\"m\"\nsystem_density = PicoBalloons.atmos_density(6400u\"m\")\ntotal_mass = system_density * balloon_2.volume\nlift_gas_mass = total_mass - payload_weight - balloon_2.weight\nlift_gas_density = lift_gas_mass * PicoBalloons.gas_density(\"air\")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)\nprintln(lift_gas_density)\n# = 0.6102020876451465 m⁻³ kg\n\n\n0.6102020876451465 m⁻³ kg\n\n\nAnd then as a cross check, use this density and work the calculations forward again.\n\n\nCode\n## work this answer forward again to verify the float altitude\ngas = \"helium party\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\nprintln(bs2)\n# Weight: 0.076 kg\n# Volume: 0.3 m³\n# Neck lift                         21.7 g\n# Gas fill at launch                0.15899158977708827 m³\n# Gas mass                          97.017 g\n# Total mass                        189.71699999999996 g\n# System density                    0.6323899999999999 m⁻³ kg\n# Temperature at float              246.65399999999997 K\n# Pressure at float                 44.74199999999999 kPa\n# Float altitude                    6400.000000000002 m\n# Internal pressure                 45.9662472246834 kPa\n# Differential pressure             1.2242472246834077 kPa\n# Super pressure                    1.1791774063473488 kPa\n# Super pressure onset altitude     6153.065084031026 m\n\n\nWeight: 0.076 kg\nVolume: 0.3 m³\nNeck lift                         21.7 g\nGas fill at launch                0.15899158977708827 m³\nGas mass                          97.017 g\nTotal mass                        189.71699999999996 g\nSystem density                    0.6323899999999999 m⁻³ kg\nTemperature at float              246.65399999999997 K\nPressure at float                 44.74199999999999 kPa\nFloat altitude                    6400.000000000002 m\nInternal pressure                 45.9662472246834 kPa\nDifferential pressure             1.2242472246834077 kPa\nSuper pressure                    1.1791774063473488 kPa\nSuper pressure onset altitude     6153.065084031026 m\n\n\nWhich is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.\nNow we can calculate the percentage of helium in the party gas based on the density.\nFor two ideal gasses the mixed density is \\[\\begin{equation}\n\\rho_{mix} = \\frac{\\rho_1 v_1 + \\rho_2 v_2}{v_1 + v_2}\n\\end{equation}\\] where \\(\\rho_i\\) is the density of each gas and \\(v_i\\) is the volume occupied by each gas. This can be manipulated to get a volume fraction for one of the gasses \\[\\begin{equation}\n\\frac{v_1}{v_{mix}} = \\frac{\\rho_{mix} - \\rho_2}{\\rho_1 - \\rho_2}\n\\end{equation}\\] and we can put in some numbers for the density we have found as well as air and pure helium\n\n\nCode\nrho_he = 0.1693u\"kg/m^3\"\nrho_air = 1.2247u\"kg/m^3\"\nrho_mix = lift_gas_density\n\nhelium_volume_fraction = (rho_mix - rho_air)/(rho_he - rho_air)\n\nprint(helium_volume_fraction)\n\n\n0.5822417210108523"
+    "objectID": "tracking.html#references",
+    "href": "tracking.html#references",
+    "title": "picoballoon tracking",
+    "section": "References",
+    "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
+  },
+  {
+    "objectID": "wspr/tracking.html",
+    "href": "wspr/tracking.html",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#balloon-specific",
+    "href": "wspr/tracking.html#balloon-specific",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#wspr-general",
+    "href": "wspr/tracking.html#wspr-general",
+    "title": "WSPR Tracking resources",
+    "section": "WSPR General",
+    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "launches/2025-08-09-smore-001.html",
+    "href": "launches/2025-08-09-smore-001.html",
+    "title": "First Launch s’more-001",
+    "section": "",
+    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "First Launch s'more-001"
+    ]
+  },
+  {
+    "objectID": "launches/2025-08-09-smore-001.html#launch",
+    "href": "launches/2025-08-09-smore-001.html#launch",
+    "title": "First Launch s’more-001",
+    "section": "",
+    "text": "Attempted first launch on 9 August 2025. Balloon escaped without payload and before we could make another attempt, clouds came in, so we opted to wait for the following morning when the forecast was better. Lesson leared, add a safety line and weight to the ballon before leaving for the field.\nSecond attempt launched around 8:30 on 10 August 2025. The payload tangled a bit on the rigging causing the solar panel so sit vertically on the side and spin around. We found two partial transmissions likely due to weak power form the panel facing away from the sun. These were in the first 20 mintues after launch and nothing else has been seen.\n\n\n\nLaunch!\n\n\nThe balloon launched, but the payload rigging got tangled and the solar panel ended up vertical and spinning around and probably didn’t get good access to the sun. We heard from the payload, but only two partial transmissions, not enough to copy the message.\n\n\n\nPartial transmission in WSJT-X\n\n\nThe u4b was using high power. Maybe should use low power until transmitted a few times.\nThe LED was on. I was using this as a confirmation of payload power before launch. Not needed in flight. Should turn off after entering the transmit loop?",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "First Launch s'more-001"
+    ]
+  },
+  {
+    "objectID": "launches/2025-08-09-smore-001.html#bom",
+    "href": "launches/2025-08-09-smore-001.html#bom",
+    "title": "First Launch s’more-001",
+    "section": "BOM",
+    "text": "BOM\n\nKyocera AVX SCCR20E335SRB Supercapacitors\n\nThese are 3 volts, so two in series\n\nPowerfilm solar panel\n\nMPT4.8-150\n\nVoltage regulator\nQRP-labs u4b\n\nu4b-002",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "First Launch s'more-001"
+    ]
   },
   {
     "objectID": "launches/2025-11-06-smore-002/design.html",
@@ -637,14 +598,326 @@
     "text": "References\n\n\nKyocera. n.d. “3.0V SCC Series High Capacitance Cylindrical Supercapacitors.” Online, accessed 2025-12-02. https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf.\n\n\nPowerFilm Solar. n.d. “MPT4.8-150.” Online, accessed 2025-12-02. https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150.\n\n\nQRP Labs. n.d. U4B - Ultimate4 Balloon Tracker Hardward Manual. QRP Labs. https://qrp-labs.com/images/u4b/u4b_hardware.pdf.\n\n\nST Microelectronics. n.d. “Positive Voltage Regulator ICs.” Online, accessed 2025-12-02. https://www.st.com/resource/en/datasheet/l78.pdf."
   },
   {
-    "objectID": "launches/index.html",
-    "href": "launches/index.html",
-    "title": "Launches",
+    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html",
+    "href": "launches/2025-11-06-smore-002/balloon-filling.html",
+    "title": "Balloon filling for smore-002",
     "section": "",
-    "text": "First Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBalloon filling for smore-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWeather at ballon times and location\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHYSPLIT predictions for balloon track\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPayload design\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Code\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\n\n\n\nCode\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.\nThis should provide a float altitude of about 35kft."
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html#filling-calculations",
+    "href": "launches/2025-11-06-smore-002/balloon-filling.html#filling-calculations",
+    "title": "Balloon filling for smore-002",
+    "section": "",
+    "text": "Code\nfree_lift = 5.0u\"g\" # grams\nballoon_weight = 38.0u\"g\" # gram\nballoon_volume = 0.15u\"m^3\" # m^3\npayload_weight = 16.7u\"g\" # gram\ngas = \"helium 97%\"\n\n# compare 1 and 2 balloons\nballoon_1 = Balloon(balloon_weight, balloon_volume)\nballoon_2 = balloon_1 * 2\n\n\nBalloon(0.076 kg, 0.3 m³)\n\n\n\n\n\n\n\nCode\nfree_lifts = collect(0.0:1.0:10.0)u\"g\"\nbss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)\nbss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)\n\n\nBalloonSystem(Balloon(0.076 kg, 0.3 m³), 0.0167 kg, Quantity{Float64, Dimensions{FRInt32}}[0.0 kg, 0.001 kg, 0.002 kg, 0.003 kg, 0.004 kg, 0.005 kg, 0.006 kg, 0.007 kg, 0.008 kg, 0.009000000000000001 kg, 0.01 kg], \"helium 97%\", 0.201 m⁻³ kg, 1.2247 m⁻³ kg, Quantity{Float64, Dimensions{FRInt32}}[0.0167 kg, 0.0177 kg, 0.0187 kg, 0.0197 kg, 0.0207 kg, 0.0217 kg, 0.022699999999999998 kg, 0.0237 kg, 0.0247 kg, 0.0257 kg, 0.0267 kg], Quantity{Float64, Dimensions{FRInt32}}[0.09055387320504056 m³, 0.09153072189117907 m³, 0.0925075705773176 m³, 0.0934844192634561 m³, 0.09446126794959461 m³, 0.09543811663573314 m³, 0.09641496532187166 m³, 0.09739181400801017 m³, 0.09836866269414869 m³, 0.0993455113802872 m³, 0.10032236006642573 m³], Quantity{Float64, Dimensions{FRInt32}}[0.018201328514213154 kg, 0.018397675100126996 kg, 0.018594021686040837 kg, 0.01879036827195468 kg, 0.018986714857868518 kg, 0.019183061443782363 kg, 0.019379408029696205 kg, 0.019575754615610046 kg, 0.019772101201523888 kg, 0.01996844778743773 kg, 0.02016479437335157 kg], Quantity{Float64, Dimensions{FRInt32}}[0.11090132851421315 kg, 0.111097675100127 kg, 0.11129402168604083 kg, 0.11149036827195467 kg, 0.11168671485786852 kg, 0.11188306144378236 kg, 0.11207940802969621 kg, 0.11227575461561004 kg, 0.11247210120152389 kg, 0.11266844778743773 kg, 0.11286479437335156 kg], Quantity{Float64, Dimensions{FRInt32}}[0.36967109504737716 m⁻³ kg, 0.37032558366709 m⁻³ kg, 0.3709800722868028 m⁻³ kg, 0.3716345609065156 m⁻³ kg, 0.37228904952622843 m⁻³ kg, 0.3729435381459412 m⁻³ kg, 0.37359802676565407 m⁻³ kg, 0.3742525153853668 m⁻³ kg, 0.37490700400507965 m⁻³ kg, 0.37556149262479244 m⁻³ kg, 0.3762159812445052 m⁻³ kg], Quantity{Float64, Dimensions{FRInt32}}[0.0 , 0.00900108844850937 , 0.01797041718594712 , 0.02690815400916249 , 0.0358144655350492 , 0.04468951721089916 , 0.05353347332464728 , 0.06234649701500886 , 0.07112875028151076 , 0.07988039399441767 , 0.0886015879045547 ], Quantity{Float64, Dimensions{FRInt32}}[217.4270575927123 K, 217.51743272339178 K, 217.60780785407127 K, 217.69818298475076 K, 217.78717726436642 K, 217.8775523950459 K, 217.9679275257254 K, 218.05692180534106 K, 218.1462699165201 K, 218.23611431531046 K, 218.32528549525188 K], Quantity{Float64, Dimensions{FRInt32}}[10903.380956438785 m, 10889.45566665766 m, 10875.530376876537 m, 10861.605087095413 m, 10847.892563271736 m, 10833.967273490613 m, 10820.041983709487 m, 10806.329459885812 m, 10792.56241656084 m, 10778.718903650157 m, 10764.979122457335 m], Quantity{Float64, Dimensions{FRInt32}}[23054.82855682038 m⁻¹ kg s⁻², 23104.959600032427 m⁻¹ kg s⁻², 23155.537605556816 m⁻¹ kg s⁻², 23206.221686456513 m⁻¹ kg s⁻², 23256.586772221748 m⁻¹ kg s⁻², 23306.717815433796 m⁻¹ kg s⁻², 23357.844660274895 m⁻¹ kg s⁻², 23408.213944411073 m⁻¹ kg s⁻², 23458.519058724887 m⁻¹ kg s⁻², 23509.611946859433 m⁻¹ kg s⁻², 23559.57724690786 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23077.95665313947 m⁻¹ kg s⁻², 23336.60579829076 m⁻¹ kg s⁻², 23595.46190179738 m⁻¹ kg s⁻², 23854.524963659314 m⁻¹ kg s⁻², 24113.642094488157 m⁻¹ kg s⁻², 24373.117491991583 m⁻¹ kg s⁻², 24632.79984785033 m⁻¹ kg s⁻², 24892.53152946848 m⁻¹ kg s⁻², 25152.507804476834 m⁻¹ kg s⁻², 25412.7464767353 m⁻¹ kg s⁻², 25673.111727428302 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[23.128096319091128 m⁻¹ kg s⁻², 231.64619825833142 m⁻¹ kg s⁻², 439.9242962405624 m⁻¹ kg s⁻², 648.3032772028018 m⁻¹ kg s⁻², 857.0553222664093 m⁻¹ kg s⁻², 1066.3996765577867 m⁻¹ kg s⁻², 1274.9551875754332 m⁻¹ kg s⁻², 1484.317585057408 m⁻¹ kg s⁻², 1693.9887457519471 m⁻¹ kg s⁻², 1903.1345298758679 m⁻¹ kg s⁻², 2113.534480520444 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[0.0 m⁻¹ kg s⁻², 207.96978495912754 m⁻¹ kg s⁻², 416.11467093674304 m⁻¹ kg s⁻², 624.4365871099384 m⁻¹ kg s⁻², 832.922225416617 m⁻¹ kg s⁻², 1041.5659669423987 m⁻¹ kg s⁻², 1250.426554042081 m⁻¹ kg s⁻², 1459.4201408119138 m⁻¹ kg s⁻², 1668.5751441021034 m⁻¹ kg s⁻², 1877.9570649710001 m⁻¹ kg s⁻², 2087.4159544360537 m⁻¹ kg s⁻²], Quantity{Float64, Dimensions{FRInt32}}[10891.11196102824 m, 10806.533633395324 m, 10722.642303118218 m, 10639.425457411626 m, 10556.872668108195 m, 10474.969829524922 m, 10393.705592654165 m, 10313.06880790737 m, 10233.048521328114 m, 10153.63397088381 m, 10074.814582834082 m])\n\n\nFree lift is the excess lift due to the super-pressure of the balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",free_lifts),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. free lift\",\n    xlabel=\"Free lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",free_lifts),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 1: Float altitude vs. free lift\n\n\n\n\nNeck lift if the amount of lift that’s used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.\n\n\nCode\nplot(\n    ustrip(u\"g\",bss1.neck_lift),\n    ustrip(us\"ft\",bss1.float_altitude)/1000.,\n    label=\"One Balloon\",\n    title=\"Altitude vs. neck lift\",\n    xlabel=\"Neck lift [grams]\",\n    ylabel=\"Float altitude [kft]\",\n)\nplot!(ustrip(u\"g\",bss2.neck_lift),\n      ustrip(us\"ft\",bss2.float_altitude)/1000.,\n      label=\"Two balloons\",\n)\n\n\n\n\n\n\n\nFigure 2: Float altitude vs. neck lift\n\n\n\n\nGenerally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out.\nFor this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.\nThis should provide a float altitude of about 35kft."
+  },
+  {
+    "objectID": "launches/2025-11-06-smore-002/balloon-filling.html#float-reality",
+    "href": "launches/2025-11-06-smore-002/balloon-filling.html#float-reality",
+    "title": "Balloon filling for smore-002",
+    "section": "Float reality",
+    "text": "Float reality\nIn reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there’s likely not a leak causing an issue.\nThe gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas?\nThe following Julia code inerts the float calculations using a known altitude to find the gas density\n\n\nCode\ngas = \"helium 97%\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\n\nfloat_altitude = 6400.0u\"m\"\nsystem_density = PicoBalloons.atmos_density(6400u\"m\")\ntotal_mass = system_density * balloon_2.volume\nlift_gas_mass = total_mass - payload_weight - balloon_2.weight\nlift_gas_density = lift_gas_mass * PicoBalloons.gas_density(\"air\")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)\nprintln(lift_gas_density)\n# = 0.6102020876451465 m⁻³ kg\n\n\n0.6102020876451465 m⁻³ kg\n\n\nAnd then as a cross check, use this density and work the calculations forward again.\n\n\nCode\n## work this answer forward again to verify the float altitude\ngas = \"helium party\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\nprintln(bs2)\n# Weight: 0.076 kg\n# Volume: 0.3 m³\n# Neck lift                         21.7 g\n# Gas fill at launch                0.15899158977708827 m³\n# Gas mass                          97.017 g\n# Total mass                        189.71699999999996 g\n# System density                    0.6323899999999999 m⁻³ kg\n# Temperature at float              246.65399999999997 K\n# Pressure at float                 44.74199999999999 kPa\n# Float altitude                    6400.000000000002 m\n# Internal pressure                 45.9662472246834 kPa\n# Differential pressure             1.2242472246834077 kPa\n# Super pressure                    1.1791774063473488 kPa\n# Super pressure onset altitude     6153.065084031026 m\n\n\nWeight: 0.076 kg\nVolume: 0.3 m³\nNeck lift                         21.7 g\nGas fill at launch                0.15899158977708827 m³\nGas mass                          97.017 g\nTotal mass                        189.71699999999996 g\nSystem density                    0.6323899999999999 m⁻³ kg\nTemperature at float              246.65399999999997 K\nPressure at float                 44.74199999999999 kPa\nFloat altitude                    6400.000000000002 m\nInternal pressure                 45.9662472246834 kPa\nDifferential pressure             1.2242472246834077 kPa\nSuper pressure                    1.1791774063473488 kPa\nSuper pressure onset altitude     6153.065084031026 m\n\n\nWhich is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.\nNow we can calculate the percentage of helium in the party gas based on the density.\nFor two ideal gasses the mixed density is \\[\\begin{equation}\n\\rho_{mix} = \\frac{\\rho_1 v_1 + \\rho_2 v_2}{v_1 + v_2}\n\\end{equation}\\] where \\(\\rho_i\\) is the density of each gas and \\(v_i\\) is the volume occupied by each gas. This can be manipulated to get a volume fraction for one of the gasses \\[\\begin{equation}\n\\frac{v_1}{v_{mix}} = \\frac{\\rho_{mix} - \\rho_2}{\\rho_1 - \\rho_2}\n\\end{equation}\\] and we can put in some numbers for the density we have found as well as air and pure helium\n\n\nCode\nrho_he = 0.1693u\"kg/m^3\"\nrho_air = 1.2247u\"kg/m^3\"\nrho_mix = lift_gas_density\n\nhelium_volume_fraction = (rho_mix - rho_air)/(rho_he - rho_air)\n\nprint(helium_volume_fraction)\n\n\n0.5822417210108523"
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html",
+    "href": "launches/2026-05-03-smore-003.html",
+    "title": "Fourth Launch s’more-003",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
     "crumbs": [
       "Home page",
-      "Launches"
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#tracking-information",
+    "href": "launches/2026-05-03-smore-003.html#tracking-information",
+    "title": "Fourth Launch s’more-003",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-at-launch",
+    "href": "launches/2026-05-03-smore-003.html#payload-at-launch",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload at launch",
+    "text": "Payload at launch\n\n\n\nSmore-003 3-solar panel payload waiting for launch\n\n\n\n\n\nSmore-003 additional view",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#pre-launch-design-and-preparations",
+    "href": "launches/2026-05-03-smore-003.html#pre-launch-design-and-preparations",
+    "title": "Fourth Launch s’more-003",
+    "section": "Pre-launch design and preparations",
+    "text": "Pre-launch design and preparations\n\nu4b tracker\n\nu4b-004\n\nzener diode regulation\n\ntest design on breadboard with power supply\ncompare design with voltage regulator\nordered 1 Watt zener 2026-02-16\n\nsupercaps x2\n\nsolder together\n\n3 half solar panels\n\nschottkey diodes\n\nHF antenna - 20m band\n\ndetermine attachment points\nmeasure and wind both antenna arms\n\nGPS antenna\n\nbuild\ntested worked with tracker\n\n2 balloons\n\nstretch\nleak test\nsuck out air\nget helium, ordered [2026-02-16]\n\nWSPR channel selection\n\nplanning channel 567, 2 minutes after, 14,097,060 MHz\nregistered in QRP-labs database as smore-003 [2026-02-08]\ntried to register in traquito system, but doesn’t work [2026-02-08]",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-weight",
+    "href": "launches/2026-05-03-smore-003.html#payload-weight",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload weight",
+    "text": "Payload weight\n\nUSB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1 (bottom): 6.2 gram\nBottom antenna + winder: 8.5 g (200 inches wire)\nAntenna winder 2 (top): 6.2 gram\nBottom antenna + winder: 10 gram (200 inches wire + fish line)\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#balloon-filling-calculations",
+    "href": "launches/2026-05-03-smore-003.html#balloon-filling-calculations",
+    "title": "Fourth Launch s’more-003",
+    "section": "Balloon filling calculations",
+    "text": "Balloon filling calculations\nSee Balloon filling calculations for earlier flight",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#launch-checklist",
+    "href": "launches/2026-05-03-smore-003.html#launch-checklist",
+    "title": "Fourth Launch s’more-003",
+    "section": "Launch checklist",
+    "text": "Launch checklist\n\nPre-launch\n\ncheck forecast for wind and clouds\nfill balloons\n\n\n\nAt launch site\n\nverify wind and clouds OK\ncheck payload voltage in sun\ncheck WSPR transmissions on ground with SDR Rx",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#testing",
+    "href": "launches/2026-05-03-smore-003.html#testing",
+    "title": "Fourth Launch s’more-003",
+    "section": "Testing",
+    "text": "Testing",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section",
+    "href": "launches/2026-05-03-smore-003.html#section",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-16",
+    "text": "2025-10-16\nSet up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise.\n\n\nwspr.rocks spots\nDownloaded spot from https://wspr.rocks in both json and tsv format for comparison.\nThese are the spots from one day of testing 2025-10-16 local time 2025-10-16-wpsr-rocks-spots.json 2025-10-16-wpsr-rocks-spots.tsv\n\n\nlu7aa spots\nhttps://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs\ncsv file created by copy/paste from website\n2025-10-16-lu7aa-spots.csv\nthis shows decoded telemetry also https://lu7aa.org/wsprx.asp?banda=20m&other=kf8eez&balloonid=05&timeslot=8&repito=on&qrpid=109&SSID=11&launch=20251016010101&tracker=qrplabs\n\n\nwsprtv.com\nshows charts https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-09-17\ndownloaded csv to KF8EEZ_109_20250917-20251017.cs\n\n\npower down\nSolar panel ends in shadow early due to trees.\nLet up over night to allow to start again with sunrise.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-1",
+    "href": "launches/2026-05-03-smore-003.html#section-1",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-17",
+    "text": "2025-10-17\nCame back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-2",
+    "href": "launches/2026-05-03-smore-003.html#section-2",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-20",
+    "text": "2025-10-20\nAdditonal testing. Working in sun.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-3",
+    "href": "launches/2026-05-03-smore-003.html#section-3",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-23",
+    "text": "2025-10-23\nBroke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-design",
+    "href": "launches/2026-05-03-smore-003.html#payload-design",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload design",
+    "text": "Payload design\nNew payload design with 3 solar panels and zener diode.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#u4b-and-programming-information",
+    "href": "launches/2026-05-03-smore-003.html#u4b-and-programming-information",
+    "title": "Fourth Launch s’more-003",
+    "section": "U4B and programming information",
+    "text": "U4B and programming information",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#configuration",
+    "href": "launches/2026-05-03-smore-003.html#configuration",
+    "title": "Fourth Launch s’more-003",
+    "section": "Configuration",
+    "text": "Configuration\n\nFirmware: 1.00.005 (make sure to upgrade to this version)\nCallsign: KF8EEZ\nBand: 20m\nChannel: 567\n\n2 minutes after, 14,097,060 MHz\n\nAutostart: TRACKER2\nQRP-labs S/N: 21811\nzener diode as regulator, 3 1/2 panels to provide voltage\nmass: 16.9 gram including u4b-usb connector.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#hf-antenna",
+    "href": "launches/2026-05-03-smore-003.html#hf-antenna",
+    "title": "Fourth Launch s’more-003",
+    "section": "HF antenna",
+    "text": "HF antenna\nfor top antenna leg, attached wire to fishing line with kapton tape, small piece about every 12 - 18 inches apart. Cut off small folded over ends with sticky tab.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#programs",
+    "href": "launches/2026-05-03-smore-003.html#programs",
+    "title": "Fourth Launch s’more-003",
+    "section": "Programs",
+    "text": "Programs\n\nVariables\n\nC is the count of transmissions since wake up\nN is the number of transmissions before switching to high-power (0-based)\nT is a flag for test mode\n\nT=1 - test mode\nT=0 - live mode - must be in live mode for flight\n\nB is the number of times to blink the led, set to 5\n\n\n\nTRACKER2\nThis is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn’t need GPS or ability to transmit.\nPRINT \"START TRACKER2\"\nRUN \"INIT\"\nRUN \"SHOW\"\nLET B = 5\nRUN \"BLINK\"\nPRINT \"INITIAL GPS\"\nRUN \"MYGPS\"\nLET B = 2\nRUN \"BLINK\"\n10 PRINT \"LOOP AT #VC\"\nRUN \"SHOW\"\nRUN \"MYTELE\"\nLET C = C + 1\nIF C &gt; N\n    LET HP = 1\nENDIF\nRUN \"MYGPS\"\nGOTO 10\n\n\nINIT\nInitialization should run once on power up.\nPRINT \"INIT START\"\nLET CH = 567\nLET HP = 0\nLET C = 0\nLET N = 2\nLET T = 1\nLET B = 5\nPRINT \"HOST USB:    #US\"\nPRINT \"HIGH POWER:  #HP\"\nPRINT \"FREQUENCY:   #FQ\"\nPRINT \"CHANNEL:     #CH\"\nPRINT \"CALLSIGN:    #CS\"\nPRINT \"TEMPERATURE: #TK\"\nIF T = 1\nPRINT \"FAKE GPS/TELE MODE\"\nELSE\nPRINT \"REAL GPS/TELE MODE\"\nENDIF\nPRINT \"INIT DONE\"\n\n\nSHOW\nPrints out the current state\nPRINT \"SHOW START\"\nPRINT \"LLH:  #LT #LN #AT\"\nPRINT \"GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL\"\nPRINT \"GPS:  NSAT:  #SC\"\nPRINT \"CNT:  #VC\"\nPRINT \"TEMP: #TK\"\nPRINT \"POWR: #HP\"\nPRINT \"SHOW DONE\"\n\n\nMYGPS\nThis is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don’t acquire GPS if in test mode (T=1)\nPRINT \"GPS START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL GPS\"\nGPS 360\nELSE\nPRINT \"FAKE GPS\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"GPS END\"\n\n\nMYTELE\nDon’t transmit if in test mode (T=1)\nPRINT \"TELEMETRY START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL TELE\"\nTELE\nELSE\nPRINT \"FAKE TELE\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"TELEMETRY END\"\n\n\nLEDOFF\nTurn LED off\nOUT 19 0\n\n\nLEDON\nTurn LED on\nOUT 19 1\n\n\nBLINK\nturns led on and off B times. you must set b first\nFOR L = 0 TO B\nRUN \"LEDON\"\nDELAY 100\nRUN \"LEDOFF\"\nDELAY 100\nNEXT",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Balloon magnetometry",
+    "section": "",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 3, but we lost contact with the payload telemetry.",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#launches",
+    "href": "index.html#launches",
+    "title": "Balloon magnetometry",
+    "section": "Launches",
+    "text": "Launches\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#pico-balloon-payload",
+    "href": "index.html#pico-balloon-payload",
+    "title": "Balloon magnetometry",
+    "section": "Pico-balloon payload",
+    "text": "Pico-balloon payload\n\nTesting with GNSS simulator\nI set up a GNSS simulator to test the system without going outdoors. See GNSS-SIM for more details about this set up.\n\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-eclipse-launch",
+    "href": "index.html#sec-eclipse-launch",
+    "title": "Balloon magnetometry",
+    "section": "Eclipse launch",
+    "text": "Eclipse launch\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#balloon-payload",
+    "href": "index.html#balloon-payload",
+    "title": "Balloon magnetometry",
+    "section": "Balloon payload",
+    "text": "Balloon payload\n\nTracker/telemetry/microcontroller\nSeveral options exist\n\nLoRA/LoRAWAN trackers\nThis option does not require an amateur radio license, instead using LoRA to connect to the Things Network or the Helium network. These are line of sight trackers. The Things Network in the US appears to be quite limited.\nhttps://github.com/lightaprs/LightTracker-1.1\nA version was built around this system and flown in 2024 during the total eclipse.\n\n\nAPRS\nVHF\n\nhttps://qrp-labs.com/lightaprs2.html\n\n\n\nWSPR\n\nhttps://www.zachtek.com/product-page/wspr-tx-pico-transmitter\nhttps://qrp-labs.com/lightaprsw2.html\nhttps://qrp-labs.com/u4b",
+    "crumbs": [
+      "Home page",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "calculators/kalman.html",
+    "href": "calculators/kalman.html",
+    "title": "Kalman tracking filter",
+    "section": "",
+    "text": "Place holder"
+  },
+  {
+    "objectID": "calculators/horizon.html",
+    "href": "calculators/horizon.html",
+    "title": "Horizon calculator",
+    "section": "",
+    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
+    "crumbs": [
+      "Home page",
+      "Tools",
+      "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "calculators/horizon.html#assumptions",
+    "href": "calculators/horizon.html#assumptions",
+    "title": "Horizon calculator",
+    "section": "",
+    "text": "This is basically just a restate of the execlleent Washington U reference below.\nThe Earth is a sphere of radius 6,378.1370 km, this is the equatorial radius of the elliptical earth.\n\nThe slant range \\(s\\) to the horizon \\[\ns = \\sqrt{(R+h)^2 - R^2}\n\\] rewritten \\[\ns = \\sqrt{2Rh + h^2}\n\\]\n\\(\\ell\\) is the distance along the ground. We assume that \\(h \\ll R\\) so \\(s \\approx \\ell\\) and \\[\ns \\approx \\ell = \\sqrt{2Rh + h^2} \\approx \\sqrt{2Rh}\n\\] often restated as \\[\ns = k \\sqrt{h}\n\\] and found on-line with \\(k=1.22459\\) with \\(h\\) in feet and \\(s\\) in miles.",
+    "crumbs": [
+      "Home page",
+      "Tools",
+      "Horizon calculator"
+    ]
+  },
+  {
+    "objectID": "calculators/horizon.html#references",
+    "href": "calculators/horizon.html#references",
+    "title": "Horizon calculator",
+    "section": "References",
+    "text": "References\n\nWashington U",
+    "crumbs": [
+      "Home page",
+      "Tools",
+      "Horizon calculator"
     ]
   },
   {
@@ -695,38 +968,5 @@
     "title": "Float calculations",
     "section": "Float calculations",
     "text": "Float calculations\n\n\nCode\n# interpolate temperature based on density\nu_system_density = ustrip(u\"kg/m^3\",system_density)\ntemperature_at_float = LinearInterpolation(df_atmos.var\"Den (Kg/cu m)\",df_atmos.var\"Temp (C)\")(u_system_density)ua\"degC\"\ninternal_pressure =  (atmosphere_pressure_msl * launch_gas_fill ) / atmosphere_temperature_msl * ( temperature_at_float) / bs.balloon.volume\nexternal_pressure = LinearInterpolation(df_atmos.var\"Den (Kg/cu m)\",df_atmos.var\"Pres (kPa)\")(u_system_density)u\"kPa\"\nballoon_altitude = LinearInterpolation(df_atmos.var\"Den (Kg/cu m)\",df_atmos.var\"Alt (m)\")(u_system_density)u\"m\" # meters\n# balloon_altitude_feet = balloon_altitude_meter * 3.28\n\nfree_lift_ratio = free_lift / (balloon_weight + payload_weight + gas_mass)\n\ndifferential_pressure = internal_pressure - external_pressure # kPa\n\nk = launch_gas_fill * df_atmos.var\"P/T (kPa/K)\"[end]u\"kPa/K\"\nkov = k / balloon_volume\n(kov |&gt; us\"kPa/K\").value\nsuperpressure_onset_altitude = LinearInterpolation(df_atmos.var\"P/T (kPa/K)\", df_atmos.var\"Alt (m)\")( (kov |&gt; us\"kPa/K\").value  )u\"m\" # meter\nsuperpressure = external_pressure * free_lift_ratio\n\nprintln(\"Float temperature:       $(temperature_at_float)\")\nprintln(\"Balloon altitude:        $(balloon_altitude)\")\nprintln(\"Free lift ratio:         $(free_lift_ratio)\")\nprintln(\"Internal pressure:       $(internal_pressure |&gt; us\"kPa\")\")\nprintln(\"External pressure:       $(external_pressure |&gt; us\"kPa\")\")\nprintln(\"Differential pressure:   $(differential_pressure |&gt; us\"kPa\" )\")\nprintln(\"Super pressure:          $(superpressure |&gt; us\"kPa\" )\")\nprintln(\"Super pressure altitute: $(superpressure_onset_altitude)\")\n\n\nFloat temperature:       219.66001725174584 K\nBalloon altitude:        10559.31937569401 m\nFree lift ratio:         0.06424175029745618 \nInternal pressure:       25.402497520560377 kPa\nExternal pressure:       24.326586372362762 kPa\nDifferential pressure:   1.0759111481976142 kPa\nSuper pressure:          1.562782487322829 kPa\nSuper pressure altitute: 4162.055334504525 m"
-  },
-  {
-    "objectID": "calculators/solar_elevation.html",
-    "href": "calculators/solar_elevation.html",
-    "title": "Compute solar elevation angles",
-    "section": "",
-    "text": "Code\nfrom astropy.coordinates import EarthLocation, get_sun, AltAz\nfrom astropy.time import Time\nfrom astropy import units as u\nfrom astropy.visualization import quantity_support, time_support\nfrom matplotlib import pylab as plt\nimport matplotlib.dates as mdates\n\nimport numpy as np\n\n\nSelect the location and time.\n\n\nCode\n#llh = np.array([34.73,-86.58,195]) # deg, deg, meter - Huntsville\nlocation_name = \"Dayton, OH\"\nllh = np.array([39.76,-84.19,226]) # deg, deg, meter - Dayton\npos = EarthLocation(lat=llh[0],lon=llh[1],height=llh[2])\nutcoffset = -5 * u.hour # EST\nlocal_midnight = Time(\"2025-11-04 00:00:00\") - utcoffset\n\n\n\n\nCode\ndelta_midnight = np.linspace(0, 24, 1000) * u.hour\ntimes = local_midnight + delta_midnight\nframe = AltAz(obstime=times, location=pos)\nsunaltazs = get_sun(times).transform_to(frame)\nalts = sunaltazs.alt\n\nspring_equinox = Time(\"2025-03-21 00:00:00\") - utcoffset\nsummer_solstice = Time(\"2025-06-21 00:00:00\") - utcoffset\nfall_equinox = Time(\"2025-09-21 00:00:00\") - utcoffset\nwinter_solstice = Time(\"2025-12-21 00:00:00\") - utcoffset\n\nspecdates = [spring_equinox,summer_solstice,fall_equinox,winter_solstice]\nspecnames = [\"spring equinox\",\"summer solstice\",\"fall equinox\",\"winter solstice\"]\n\nwith quantity_support():\n    fig, ax = plt.subplots()\n    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H'))\n    locator = mdates.AutoDateLocator(maxticks=20)\n\n    ax.plot(delta_midnight, sunaltazs.alt,'r',label=f'{str(local_midnight)}')\n    ax.xaxis.set_major_locator(locator)\n    ax.grid()\n\n    for sd,sn in zip(specdates,specnames):\n        times = sd + delta_midnight\n        frame = AltAz(obstime=times, location=pos)\n        saz = get_sun(times).transform_to(frame)\n        ax.plot(delta_midnight,saz.alt,'b',label=sn)\n\n    ax.legend()\n    ax.set_title(f'Solar elevation angle, {location_name}')\n\n    ylim = np.array(ax.get_ylim())\n    ylim[0] = 0.0\n    ax.set_ylim(ylim)\n\n    ax.set_xlabel('Hours after midnight (local)')\n    ax.set_ylabel('Solar elevation [deg]')\n\n\n\n\n\n\n\n\nFigure 1",
-    "crumbs": [
-      "Home page",
-      "Tools",
-      "Solar elevation at location"
-    ]
-  },
-  {
-    "objectID": "calculators/kalman.html",
-    "href": "calculators/kalman.html",
-    "title": "Kalman tracking filter",
-    "section": "",
-    "text": "Place holder"
-  },
-  {
-    "objectID": "tracking.html",
-    "href": "tracking.html",
-    "title": "picoballoon tracking",
-    "section": "",
-    "text": "WSPRNet\nLU7AA\nTraquito channel map\n\nRegistered channel 109 on 20m\n\nQRP Labs tracking\n\nRegistered smore-001\n\nWSPR Telemetry Viewer"
-  },
-  {
-    "objectID": "tracking.html#references",
-    "href": "tracking.html#references",
-    "title": "picoballoon tracking",
-    "section": "References",
-    "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
   }
 ]
