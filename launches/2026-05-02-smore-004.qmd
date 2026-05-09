@@ -1,0 +1,15 @@
+---
+title: Second Launch s'more-004
+date: 2026-05-02
+toc: true
+filters:
+  - abstract-section
+---
+
+## Abstract
+
+smore-004 was similar to smore-002. The launch went well, but after reaching about 6500 meters altitude immediately started to descend and landed somewhere near the Ohio-West Virginia border, not making it out of Ohio. Assumed to be either a balloon or rigging failure. The balloon went north, crossing the Arctic Circle but because trapped in the middle of a storm and likely went down due to icing near Baffin Island, Canada.
+
+----
+
+{{< include /_sources/launches/smore-004/smore-004.qmd >}}

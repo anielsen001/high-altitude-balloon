@@ -1,1 +1,18 @@
+## Tracking information
+
+:::{#fig-wsprtv-tracking}
+
+```{=html}
+<iframe src="https://wsprtv.com/?cs=kf8eez&ch=244&band=20m&start_date=2026-05-02&sun_el=10&show_unattached&end_date=2026-05-03" width="780" height="500""></iframe>
+```
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=244&band=20m&start_date=2026-05-02&sun_el=10&show_unattached&end_date=2026-05-03)
+
+:::
+
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=244&band=20m&start_date=2026-05-02&sun_el=10&show_unattached&end_date=2026-05-03)
+
+## Design
+
 Smore-004 is similar to smore-002 using the same regulator and solar panel design. 
+
+![Payload at launch site, monitoring voltage and waiting for sun rise](/_sources/launches/smore-004/photos/smore-004_payload_voltage.jpg)

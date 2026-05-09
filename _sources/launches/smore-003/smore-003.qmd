@@ -1,26 +1,45 @@
+## Tracking information
+
+:::{#fig-wsprtv-tracking}
+
+```{=html}
+<iframe src="https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06" width="780" height="500""></iframe>
+```
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06")
+
+:::
+
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06")
+
+## Payload at launch
+
+![Smore-003 3-solar panel payload waiting for launch](/_sources/launches/smore-003/photos/smore-003-payload_launch_ready.jpg)
+
+![Smore-003 additional view](/_sources/launches/smore-003/photos/smore-003-payload_launch_ready2.jpg)
+
 ## Pre-launch design and preparations
 
 - u4b tracker
   - [u4b-004](/_sources/u4b/u4b_004.qmd)
 - zener diode regulation
   - [x] test design on breadboard with power supply
-  - [ ] compare design with voltage regulator
-  - [ ] ordered 1 Watt zener 2026-02-16
+  - [x] compare design with voltage regulator
+  - [x] ordered 1 Watt zener 2026-02-16
 - supercaps x2
   - [x] solder together 
 - 3 half solar panels
   - schottkey diodes
 - HF antenna - 20m band
-  - [ ] determine attachment points
+  - [x] determine attachment points
   - [x] measure and wind both antenna arms
 - GPS antenna
   - [x] build 
   - [x] tested worked with tracker
 - 2 balloons
-  - [ ] stretch
-  - [ ] leak test
-  - [ ] suck out air
-  - [ ] get helium, ordered [2026-02-16]
+  - [x] stretch
+  - [x] leak test
+  - [x] suck out air
+  - [x] get helium, ordered [2026-02-16]
 - WSPR channel selection
   - planning channel 567, 2 minutes after, 14,097,060 MHz
   - registered in QRP-labs database as smore-003 [2026-02-08]
@@ -45,14 +64,14 @@ See [Balloon filling calculations for earlier flight](/launches/2025-11-06-smore
 
 ### Pre-launch
 
-- [ ] check forecast for wind and clouds
-- [ ] fill balloons
+- [x] check forecast for wind and clouds
+- [x] fill balloons
 
 ### At launch site
 
-- [ ] verify wind and clouds OK
-- [ ] check payload voltage in sun
-- [ ] check WSPR transmissions on ground with SDR Rx
+- [x] verify wind and clouds OK
+- [x] check payload voltage in sun
+- [x] check WSPR transmissions on ground with SDR Rx
 
 ## Testing
 
@@ -60,8 +79,8 @@ See [Balloon filling calculations for earlier flight](/launches/2025-11-06-smore
 
 ## Payload design
 
-[S'more 002 payload design](/launches/2025-11-06-smore-002/design.qmd)
+New payload design with 3 solar panels and zener diode.
 
 ## U4B and programming information
 
-{{< include /_sources/u4b/u4b_003.qmd >}}
+{{< include /_sources/u4b/u4b_004.qmd >}}

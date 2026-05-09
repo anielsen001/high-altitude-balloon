@@ -1,0 +1,15 @@
+---
+title: Fourth Launch s'more-003
+date: 2026-05-03
+toc: true
+filters:
+  - abstract-section
+---
+
+## Abstract
+
+The new 3 solar panel design was meant to allow operation at lower sun elevations and suceeded allowing operation down to nearly 10 degrees solar elevation. The voltage regulator was replaced with a zener diode which reduced the weight of the payload.
+
+----
+
+{{< include /_sources/launches/smore-003/smore-003.qmd >}}
