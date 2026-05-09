@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Balloon magnetometry",
     "section": "",
-    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 4, but we lost contact with the payload telemetry.",
+    "text": "The goal of this project is to measure the magnetic field at high-altitudes 60kft to 100kft. The Earth’s magnetic field is typically not measured at these altitudes, it’s usually measured with satellites or low-altitude (&lt;10kft) aircraft for anomaly surveys.\nThe goal is to build a pico-balloon payload that can circumnavigate the Earth using a low power tracker and a PNI RM3100 magnetometer. We had an opportunity to launch the first version of the payload during the total eclipse in April 2024, Section 3, but we lost contact with the payload telemetry.",
     "crumbs": [
       "Home page",
       "Home"
@@ -26,7 +26,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
@@ -37,7 +37,7 @@
     "href": "index.html#pico-balloon-payload",
     "title": "Balloon magnetometry",
     "section": "Pico-balloon payload",
-    "text": "Pico-balloon payload\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "text": "Pico-balloon payload\n\nTesting with GNSS simulator\nI set up a GNSS simulator to test the system without going outdoors. See GNSS-SIM for more details about this set up.\n\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
     "crumbs": [
       "Home page",
       "Home"
@@ -739,5 +739,245 @@
     "title": "picoballoon tracking",
     "section": "References",
     "text": "References\n\nhttps://sites.google.com/view/picoballoonsbyk9yo/tracking"
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html",
+    "href": "launches/2026-05-03-smore-003.html",
+    "title": "Fourth Launch s’more-003",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#tracking-information",
+    "href": "launches/2026-05-03-smore-003.html#tracking-information",
+    "title": "Fourth Launch s’more-003",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#pre-launch-design-and-preparations",
+    "href": "launches/2026-05-03-smore-003.html#pre-launch-design-and-preparations",
+    "title": "Fourth Launch s’more-003",
+    "section": "Pre-launch design and preparations",
+    "text": "Pre-launch design and preparations\n\nu4b tracker\n\nu4b-004\n\nzener diode regulation\n\ntest design on breadboard with power supply\ncompare design with voltage regulator\nordered 1 Watt zener 2026-02-16\n\nsupercaps x2\n\nsolder together\n\n3 half solar panels\n\nschottkey diodes\n\nHF antenna - 20m band\n\ndetermine attachment points\nmeasure and wind both antenna arms\n\nGPS antenna\n\nbuild\ntested worked with tracker\n\n2 balloons\n\nstretch\nleak test\nsuck out air\nget helium, ordered [2026-02-16]\n\nWSPR channel selection\n\nplanning channel 567, 2 minutes after, 14,097,060 MHz\nregistered in QRP-labs database as smore-003 [2026-02-08]\ntried to register in traquito system, but doesn’t work [2026-02-08]",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-weight",
+    "href": "launches/2026-05-03-smore-003.html#payload-weight",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload weight",
+    "text": "Payload weight\n\nUSB connector removed from U4B.\nWith antenna winders: 31.7 gram.\nAntenna winder 1 (bottom): 6.2 gram\nBottom antenna + winder: 8.5 g (200 inches wire)\nAntenna winder 2 (top): 6.2 gram\nBottom antenna + winder: 10 gram (200 inches wire + fish line)\nTotal antenna winder: 15 gram\nPayload weight: 16.7 gram",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#balloon-filling-calculations",
+    "href": "launches/2026-05-03-smore-003.html#balloon-filling-calculations",
+    "title": "Fourth Launch s’more-003",
+    "section": "Balloon filling calculations",
+    "text": "Balloon filling calculations\nSee Balloon filling calculations for earlier flight",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#launch-checklist",
+    "href": "launches/2026-05-03-smore-003.html#launch-checklist",
+    "title": "Fourth Launch s’more-003",
+    "section": "Launch checklist",
+    "text": "Launch checklist\n\nPre-launch\n\ncheck forecast for wind and clouds\nfill balloons\n\n\n\nAt launch site\n\nverify wind and clouds OK\ncheck payload voltage in sun\ncheck WSPR transmissions on ground with SDR Rx",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#testing",
+    "href": "launches/2026-05-03-smore-003.html#testing",
+    "title": "Fourth Launch s’more-003",
+    "section": "Testing",
+    "text": "Testing",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section",
+    "href": "launches/2026-05-03-smore-003.html#section",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-16",
+    "text": "2025-10-16\nSet up balloon payload on wooden poles with horizontal wiring in morning of 2025-10-16 and let it start with sunrise.\n\n\nwspr.rocks spots\nDownloaded spot from https://wspr.rocks in both json and tsv format for comparison.\nThese are the spots from one day of testing 2025-10-16 local time 2025-10-16-wpsr-rocks-spots.json 2025-10-16-wpsr-rocks-spots.tsv\n\n\nlu7aa spots\nhttps://lu7aa.org.ar/wsprx.asp?banda=All&other=KF8EEZ&balloonid=&timeslot=&SSID=&launch=&tracker=qrplabs\ncsv file created by copy/paste from website\n2025-10-16-lu7aa-spots.csv\nthis shows decoded telemetry also https://lu7aa.org/wsprx.asp?banda=20m&other=kf8eez&balloonid=05&timeslot=8&repito=on&qrpid=109&SSID=11&launch=20251016010101&tracker=qrplabs\n\n\nwsprtv.com\nshows charts https://wsprtv.com/?cs=kf8eez&ch=109&band=20m&start_date=2025-09-17\ndownloaded csv to KF8EEZ_109_20250917-20251017.cs\n\n\npower down\nSolar panel ends in shadow early due to trees.\nLet up over night to allow to start again with sunrise.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-1",
+    "href": "launches/2026-05-03-smore-003.html#section-1",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-17",
+    "text": "2025-10-17\nCame back up after overnight testing and starting transmitting. Brought inside due to forecast rain overnight.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-2",
+    "href": "launches/2026-05-03-smore-003.html#section-2",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-20",
+    "text": "2025-10-20\nAdditonal testing. Working in sun.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#section-3",
+    "href": "launches/2026-05-03-smore-003.html#section-3",
+    "title": "Fourth Launch s’more-003",
+    "section": "2025-10-23",
+    "text": "2025-10-23\nBroke off the USB connector from the U4B and mounted again outside for testing. Partly cloudy but transmitted fine during sun.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-design",
+    "href": "launches/2026-05-03-smore-003.html#payload-design",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload design",
+    "text": "Payload design\nNew payload design with 3 solar panels and zener diode.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#u4b-and-programming-information",
+    "href": "launches/2026-05-03-smore-003.html#u4b-and-programming-information",
+    "title": "Fourth Launch s’more-003",
+    "section": "U4B and programming information",
+    "text": "U4B and programming information",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#configuration",
+    "href": "launches/2026-05-03-smore-003.html#configuration",
+    "title": "Fourth Launch s’more-003",
+    "section": "Configuration",
+    "text": "Configuration\n\nFirmware: 1.00.005 (make sure to upgrade to this version)\nCallsign: KF8EEZ\nBand: 20m\nChannel: 567\n\n2 minutes after, 14,097,060 MHz\n\nAutostart: TRACKER2\nQRP-labs S/N: 21811\nzener diode as regulator, 3 1/2 panels to provide voltage\nmass: 16.9 gram including u4b-usb connector.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#hf-antenna",
+    "href": "launches/2026-05-03-smore-003.html#hf-antenna",
+    "title": "Fourth Launch s’more-003",
+    "section": "HF antenna",
+    "text": "HF antenna\nfor top antenna leg, attached wire to fishing line with kapton tape, small piece about every 12 - 18 inches apart. Cut off small folded over ends with sticky tab.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#programs",
+    "href": "launches/2026-05-03-smore-003.html#programs",
+    "title": "Fourth Launch s’more-003",
+    "section": "Programs",
+    "text": "Programs\n\nVariables\n\nC is the count of transmissions since wake up\nN is the number of transmissions before switching to high-power (0-based)\nT is a flag for test mode\n\nT=1 - test mode\nT=0 - live mode - must be in live mode for flight\n\nB is the number of times to blink the led, set to 5\n\n\n\nTRACKER2\nThis is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn’t need GPS or ability to transmit.\nPRINT \"START TRACKER2\"\nRUN \"INIT\"\nRUN \"SHOW\"\nLET B = 5\nRUN \"BLINK\"\nPRINT \"INITIAL GPS\"\nRUN \"MYGPS\"\nLET B = 2\nRUN \"BLINK\"\n10 PRINT \"LOOP AT #VC\"\nRUN \"SHOW\"\nRUN \"MYTELE\"\nLET C = C + 1\nIF C &gt; N\n    LET HP = 1\nENDIF\nRUN \"MYGPS\"\nGOTO 10\n\n\nINIT\nInitialization should run once on power up.\nPRINT \"INIT START\"\nLET CH = 567\nLET HP = 0\nLET C = 0\nLET N = 2\nLET T = 1\nLET B = 5\nPRINT \"HOST USB:    #US\"\nPRINT \"HIGH POWER:  #HP\"\nPRINT \"FREQUENCY:   #FQ\"\nPRINT \"CHANNEL:     #CH\"\nPRINT \"CALLSIGN:    #CS\"\nPRINT \"TEMPERATURE: #TK\"\nIF T = 1\nPRINT \"FAKE GPS/TELE MODE\"\nELSE\nPRINT \"REAL GPS/TELE MODE\"\nENDIF\nPRINT \"INIT DONE\"\n\n\nSHOW\nPrints out the current state\nPRINT \"SHOW START\"\nPRINT \"LLH:  #LT #LN #AT\"\nPRINT \"GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL\"\nPRINT \"GPS:  NSAT:  #SC\"\nPRINT \"CNT:  #VC\"\nPRINT \"TEMP: #TK\"\nPRINT \"POWR: #HP\"\nPRINT \"SHOW DONE\"\n\n\nMYGPS\nThis is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don’t acquire GPS if in test mode (T=1)\nPRINT \"GPS START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL GPS\"\nGPS 360\nELSE\nPRINT \"FAKE GPS\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"GPS END\"\n\n\nMYTELE\nDon’t transmit if in test mode (T=1)\nPRINT \"TELEMETRY START\"\nRUN \"LEDOFF\"\nIF T = 0\nPRINT \"REAL TELE\"\nTELE\nELSE\nPRINT \"FAKE TELE\"\nDELAY 2000\nENDIF\nRUN \"LEDON\"\nPRINT \"TELEMETRY END\"\n\n\nLEDOFF\nTurn LED off\nOUT 19 0\n\n\nLEDON\nTurn LED on\nOUT 19 1\n\n\nBLINK\nturns led on and off B times. you must set b first\nFOR L = 0 TO B\nRUN \"LEDON\"\nDELAY 100\nRUN \"LEDOFF\"\nDELAY 100\nNEXT",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html",
+    "href": "launches/2026-05-02-smore-004.html",
+    "title": "Second Launch s’more-004",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch s'more-004"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html#tracking-information",
+    "href": "launches/2026-05-02-smore-004.html#tracking-information",
+    "title": "Second Launch s’more-004",
+    "section": "",
+    "text": "Figure 1: WSPR Telemetry Viewer embedded tracker\n\n\n\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch s'more-004"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-02-smore-004.html#design",
+    "href": "launches/2026-05-02-smore-004.html#design",
+    "title": "Second Launch s’more-004",
+    "section": "Design",
+    "text": "Design\nSmore-004 is similar to smore-002 using the same regulator and solar panel design.\n\n\n\nPayload at launch site, monitoring voltage and waiting for sun rise",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Second Launch s'more-004"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-03-smore-003.html#payload-at-launch",
+    "href": "launches/2026-05-03-smore-003.html#payload-at-launch",
+    "title": "Fourth Launch s’more-003",
+    "section": "Payload at launch",
+    "text": "Payload at launch\n\n\n\nSmore-003 3-solar panel payload waiting for launch\n\n\n\n\n\nSmore-003 additional view",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "Fourth Launch s'more-003"
+    ]
   }
 ]

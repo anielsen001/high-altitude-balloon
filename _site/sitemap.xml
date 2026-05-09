@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://apnielsen.com/high-altitude-balloon/index.html</loc>
-    <lastmod>2025-11-11T19:19:17.022Z</lastmod>
+    <lastmod>2025-12-07T20:22:22.284Z</lastmod>
   </url>
   <url>
     <loc>https://apnielsen.com/high-altitude-balloon/references.html</loc>
@@ -71,5 +71,13 @@
   <url>
     <loc>https://apnielsen.com/high-altitude-balloon/tracking.html</loc>
     <lastmod>2025-10-20T19:25:33.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://apnielsen.com/high-altitude-balloon/launches/2026-05-03-smore-003.html</loc>
+    <lastmod>2026-05-09T16:03:21.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://apnielsen.com/high-altitude-balloon/launches/2026-05-02-smore-004.html</loc>
+    <lastmod>2026-05-09T15:57:49.321Z</lastmod>
   </url>
 </urlset>
