@@ -5,11 +5,11 @@
 ```{=html}
 <iframe src="https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06" width="780" height="500""></iframe>
 ```
-[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06")
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06)
 
 :::
 
-- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06")
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06)
 
 ## Payload at launch
 
