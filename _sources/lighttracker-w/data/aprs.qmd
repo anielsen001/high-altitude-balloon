@@ -1,0 +1,29 @@
+This is example parsing code. 
+
+```python
+from aprspy import APRS
+msg = 'KF8EEZ-11>APLIGA,WIDE1-1,WIDE2-1,qAR,KB9QDI:/165213h3943.08N/08409.86WO000/000/A=000915 002TxC  22.00C  974.03hPa  5.54V 05S LightAPRS-W 2.0 !w-(!'
+p = APRS.parse_packet(msg)
+```
+
+
+```python
+n [14]: p
+Out[14]: <PositionPacket: KF8EEZ-11>
+
+In [15]: p.altitude
+Out[15]: 915
+
+In [16]: p.path
+Out[16]: <Path: WIDE1-1,WIDE2-1,qAR,KB9QDI>
+
+In [17]: p.comment
+Out[17]: ' 002TxC  22.00C  974.03hPa  5.54V 05S LightAPRS-W 2.0 !w-(!'
+
+In [18]: msg
+Out[18]: 'KF8EEZ-11>APLIGA,WIDE1-1,WIDE2-1,qAR,KB9QDI:/165213h3943.08N/08409.86WO000/000/A=000915 002TxC  22.00C  974.03hPa  5.54V 05S LightAPRS-W 2.0 !w-(!'
+
+In [19]: len(p.comment)
+Out[19]: 59
+
+```
