@@ -1,4 +1,4 @@
-This is example parsing code. 
+This is example parsing code. The text file `2025-05-10-test.txt` contains a list of messages downloaded from <https://aprs.fi>. APRS packets don't have time stamps, those were added by <https://aprs.fi>.
 
 ```python
 from aprspy import APRS
