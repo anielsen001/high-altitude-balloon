@@ -1,16 +1,36 @@
 ## Configuration
 
-- Firmware: 1.01.001 upgraded 26 march 2026!
+- Firmware: 1.01.001 (upgraded 26 march 2026)
 - Callsign: KF8EEZ
 - Band: 20m
-- Channel: 567
-  - 2 minutes after, 14,097,060 MHz
+- Channel: 244
+  - 6 minutes after, 14,097,020 MHz
 - Autostart: TRACKER2
 - QRP-labs S/N: 21831
 
 ## HF antenna
 
-for top antenna leg, attached wire to fishing line with kapton tape, small piece about every 12 - 18 inches apart. Cut off small folded over ends with sticky tab.
+top and bottom arms from U4B about 5 inches. Antenna arms should be about 198.84837766362426 inches. I created two spools of 200 inch long each. For both, need to cut about 6.16 inches off of the spooled wire.
+
+### Upper
+
+```{python}
+print(200 + 5 - 198.84) 
+```
+= 6.16 in
+
+### Lower
+
+```{python}
+print(200 + 5 - 198.84) 
+```
+= 6.16 in
+
+
+
+## GPS antenna
+
+Twisted pair feed, 50mm arms. Tested. Good GPS fixes.
 
 ## Programs
 

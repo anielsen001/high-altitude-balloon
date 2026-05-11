@@ -1,0 +1,165 @@
+---
+title: Balloon filling for smore-004
+date: 2026-05-03
+engine: julia
+toc: true
+julia:
+  exeflags:
+    - "--project=/opt/project"
+---
+
+
+## Filling Calculations
+
+```{julia}
+#| echo: false
+include("/opt/project/_sources/filling/PicoBalloons.jl")
+
+using Plots
+using Revise
+using DynamicQuantities
+using .PicoBalloons
+
+```
+
+### Define basic balloon parameters
+
+```{julia}
+free_lift = 5.0u"g" # grams
+balloon_weight = 38.0u"g" # gram
+balloon_volume = 0.15u"m^3" # m^3
+payload_weight = 16.9u"g" # gram
+gas = "helium 99%"
+
+# compare 1 and 2 balloons
+balloon_1 = Balloon(balloon_weight, balloon_volume)
+balloon_2 = balloon_1 * 2
+```
+
+### Look at options as a function of free lift
+
+```{julia}
+free_lifts = collect(0.0:1.0:10.0)u"g"
+bss1 = BalloonSystem(balloon_1, payload_weight, free_lifts, gas)
+bss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)
+```
+
+Free lift is the excess lift due to the super-pressure of the balloon. 
+
+```{julia}
+#| label: fig-altitude-vs-free-lift
+#| fig-cap: Float altitude vs. free lift
+#| code-fold: true
+plot(
+    ustrip(u"g",free_lifts),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    label="One Balloon",
+    title="Altitude vs. free lift",
+    xlabel="Free lift [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",free_lifts),
+      ustrip(us"ft",bss2.float_altitude)/1000.,
+      label="Two balloons",
+)
+```
+
+Neck lift if the amount of lift that's used to fill a balloon. For a two balloon system, this is the total, so divide by two to get the amount for each balloon.
+
+```{julia}
+#| label: fig-altitude-vs-neck-lift
+#| fig-cap: Float altitude vs. neck lift
+#| code-fold: true
+plot(
+    ustrip(u"g",bss1.neck_lift),
+    ustrip(us"ft",bss1.float_altitude)/1000.,
+    label="One Balloon",
+    title="Altitude vs. neck lift",
+    xlabel="Neck lift [grams]",
+    ylabel="Float altitude [kft]",
+)
+plot!(ustrip(u"g",bss2.neck_lift),
+      ustrip(us"ft",bss2.float_altitude)/1000.,
+      label="Two balloons",
+)
+```
+
+Generally, more free lift means that there is extra gas and the balloon will stay aloft longer as the gas slowly leaks or diffuses out. 
+
+For this launch, there will be two balloons carrying the payload. A free lift of 5 grams means a neck lift of 22 grams total or 11 grams per balloon.
+
+**This should provide a float altitude of about 35kft.**
+
+## Float reality
+
+In reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there's likely not a leak causing an issue. 
+
+The gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas? 
+
+The following Julia code inerts the float calculations using a known altitude to find the gas density
+
+```{julia}
+gas = "helium 97%"
+
+bs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
+
+float_altitude = 6400.0u"m"
+system_density = PicoBalloons.atmos_density(6400u"m")
+total_mass = system_density * balloon_2.volume
+lift_gas_mass = total_mass - payload_weight - balloon_2.weight
+lift_gas_density = lift_gas_mass * PicoBalloons.gas_density("air")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)
+println(lift_gas_density)
+# = 0.6102020876451465 m⁻³ kg
+```
+
+And then as a cross check, use this density and work the calculations forward again.
+
+```{julia}
+## work this answer forward again to verify the float altitude
+gas = "helium party"
+
+bs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)
+bs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)
+println(bs2)
+# Weight: 0.076 kg
+# Volume: 0.3 m³
+# Neck lift                         21.7 g
+# Gas fill at launch                0.15899158977708827 m³
+# Gas mass                          97.017 g
+# Total mass                        189.71699999999996 g
+# System density                    0.6323899999999999 m⁻³ kg
+# Temperature at float              246.65399999999997 K
+# Pressure at float                 44.74199999999999 kPa
+# Float altitude                    6400.000000000002 m
+# Internal pressure                 45.9662472246834 kPa
+# Differential pressure             1.2242472246834077 kPa
+# Super pressure                    1.1791774063473488 kPa
+# Super pressure onset altitude     6153.065084031026 m
+```
+
+Which is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.
+
+
+Now we can calculate the percentage of helium in the party gas based on the density. 
+
+
+For two ideal gasses the mixed density is
+\begin{equation}
+\rho_{mix} = \frac{\rho_1 v_1 + \rho_2 v_2}{v_1 + v_2}
+\end{equation}
+where $\rho_i$ is the density of each gas and $v_i$ is the volume occupied by each gas. This can be manipulated to get a volume fraction for one of the gasses
+\begin{equation}
+\frac{v_1}{v_{mix}} = \frac{\rho_{mix} - \rho_2}{\rho_1 - \rho_2}
+\end{equation}
+and we can put in some numbers for the density we have found as well as air and pure helium
+
+```{julia}
+rho_he = 0.1693u"kg/m^3"
+rho_air = 1.2247u"kg/m^3"
+rho_mix = lift_gas_density
+
+helium_volume_fraction = (rho_mix - rho_air)/(rho_he - rho_air)
+
+print(helium_volume_fraction)
+```
