@@ -3,6 +3,7 @@ from io import StringIO
 from matplotlib import pylab as plt
 import numpy as np
 import pandas as pd
+import scipy.interpolate as spi
 
 atmosphere_pressure_msl = 101.325*u.kPa # kPa at MSL "standard pressure"
 atmosphere_temperature_msl = 15.0ua"degC"
@@ -49,6 +50,107 @@ def gas_density(
 # in this table, the P/T column is just the ration of the Pressure/(Temperature converted to Kelvin)
 df_atmos = pd.read_csv("atmos.csv")
 
+class Atmosphere():
+
+    # atmospheric profile data frame
+    df_atmos = None
+
+    # interplators
+    interp_pressure = None
+    interp_temperature = None
+    interp_altitude = None
+    interp_density = None
+
+    def __init__(
+            self,
+            atmosfile = 'atmos.csv',
+            ):
+
+        # read the atmospheric profile to a data frame
+        self.df_atmos = pd.read_csv("atmos.csv")
+
+        # create interpolators
+        # these are created here so they are only created once
+        # and then called when needed
+        self.interp_pressure = spi.make_interp_spline(
+            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
+            self.df_atmos['Pres (kPa)'].to_numpy(),
+            k=1,
+            )
+
+        self.interp_temperature = spi.make_interp_spline(
+            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
+            self.df_atmos['Temp (C)'].to_numpy(),
+            k=1,
+            )
+
+        self.interp_altitude = spi.make_interp_spline(
+            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
+            self.df_atmos['Alt (m)'].to_numpy(),
+            k=1,
+            )
+
+        self.interp_density = spi.make_interp_spline(
+            self.df_atmos['Alt (m)'].to_numpy(),
+            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
+            k=1,
+            )
+        
+
+    def pressure(
+            self,
+            density,
+            ):
+        """
+        Return the atmospheric pressure at a given density
+
+        Parameters
+        ----------
+        density :
+          quantity of km/m**3, i.e. 10*u.kg/u.m**3
+
+        Returns
+        -------
+        pressure
+          quantity of kPa
+        """
+
+        # get just the value from the density quantity
+        u_density = density.value
+
+        # get return value
+        pressure = self.interp_pressure(u_density) * u.kPa
+
+        return pressure
+
+    def temperature(
+            self,
+            density,
+            ):
+        """
+        Return the atmospheric temperature at a given density
+
+        Parameters
+        ----------
+        density :
+          quantity of km/m**3, i.e. 10*u.kg/u.m**3
+
+        Returns
+        -------
+        temperature
+          quantity of Kelvin
+        """
+
+        # get just the value from the density quantity
+        u_density = density.value
+
+        # get return value - will be in Centigrade
+        tempC = self.interp_temperature(u_density) * u.Celsius
+        tempK = tempC.to(u.K, equivalencies=u.temperature())
+
+        return tempK       
+        
+        
 
 class Balloon():
     weight = None
