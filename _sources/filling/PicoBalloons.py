@@ -303,6 +303,12 @@ class BalloonSystem():
             self.atmos.df_atmos['Alt (m)'].to_numpy(),
             k=1,
             )(kov.value)* u.meter
+
+        altitude = spi.make_interp_spline(
+            self.atmos.df_atmos['P/T (kPa/K)'].to_numpy(),
+            self.atmos.df_atmos['Alt (m)'].to_numpy(),
+            k=1,
+            )(kov.value)* u.meter
             
         super_pressure = pressure_at_float * free_lift_ratio
 
@@ -321,8 +327,22 @@ class BalloonSystem():
         self.super_pressure_onset_altitude = super_pressure_onset_altitude
         self.super_pressure = super_pressure
 
-    def __str__(self):
+    def msgstr(self):
         msg = [ f'{_k}:\t{_v}' for _k,_v in vars(self).items()]
 
         return '\n'.join(msg)
         
+    def __str__(self):
+        return self.msgstr()
+
+    def __repr__(self):
+        return self.msgstr()
+        
+    def info(self):
+        if self.name is not None:
+            msg = f'{self.name}\n'
+            
+        msg = \
+            f'Altitude:\t{self.balloon_altitude}\t{self.balloon_altitude.to(u.imperial.foot)}\n'
+
+        return msg
