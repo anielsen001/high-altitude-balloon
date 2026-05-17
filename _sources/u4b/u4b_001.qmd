@@ -1,27 +1,190 @@
-## Not for launch
+## U4B 001 - Now for launch
 
-One of the resistors that are designed to bleed off charge from the antenna came off. The unit can be used for ground testing, but won't be used for flight.
+One of the resistors that are designed to bleed off charge from the antenna came off. 
+The unit can be used for ground testing, but won't be used for flight.
+
+2026-05-17 - going to try and fly it anyway becuse the u4b design has changed and it's not going to be useful for testing going forward. 
+
+## Traquito channel registration
+
+https://traquito.github.io/channelmap/
+
+- Callsign KF8EEZ
+- Firmware: 1_01_004
+- QRP-labs S/N: 
+- registered channel 216
+- Band 20m
+- ID13 10
+- Minute 0
+- Freq 14,097,180
+
+## Programming
+
+Plan to test out extended telemetry using TELEC command.
+
+### Variables
+
+- C is the count of transmissions since wake up
+- N is the number of transmissions before switching to high-power (0-based)
+- T is a flag for test mode
+  - T=1 - test mode
+  - T=0 - live mode - must be in live mode for flight
+- B is the number of times to blink the led, set to 5
+
+
+### TRACKER2
+
+This is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn't need GPS or ability to transmit.
+
+```
+PRINT "START TRACKER2"
+RUN "INIT"
+RUN "SHOW"
+LET B = 5
+RUN "BLINK"
+PRINT "INITIAL GPS"
+RUN "MYGPS"
+LET B = 2
+RUN "BLINK"
+10 PRINT "LOOP AT #VC"
+RUN "SHOW"
+RUN "MYTELE"
+LET C = C + 1
+IF C > N
+    LET HP = 1
+ENDIF
+RUN "MYGPS"
+GOTO 10
+```
+### INIT
+
+Initialization should run once on power up.
+
+```
+PRINT "INIT START"
+LET CH = 216
+LET HP = 0
+LET C = 0
+LET N = 2
+LET T = 1
+LET B = 5
+PRINT "HOST USB:    #US"
+PRINT "HIGH POWER:  #HP"
+PRINT "FREQUENCY:   #FQ"
+PRINT "CHANNEL:     #CH"
+PRINT "CALLSIGN:    #CS"
+PRINT "TEMPERATURE: #TK"
+IF T = 1
+PRINT "FAKE GPS/TELE MODE"
+ELSE
+PRINT "REAL GPS/TELE MODE"
+ENDIF
+PRINT "INIT DONE"
+```
+### SHOW
+
+Prints out the current state
+
+```
+PRINT "SHOW START"
+PRINT "LLH:  #LT #LN #AT"
+PRINT "GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "GPS:  NSAT:  #SC"
+PRINT "CNT:  #VC"
+PRINT "TEMP: #TK"
+PRINT "POWR: #HP"
+PRINT "SHOW DONE"
+```
+
+### MYGPS
+
+This is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don't acquire GPS if in test mode (T=1)
+
+```
+PRINT "GPS START"
+RUN "LEDOFF"
+IF T = 0
+PRINT "REAL GPS"
+GPS 360
+ELSE
+PRINT "FAKE GPS"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "GPS END"
+```
+
+### MYTELE
+
+Don't transmit if in test mode (T=1)
+
+```
+PRINT "TELEMETRY START"
+RUN "LEDOFF"
+IF T = 0
+PRINT "REAL TELE"
+TELE
+ELSE
+PRINT "FAKE TELE"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "TELEMETRY END"
+```
+
+### LEDOFF
+
+Turn LED off
+
+```
+OUT 19 0
+```
+
+### LEDON
+
+Turn LED on
+
+```
+OUT 19 1
+```
+
+### BLINK
+
+turns led on and off B times. you must set b first
+
+```
+FOR L = 0 TO B
+RUN "LEDON"
+DELAY 100
+RUN "LEDOFF"
+DELAY 100
+NEXT
+```
+
 
 ## U4B 001
 
-Notes for u4b number 001 
+### firmware - 2026-05-17 - 1_01_004
 
+     U4B 1_01_004
+     QRP Labs, 2025
+                             +---Configuration------------------------+
+                             |                                        |
+     Configuration           |   Callsign            KF8EEZ           |
+     Run program             |   Band                20m              |
+     Text editor             |   Channel             567              |
+     File manager            |   Autostart program   TRACKER2         |
+     Command line            |                                        |
+     Hardware test           |   Frequency           14097060         |
+     Factory reset           |   Telemetry format    QX8XXX XXXX XX   |
+     Update F/W              |   Start minute        02               |
+                             |                                        |
+                             |     Use left & right arrow keys to     |
+                             |        change Band.                    |
+                             |                                        |
+                             +------------------------Ctrl-Q = Quit---+
 
- +---Configuration------------------------+
- |                                        |
- |   Callsign            KF8EEZ           |
- |   Band                20m              |
- |   Channel             567              |
- |   Autostart program   TRACKER          |
- |                                        |
- |   Frequency           14097060         |
- |   Telemetry format    QX8XXX XXXX XX   |
- |   Start minute        02               |
- |                                        |
- |     Use left & right arrow keys to     |
- |        change Band and Channel.        |
- |                                        |
- +------------------------Ctrl-Q = Quit---+
+### Older firmware configs
 
 upgraded firmware, 2026-04-05
 
@@ -117,6 +280,8 @@ the channel can also be configured in program with LET CH=<chan num>
 available channels thru config are 567, 452, 561
 
 Registered channel 109 at traquito website. min 6, freq = 14097060
+
+
 
 
 ## Test 2025-07-13
