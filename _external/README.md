@@ -1,4 +1,11 @@
 
+# u4b firmware 
+
+`./u4b/firmware`
+
+Downlands of u4b firmare from https://qrp-labs.com/u4b
+
+
 # LightAPRS with WSPR
 branch with my flight mods
 https://github.com/KF8EEZ/LightAPRS-W-2.0/tree/kf8eez-snickerdoodle
@@ -13,12 +20,10 @@ https://github.com/anielsen001/arduino-container
 
 # WSPR encoded bitstreams
 
-
 to generate wspr encoded bitstream
 ```bash
 git clone git@github.com:PH0TRA/wspr.git
 ```
-
 
 wsprgen.py to create audio signals of wspr signal
 ```bash
