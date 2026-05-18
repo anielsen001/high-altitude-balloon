@@ -1,0 +1,22 @@
+## Scientific Balloon Solutions
+
+https://www.scientificballoonsolutions.com/products/
+
+I have one SBS-13 that was provided to me. 
+
+specs from SBS website:
+
+> New SBS-13 Version 2 is a machine seamed Super Pressure Balloon.
+> Estimated Altitude (43k-45k feet)  (13.1km -13.7km)
+> Dimensions when flat on table (3’ W X 7.5’ L)  (0.91m W X 2.28m L)
+> Film Thickness, (1mil) Pic
+
+They do not list the inflated dimension or the mass. I made my own measurements shown in @fig-sbs-13-dims. 
+
+![SBS-13 dimensions as measured](/_sources/balloons/sbs-13-dims.jpg){#fig-sbs-13-dims)
+
+I modeled it as a cylinder with two hemispherical end caps. 
+
+- Cylinder center: 107-100 mm long, circumference 186 mm
+- End caps: half-circumference 125-134 mm
+- Mass: 105 grams
