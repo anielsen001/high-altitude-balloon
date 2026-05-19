@@ -17,6 +17,36 @@ They do not list the inflated dimension or the mass. I made my own measurements 
 
 I modeled it as a cylinder with two hemispherical end caps. 
 
-- Cylinder center: 107-100 mm long, circumference 186 mm
-- End caps: half-circumference 125-134 mm
+- Cylinder center: 107-110 cm long, circumference 186 cm
+- End caps: half-circumference 125-134 cm
 - Mass: 105 grams
+
+
+### Determine the volume
+
+```{python}
+#| label: sbs-13-volume
+
+import numpy as np
+
+# cylinder section
+length = 110.0 # cm
+circumference = 186.0 # cm
+radius = circumference / (2*np.pi) # cm
+volume_cyl = np.pi * radius**2 * length # cm**3
+
+# end caps
+half_circumference = 130.0 # cm
+full_circumference = half_circumference * 2.0 # cm
+radius = circumference / (2*np.pi) # cm
+volume_end = 4.0/3.0 * np.pi * radius**3 # cm**3
+# there are two end caps, so it's like a full sphere
+
+# total volume
+volume_total = volume_cyl + volume_end # cm**3
+
+# total volume in m**3
+volume_total_cubic_meter = volume_total/10**3
+```
+
+0.411
