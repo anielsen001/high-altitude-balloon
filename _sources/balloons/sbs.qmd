@@ -46,7 +46,9 @@ volume_end = 4.0/3.0 * np.pi * radius**3 # cm**3
 volume_total = volume_cyl + volume_end # cm**3
 
 # total volume in m**3
-volume_total_cubic_meter = volume_total/10**3
+volume_total_cubic_meter = volume_total/100**3
+
+print(f'Total volume: {volume_total_cubic_meter}')
 ```
 
-0.411
+Total volume: 0.411 cubic meter
