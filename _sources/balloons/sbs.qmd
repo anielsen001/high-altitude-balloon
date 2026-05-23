@@ -1,0 +1,54 @@
+## Scientific Balloon Solutions
+
+https://www.scientificballoonsolutions.com/products/
+
+I have one SBS-13 that was provided to me. 
+
+specs from SBS website:
+
+> New SBS-13 Version 2 is a machine seamed Super Pressure Balloon.
+> Estimated Altitude (43k-45k feet)  (13.1km -13.7km)
+> Dimensions when flat on table (3’ W X 7.5’ L)  (0.91m W X 2.28m L)
+> Film Thickness, (1mil) Pic
+
+They do not list the inflated dimension or the mass. I made my own measurements shown in @fig-sbs-13-dims. 
+
+![SBS-13 dimensions as measured](/_sources/balloons/sbs-13-dims.jpg){#fig-sbs-13-dims)
+
+I modeled it as a cylinder with two hemispherical end caps. 
+
+- Cylinder center: 107-110 cm long, circumference 186 cm
+- End caps: half-circumference 125-134 cm
+- Mass: 105 grams
+
+
+### Determine the volume
+
+```{python}
+#| label: sbs-13-volume
+
+import numpy as np
+
+# cylinder section
+length = 110.0 # cm
+circumference = 186.0 # cm
+radius = circumference / (2*np.pi) # cm
+volume_cyl = np.pi * radius**2 * length # cm**3
+
+# end caps
+half_circumference = 130.0 # cm
+full_circumference = half_circumference * 2.0 # cm
+radius = circumference / (2*np.pi) # cm
+volume_end = 4.0/3.0 * np.pi * radius**3 # cm**3
+# there are two end caps, so it's like a full sphere
+
+# total volume
+volume_total = volume_cyl + volume_end # cm**3
+
+# total volume in m**3
+volume_total_cubic_meter = volume_total/100**3
+
+print(f'Total volume: {volume_total_cubic_meter}')
+```
+
+Total volume: 0.411 cubic meter
