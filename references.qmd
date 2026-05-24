@@ -1,7 +1,13 @@
 ---
-title: picoballoon build references
+title: picoballoon references
 format: html
 ---
+
+## Channel reservation
+
+- Traquito: <https://traquito.github.io/channelmap/>
+
+## Build
 
 - https://sites.google.com/view/picoballoonsbyk9yo/home
 - https://qrp-labs.com/images/u4b/U4B_construction_notes.pdf
