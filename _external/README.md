@@ -1,9 +1,7 @@
 
 # u4b firmware 
 
-`./u4b/firmware`
-
-Downlands of u4b firmare from https://qrp-labs.com/u4b
+- `./u4b/firmware` Downlands of u4b firmare from https://qrp-labs.com/u4b
 
 
 # LightAPRS with WSPR
