@@ -30,6 +30,14 @@ EMAIL:
 PHONE:
 :::
 
+## GPS antenna
+
+half wavelength: 95.14683639918243 millimeters
+quarter wavelength: 47.57341819959122 millimeters
+quarter wavelength * 95%: 45.194747289611655 mm
+feed length: 25.400000000000002 mm
+total length: 70.59474728961166 mm
+
 
 ## HF antenna
 
