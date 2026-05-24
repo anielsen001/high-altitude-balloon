@@ -18,6 +18,10 @@ https://traquito.github.io/channelmap/
 - Minute 0
 - Freq 14,097,180
 
+https://wsprtv.com/?cs=KF8EEZ&ch=216&band=20m&start_date=2026-05-17&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats
+
+https://wsprtv.com/tools/ct_wizard.html?spec=https%3A%2F%2Fwsprtv.com%3Fcs%3DKF8EEZ%26ch%3D216%26band%3D20m%26start_date%3D2026-05-17%26ct_dec%3Dct%2Cs%3A2_500%3A0%3A1%2C2%3A0%3A1%2C38%3A0%3A1%2C1000%3At100%2C1000%3At101%26ct_labels%3Dcount%2Cpower%2Cnsat%26ct_llabels%3Dspot%2Bxmit%2Bsince%2Bpower%2Cpower%2Cnumber%2Bsats
+
 ## Programming
 
 Plan to test out extended telemetry using TELEC command.
@@ -30,6 +34,9 @@ Plan to test out extended telemetry using TELEC command.
   - T=1 - test mode
   - T=0 - live mode - must be in live mode for flight
 - B is the number of times to blink the led, set to 5
+- X is the ERLON - Easting value
+- Y is the ERLON - Northing value
+- Z is the "big number" for telemetry
 
 
 ### TRACKER2
@@ -121,11 +128,21 @@ Don't transmit if in test mode (T=1)
 ```
 PRINT "TELEMETRY START"
 RUN "LEDOFF"
+LET Y = ERLAT 1000
+LET X = ERLON 1000
+LET Z = 0
+LET Z = PACK Z 1000 Y
+LET Z = PACK Z 1000 X
+LET Z = PACK Z 38 SC
+LET Z = PACK Z 2 HP
+LET Z = PACK Z 500 C
 IF T = 0
 PRINT "REAL TELE"
 TELE
+TELEC Z
 ELSE
 PRINT "FAKE TELE"
+PRINT "BIG NUM:", Z
 DELAY 2000
 ENDIF
 RUN "LEDON"
