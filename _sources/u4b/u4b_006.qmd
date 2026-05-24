@@ -65,6 +65,9 @@ Twisted pair feed, 50mm arms. Tested. Good GPS fixes.
   - T=1 - test mode
   - T=0 - live mode - must be in live mode for flight
 - B is the number of times to blink the led, set to 5
+- X is the ERLON - Easting value
+- Y is the ERLON - Northing value
+- Z is the "big number" for telemetry
 
 ### TRACKER2
 
