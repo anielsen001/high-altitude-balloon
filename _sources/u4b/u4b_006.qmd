@@ -3,10 +3,33 @@
 - Firmware: 1.01.004 (upgraded 23 May 2026)
 - Callsign: KF8EEZ
 - Band: 20m
-- Channel: 244
-  - 6 minutes after, 14,097,020 MHz
+- Channel: 370
+  - 8 minutes after, 14,097,180 MHz
 - Autostart: TRACKER2
 - QRP-labs S/N: 969
+
+### Background info
+
+- QRP-labs u4b info page: <https://qrp-labs.com/u4b>
+- Traquito channel reservation: <https://traquito.github.io/channelmap/>
+
+## README
+
+Edited `README` on u4b to contain contact and WSPRtv tracking information in the unlikely event that someone can find it.
+
+:::{.callout-note}
+IF YOU ARE READING THIS:
+
+BALLOON OPERATED UNDER CALLSIGN KF8EEZ.
+LAUNCHED FROM DAYTON, OHIO, USA.
+
+TRACKING:
+HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=370&BAND=20M
+
+EMAIL:
+PHONE:
+:::
+
 
 ## HF antenna
 
@@ -72,9 +95,14 @@ GOTO 10
 
 Initialization should run once on power up.
 
+This code should be edited for each flight. 
+Specifically, set:
+- channel number: `CH=xxx`
+- test mode: `T=1` for test without GPS/Telemetry OR `T=0` for live
+
 ```
 PRINT "INIT START"
-LET CH = 567
+LET CH = 370
 LET HP = 0
 LET C = 0
 LET N = 2
@@ -87,6 +115,7 @@ PRINT "CHANNEL:     #CH"
 PRINT "CALLSIGN:    #CS"
 PRINT "TEMPERATURE: #TK"
 IF T = 1
+PRINT "*** TEST MODE ***"
 PRINT "FAKE GPS/TELE MODE"
 ELSE
 PRINT "REAL GPS/TELE MODE"
@@ -130,13 +159,29 @@ PRINT "GPS END"
 ### MYTELE
 
 Don't transmit if in test mode (T=1)
+This packs additional telemetry into the Z variable and sends a 3rd telemetry packet.
+
+THESE URLs create the telemetry packet decode for WSPRtv.com:
+https://wsprtv.com/?cs=KF8EEZ&ch=216&band=20m&start_date=2026-05-17&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats
+
+https://wsprtv.com/tools/ct_wizard.html?spec=https%3A%2F%2Fwsprtv.com%3Fcs%3DKF8EEZ%26ch%3D216%26band%3D20m%26start_date%3D2026-05-17%26ct_dec%3Dct%2Cs%3A2_500%3A0%3A1%2C2%3A0%3A1%2C38%3A0%3A1%2C1000%3At100%2C1000%3At101%26ct_labels%3Dcount%2Cpower%2Cnsat%26ct_llabels%3Dspot%2Bxmit%2Bsince%2Bpower%2Cpower%2Cnumber%2Bsats
+
 
 ```
 PRINT "TELEMETRY START"
 RUN "LEDOFF"
+LET Y = ERLAT 1000
+LET X = ERLON 1000
+LET Z = 0
+LET Z = PACK Z 1000 Y
+LET Z = PACK Z 1000 X
+LET Z = PACK Z 38 SC
+LET Z = PACK Z 2 HP
+LET Z = PACK Z 500 C
 IF T = 0
 PRINT "REAL TELE"
 TELE
+TELEC Z
 ELSE
 PRINT "FAKE TELE"
 DELAY 2000
