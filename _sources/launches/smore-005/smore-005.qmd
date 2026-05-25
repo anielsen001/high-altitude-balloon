@@ -1,0 +1,66 @@
+## Tracking information
+
+:::{#fig-wsprtv-tracking}
+
+```{=html}
+<iframe src="https://wsprtv.com/?cs=kf8eez&ch=370&band=20m&start_date=2026-05-25&sun_el=10&show_unattached&end_date=2026-05-27" width="780" height="500""></iframe>
+```
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=370&band=20m&start_date=2026-05-25&sun_el=10&show_unattached&end_date=2026-05-27)
+
+:::
+
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06)
+
+
+
+## Pre-launch design and preparations
+
+- u4b tracker
+  - [u4b-006](/_sources/u4b/u4b_006.qmd)
+- zener diode regulation
+- supercaps x2
+- HF antenna - 20m band
+- GPS antenna
+- 2 balloons
+  - [x] stretch
+  - [x] leak test
+  - [x] suck out air
+- WSPR channel selection
+
+
+## Payload weight 
+
+- USB connector removed from U4B.
+- With antenna winders: 31.7 gram.
+- Antenna winder 1 (bottom): 6.2 gram
+- Bottom antenna + winder: 8.5 g (200 inches wire)
+- Antenna winder 2 (top): 6.2 gram
+- Bottom antenna + winder: 10 gram (200 inches wire + fish line)
+- Total antenna winder: 15 gram
+- Payload weight: 16.7 gram
+
+## Balloon filling calculations
+
+See [Balloon filling calculations for earlier flight](/launches/2025-11-06-smore-002/balloon-filling.qmd)
+
+## Launch checklist
+
+### Pre-launch
+
+- [x] check forecast for wind and clouds
+- [x] fill balloons
+
+### At launch site
+
+- [x] verify wind and clouds OK
+- [x] check payload voltage in sun
+- [x] check WSPR transmissions on ground with SDR Rx
+
+
+## Payload design
+
+New payload design with 3 solar panels and zener diode.
+
+## U4B and programming information
+
+{{< include /_sources/u4b/u4b_006.qmd >}}

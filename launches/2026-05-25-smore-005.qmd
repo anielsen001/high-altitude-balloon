@@ -1,0 +1,15 @@
+---
+title: Fift Launch s'more-005
+date: 2026-05-26
+toc: true
+filters:
+  - abstract-section
+---
+
+## Abstract
+
+Smore-005 was similar to smore-003, with a goal of acheiving higher altitude. The balloons were pumped out with the pump in reverse to evacuate any air before filling with Helium. The launch went well, the balloon rose, but no telemetry was received. We heard confimation on the ground of transmit tones, but WSJT-X was not working properly to look for decodes. 
+
+----
+
+{{< include /_sources/launches/smore-005/smore-005.qmd >}}
