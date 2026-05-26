@@ -1,3 +1,11 @@
+## Pictures
+
+![Launch](/_sources/launches/smore-005/smore-005-2026-05-25-launch.jpg)
+
+![Launch preparation](/_sources/launches/smore-005/smore-005-2026-05-25-launch-prep-1-sm.jpg)
+
+![Payload testing before launch](/_sources/launches/smore-005/smore-005-2026-05-25-launch-prep-2-sm.jpg)
+
 ## Tracking information
 
 :::{#fig-wsprtv-tracking}
@@ -9,7 +17,7 @@
 
 :::
 
-- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=567&band=20m&start_date=2026-05-03&sun_el=10&show_unattached&end_date=2026-05-06)
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=370&band=20m&start_date=2026-05-25&sun_el=10&show_unattached&end_date=2026-05-27)
 
 
 
@@ -27,17 +35,6 @@
   - [x] suck out air
 - WSPR channel selection
 
-
-## Payload weight 
-
-- USB connector removed from U4B.
-- With antenna winders: 31.7 gram.
-- Antenna winder 1 (bottom): 6.2 gram
-- Bottom antenna + winder: 8.5 g (200 inches wire)
-- Antenna winder 2 (top): 6.2 gram
-- Bottom antenna + winder: 10 gram (200 inches wire + fish line)
-- Total antenna winder: 15 gram
-- Payload weight: 16.7 gram
 
 ## Balloon filling calculations
 
