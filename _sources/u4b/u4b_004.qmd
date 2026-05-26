@@ -8,7 +8,7 @@
 - Autostart: TRACKER2
 - QRP-labs S/N: 21811
 
-- zener diode as regulator, 3 1/2 panels to provide voltage
+- zener diode as regulator, 3, 1/2 panels to provide voltage
 - mass: 16.9 gram including u4b-usb connector.
 
 ## HF antenna

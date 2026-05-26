@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-321847fe3ba8f57e9ee00646970f0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b8be3d391443fefe914f02bf39e7599b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -160,7 +161,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -185,6 +186,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Balloons</span>
     </a>
@@ -232,7 +235,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./_sources/eclipse/balloon_launch_eclipse_thumb.jpg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -320,6 +324,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./launches/2026-05-03-smore-003.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fourth Launch s’more-003</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./launches/2026-05-25-smore-005.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fifth Launch s’more-005</span></a>
   </div>
 </li>
       </ul>
@@ -414,7 +424,29 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1777780800000" data-listing-file-modified-sort="1778342601239" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1779681600000" data-listing-file-modified-sort="1779786703253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
+<div class="thumbnail"><a href="./launches/2026-05-25-smore-005.html" class="no-external">
+
+<img loading="lazy" src="./_sources/launches/smore-005/smore-005-2026-05-25-launch-prep-1-sm.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./launches/2026-05-25-smore-005.html" class="no-external">Fifth Launch s’more-005</a>
+</h3>
+<div class="delink listing-description"><a href="./launches/2026-05-25-smore-005.html" class="no-external">
+See Balloon filling calculations for earlier flight
+</a></div>
+</div>
+<div class="metadata">
+<a href="./launches/2026-05-25-smore-005.html" class="no-external">
+<div class="listing-date">
+May 25, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1777780800000" data-listing-file-modified-sort="1779786603516" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
 <div class="thumbnail"><a href="./launches/2026-05-03-smore-003.html" class="no-external">
 
 <p class="card-img-top"><img src="_sources/launches/smore-003/photos/smore-003-payload_launch_ready.jpg" alt="Smore-003 3-solar panel payload waiting for launch"  class="thumbnail-image card-img"/></p>
@@ -436,7 +468,7 @@ May 3, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1777694400000" data-listing-file-modified-sort="1778343287038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1777694400000" data-listing-file-modified-sort="1779786652984" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
 <div class="thumbnail"><a href="./launches/2026-05-02-smore-004.html" class="no-external">
 
 <p class="card-img-top"><img src="_sources/launches/smore-004/photos/smore-004_payload_voltage.jpg" alt="Payload at launch site, monitoring voltage and waiting for sun rise"  class="thumbnail-image card-img"/></p>
@@ -458,7 +490,7 @@ May 2, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1762405200000" data-listing-file-modified-sort="1764091781764" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1762405200000" data-listing-file-modified-sort="1762874804390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
 <div class="thumbnail"><a href="./launches/2025-11-06-smore-002.html" class="no-external">
 
 <p class="card-img-top"><img src="_sources/launches/smore-002/launch/payload_at_launch.jpg"  class="thumbnail-image card-img"/></p>
@@ -480,7 +512,7 @@ Nov 6, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1754712000000" data-listing-file-modified-sort="1761245447539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1754712000000" data-listing-file-modified-sort="1762276935700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
 <div class="thumbnail"><a href="./launches/2025-08-09-smore-001.html" class="no-external">
 
 <p class="card-img-top"><img src="_sources/launches/smore-001/launch_away_crop.jpg" alt="Launch!"  class="thumbnail-image card-img"/></p>
@@ -670,13 +702,14 @@ Aug 9, 2025
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1069,7 +1102,7 @@ Aug 9, 2025
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Balloon magnetometry"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  id: launch-listing</span></span>
@@ -1170,7 +1203,7 @@ Aug 9, 2025
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>https://www.zachtek.com/product-page/wspr-tx-pico-transmitter</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>https://qrp-labs.com/lightaprsw2.html</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>https://qrp-labs.com/u4b</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>https://qrp-labs.com/u4b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
