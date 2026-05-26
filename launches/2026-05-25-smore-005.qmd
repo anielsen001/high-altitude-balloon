@@ -2,6 +2,7 @@
 title: Fifth Launch s'more-005
 date: 2026-05-25
 toc: true
+image: /_sources/launches/smore-005/smore-005-2026-05-25-launch-prep-1-sm.jpg
 filters:
   - abstract-section
 ---
