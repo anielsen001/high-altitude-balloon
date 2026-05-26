@@ -14,3 +14,16 @@ The julia packages are stored in a `.julia` directory created within the project
 export JULIA_DEPOT_PATH=/opt/project/.julia
 ```
 
+## remove image metadata
+
+this removes metadata from all images in the current directory
+```bash
+exiftool -all= .
+```
+
+## resize images
+
+resizes image to be 800 pixels height
+```bash
+convert in.jpg -resize 800 out.jpg
+```
