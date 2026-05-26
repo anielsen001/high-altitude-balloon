@@ -14,6 +14,12 @@ The julia packages are stored in a `.julia` directory created within the project
 export JULIA_DEPOT_PATH=/opt/project/.julia
 ```
 
+In the container run
+```bash
+uv run quarto render
+```
+to render the pages
+
 ## remove image metadata
 
 this removes metadata from all images in the current directory
