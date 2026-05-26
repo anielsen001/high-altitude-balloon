@@ -3,6 +3,7 @@ name = "high-altitude-balloon"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
+    "aprspy>=0.5.0",
     "astropy>=7.1.0",
     "bash-kernel>=0.10.0",
     "fastkml>=1.4.0",

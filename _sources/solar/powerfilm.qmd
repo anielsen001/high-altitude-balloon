@@ -23,3 +23,15 @@ about 14.5 degrees
 should need 3.3V to work. 
 
 There's some evidence that the current draw (from google ai) is 40 mA. This works out to 132 mW, which seems high.
+
+u4b max voltage is 6.0V, but max recommended voltage is 5.5V.
+circuit operating voltage is 3.3V.
+RT9013-3.3 is the Part regulator on board. It's 3.3V out, with maximum 0.4 drop, so minimum input is 3.7V to guarantee turn on.
+
+
+https://www.mouser.com/ProductDetail/PowerFilm/MPT4.8-150?qs=BJlw7L4Cy7%2Fi15Fh71zsvA%3D%3D
+ordering 10 yield 6 luanch
+ordering 20 yield 13 launches
+
+need capacitor
+
