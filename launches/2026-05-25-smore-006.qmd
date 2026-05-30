@@ -1,15 +1,15 @@
 ---
-title: Fifth Launch s'more-006
+title: 6th Launch s'more-006
 date: 2026-05-30
 toc: true
-image: /_sources/launches/smore-006/smore-006-2026-05-30-launch-prep-1-sm.jpg
+image: /_sources/launches/smore-006/2026-05-30-smore-006-launch-photo-01.jpg
 filters:
   - abstract-section
 ---
 
 ## Abstract
 
-Smore-006 is similar to smore-005, with a goal of acheiving higher altitude. The u4b is sending a third telemetry packet as well. The balloons were pumped out with the pump in reverse to evacuate any air before filling with Helium. Telemetry was decoded on the ground. The launch went well, the balloon rose. 
+Smore-006 is similar to smore-005, with the same goal of acheiving higher altitude, and this time, hopefully receving some data back. The u4b is sending a third telemetry packet as well. The balloons were pumped out with the pump in reverse to evacuate any air before filling with Helium. Telemetry was decoded on the ground. The launch went well, the balloon rose. 
 
 ----
 
