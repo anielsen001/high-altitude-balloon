@@ -1001,7 +1001,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n6th Launch s’more-006\n\n\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
@@ -1012,7 +1012,7 @@
     "href": "index.html#pico-balloon-payload",
     "title": "Balloon magnetometry",
     "section": "Pico-balloon payload",
-    "text": "Pico-balloon payload\n\nTesting with GNSS simulator\nI set up a GNSS simulator to test the system without going outdoors. See GNSS-SIM for more details about this set up.\n\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
+    "text": "Pico-balloon payload\n\nTesting with GNSS simulator\nI set up a GNSS simulator to test the system without going outdoors. See GNSS-SIM for more details about this set up.\n\n\nTesting with HF antenna and raspberry pi\nTested outside with a 20 meter band HF antenna and made a (one!) successful WSPR contact. I set up a raspberry pi with a battery pack to power the u4b so that I can log in and monitor the u4b from inside the house.\n\n\n\n\n\n\n\n\n\nhttps://WSPRnet.org map page showing successful contact.\n\n\n\n\n\n\n\nSet up in backyard. Raspberry Pi as USB host for u4b so that I can sit in air-conditioned luxury and monitor things.\n\n\n\n\n\n\n\nGPS dipole antenna\nI’m developing a new payload based on QRP labs u4b balloon tracker. So far I’ve tested mine with a GPS dipole antenna.\n\n\n\nu4b with GPS antenna",
     "crumbs": [
       "Home page",
       "Home"
@@ -1023,7 +1023,7 @@
     "href": "index.html#sec-eclipse-launch",
     "title": "Balloon magnetometry",
     "section": "Eclipse launch",
-    "text": "Eclipse launch\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
+    "text": "Eclipse launch\n\n\n\n\n\n\n\n\n\nTest payload (Eclipse Chipse for scale)\n\n\n\n\n\nFlight payload\n\n\n\n\n\n\n\nLaunch\n\n\n\n\n\n\n\nRecovery",
     "crumbs": [
       "Home page",
       "Home"
@@ -1149,6 +1149,42 @@
       "Home page",
       "Tools",
       "Solar elevation at location"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-25-smore-006.html",
+    "href": "launches/2026-05-25-smore-006.html",
+    "title": "6th Launch s’more-006",
+    "section": "",
+    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-25-smore-006.html#tracking-information",
+    "href": "launches/2026-05-25-smore-006.html#tracking-information",
+    "title": "6th Launch s’more-006",
+    "section": "",
+    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-25-smore-006.html#design",
+    "href": "launches/2026-05-25-smore-006.html#design",
+    "title": "6th Launch s’more-006",
+    "section": "Design",
+    "text": "Design\nSmore-006 is similar to smore-005 using the same zener and 3 half-solar panel design.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
     ]
   }
 ]
