@@ -1,13 +1,9 @@
 ## Tracking information
 
-:::{#fig-wsprtv-tracking}
 
-```{=html}
-<iframe src="https://wsprtv.com/?cs=KF8EEZ&ch=216&band=20m&start_date=2026-05-30&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats>
-```
+
 [WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=KF8EEZ&ch=216&band=20m&start_date=2026-05-30&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats)
 
-:::
 
 - [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=KF8EEZ&ch=216&band=20m&start_date=2026-05-30&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats)
 
