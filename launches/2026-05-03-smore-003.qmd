@@ -2,6 +2,17 @@
 title: Fourth Launch s'more-003
 date: 2026-05-03
 toc: true
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 32in balloon x2
+  - Helium 99%
+description: |
+  First balloon with 3-solar panel design. Replaced regulator with Zener diode to reduce weight. This power design worked down to about 10 deg sun elevation. Spots received consistently throughout flight.
+
+  Balloon went above the Arctic circle and came down near Baffin Island, Canada probably in a storm.
+    
 filters:
   - abstract-section
 ---

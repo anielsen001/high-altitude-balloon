@@ -2,7 +2,21 @@
 title: 6th Launch s'more-006
 date: 2026-05-30
 toc: true
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 3rd tele
+  - 32in balloon x2
+  - Helium 99%
 image: /_sources/launches/smore-006/2026-05-30-smore-006-launch-photo-01.jpg
+description: |
+  Goal was higher altitude by pumping out balloons before fill with helium.
+  Used "Party Factory" helium. Float acheived at 8.2-8.4 km a new record for me.
+
+  Implemented 3rd telemetry packet and decoded from air for first time.
+
+  Problems: very weak transmission (was antenna damaged?) so minimal spots reported. The "count" variable in the 3rd telemetry packet indicates the balloon is powered reliably.
 filters:
   - abstract-section
 ---

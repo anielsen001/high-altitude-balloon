@@ -2,6 +2,17 @@
 title: Third Launch s'more-004
 date: 2026-05-02
 toc: true
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 32in balloon x2
+  - Helium 99%
+description: |
+  Single SolarFlex design using 5.1V regulator. 
+
+  Balloon went up and immediately descended, landing somewhere near the Ohio-West Virginia border. Total flight time, less than a day.
+    
 filters:
   - abstract-section
 ---

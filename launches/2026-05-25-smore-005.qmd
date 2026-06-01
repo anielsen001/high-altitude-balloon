@@ -2,6 +2,20 @@
 title: Fifth Launch s'more-005
 date: 2026-05-25
 toc: true
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 3rd tele
+  - 32in balloon x2
+  - Helium 99%
+description: |
+  Goal was higher altitude by pumping out balloons before fill with helium.
+  Used "Party Factory" helium. 
+
+  Implemented 3rd telemetry packet.
+
+  Problems: very strong transmission seen, but never decoded. After launch no spots were returned.
 image: /_sources/launches/smore-005/smore-005-2026-05-25-launch-prep-1-sm.jpg
 filters:
   - abstract-section

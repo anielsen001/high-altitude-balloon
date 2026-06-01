@@ -1,6 +1,18 @@
 ---
 title: First Launch s'more-001
 date: 2025-08-09
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 32in balloon x1
+  - Helium 
+description: |
+  First launch. Used one 32in balloon and a complicted rigging system to hold the solar panel and payload underneath. The panel got caught in the rigging at launch and ended up on it's side spinning.
+  A couple of attempted transmissions were received, but the WSPR packets were not long enough to decode due to probably lack of power from the tangled solar panels. 
+
+  
+  
 ---
 
 {{< include /_sources/launches/smore-001/smore-001.qmd >}}

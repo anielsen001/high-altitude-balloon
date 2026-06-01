@@ -1,6 +1,7 @@
 ---
 title: Launches
-listing: 
+listing:
+  categories: true
   sort: 
     - "date"
 ---

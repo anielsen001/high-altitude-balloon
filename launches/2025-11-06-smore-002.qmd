@@ -1,6 +1,19 @@
 ---
 title: Second Launch s'more-002
 date: 2025-11-06
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 32in balloon x2
+  - Helium 
+description: |
+  First good launch. Balloon transmitted well, but power was plagued by clouds and low sun elevation for the time of year.
+
+  Flight time about 2 weeks. Balloon achieved float at about 6.0 km. Crossed the Atlantic. Likely went down in weather somwhere near the Black Sea.
+
+  Helium was from Target and of unknown quality.
+  
 #engine: julia
 toc: true
 #julia:
