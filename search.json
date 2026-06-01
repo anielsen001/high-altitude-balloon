@@ -15,7 +15,7 @@
     "href": "index.html#launches",
     "title": "Balloon magnetometry",
     "section": "Launches",
-    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n6th Launch s’more-006\n\n\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
+    "text": "Launches\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n6th Launch s’more-006\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n3rd tele\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nGoal was higher altitude by pumping out balloons before fill with helium. Used “Party Factory” helium. Float acheived at 8.2-8.4 km a new record for me.\nImplemented 3rd telemetry packet and decoded from air for first time.\nProblems: very weak transmission (was antenna damaged?) so minimal spots reported. The “count” variable in the 3rd telemetry packet indicates the balloon is powered reliably. \n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n3rd tele\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nGoal was higher altitude by pumping out balloons before fill with helium. Used “Party Factory” helium.\nImplemented 3rd telemetry packet.\nProblems: very strong transmission seen, but never decoded. After launch no spots were returned. \n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nFirst balloon with 3-solar panel design. Replaced regulator with Zener diode to reduce weight. This power design worked down to about 10 deg sun elevation. Spots received consistently throughout flight.\nBalloon went above the Arctic circle and came down near Baffin Island, Canada probably in a storm. \n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nSingle SolarFlex design using 5.1V regulator.\nBalloon went up and immediately descended, landing somewhere near the Ohio-West Virginia border. Total flight time, less than a day. \n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium\n\n\n\nFirst good launch. Balloon transmitted well, but power was plagued by clouds and low sun elevation for the time of year.\nFlight time about 2 weeks. Balloon achieved float at about 6.0 km. Crossed the Atlantic. Likely went down in weather somwhere near the Black Sea.\nHelium was from Target and of unknown quality. \n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Launch s’more-001\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x1\n\n\nHelium\n\n\n\nFirst launch. Used one 32in balloon and a complicted rigging system to hold the solar panel and payload underneath. The panel got caught in the rigging at launch and ended up on it’s side spinning. A couple of attempted transmissions were received, but the WSPR packets were not long enough to decode due to probably lack of power from the tangled solar panels. \n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Home"
@@ -188,7 +188,7 @@
     "href": "launches/index.html",
     "title": "Launches",
     "section": "",
-    "text": "First Launch s’more-001\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBalloon filling for smore-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n6th Launch s’more-006\n\n\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeather at ballon times and location\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHYSPLIT predictions for balloon track\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPayload design\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "First Launch s’more-001\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x1\n\n\nHelium\n\n\n\nFirst launch. Used one 32in balloon and a complicted rigging system to hold the solar panel and payload underneath. The panel got caught in the rigging at launch and ended up on it’s side spinning. A couple of attempted transmissions were received, but the WSPR packets were not long enough to decode due to probably lack of power from the tangled solar panels. \n\n\n\n\n\nAug 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Launch s’more-002\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium\n\n\n\nFirst good launch. Balloon transmitted well, but power was plagued by clouds and low sun elevation for the time of year.\nFlight time about 2 weeks. Balloon achieved float at about 6.0 km. Crossed the Atlantic. Likely went down in weather somwhere near the Black Sea.\nHelium was from Target and of unknown quality. \n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBalloon filling for smore-002\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nThird Launch s’more-004\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nSingle SolarFlex design using 5.1V regulator.\nBalloon went up and immediately descended, landing somewhere near the Ohio-West Virginia border. Total flight time, less than a day. \n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFourth Launch s’more-003\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nFirst balloon with 3-solar panel design. Replaced regulator with Zener diode to reduce weight. This power design worked down to about 10 deg sun elevation. Spots received consistently throughout flight.\nBalloon went above the Arctic circle and came down near Baffin Island, Canada probably in a storm. \n\n\n\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFifth Launch s’more-005\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n3rd tele\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nGoal was higher altitude by pumping out balloons before fill with helium. Used “Party Factory” helium.\nImplemented 3rd telemetry packet.\nProblems: very strong transmission seen, but never decoded. After launch no spots were returned. \n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n6th Launch s’more-006\n\n\n\n\n\n\nu4b\n\n\nWSPR\n\n\n20m\n\n\n3rd tele\n\n\n32in balloon x2\n\n\nHelium 99%\n\n\n\nGoal was higher altitude by pumping out balloons before fill with helium. Used “Party Factory” helium. Float acheived at 8.2-8.4 km a new record for me.\nImplemented 3rd telemetry packet and decoded from air for first time.\nProblems: very weak transmission (was antenna damaged?) so minimal spots reported. The “count” variable in the 3rd telemetry packet indicates the balloon is powered reliably. \n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeather at ballon times and location\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHYSPLIT predictions for balloon track\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPayload design\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Home page",
       "Launches"
@@ -299,86 +299,6 @@
     "title": "Balloon filling for smore-002",
     "section": "Float reality",
     "text": "Float reality\nIn reality the ballon as settled on a float of about 6500 meters or about 20kft. The balloon has held float for 5 days (so far so good, fingers crossed) so there’s likely not a leak causing an issue.\nThe gas I used was Target party gas or unknown quality. The question is, can I back out the effetive density of the Target party gas?\nThe following Julia code inerts the float calculations using a known altitude to find the gas density\n\n\nCode\ngas = \"helium 97%\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\n\nfloat_altitude = 6400.0u\"m\"\nsystem_density = PicoBalloons.atmos_density(6400u\"m\")\ntotal_mass = system_density * balloon_2.volume\nlift_gas_mass = total_mass - payload_weight - balloon_2.weight\nlift_gas_density = lift_gas_mass * PicoBalloons.gas_density(\"air\")/(bs2.neck_lift + balloon_2.weight + lift_gas_mass)\nprintln(lift_gas_density)\n# = 0.6102020876451465 m⁻³ kg\n\n\n0.6102020876451465 m⁻³ kg\n\n\nAnd then as a cross check, use this density and work the calculations forward again.\n\n\nCode\n## work this answer forward again to verify the float altitude\ngas = \"helium party\"\n\nbs1 = BalloonSystem(balloon_1, payload_weight, free_lift, gas)\nbs2 = BalloonSystem(balloon_2, payload_weight, free_lift, gas)\nprintln(bs2)\n# Weight: 0.076 kg\n# Volume: 0.3 m³\n# Neck lift                         21.7 g\n# Gas fill at launch                0.15899158977708827 m³\n# Gas mass                          97.017 g\n# Total mass                        189.71699999999996 g\n# System density                    0.6323899999999999 m⁻³ kg\n# Temperature at float              246.65399999999997 K\n# Pressure at float                 44.74199999999999 kPa\n# Float altitude                    6400.000000000002 m\n# Internal pressure                 45.9662472246834 kPa\n# Differential pressure             1.2242472246834077 kPa\n# Super pressure                    1.1791774063473488 kPa\n# Super pressure onset altitude     6153.065084031026 m\n\n\nWeight: 0.076 kg\nVolume: 0.3 m³\nNeck lift                         21.7 g\nGas fill at launch                0.15899158977708827 m³\nGas mass                          97.017 g\nTotal mass                        189.71699999999996 g\nSystem density                    0.6323899999999999 m⁻³ kg\nTemperature at float              246.65399999999997 K\nPressure at float                 44.74199999999999 kPa\nFloat altitude                    6400.000000000002 m\nInternal pressure                 45.9662472246834 kPa\nDifferential pressure             1.2242472246834077 kPa\nSuper pressure                    1.1791774063473488 kPa\nSuper pressure onset altitude     6153.065084031026 m\n\n\nWhich is consistent. Also note that my balloon volumes are derived by measuring an inflated balloon with a tape measure adding a potential source of uncertainty.\nNow we can calculate the percentage of helium in the party gas based on the density.\nFor two ideal gasses the mixed density is \\[\\begin{equation}\n\\rho_{mix} = \\frac{\\rho_1 v_1 + \\rho_2 v_2}{v_1 + v_2}\n\\end{equation}\\] where \\(\\rho_i\\) is the density of each gas and \\(v_i\\) is the volume occupied by each gas. This can be manipulated to get a volume fraction for one of the gasses \\[\\begin{equation}\n\\frac{v_1}{v_{mix}} = \\frac{\\rho_{mix} - \\rho_2}{\\rho_1 - \\rho_2}\n\\end{equation}\\] and we can put in some numbers for the density we have found as well as air and pure helium\n\n\nCode\nrho_he = 0.1693u\"kg/m^3\"\nrho_air = 1.2247u\"kg/m^3\"\nrho_mix = lift_gas_density\n\nhelium_volume_fraction = (rho_mix - rho_air)/(rho_he - rho_air)\n\nprint(helium_volume_fraction)\n\n\n0.5822417210108523"
-  },
-  {
-    "objectID": "launches/2026-05-25-smore-006.html",
-    "href": "launches/2026-05-25-smore-006.html",
-    "title": "6th Launch s’more-006",
-    "section": "",
-    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "6th Launch s'more-006"
-    ]
-  },
-  {
-    "objectID": "launches/2026-05-25-smore-006.html#tracking-information",
-    "href": "launches/2026-05-25-smore-006.html#tracking-information",
-    "title": "6th Launch s’more-006",
-    "section": "",
-    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "6th Launch s'more-006"
-    ]
-  },
-  {
-    "objectID": "launches/2026-05-25-smore-006.html#design",
-    "href": "launches/2026-05-25-smore-006.html#design",
-    "title": "6th Launch s’more-006",
-    "section": "Design",
-    "text": "Design\nSmore-006 is similar to smore-005 using the same zener and 3 half-solar panel design.",
-    "crumbs": [
-      "Home page",
-      "Launches",
-      "6th Launch s'more-006"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html",
-    "href": "wspr/tracking.html",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#balloon-specific",
-    "href": "wspr/tracking.html#balloon-specific",
-    "title": "WSPR Tracking resources",
-    "section": "",
-    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "wspr/tracking.html#wspr-general",
-    "href": "wspr/tracking.html#wspr-general",
-    "title": "WSPR Tracking resources",
-    "section": "WSPR General",
-    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
-    "crumbs": [
-      "Home page",
-      "WSPR Tracking"
-    ]
-  },
-  {
-    "objectID": "refs/refs.html",
-    "href": "refs/refs.html",
-    "title": "All references",
-    "section": "",
-    "text": "Boyd, Matthew, and Clifford Hansen. 2026. “Single Diode Equivalent Circuit Models.” Online, Acccessed 2026-02-16. https://pvpmc.sandia.gov/modeling-guide/2-dc-module-iv/single-diode-equivalent-circuit-models/.\n\n\nCherry, N. J. 1971. “Characteristics and Performance of Three Low-Cost Superpressure Balloon (Tetroon) Systems.” Journal of Applied Meteorology 10 (5): 982–90. https://doi.org/10.1175/1520-0450(1971)010&lt;0982:capotl&gt;2.0.co;2.\n\n\nDavid Beverstein, VE3KCL. n.d. “Some Notes about Flying Clear Chinese Balloons with the U4B Transmitter.” Online, accessed 2025-12-02. https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf.\n\n\nDavid WB6TOU, Bryan KF6ZEO, Martin W6MRR. 2021. “Picoballooning in the Bay Area.” In ARRL/MDARC Pacificon, Oct 16, 2021.\n\n\nDe Soto, Widalys. 2004. “Improvement and Validationof a Model for PhotovoltaicArray Performance.” Master’s thesis, Univeristy of Wisconsin-Madison. https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1.\n\n\nHonsberg, C. B., and S. G. Bowden. 2019. “Photovoltaics Education Website.” Online, Acccessed 2026-02-16. https://www.pveducation.org/.\n\n\nJager, Klaus, Olindo Isabella, Arno H. M. Smets, Rene A. C. M. M. van Swaaij, and Miro Zeman. 2014. Solar Energy: Fundamentals, Technology, and Systems. Delft University of Technology. https://courses.edx.org/c4x/DelftX/ET.3034TU/asset/solar_energy_v1.1.pdf.\n\n\nKyocera. n.d. “3.0V SCC Series High Capacitance Cylindrical Supercapacitors.” Online, accessed 2025-12-02. https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf.\n\n\nLally, Vincent E. 1971. “Superpressure Balloons for Horizontal Soundings Ofthe Atmosphere.” Technical report NCAR-TN-28. National Center for Atmospheric Research. https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf.\n\n\nMcKinney, Todd. 2024. “METHODOLOGY, DEPLOYMENT, ANDPERFORMANCE OF PICO BALLOONS INANTARCTICA.” Master’s thesis, The University of Alabama in Huntsville. https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&path_info=mckinney_10931.pdf.\n\n\nMcKinney, Todd, Nick Perlaky, Alice Crawford, Bill Brown, and Michael J. Newchurch. 2023. “Methodology, Deployment, and Performance of Pico Balloons in Antarctica.” Journal of Atmospheric and Oceanic Technology 40 (10): 1277–90. https://doi.org/10.1175/jtech-d-23-0047.1.\n\n\nMoghbelli, Hassan, Khaled Ellithy, and Zohreh Eslami. 2024. “Investigation of Solar Energy Applications with Design and Implementation of Photovoltaic Traffic Light Signal System for Qatar.” RE&PQJ 7 (1). https://doi.org/10.24084/repqj07.249.\n\n\nO’Kane, Mary. 2026. “Equivalent Circuit of Solar Cell.” Online, accessed 2026-02-16. https://www.ossila.com/pages/equivalent-circuit-of-solar-cell.\n\n\nPowerFilm Solar. n.d. “MPT4.8-150.” Online, accessed 2025-12-02. https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150.\n\n\n(PVPMC), PV Performance Modeling Collaborative. n.d. “Modeling Guide.” Online, accessed 2025-12-02. https://pvpmc.sandia.gov/modeling-guide/.\n\n\nQRP Labs. 2025a. “U4B - Balloon Tracker.” Online, accessed 2025-12-02, last updated 11 July 2025. https://qrp-labs.com/u4b.\n\n\n———. 2025b. U4B – Ultimate4 Balloon Tracker Operating Manual, Firmware Version 1.00_005. QRP Labs. https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf.\n\n\n———. n.d. U4B - Ultimate4 Balloon Tracker Hardward Manual. QRP Labs. https://qrp-labs.com/images/u4b/u4b_hardware.pdf.\n\n\nRoth, Sarah A, Erin M Reed, Christopher D Yoder, Ethan A Chaffee, and Javier Romualdez. 2025. Scientific Ballooning Handbook. 50th Anniversay Edition. NASA/TP−20240004989. NASA.\n\n\nSharma, R. 2019. “Effect of Obliquity of Incident Light on the Performance of Silicon Solar Cells.” Heliyon 5 (7): e01965. https://doi.org/10.1016/j.heliyon.2019.e01965.\n\n\nST Microelectronics. n.d. “Positive Voltage Regulator ICs.” Online, accessed 2025-12-02. https://www.st.com/resource/en/datasheet/l78.pdf.\n\n\nTommy Davis, KB7HTA. 2025. “TALARC ALP40-i Balloon Construction.” Online, accessed 2025-12-02. https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf.\n\n\nWardhana, A S J, E S Damarwan, and ML Hakim. 2021. “The Effect of Inclination Angle of the Solar Panel on the Resulting Output Voltage.” Journal of Physics: Conference Series 2111 (1): 012053. https://doi.org/10.1088/1742-6596/2111/1/012053.\n\n\nYaniv, Asaf, Arie Sheinker, Boris Ginzburg, Nizan Salomonski, Joseph Ashkenazy, and Kobi Kusher. 2022. “EXPLORATION OF EARTH’s MAGNETIC FIELD BY HIGH ALTITUDE BALLOONS.” In Conference: 24th ESA Symposium on European Rocket and Balloon Programmes and Related ResearchAt: Essen Germany. https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS.\n\n\nZeman, Miro. 2026. Solar Cells. Online, accessed 2026-02-16. https://mikro.elfak.ni.ac.rs/wp-content/uploads/Solar-Cells-Miro-Zeman.pdf.",
-    "crumbs": [
-      "Home page",
-      "References"
-    ]
   },
   {
     "objectID": "launches/2025-11-06-smore-002.html",
@@ -618,6 +538,86 @@
       "Home page",
       "Launches",
       "Second Launch s'more-002"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html",
+    "href": "wspr/tracking.html",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#balloon-specific",
+    "href": "wspr/tracking.html#balloon-specific",
+    "title": "WSPR Tracking resources",
+    "section": "",
+    "text": "Sondehub\nWSPR Telemetry viewer\n\nExample: https://wsprtv.com/?cs=Kf8eez&ch=&band=20m&start_date=2025-07-08\nSee GitHub: https://github.com/wsprtv/wsprtv.github.io",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "wspr/tracking.html#wspr-general",
+    "href": "wspr/tracking.html#wspr-general",
+    "title": "WSPR Tracking resources",
+    "section": "WSPR General",
+    "text": "WSPR General\n\nWSPRnet.org\nWSPR Daemon\n\nGitHub source\n\nWSPR Live\nWSPR Rocks\nWSJT-X",
+    "crumbs": [
+      "Home page",
+      "WSPR Tracking"
+    ]
+  },
+  {
+    "objectID": "refs/refs.html",
+    "href": "refs/refs.html",
+    "title": "All references",
+    "section": "",
+    "text": "Boyd, Matthew, and Clifford Hansen. 2026. “Single Diode Equivalent Circuit Models.” Online, Acccessed 2026-02-16. https://pvpmc.sandia.gov/modeling-guide/2-dc-module-iv/single-diode-equivalent-circuit-models/.\n\n\nCherry, N. J. 1971. “Characteristics and Performance of Three Low-Cost Superpressure Balloon (Tetroon) Systems.” Journal of Applied Meteorology 10 (5): 982–90. https://doi.org/10.1175/1520-0450(1971)010&lt;0982:capotl&gt;2.0.co;2.\n\n\nDavid Beverstein, VE3KCL. n.d. “Some Notes about Flying Clear Chinese Balloons with the U4B Transmitter.” Online, accessed 2025-12-02. https://www.qrp-labs.com/images/u4b/U4B_construction_notes.pdf.\n\n\nDavid WB6TOU, Bryan KF6ZEO, Martin W6MRR. 2021. “Picoballooning in the Bay Area.” In ARRL/MDARC Pacificon, Oct 16, 2021.\n\n\nDe Soto, Widalys. 2004. “Improvement and Validationof a Model for PhotovoltaicArray Performance.” Master’s thesis, Univeristy of Wisconsin-Madison. https://minds.wisconsin.edu/bitstream/handle/1793/7602/desoto04.pdf;jsessionid=883E1911C6E7CFF064612DB37AB73E23?sequence=1.\n\n\nHonsberg, C. B., and S. G. Bowden. 2019. “Photovoltaics Education Website.” Online, Acccessed 2026-02-16. https://www.pveducation.org/.\n\n\nJager, Klaus, Olindo Isabella, Arno H. M. Smets, Rene A. C. M. M. van Swaaij, and Miro Zeman. 2014. Solar Energy: Fundamentals, Technology, and Systems. Delft University of Technology. https://courses.edx.org/c4x/DelftX/ET.3034TU/asset/solar_energy_v1.1.pdf.\n\n\nKyocera. n.d. “3.0V SCC Series High Capacitance Cylindrical Supercapacitors.” Online, accessed 2025-12-02. https://datasheets.kyocera-avx.com/AVX-SCC-3.0V.pdf.\n\n\nLally, Vincent E. 1971. “Superpressure Balloons for Horizontal Soundings Ofthe Atmosphere.” Technical report NCAR-TN-28. National Center for Atmospheric Research. https://airbine.com/wp-content/uploads/2023/01/BT-1777_pt1-Scientific-Ballooning-Handbook.pdf.\n\n\nMcKinney, Todd. 2024. “METHODOLOGY, DEPLOYMENT, ANDPERFORMANCE OF PICO BALLOONS INANTARCTICA.” Master’s thesis, The University of Alabama in Huntsville. https://louis.uah.edu/cgi/viewcontent.cgi?params=/context/uah-theses/article/1654/&path_info=mckinney_10931.pdf.\n\n\nMcKinney, Todd, Nick Perlaky, Alice Crawford, Bill Brown, and Michael J. Newchurch. 2023. “Methodology, Deployment, and Performance of Pico Balloons in Antarctica.” Journal of Atmospheric and Oceanic Technology 40 (10): 1277–90. https://doi.org/10.1175/jtech-d-23-0047.1.\n\n\nMoghbelli, Hassan, Khaled Ellithy, and Zohreh Eslami. 2024. “Investigation of Solar Energy Applications with Design and Implementation of Photovoltaic Traffic Light Signal System for Qatar.” RE&PQJ 7 (1). https://doi.org/10.24084/repqj07.249.\n\n\nO’Kane, Mary. 2026. “Equivalent Circuit of Solar Cell.” Online, accessed 2026-02-16. https://www.ossila.com/pages/equivalent-circuit-of-solar-cell.\n\n\nPowerFilm Solar. n.d. “MPT4.8-150.” Online, accessed 2025-12-02. https://www.powerfilmsolar.com/products/electronic-component-solar-panels/classic-application-series/mpt4-8-150.\n\n\n(PVPMC), PV Performance Modeling Collaborative. n.d. “Modeling Guide.” Online, accessed 2025-12-02. https://pvpmc.sandia.gov/modeling-guide/.\n\n\nQRP Labs. 2025a. “U4B - Balloon Tracker.” Online, accessed 2025-12-02, last updated 11 July 2025. https://qrp-labs.com/u4b.\n\n\n———. 2025b. U4B – Ultimate4 Balloon Tracker Operating Manual, Firmware Version 1.00_005. QRP Labs. https://qrp-labs.com/images/u4b/firmware/1_00_005/u4b_operation_1_00_005a.pdf.\n\n\n———. n.d. U4B - Ultimate4 Balloon Tracker Hardward Manual. QRP Labs. https://qrp-labs.com/images/u4b/u4b_hardware.pdf.\n\n\nRoth, Sarah A, Erin M Reed, Christopher D Yoder, Ethan A Chaffee, and Javier Romualdez. 2025. Scientific Ballooning Handbook. 50th Anniversay Edition. NASA/TP−20240004989. NASA.\n\n\nSharma, R. 2019. “Effect of Obliquity of Incident Light on the Performance of Silicon Solar Cells.” Heliyon 5 (7): e01965. https://doi.org/10.1016/j.heliyon.2019.e01965.\n\n\nST Microelectronics. n.d. “Positive Voltage Regulator ICs.” Online, accessed 2025-12-02. https://www.st.com/resource/en/datasheet/l78.pdf.\n\n\nTommy Davis, KB7HTA. 2025. “TALARC ALP40-i Balloon Construction.” Online, accessed 2025-12-02. https://kb7hta.com/wp-content/uploads/2025/05/TALARC-ALP40-I-Balloon-Construction-r1.pdf.\n\n\nWardhana, A S J, E S Damarwan, and ML Hakim. 2021. “The Effect of Inclination Angle of the Solar Panel on the Resulting Output Voltage.” Journal of Physics: Conference Series 2111 (1): 012053. https://doi.org/10.1088/1742-6596/2111/1/012053.\n\n\nYaniv, Asaf, Arie Sheinker, Boris Ginzburg, Nizan Salomonski, Joseph Ashkenazy, and Kobi Kusher. 2022. “EXPLORATION OF EARTH’s MAGNETIC FIELD BY HIGH ALTITUDE BALLOONS.” In Conference: 24th ESA Symposium on European Rocket and Balloon Programmes and Related ResearchAt: Essen Germany. https://www.researchgate.net/publication/358884952_EXPLORATION_OF_EARTH'S_MAGNETIC_FIELD_BY_HIGH_ALTITUDE_BALLOONS.\n\n\nZeman, Miro. 2026. Solar Cells. Online, accessed 2026-02-16. https://mikro.elfak.ni.ac.rs/wp-content/uploads/Solar-Cells-Miro-Zeman.pdf.",
+    "crumbs": [
+      "Home page",
+      "References"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-30-smore-006.html",
+    "href": "launches/2026-05-30-smore-006.html",
+    "title": "6th Launch s’more-006",
+    "section": "",
+    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-30-smore-006.html#tracking-information",
+    "href": "launches/2026-05-30-smore-006.html#tracking-information",
+    "title": "6th Launch s’more-006",
+    "section": "",
+    "text": "WSPR Telemetry Viewer embedded tracker\n\nWSPR Telemetry Viewer tracking link",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
+    ]
+  },
+  {
+    "objectID": "launches/2026-05-30-smore-006.html#design",
+    "href": "launches/2026-05-30-smore-006.html#design",
+    "title": "6th Launch s’more-006",
+    "section": "Design",
+    "text": "Design\nSmore-006 is similar to smore-005 using the same zener and 3 half-solar panel design.",
+    "crumbs": [
+      "Home page",
+      "Launches",
+      "6th Launch s'more-006"
     ]
   },
   {
