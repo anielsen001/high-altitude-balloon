@@ -14,5 +14,10 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 ## 3rd party
 
 Configurator
-
 https://github.com/uge/JetpackConfigurator
+
+Board artifacts
+https://github.com/uge/jetboard
+
+Alternative Beacon firmware
+https://github.com/filipsPL/TraquitoBeacon
