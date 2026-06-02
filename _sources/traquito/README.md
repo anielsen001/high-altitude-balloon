@@ -10,3 +10,9 @@ copy the https://traquito.github.io website:
 ```bash
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://traquito.github.io/
 ```
+
+## 3rd party
+
+Configurator
+
+https://github.com/uge/JetpackConfigurator
