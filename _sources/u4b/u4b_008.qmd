@@ -41,7 +41,60 @@ total length: 70.59474728961166 mm
 
 ## HF antenna
 
-top and bottom arms from U4B about 5 inches. Antenna arms should be about 198.84837766362426 inches. I created two spools of 200 inch long each. For both, need to cut about 6.16 inches off of the spooled wire.
+```{python}
+#| label: free-space HF antenna calculation
+def print_row(label, value, unit=""):
+    """
+    Prints a perfectly aligned row with thousands separators and decimal alignment.
+    
+    :param label: The text label (e.g., "Frequency:")
+    :param value: The numeric value to format
+    :param unit: The unit string (e.g., "Hertz")
+    """
+    # 1. Format number with commas and 2 decimal places
+    formatted_value = f"{value:,.2f}"
+    
+    # 2. Print with left-aligned label (<25), right-aligned number (>15), and unit
+    print(f"{label:<25} {formatted_value:>15} {unit}")
+
+meter_to_inch = 39.3701 # inches/meter
+speed_of_light = 2.997e8 # m/s
+freq_Hz = 14_097_020
+wavelength_m = speed_of_light/freq_Hz
+wavelength_in = wavelength_m * meter_to_inch
+velocity_factor = 0.95
+
+antenna_wavelength_m = wavelength_m * velocity_factor
+antenna_wavelength_in = antenna_wavelength_m * meter_to_inch
+
+dipole_length_m = antenna_wavelength_m * 0.5
+quarter_length_m = antenna_wavelength_m * 0.25
+quarter_length_in = quarter_length_m * meter_to_inch
+
+print_row('Frequency',freq_Hz,'Hertz')
+print_row('Wavelength free space',wavelength_m,'meter')
+print_row('Velocity factor',velocity_factor,)
+print_row('Dipole arm length',quarter_length_m,'meter')
+print_row('Dipole arm length',quarter_length_in,'inches')
+
+```
+
+Measured antenna on NanoVNA, resonance with arm lengths at 200.25 inches.
+
+```{python}
+#| label: computed velocity factor
+quarter_length_in = 200.25 # measured arm lengths
+quarter_length_m = quarter_length_in / meter_to_inch
+dipole_length_m = quarter_length_m * 2
+antenna_wavelength_m = dipole_length_m * 2
+velocity_factor = antenna_wavelength_m / wavelength_m
+
+print_row('Frequency',freq_Hz,'Hertz')
+print_row('Dipole arm length',quarter_length_m,'meter')
+print_row('Dipole arm length',quarter_length_in,'inches')
+print_row('Velocity factor',velocity_factor,)
+```
+
 
 ### Upper
 
