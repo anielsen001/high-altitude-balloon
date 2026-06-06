@@ -1,0 +1,231 @@
+## Configuration
+
+- Firmware: 1.01.004 (upgraded 6 June 2026)
+- Callsign: KF8EEZ
+- Band: 20m
+- Channel: 49
+  - 6 minutes after, 14,097,180 MHz
+- Autostart: TRACKER2
+- QRP-labs S/N: 992
+
+### Background info
+
+- QRP-labs u4b info page: <https://qrp-labs.com/u4b>
+- Traquito channel reservation: <https://traquito.github.io/channelmap/>
+
+## README
+
+Edited `README` on u4b to contain contact and WSPRtv tracking information in the unlikely event that someone can find it.
+
+:::{.callout-note}
+IF YOU ARE READING THIS:
+
+BALLOON OPERATED UNDER CALLSIGN KF8EEZ.
+LAUNCHED FROM DAYTON, OHIO, USA.
+
+TRACKING:
+HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=49&BAND=20M
+
+EMAIL:
+PHONE:
+:::
+
+## GPS antenna
+
+half wavelength: 95.14683639918243 millimeters
+quarter wavelength: 47.57341819959122 millimeters
+quarter wavelength * 95%: 45.194747289611655 mm
+feed length: 25.400000000000002 mm
+total length: 70.59474728961166 mm
+
+
+## HF antenna
+
+top and bottom arms from U4B about 5 inches. Antenna arms should be about 198.84837766362426 inches. I created two spools of 200 inch long each. For both, need to cut about 6.16 inches off of the spooled wire.
+
+### Upper
+
+```{python}
+print(200 + 5 - 198.84) 
+```
+= 6.16 in
+
+### Lower
+
+```{python}
+print(200 + 5 - 198.84) 
+```
+= 6.16 in
+
+
+
+## GPS antenna
+
+Twisted pair feed, 50mm arms.
+
+## Programs
+
+### Variables
+
+- C is the count of transmissions since wake up
+- N is the number of transmissions before switching to high-power (0-based)
+- T is a flag for test mode
+  - T=1 - test mode
+  - T=0 - live mode - must be in live mode for flight
+- B is the number of times to blink the led, set to 5
+- X is the ERLON - Easting value
+- Y is the ERLON - Northing value
+- Z is the "big number" for telemetry
+
+### TRACKER2
+
+This is the primary program. The MYTELE and MYGPS subroutines enable control of a test mode which doesn't need GPS or ability to transmit.
+
+```
+PRINT "START TRACKER2"
+RUN "INIT"
+RUN "SHOW"
+LET B = 5
+RUN "BLINK"
+PRINT "INITIAL GPS"
+RUN "MYGPS"
+LET B = 2
+RUN "BLINK"
+10 PRINT "LOOP AT #VC"
+RUN "SHOW"
+RUN "MYTELE"
+LET C = C + 1
+IF C > N
+    LET HP = 1
+ENDIF
+RUN "MYGPS"
+GOTO 10
+```
+
+### INIT
+
+Initialization should run once on power up.
+
+This code should be edited for each flight. 
+Specifically, set:
+- channel number: `CH=xxx`
+- test mode: `T=1` for test without GPS/Telemetry OR `T=0` for live
+
+```
+PRINT "INIT START"
+LET CH = 49
+LET HP = 0
+LET C = 0
+LET N = 2
+LET T = 1
+LET B = 5
+PRINT "HOST USB:    #US"
+PRINT "HIGH POWER:  #HP"
+PRINT "FREQUENCY:   #FQ"
+PRINT "CHANNEL:     #CH"
+PRINT "CALLSIGN:    #CS"
+PRINT "TEMPERATURE: #TK"
+IF T = 1
+PRINT "*** TEST MODE ***"
+PRINT "FAKE GPS/TELE MODE"
+ELSE
+PRINT "REAL GPS/TELE MODE"
+ENDIF
+PRINT "INIT DONE"
+```
+
+### SHOW
+
+Prints out the current state
+
+```
+PRINT "SHOW START"
+PRINT "LLH:  #LT #LN #AT"
+PRINT "GPS:  VALID: #GV LOCK: #GL SPEED: #GS CALIB: #CL"
+PRINT "GPS:  NSAT:  #SC"
+PRINT "CNT:  #VC"
+PRINT "TEMP: #TK"
+PRINT "POWR: #HP"
+PRINT "SHOW DONE"
+```
+
+### MYGPS
+
+This is my GPS program, it lets you use the GPS in a test mode without an actual signal. Don't acquire GPS if in test mode (T=1)
+
+```
+PRINT "GPS START"
+RUN "LEDOFF"
+IF T = 0
+PRINT "REAL GPS"
+GPS 360
+ELSE
+PRINT "FAKE GPS"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "GPS END"
+```
+
+### MYTELE
+
+Don't transmit if in test mode (T=1)
+This packs additional telemetry into the Z variable and sends a 3rd telemetry packet.
+
+THESE URLs create the telemetry packet decode for WSPRtv.com:
+https://wsprtv.com/?cs=KF8EEZ&ch=49&band=20m&start_date=2026-06-06&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats
+
+https://wsprtv.com/tools/ct_wizard.html?spec=https%3A%2F%2Fwsprtv.com%3Fcs%3DKF8EEZ%26ch%3D216%26band%3D20m%26start_date%3D2026-05-17%26ct_dec%3Dct%2Cs%3A2_500%3A0%3A1%2C2%3A0%3A1%2C38%3A0%3A1%2C1000%3At100%2C1000%3At101%26ct_labels%3Dcount%2Cpower%2Cnsat%26ct_llabels%3Dspot%2Bxmit%2Bsince%2Bpower%2Cpower%2Cnumber%2Bsats
+
+
+```
+PRINT "TELEMETRY START"
+RUN "LEDOFF"
+LET Y = ERLAT 1000
+LET X = ERLON 1000
+LET Z = 0
+LET Z = PACK Z 1000 Y
+LET Z = PACK Z 1000 X
+LET Z = PACK Z 38 SC
+LET Z = PACK Z 2 HP
+LET Z = PACK Z 500 C
+IF T = 0
+PRINT "REAL TELE"
+TELE
+TELEC Z
+ELSE
+PRINT "FAKE TELE"
+DELAY 2000
+ENDIF
+RUN "LEDON"
+PRINT "TELEMETRY END"
+```
+
+### LEDOFF
+
+Turn LED off
+
+```
+OUT 19 0
+```
+
+### LEDON
+
+Turn LED on
+
+```
+OUT 19 1
+```
+
+### BLINK
+
+turns led on and off B times. you must set b first
+
+```
+FOR L = 0 TO B
+RUN "LEDON"
+DELAY 100
+RUN "LEDOFF"
+DELAY 100
+NEXT
+```
