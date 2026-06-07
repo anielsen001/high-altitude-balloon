@@ -13,23 +13,6 @@
 - QRP-labs u4b info page: <https://qrp-labs.com/u4b>
 - Traquito channel reservation: <https://traquito.github.io/channelmap/>
 
-## README
-
-Edited `README` on u4b to contain contact and WSPRtv tracking information in the unlikely event that someone can find it.
-
-:::{.callout-note}
-IF YOU ARE READING THIS:
-
-BALLOON OPERATED UNDER CALLSIGN KF8EEZ.
-LAUNCHED FROM DAYTON, OHIO, USA.
-
-TRACKING:
-HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=49&BAND=20M
-
-EMAIL:
-PHONE:
-:::
-
 ## GPS antenna
 
 half wavelength: 95.14683639918243 millimeters
@@ -43,20 +26,6 @@ total length: 70.59474728961166 mm
 
 ```{python}
 #| label: free-space HF antenna calculation
-def print_row(label, value, unit=""):
-    """
-    Prints a perfectly aligned row with thousands separators and decimal alignment.
-    
-    :param label: The text label (e.g., "Frequency:")
-    :param value: The numeric value to format
-    :param unit: The unit string (e.g., "Hertz")
-    """
-    # 1. Format number with commas and 2 decimal places
-    formatted_value = f"{value:,.2f}"
-    
-    # 2. Print with left-aligned label (<25), right-aligned number (>15), and unit
-    print(f"{label:<25} {formatted_value:>15} {unit}")
-
 meter_to_inch = 39.3701 # inches/meter
 speed_of_light = 2.997e8 # m/s
 freq_Hz = 14_097_020
