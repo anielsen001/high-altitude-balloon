@@ -1,6 +1,5 @@
 ## GPS dipole antenna
 
-
 From the u4b hardware manual, page 12
 
 ```
