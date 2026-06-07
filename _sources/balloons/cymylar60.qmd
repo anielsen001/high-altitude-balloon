@@ -1,0 +1,47 @@
+
+## CyMylar 60 Balloon
+
+- Purchased from Amazon <https://a.co/d/08hagKZR>. 
+  - Each package contained 2 balloons. 
+  
+- Each balloon weighed 71 grams as measured.
+- After stretching, measured dimensions were:
+  - 144 cm half circumference around
+  - 146 cm half circumference vertically
+
+### Volume calculation
+
+```{python}
+#| label: compute-balloon-dimensions
+from numpy import pi
+
+mass = 71.0 # grams
+
+# measurements are half circumference, factor of
+# 2 converts to circumference
+c1 = 144.0 * 2.0 # cm
+c2 = 146.0 * 2.0 # cm
+
+# compute semi-axis radii
+a = c1/pi/2 # semi-axis radius cm
+b = c1/pi/2 # semi-axis radius cm
+c = c2/pi/2 # semi-axis radius cm
+
+# compute volume
+volume = 4/3 * pi * a * b * c # cm^3
+volume /= 100**3 # m^3
+```
+
+```{python}
+#| label: print-balloon-dimensions
+print_row('Mass',mass,unit='grams',label_width=30)
+print_row('Half-cicumference longitudinal',c1,unit='cm',label_width=30)
+print_row('Half-cicumference vertical',c2,unit='cm',label_width=30)
+print_row('Volume',volume,unit='m**3',label_width=30)
+```
+
+Mass                                     71.00 grams
+Half-cicumference longitudinal          288.00 cm
+Half-cicumference vertical              292.00 cm
+Volume                                    0.41 m**3
+
