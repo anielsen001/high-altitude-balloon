@@ -1,7 +1,8 @@
 ---
 title: Antennae build information
 format:
-	toc: true
+  html:
+    toc: true
 ---
 
 # GPS
@@ -10,4 +11,4 @@ format:
 
 # HF
 
-{{< include /_soruces/antennae/hf.qmd >}}
+{{< include /_sources/antennae/hf.qmd >}}
