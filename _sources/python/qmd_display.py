@@ -3,7 +3,12 @@ These are some useful display tools for returning results in quarto
 output.
 """
 
-def print_row(label, value, unit=""):
+def print_row(
+        label,
+        value,
+        unit="",
+        label_width=25,
+):
     """
     Prints a perfectly aligned row with thousands separators and decimal alignment.
     
@@ -15,4 +20,4 @@ def print_row(label, value, unit=""):
     formatted_value = f"{value:,.2f}"
     
     # 2. Print with left-aligned label (<25), right-aligned number (>15), and unit
-    print(f"{label:<25} {formatted_value:>15} {unit}")
+    print(f"{label:<{label_width}} {formatted_value:>15} {unit}")
