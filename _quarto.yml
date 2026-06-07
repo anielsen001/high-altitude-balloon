@@ -46,6 +46,8 @@ website:
           href: https://apnielsen.com/gnss-sim
       - section: "Launches"
         contents: launches/*.qmd
+      - section: "Build info"
+        contents: build/*.qmd
       - text: "WSPR Tracking"
         href: wspr/tracking.qmd
       - text: "References"
