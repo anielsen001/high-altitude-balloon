@@ -6,12 +6,30 @@
 - Channel: 122
   - 2 minutes after, 14,097,020 MHz
 - Autostart: TRACKER2
+- Telemetry format: 0X6XXX XXXX XX
 - QRP-labs S/N: 981
 
 ### Background info
 
 - QRP-labs u4b info page: <https://qrp-labs.com/u4b>
 - Traquito channel reservation: <https://traquito.github.io/channelmap/>
+
+## README
+
+Edited `README` on u4b to contain contact and WSPRtv tracking information in the unlikely event that someone can find it.
+
+:::{.callout-note}
+IF YOU ARE READING THIS:
+
+BALLOON OPERATED UNDER CALLSIGN KF8EEZ.
+LAUNCHED FROM DAYTON, OHIO, USA.
+
+TRACKING:
+HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=122&BAND=20M
+
+EMAIL:
+PHONE:
+:::
 
 ## GPS antenna
 
@@ -134,27 +152,8 @@ Specifically, set:
 - test mode: `T=1` for test without GPS/Telemetry OR `T=0` for live
 
 ```
-PRINT "INIT START"PRINT "INIT START"
+PRINT "INIT START"
 LET CH = 122
-LET HP = 0
-LET C = 0
-LET N = 2
-LET T = 1
-LET B = 5
-PRINT "HOST USB:    #US"
-PRINT "HIGH POWER:  #HP"
-PRINT "FREQUENCY:   #FQ"
-PRINT "CHANNEL:     #CH"
-PRINT "CALLSIGN:    #CS"
-PRINT "TEMPERATURE: #TK"
-IF T = 1
-PRINT "*** TEST MODE ***"
-PRINT "FAKE GPS/TELE MODE"
-ELSE
-PRINT "REAL GPS/TELE MODE"
-ENDIF
-PRINT "INIT DONE"
-LET CH = 49
 LET HP = 0
 LET C = 0
 LET N = 2
