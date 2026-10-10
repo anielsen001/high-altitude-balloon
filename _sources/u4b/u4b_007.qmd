@@ -4,9 +4,11 @@
 - Callsign: KF8EEZ
 - Band: 20m
 - Channel: 49
-  - 6 minutes after, 14,097,180 MHz
+  - 6 minutes after, 14,097,060 Hz
 - Autostart: TRACKER2
+- Telemetry format: 0X2XXX XXXX XX
 - QRP-labs S/N: 992
+- Test mode: `T=0` (live, will transmit) as of 2026-10-10, set for outdoor bench testing ahead of final build
 
 ### Background info
 
@@ -117,7 +119,7 @@ LET CH = 49
 LET HP = 0
 LET C = 0
 LET N = 2
-LET T = 1
+LET T = 0
 LET B = 5
 PRINT "HOST USB:    #US"
 PRINT "HIGH POWER:  #HP"
