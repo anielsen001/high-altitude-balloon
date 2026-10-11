@@ -8,6 +8,8 @@
 - Autostart: TRACKER2
 - Telemetry format: 0X6XXX XXXX XX
 - QRP-labs S/N: 981
+- Test flag: T=0 (live mode), set after build
+- Status: built
 
 ### Background info
 
@@ -28,8 +30,9 @@ TRACKING:
 HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=122&BAND=20M
 
 EMAIL: KF8EEZ@KF8EEZ.ORG
-PHONE:
 :::
+
+The `README` was copied to the tracker.
 
 ## GPS antenna
 
