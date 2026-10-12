@@ -21,7 +21,7 @@ using .PicoBalloons
 #| label: balloon-parameters
 free_lift = 5.0u"g" # grams
 balloon_weight = 38.0u"g" # gram
-balloon_volume = 0.15u"m^3" # m^3
+balloon_volume = 0.118u"m^3" # m^3, tape-measure estimate of one 32in balloon (see filling/float1g.qmd)
 payload_weight = 20.0u"g" # gram
 gas = "helium 97%"
 
@@ -70,7 +70,7 @@ bss2 = BalloonSystem(balloon_2, payload_weight, free_lifts, gas)
 
 ```{julia}
 #| label: fig-balloon-altitudes-free-lift
-#| fig-cap: Balloon system altitude for different payload weights.
+#| fig-cap: Balloon system altitude for different free lift.
 
 plot(
     ustrip(u"g",free_lifts),
@@ -89,7 +89,7 @@ plot!(ustrip(u"g",free_lifts),
 
 ```{julia}
 #| label: fig-balloon-altitudes-neck-lift
-#| fig-cap: Balloon system altitude for different payload weights.
+#| fig-cap: Balloon system altitude for different neck lift.
 
 plot(
     ustrip(u"g",bss1.neck_lift),

@@ -30,7 +30,7 @@ Pkg.add(needed_pkgs)
 ### Imports
 
 ```{julia}
-#| lable: load-packages
+#| label: load-packages
 using CSV
 using DataFrames
 using Interpolations
@@ -134,7 +134,7 @@ end
 
 free_lift = 5.0u"g" # grams
 balloon_weight = 38.0u"g" # gram
-balloon_volume = 0.15u"m^3" # m^3
+balloon_volume = 0.118u"m^3" # m^3, tape-measure estimate of one 32in balloon (see filling/float1g.qmd)
 payload_weight = 20.0u"g" # gram
 gas = "helium 97%"
 
