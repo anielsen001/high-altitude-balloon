@@ -1,17 +1,40 @@
-from astropy import units as u
+"""
+Pico balloon float calculations.
+
+Python port of PicoBalloons.jl, validated against float1g.xls (Steve Randall's
+superpressure balloon float calculator, version 1g) and against the Julia
+module. See test_PicoBalloons.py.
+
+The model treats the balloon as a sealed, fixed-volume envelope. It floats at
+the altitude where the density of the surrounding air equals the total system
+mass (balloon + payload + lift gas) divided by the balloon volume.
+"""
+from functools import lru_cache
 from io import StringIO
-from matplotlib import pylab as plt
+from pathlib import Path
+
+from astropy import units as u
 import numpy as np
 import pandas as pd
-import scipy.interpolate as spi
 
 atmosphere_pressure_msl = 101.325*u.kPa # kPa at MSL "standard pressure"
 atmosphere_temperature_msl = (15.0*u.Celsius).to(u.K, equivalencies=u.temperature())
 
-## Define atmospheric profile
-#fpath = "/opt/project/_sources/filling"
-# in this table, the P/T column is just the ration of the Pressure/(Temperature converted to Kelvin)
-df_atmos = pd.read_csv("atmos.csv")
+# atmos.csv lives next to this file, so this works from any working directory
+DEFAULT_ATMOS_FILE = Path(__file__).resolve().parent / "atmos.csv"
+
+@lru_cache(maxsize=None)
+def _read_atmos(atmosfile):
+    """
+    Read the atmospheric profile table once per file.
+
+    In this table, the P/T column is just the ratio of the pressure to the
+    temperature converted to Kelvin. Rows run from high altitude (low density)
+    to sea level (high density).
+    """
+    return pd.read_csv(atmosfile)
+
+df_atmos = _read_atmos(DEFAULT_ATMOS_FILE)
 
 # this table contains the density of different gasses at 0 deg and 15 deg Celsius
 gas_csv = """
@@ -41,61 +64,55 @@ def gas_density(
     else:
         raise ValueError("gas_temp must be 0 or 15")
 
-    density = df_gas[df_gas['name']==gas_name][tempstr].to_numpy()*u.kg/u.m**3
+    match = df_gas[df_gas['name']==gas_name][tempstr]
+    if len(match) != 1:
+        raise ValueError(
+            f"unknown gas {gas_name!r}, choose from {list(df_gas['name'])}"
+        )
 
-    return density
-
-## Define atmospheric profile
-#fpath = "/opt/project/_sources/filling"
-# in this table, the P/T column is just the ration of the Pressure/(Temperature converted to Kelvin)
-df_atmos = pd.read_csv("atmos.csv")
+    return match.iloc[0]*u.kg/u.m**3
 
 class Atmosphere():
+    """
+    Atmospheric profile with linear interpolation of the table in atmos.csv.
 
-    # atmospheric profile data frame
-    df_atmos = None
-
-    # interplators
-    interp_pressure = None
-    interp_temperature = None
-    interp_altitude = None
-    interp_density = None
+    Like the Julia version, an input outside the table raises ValueError
+    instead of silently extrapolating.
+    """
 
     def __init__(
             self,
-            atmosfile = 'atmos.csv',
+            atmosfile = None,
             ):
 
+        if atmosfile is None:
+            atmosfile = DEFAULT_ATMOS_FILE
+
         # read the atmospheric profile to a data frame
-        self.df_atmos = pd.read_csv("atmos.csv")
+        self.df_atmos = _read_atmos(Path(atmosfile))
 
-        # create interpolators
-        # these are created here so they are only created once
-        # and then called when needed
-        self.interp_pressure = spi.make_interp_spline(
-            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
-            self.df_atmos['Pres (kPa)'].to_numpy(),
-            k=1,
-            )
+        self._density = self.df_atmos['Den (Kg/cu m)'].to_numpy()
+        self._pressure = self.df_atmos['Pres (kPa)'].to_numpy()
+        self._temperature = self.df_atmos['Temp (C)'].to_numpy()
+        self._altitude = self.df_atmos['Alt (m)'].to_numpy()
+        self._p_over_t = self.df_atmos['P/T (kPa/K)'].to_numpy()
 
-        self.interp_temperature = spi.make_interp_spline(
-            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
-            self.df_atmos['Temp (C)'].to_numpy(),
-            k=1,
+    @staticmethod
+    def _interp(x, xp, fp, what):
+        """linear interpolation which refuses to extrapolate"""
+        x = np.asarray(x, dtype=float)
+        if np.any(x < xp.min()) or np.any(x > xp.max()):
+            raise ValueError(
+                f"{what} outside the atmosphere table "
+                f"[{xp.min():g}, {xp.max():g}]: {x}"
             )
+        return np.interp(x, xp, fp)
 
-        self.interp_altitude = spi.make_interp_spline(
-            self.df_atmos['Den (Kg/cu m)'].to_numpy(),
-            self.df_atmos['Alt (m)'].to_numpy(),
-            k=1,
-            )
-
-        self.interp_density = spi.make_interp_spline(
-            np.flip(self.df_atmos['Alt (m)'].to_numpy()),
-            np.flip(self.df_atmos['Den (Kg/cu m)'].to_numpy()),
-            k=1,
-            )
-        
+    def _by_density(self, density, column):
+        value = density.to(u.kg/u.m**3).value
+        return self._interp(
+            value, self._density, column, "system density (kg/m^3)",
+        )
 
     def pressure(
             self,
@@ -107,21 +124,14 @@ class Atmosphere():
         Parameters
         ----------
         density :
-          quantity of km/m**3, i.e. 10*u.kg/u.m**3
+          quantity of kg/m**3, i.e. 10*u.kg/u.m**3
 
         Returns
         -------
         pressure
           quantity of kPa
         """
-
-        # get just the value from the density quantity
-        u_density = density.value
-
-        # get return value
-        pressure = self.interp_pressure(u_density) * u.kPa
-
-        return pressure
+        return self._by_density(density, self._pressure) * u.kPa
 
     def temperature(
             self,
@@ -133,47 +143,75 @@ class Atmosphere():
         Parameters
         ----------
         density :
-          quantity of km/m**3, i.e. 10*u.kg/u.m**3
+          quantity of kg/m**3, i.e. 10*u.kg/u.m**3
 
         Returns
         -------
         temperature
           quantity of Kelvin
         """
-
-        # get just the value from the density quantity
-        u_density = density.value
-
-        # get return value - will be in Centigrade
-        tempC = self.interp_temperature(u_density) * u.Celsius
-        tempK = tempC.to(u.K, equivalencies=u.temperature())
-
-        return tempK       
+        tempC = self._by_density(density, self._temperature) * u.Celsius
+        return tempC.to(u.K, equivalencies=u.temperature())
 
     def altitude(
             self,
             density,
             ):
         """
-        Return the atmospheric altitude at a given density
+        Return the altitude at which the air has a given density
 
         Parameters
         ----------
         density :
-          quantity of km/m**3, i.e. 10*u.kg/u.m**3
+          quantity of kg/m**3, i.e. 10*u.kg/u.m**3
 
         Returns
         -------
         altitude
           meters
-        """        
-        # get just the value from the density quantity
-        u_density = density.value
+        """
+        return self._by_density(density, self._altitude) * u.meter
 
-        # get return value
-        alt =  self.interp_altitude(u_density) * u.meter
+    def density(
+            self,
+            altitude,
+            ):
+        """
+        Return the air density at a given altitude
 
-        return alt
+        Parameters
+        ----------
+        altitude :
+          quantity of length, i.e. 6400*u.m
+
+        Returns
+        -------
+        density
+          quantity of kg/m**3
+        """
+        value = altitude.to(u.m).value
+        # the table runs from high altitude to sea level, np.interp needs
+        # increasing x, so flip it
+        return self._interp(
+            value, self._altitude[::-1], self._density[::-1], "altitude (m)",
+        ) * u.kg/u.m**3
+
+    def onset_altitude(
+            self,
+            p_over_t,
+            ):
+        """
+        Return the altitude at which the atmosphere has a given P/T ratio
+
+        Parameters
+        ----------
+        p_over_t :
+          quantity of kPa/K
+        """
+        value = p_over_t.to(u.kPa/u.K).value
+        return self._interp(
+            value, self._p_over_t, self._altitude, "P/T (kPa/K)",
+        ) * u.meter
 
 class Balloon():
     weight = None
@@ -223,37 +261,12 @@ class Balloon():
         return Balloon(self.weight * other, self.volume * other)
 
 class BalloonSystem():
+    """
+    A balloon, its payload, and the lift gas, with the computed float state.
 
-    # optional
-    name = None
-    
-    # these are required
-    balloon = None
-    payload_weight = None
-    free_lift = None
-    gas = None
-
-    # Atmosphere()
-    atmos = None
-
-    # these could be computed
-    gas_density = None
-    air_density = None
-    neck_lift = None
-    launch_gas_volume = None
-    lift_gas_mass = None
-    total_mass = None
-    system_density = None
-    free_lift_ratio = None
-
-    # these are computed float parameters
-    float_temperature = None
-    float_altitude = None
-    float_pressure = None
-    internal_pressure = None
-    differential_pressure = None
-    super_pressure = None
-    super_pressure_onset_altitude = None  
+    Attribute names follow PicoBalloons.jl (float_altitude, float_temperature,
+    float_pressure, ...).
+    """
 
     def __init__(
             self,
@@ -262,7 +275,7 @@ class BalloonSystem():
             free_lift,
             gas,
             name = None,
-            atmosfile = 'atmos.csv',
+            atmosfile = None,
             ):
 
         # copy input parameters
@@ -273,76 +286,78 @@ class BalloonSystem():
         self.name = name
 
         self.atmos = Atmosphere(atmosfile)
-        
+
         neck_lift = self.free_lift + self.payload_weight
-        lift_gas_density = gas_density(gas).decompose()
+        lift_gas_density = gas_density(gas)
         air_density = gas_density("air")
         launch_gas_volume = (neck_lift + balloon.weight)/(air_density - lift_gas_density)
         lift_gas_mass = lift_gas_density * launch_gas_volume
-        total_mass = lift_gas_mass + payload_weight + balloon.weight
+        total_mass = lift_gas_mass + self.payload_weight + balloon.weight
         system_density = total_mass / balloon.volume
-        free_lift_ratio = free_lift / (balloon.weight + payload_weight + lift_gas_mass)
+        free_lift_ratio = (
+            self.free_lift / (balloon.weight + self.payload_weight + lift_gas_mass)
+        ).decompose()
 
-        temperature_at_float = self.atmos.temperature(system_density)
-        pressure_at_float = self.atmos.pressure(system_density)
-        balloon_altitude = self.atmos.altitude(system_density)
+        float_temperature = self.atmos.temperature(system_density)
+        float_pressure = self.atmos.pressure(system_density)
+        float_altitude = self.atmos.altitude(system_density)
 
-        internal_pressure =\
-            (atmosphere_pressure_msl * launch_gas_volume) / atmosphere_temperature_msl * ( temperature_at_float) / balloon.volume
+        internal_pressure = (
+            (atmosphere_pressure_msl * launch_gas_volume)
+            / atmosphere_temperature_msl
+            * float_temperature
+            / balloon.volume
+        ).to(u.kPa)
 
-        differential_pressure = internal_pressure - pressure_at_float
+        differential_pressure = internal_pressure - float_pressure
 
-        #kov = launch_gas_volume/balloon.volume * df_atmos.var"P/T (kPa/K)"[end]u"kPa/K"
-        kov = launch_gas_volume/balloon.volume * self.atmos.df_atmos['P/T (kPa/K)'].to_numpy()[-1] * u.kPa/u.Kelvin
-        
-        # super_pressure_onset_altitude =
-        #     LinearInterpolation(df_atmos.var"P/T (kPa/K)",
-        #                         df_atmos.var"Alt (m)")( (kov |> us"kPa/K").value  )u"m" # meter
-        super_pressure_onset_altitude = spi.make_interp_spline(
-            self.atmos.df_atmos['P/T (kPa/K)'].to_numpy(),
-            self.atmos.df_atmos['Alt (m)'].to_numpy(),
-            k=1,
-            )(kov.value)* u.meter
+        # the envelope becomes full (superpressure starts) when the ambient
+        # P/T falls to the launch P/T scaled by launch volume / balloon volume
+        kov = (
+            launch_gas_volume / balloon.volume
+            * self.atmos.df_atmos['P/T (kPa/K)'].to_numpy()[-1] * u.kPa/u.Kelvin
+        )
+        super_pressure_onset_altitude = self.atmos.onset_altitude(kov)
 
-        altitude = spi.make_interp_spline(
-            self.atmos.df_atmos['P/T (kPa/K)'].to_numpy(),
-            self.atmos.df_atmos['Alt (m)'].to_numpy(),
-            k=1,
-            )(kov.value)* u.meter
-            
-        super_pressure = pressure_at_float * free_lift_ratio
+        super_pressure = (float_pressure * free_lift_ratio).to(u.kPa)
 
+        self.gas_density = lift_gas_density
+        self.air_density = air_density
         self.neck_lift = neck_lift
         self.launch_gas_volume = launch_gas_volume
         self.lift_gas_mass = lift_gas_mass
         self.total_mass = total_mass
         self.system_density = system_density
         self.free_lift_ratio = free_lift_ratio
-        self.temperature_at_float = temperature_at_float
-        self.pressure_at_float = pressure_at_float
-        self.balloon_altitude = balloon_altitude
+        self.float_temperature = float_temperature
+        self.float_altitude = float_altitude
+        self.float_pressure = float_pressure
         self.internal_pressure = internal_pressure
         self.differential_pressure = differential_pressure
         self.kov = kov
-        self.super_pressure_onset_altitude = super_pressure_onset_altitude
         self.super_pressure = super_pressure
+        self.super_pressure_onset_altitude = super_pressure_onset_altitude
 
     def msgstr(self):
-        msg = [ f'{_k}:\t{_v}' for _k,_v in vars(self).items()]
+        msg = [
+            f'{_k}:\t{_v}' for _k,_v in vars(self).items()
+            if _k != 'atmos'
+        ]
 
         return '\n'.join(msg)
-        
+
     def __str__(self):
         return self.msgstr()
 
     def __repr__(self):
         return self.msgstr()
-        
+
     def info(self):
+        msg = ''
         if self.name is not None:
             msg = f'{self.name}\n'
-            
-        msg = \
-            f'Altitude:\t{self.balloon_altitude}\t{self.balloon_altitude.to(u.imperial.foot)}\n'
+
+        msg += \
+            f'Altitude:\t{self.float_altitude}\t{self.float_altitude.to(u.imperial.foot)}\n'
 
         return msg
