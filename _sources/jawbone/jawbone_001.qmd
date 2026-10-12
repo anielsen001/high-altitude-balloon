@@ -1,0 +1,1 @@
+appears to be a dud. will connect via usb to computer and appear as usb drive. I can copy the firmware to it, but the firmware never takes over. I created this issue about it https://github.com/EngineerGuy314/JAWBONE/issues/19

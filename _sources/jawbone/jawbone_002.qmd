@@ -1,0 +1,11 @@
+Appears to work as advertised, set the following configuration
+
+
+Current values:
+
+        Callsign:KF8EEZ
+        U4b channel:216 (Id13:10 Start Minute:0 Lane:4)
+        Band:H (14097100 Hz)
+        Verbosity:0
+        Optional debug:0
+        Telemetry config:0--   (please set to '---' if unused)
