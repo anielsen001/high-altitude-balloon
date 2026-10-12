@@ -97,6 +97,42 @@ Twisted pair feed, 50mm arms.
 
 Testing outdoors. While setting up, I noticed the antenna used for the laptop + LimeSDR recording is sensitive to QRM when oriented a particular way. This may have affected WSPR decoding on the laptop. The same antenna was used when recording u4b_008, so it may apply there too, but I didn't notice it until setting up u4b_007. Recordings from both trackers are saved for analysis.
 
+## Weight
+
+Measured 2026-10-12, before launch.
+
+| Item                                          | Mass (g) |
+|-----------------------------------------------|---------:|
+| Box + entire payload                          |     63.6 |
+| Box alone                                     |     30.0 |
+| **Payload as weighed** (63.6 − 30.0)          | **33.6** |
+| Toilet paper roll for winding antenna (1)     |      6.2 |
+| Toilet paper roll for winding antenna (2)     |      7.1 |
+| Antenna winding rolls total                   |     13.3 |
+| USB connector (removed before launch)         |      3.5 |
+| **Flight payload** (33.6 − 13.3 − 3.5)        | **16.8** |
+
+- The payload as weighed is assumed to include the rolls and the attached USB connector.
+- The 3.5 g USB connector mass was measured on a connector removed from a previous launch, not on this exact one.
+- The winding rolls are removed for flight. Rigging is not included in this mass.
+
+## Balloon fill options
+
+Flight payload 16.8 g, 97% helium, balloons modelled as 38 g and 0.118 m³ each (32in) or 71 g and 0.41 m³ (CyMylar 60). Calculated with `PicoBalloons.py`.
+
+| Setup       | Free lift | Neck lift | Fill (97% He) | Predicted float | Pressure margin |
+|-------------|----------:|----------:|--------------:|----------------:|----------------:|
+| 1 × 32in    | 5 g       | 21.8 g    | 58 L (50%)    | 7.4 km (24 kft) | 3.0 kPa         |
+| 1 × 32in    | 8 g       | 24.8 g    | 61 L (52%)    | 7.3 km (24 kft) | 4.7 kPa         |
+| 2 × 32in    | 5 g       | 21.8 g    | 96 L (40%)    | 8.9 km (29 kft) | 1.4 kPa         |
+| 2 × 32in    | 8 g       | 24.8 g    | 99 L (42%)    | 8.8 km (29 kft) | 2.3 kPa         |
+| CyMylar 60  | 5 g       | 21.8 g    | 91 L (22%)    | 13.2 km (43 kft) | 0.8 kPa        |
+| CyMylar 60  | 8 g       | 24.8 g    | 94 L (23%)    | 13.2 km (43 kft) | 1.2 kPa        |
+
+- These floats assume 97% helium. Past flights with party gas floated much lower (6.4 km on smore-002, 2 × 32in).
+- With party gas the model predicts about 2.2 km (1 × 32in), 4.1 km (2 × 32in) and 9.4 km (CyMylar) at 8 g free lift.
+- Fill by neck lift on a scale, including the rigging mass.
+
 ## Programs
 
 ### Variables
