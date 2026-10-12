@@ -8,7 +8,8 @@
 - Autostart: TRACKER2
 - Telemetry format: 0X2XXX XXXX XX
 - QRP-labs S/N: 992
-- Test mode: `T=0` (live, will transmit) as of 2026-10-10, set for outdoor bench testing ahead of final build
+- Test mode: `T=0` (live, will transmit) as of 2026-10-10
+- Status: built (final build complete as of 2026-10-12)
 
 ### Background info
 
@@ -96,6 +97,8 @@ Twisted pair feed, 50mm arms.
 ### 2026-10-12
 
 Testing outdoors. While setting up, I noticed the antenna used for the laptop + LimeSDR recording is sensitive to QRM when oriented a particular way. This may have affected WSPR decoding on the laptop. The same antenna was used when recording u4b_008, so it may apply there too, but I didn't notice it until setting up u4b_007. Recordings from both trackers are saved for analysis.
+
+Both u4b_007 and u4b_008 decoded on the main receiver. They did not decode on the portable laptop setup.
 
 ## Weight
 
