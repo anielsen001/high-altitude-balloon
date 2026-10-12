@@ -106,6 +106,20 @@ print(200 + 5 - 198.84)
 
 Twisted pair feed, 50mm arms.
 
+## Ground test log
+
+### 2026-10-12
+
+Set up on the ground test fixture in live mode (T=0). At 14:12 UTC a partial transmission started and then failed. Likely cause is low sun (insufficient solar power for the transmit); not yet confirmed.
+
+Expected transmit schedule: channel 122 uses the 2-minute slot, so transmissions start on the 2's of every 10-minute cycle (xx:02, :12, :22, :32, :42, :52 UTC). The 14:12 attempt is consistent with that.
+
+With strong sun, all 3 packets of a transmission were received on both the main receiver and the laptop + LimeSDR setup. The main receiver decoded all 3; the laptop + LimeSDR decoded only the first and failed to decode the last two. Cause unknown.
+
+The next set of packets was similar: the laptop + LimeSDR received them but decoded none, while the main receiver received and decoded all of them. The laptop's recordings were saved for analysis.
+
+The antenna used for the laptop recording was later found to be sensitive to QRM when oriented a particular way (noticed while setting up u4b_007). This may have affected decoding here too; see the u4b_007 notes.
+
 ## Programs
 
 ### Variables
@@ -160,7 +174,7 @@ LET CH = 122
 LET HP = 0
 LET C = 0
 LET N = 2
-LET T = 1
+LET T = 0
 LET B = 5
 PRINT "HOST USB:    #US"
 PRINT "HIGH POWER:  #HP"

@@ -91,6 +91,12 @@ print_row('Velocity factor',velocity_factor,)
 
 Twisted pair feed, 50mm arms.
 
+## Ground test log
+
+### 2026-10-12
+
+Testing outdoors. While setting up, I noticed the antenna used for the laptop + LimeSDR recording is sensitive to QRM when oriented a particular way. This may have affected WSPR decoding on the laptop. The same antenna was used when recording u4b_008, so it may apply there too, but I didn't notice it until setting up u4b_007. Recordings from both trackers are saved for analysis.
+
 ## Programs
 
 ### Variables
