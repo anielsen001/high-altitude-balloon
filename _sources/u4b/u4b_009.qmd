@@ -32,7 +32,7 @@ HTTPS://WSPRTV.COM/?CS=KF8EEZ&CH=49&BAND=20M
 EMAIL: KF8EEZ@KF8EEZ.ORG
 :::
 
-The `README` was copied to the tracker.
+The `README` was copied to the tracker, with the contact card added above the original factory QRP Labs instructions (kept rather than replaced, confirmed on-device 2026-10-17).
 
 ## GPS antenna
 
