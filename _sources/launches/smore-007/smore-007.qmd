@@ -1,0 +1,44 @@
+## Tracking information
+
+:::{#fig-wsprtv-tracking}
+
+```{=html}
+<iframe src="https://wsprtv.com/?cs=kf8eez&ch=49&band=20m&start_date=2026-10-12&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats" width="780" height="500"></iframe>
+```
+[WSPR Telemetry Viewer embedded tracker](https://wsprtv.com/?cs=kf8eez&ch=49&band=20m&start_date=2026-10-12&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats)
+
+:::
+
+- [WSPR Telemetry Viewer tracking link](https://wsprtv.com/?cs=kf8eez&ch=49&band=20m&start_date=2026-10-12&show_unattached&ct_dec=ct,s:2_500:0:1,2:0:1,38:0:1,1000:t100,1000:t101&ct_labels=count,power,nsat&ct_llabels=spot+xmit+since+power,power,number+sats)
+
+## Pre-launch design and preparations
+
+- u4b tracker
+  - [u4b_007](/_sources/u4b/u4b_007.qmd)
+- Balloon: single [CyMylar 60](/_sources/balloons/cymylar60.qmd) — first flight on this balloon type, chosen over 32in latex for the much higher predicted float
+- 97% helium fill; see the fill plan in the u4b_007 notes below
+- HF antenna — 20m band
+- GPS antenna
+- WSPR channel 49 (6-minute transmit slot)
+
+## Launch checklist
+
+### Pre-launch
+
+- [x] weigh payload
+- [x] confirm balloon fill plan
+- [x] ground test tracker (decoded cleanly on the main receiver; see Ground test log in the u4b_007 notes below)
+
+### At launch site
+
+- [x] wait for a calm lull — wind was higher than preferred for most of the day
+- [x] verify WSPR transmissions on ground with SDR Rx
+- [x] launch
+
+## Outcome
+
+Both u4b_007 and u4b_008 worked and decoded cleanly on the ground right up to launch. No telemetry was received from u4b_007 after launch. The leading theory is antenna damage during the launch release — wind conditions were higher than ideal, which may have caused the HF antenna wire to snag or break as the balloon went up.
+
+## U4B and programming information
+
+{{< include /_sources/u4b/u4b_007.qmd >}}

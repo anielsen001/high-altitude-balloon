@@ -1,0 +1,28 @@
+---
+title: 8th Launch s'more-008
+date: 2026-10-12
+toc: true
+categories:
+  - u4b
+  - WSPR
+  - 20m
+  - 3rd tele
+  - CyMylar 60
+  - Helium 97%
+description: |
+  First flight on a single CyMylar 60 balloon instead of latex 32in balloons, chasing a much higher predicted float — about 13.2 km (43 kft) at 97% helium.
+
+  u4b_008 tested and decoded cleanly on the ground beforehand. Wind on launch day was higher than preferred; launched during a calm lull.
+
+  No telemetry was received after launch. Leading theory is antenna damage during the launch release.
+filters:
+  - abstract-section
+---
+
+## Abstract
+
+Smore-008 flew u4b_008 (channel 122) under a single CyMylar 60 balloon — the first flight on this balloon type, chosen for its much higher predicted float altitude compared to the 32in latex balloons used on earlier launches. The tracker was ground-tested beforehand and decoded cleanly. Wind on launch day was higher than ideal, so launch was timed for a calm lull. No telemetry was received after launch; antenna damage during the launch release is the leading theory.
+
+----
+
+{{< include /_sources/launches/smore-008/smore-008.qmd >}}
