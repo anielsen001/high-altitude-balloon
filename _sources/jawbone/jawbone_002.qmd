@@ -9,3 +9,7 @@ Current values:
         Verbosity:0
         Optional debug:0
         Telemetry config:0--   (please set to '---' if unused)
+
+## Weight
+
+- Weighed 2.9 g with USB connector attached (measured 2026-10-17).
